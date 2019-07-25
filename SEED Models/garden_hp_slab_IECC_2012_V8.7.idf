@@ -26,7 +26,7 @@ SimulationControl,
 !-   ===========  ALL OBJECTS IN CLASS: BUILDING ===========
 
 Building,
-    MF_Washington_Seattle-Tacoma.Intl.AP.727930_hp_heatedbsmt_IECC_2012,  !- Name
+    MF_Washington_Seattle-Tacoma.Intl.AP.727930_hp_slab_IECC_2012,  !- Name
     0,                       !- North Axis {deg}
     Suburbs,                 !- Terrain
     0.04,                    !- Loads Convergence Tolerance Value
@@ -1955,12 +1955,6 @@ Construction,
     TDD Diffuser,            !- Name
     Diffusing Acrylic Plastic;  !- Outside Layer
 
-Construction,
-    Basement Wall,           !- Name
-    Plywood_3/4in,           !- Outside Layer
-    bsmtwall_consol_layer,   !- Layer 2
-    Plywood_3/4in;           !- Layer 3
-
 
 !-   ===========  ALL OBJECTS IN CLASS: GLOBALGEOMETRYRULES ===========
 
@@ -1973,14 +1967,13 @@ GlobalGeometryRules,
 !-   ===========  ALL OBJECTS IN CLASS: ZONE ===========
 
 Zone,
-    heatedbsmt,              !- Name
+    Breezeway,               !- Name
     0.0,                     !- Direction of Relative North {deg}
     0.0,                     !- X Origin {m}
     0.0,                     !- Y Origin {m}
     0.0,                     !- Z Origin {m}
     ,                        !- Type
     1;                       !- Multiplier
-
 
 Zone,
     living_unit1_FrontRow_BottomFloor,  !- Name
@@ -2154,257 +2147,8 @@ Zone,
     ,                        !- Type
     1;                       !- Multiplier
 
-Zone,
-    G Corridor,              !- Name
-    0.0,                     !- Direction of Relative North {deg}
-    0.0,                     !- X Origin {m}
-    0.0,                     !- Y Origin {m}
-    0.0,                     !- Z Origin {m}
-    ,                        !- Type
-    1;                       !- Multiplier
-Zone,
-    M Corridor,              !- Name
-    0.0,                     !- Direction of Relative North {deg}
-    0.0,                     !- X Origin {m}
-    0.0,                     !- Y Origin {m}
-    2.743902,                !- Z Origin {m}
-    ,                        !- Type
-    1;                       !- Multiplier
-Zone,
-    T Corridor,              !- Name
-    0.0,                     !- Direction of Relative North {deg}
-    36.536889,               !- X Origin {m}
-    19.83862,                !- Y Origin {m}
-    5.3329,                  !- Z Origin {m}
-    ,                        !- Type
-    1;                       !- Multiplier
-
 
 !-   ===========  ALL OBJECTS IN CLASS: BUILDINGSURFACE:DETAILED ===========
-
-BuildingSurface:Detailed,
-    BGFloor,                 !- Name
-    Floor,                   !- Surface Type
-    Exterior Floor,          !- Construction Name
-    heatedbsmt,              !- Zone Name
-    GroundBasementPreprocessorAverageFloor,  !- Outside Boundary Condition
-    ,                        !- Outside Boundary Condition Object
-    NoSun,                   !- Sun Exposure
-    NoWind,                  !- Wind Exposure
-    ,                        !- View Factor to Ground
-    4,                       !- Number of Vertices
-    36.536888727945,         !- Vertex 1 X-coordinate {m}
-    0.000000000000,          !- Vertex 1 Y-coordinate {m}
-    -2.134146341463,       !- Vertex 1 Z-coordinate {m}
-    0.000000000000,          !- Vertex 2 X-coordinate {m}
-    0.000000000000,          !- Vertex 2 Y-coordinate {m}
-    -2.134146341463,       !- Vertex 2 Z-coordinate {m}
-    0.000000000000,          !- Vertex 3 X-coordinate {m}
-    19.817000000000,         !- Vertex 3 Y-coordinate {m}
-    -2.134146341463,       !- Vertex 3 Z-coordinate {m}
-    36.536888727945,         !- Vertex 4 X-coordinate {m}
-    19.817000000000,         !- Vertex 4 Y-coordinate {m}
-    -2.134146341463;       !- Vertex 4 Z-coordinate {m}
-
-!
-BuildingSurface:Detailed,
-    BGWall_upper_ldf,        !- Name
-    Wall,                    !- Surface Type
-    Basement Wall,           !- Construction Name
-    heatedbsmt,              !- Zone Name
-    Outdoors,                !- Outside Boundary Condition
-    ,                        !- Outside Boundary Condition Object
-    SunExposed,              !- Sun Exposure
-    WindExposed,             !- Wind Exposure
-    ,                        !- View Factor to Ground
-    4,                       !- Number of Vertices
-    0.000000000000,          !- Vertex 1 X-coordinate {m}
-    0.000000000000,          !- Vertex 1 Y-coordinate {m}
-    0.000000000000,          !- Vertex 1 Z-coordinate {m}
-    36.536888727945,         !- Vertex 2 X-coordinate {m}
-    0.000000000000,          !- Vertex 2 Y-coordinate {m}
-    0.000000000000,          !- Vertex 2 Z-coordinate {m}
-    36.536888727945,         !- Vertex 3 X-coordinate {m}
-    0.000000000000,          !- Vertex 3 Y-coordinate {m}
-    0.152439024390,          !- Vertex 3 Z-coordinate {m}
-    0.000000000000,          !- Vertex 4 X-coordinate {m}
-    0.000000000000,          !- Vertex 4 Y-coordinate {m}
-    0.152439024390;          !- Vertex 4 Z-coordinate {m}
-
-!
-BuildingSurface:Detailed,
-    BGWall_lower_ldf,        !- Name
-    Wall,                    !- Surface Type
-    Basement Wall,           !- Construction Name
-    heatedbsmt,              !- Zone Name
-    GroundBasementPreprocessorAverageWall,  !- Outside Boundary Condition
-    ,                        !- Outside Boundary Condition Object
-    NoSun,                   !- Sun Exposure
-    NoWind,                  !- Wind Exposure
-    ,                        !- View Factor to Ground
-    4,                       !- Number of Vertices
-    0.000000000000,          !- Vertex 1 X-coordinate {m}
-    0.000000000000,          !- Vertex 1 Y-coordinate {m}
-    -2.134146341463,       !- Vertex 1 Z-coordinate {m}
-    36.536888727945,         !- Vertex 2 X-coordinate {m}
-    0.000000000000,          !- Vertex 2 Y-coordinate {m}
-    -2.134146341463,       !- Vertex 2 Z-coordinate {m}
-    36.536888727945,         !- Vertex 3 X-coordinate {m}
-    0.000000000000,          !- Vertex 3 Y-coordinate {m}
-    0.000000000000,          !- Vertex 3 Z-coordinate {m}
-    0.000000000000,          !- Vertex 4 X-coordinate {m}
-    0.000000000000,          !- Vertex 4 Y-coordinate {m}
-    0.000000000000;          !- Vertex 4 Z-coordinate {m}
-
-!
-BuildingSurface:Detailed,
-    BGWall_upper_sdr,        !- Name
-    Wall,                    !- Surface Type
-    Basement Wall,           !- Construction Name
-    heatedbsmt,              !- Zone Name
-    Outdoors,                !- Outside Boundary Condition
-    ,                        !- Outside Boundary Condition Object
-    SunExposed,              !- Sun Exposure
-    WindExposed,             !- Wind Exposure
-    ,                        !- View Factor to Ground
-    4,                       !- Number of Vertices
-    36.536888727945,         !- Vertex 1 X-coordinate {m}
-    0.000000000000,          !- Vertex 1 Y-coordinate {m}
-    0.000000000000,          !- Vertex 1 Z-coordinate {m}
-    36.536888727945,         !- Vertex 2 X-coordinate {m}
-    19.838620182722,         !- Vertex 2 Y-coordinate {m}
-    0.000000000000,          !- Vertex 2 Z-coordinate {m}
-    36.536888727945,         !- Vertex 3 X-coordinate {m}
-    19.838620182722,         !- Vertex 3 Y-coordinate {m}
-    0.152439024390,          !- Vertex 3 Z-coordinate {m}
-    36.536888727945,         !- Vertex 4 X-coordinate {m}
-    0.000000000000,          !- Vertex 4 Y-coordinate {m}
-    0.152439024390;          !- Vertex 4 Z-coordinate {m}
-
-!
-BuildingSurface:Detailed,
-    BGWall_lower_sdr,        !- Name
-    Wall,                    !- Surface Type
-    Basement Wall,           !- Construction Name
-    heatedbsmt,              !- Zone Name
-    GroundBasementPreprocessorAverageWall,  !- Outside Boundary Condition
-    ,                        !- Outside Boundary Condition Object
-    NoSun,                   !- Sun Exposure
-    NoWind,                  !- Wind Exposure
-    ,                        !- View Factor to Ground
-    4,                       !- Number of Vertices
-    36.536888727945,         !- Vertex 1 X-coordinate {m}
-    0.000000000000,          !- Vertex 1 Y-coordinate {m}
-    -2.134146341463,       !- Vertex 1 Z-coordinate {m}
-    36.536888727945,         !- Vertex 2 X-coordinate {m}
-    19.838620182722,         !- Vertex 2 Y-coordinate {m}
-    -2.134146341463,       !- Vertex 2 Z-coordinate {m}
-    36.536888727945,         !- Vertex 3 X-coordinate {m}
-    19.838620182722,         !- Vertex 3 Y-coordinate {m}
-    0.000000000000,          !- Vertex 3 Z-coordinate {m}
-    36.536888727945,         !- Vertex 4 X-coordinate {m}
-    0.000000000000,          !- Vertex 4 Y-coordinate {m}
-    0.000000000000;          !- Vertex 4 Z-coordinate {m}
-
-!
-BuildingSurface:Detailed,
-    BGWall_upper_ldb,        !- Name
-    Wall,                    !- Surface Type
-    Basement Wall,           !- Construction Name
-    heatedbsmt,              !- Zone Name
-    Outdoors,                !- Outside Boundary Condition
-    ,                        !- Outside Boundary Condition Object
-    SunExposed,              !- Sun Exposure
-    WindExposed,             !- Wind Exposure
-    ,                        !- View Factor to Ground
-    4,                       !- Number of Vertices
-    36.536888727945,         !- Vertex 1 X-coordinate {m}
-    19.838620182722,         !- Vertex 1 Y-coordinate {m}
-    0.000000000000,          !- Vertex 1 Z-coordinate {m}
-    0.000000000000,          !- Vertex 2 X-coordinate {m}
-    19.838620182722,         !- Vertex 2 Y-coordinate {m}
-    0.000000000000,          !- Vertex 2 Z-coordinate {m}
-    0.000000000000,          !- Vertex 3 X-coordinate {m}
-    19.838620182722,         !- Vertex 3 Y-coordinate {m}
-    0.152439024390,          !- Vertex 3 Z-coordinate {m}
-    36.536888727945,         !- Vertex 4 X-coordinate {m}
-    19.838620182722,         !- Vertex 4 Y-coordinate {m}
-    0.152439024390;          !- Vertex 4 Z-coordinate {m}
-
-!
-BuildingSurface:Detailed,
-    BGWall_lower_ldb,        !- Name
-    Wall,                    !- Surface Type
-    Basement Wall,           !- Construction Name
-    heatedbsmt,              !- Zone Name
-    GroundBasementPreprocessorAverageWall,  !- Outside Boundary Condition
-    ,                        !- Outside Boundary Condition Object
-    NoSun,                   !- Sun Exposure
-    NoWind,                  !- Wind Exposure
-    ,                        !- View Factor to Ground
-    4,                       !- Number of Vertices
-    36.536888727945,         !- Vertex 1 X-coordinate {m}
-    19.838620182722,         !- Vertex 1 Y-coordinate {m}
-    -2.134146341463,       !- Vertex 1 Z-coordinate {m}
-    0.000000000000,          !- Vertex 2 X-coordinate {m}
-    19.838620182722,         !- Vertex 2 Y-coordinate {m}
-    -2.134146341463,       !- Vertex 2 Z-coordinate {m}
-    0.000000000000,          !- Vertex 3 X-coordinate {m}
-    19.838620182722,         !- Vertex 3 Y-coordinate {m}
-    0.000000000000,          !- Vertex 3 Z-coordinate {m}
-    36.536888727945,         !- Vertex 4 X-coordinate {m}
-    19.838620182722,         !- Vertex 4 Y-coordinate {m}
-    0.000000000000;          !- Vertex 4 Z-coordinate {m}
-
-!
-BuildingSurface:Detailed,
-    BGWall_upper_sdl,        !- Name
-    Wall,                    !- Surface Type
-    Basement Wall,           !- Construction Name
-    heatedbsmt,              !- Zone Name
-    Outdoors,                !- Outside Boundary Condition
-    ,                        !- Outside Boundary Condition Object
-    SunExposed,              !- Sun Exposure
-    WindExposed,             !- Wind Exposure
-    ,                        !- View Factor to Ground
-    4,                       !- Number of Vertices
-    0.000000000000,          !- Vertex 1 X-coordinate {m}
-    19.838620182722,         !- Vertex 1 Y-coordinate {m}
-    0.000000000000,          !- Vertex 1 Z-coordinate {m}
-    0.000000000000,          !- Vertex 2 X-coordinate {m}
-    0.000000000000,          !- Vertex 2 Y-coordinate {m}
-    0.000000000000,          !- Vertex 2 Z-coordinate {m}
-    0.000000000000,          !- Vertex 3 X-coordinate {m}
-    0.000000000000,          !- Vertex 3 Y-coordinate {m}
-    0.152439024390,          !- Vertex 3 Z-coordinate {m}
-    0.000000000000,          !- Vertex 4 X-coordinate {m}
-    19.838620182722,         !- Vertex 4 Y-coordinate {m}
-    0.152439024390;          !- Vertex 4 Z-coordinate {m}
-
-!
-BuildingSurface:Detailed,
-    BGWall_lower_sdl,        !- Name
-    Wall,                    !- Surface Type
-    Basement Wall,           !- Construction Name
-    heatedbsmt,              !- Zone Name
-    GroundBasementPreprocessorAverageWall,  !- Outside Boundary Condition
-    ,                        !- Outside Boundary Condition Object
-    NoSun,                   !- Sun Exposure
-    NoWind,                  !- Wind Exposure
-    ,                        !- View Factor to Ground
-    4,                       !- Number of Vertices
-    0.000000000000,          !- Vertex 1 X-coordinate {m}
-    19.838620182722,         !- Vertex 1 Y-coordinate {m}
-    -2.134146341463,       !- Vertex 1 Z-coordinate {m}
-    0.000000000000,          !- Vertex 2 X-coordinate {m}
-    0.000000000000,          !- Vertex 2 Y-coordinate {m}
-    -2.134146341463,       !- Vertex 2 Z-coordinate {m}
-    0.000000000000,          !- Vertex 3 X-coordinate {m}
-    0.000000000000,          !- Vertex 3 Y-coordinate {m}
-    0.000000000000,          !- Vertex 3 Z-coordinate {m}
-    0.000000000000,          !- Vertex 4 X-coordinate {m}
-    19.838620182722,         !- Vertex 4 Y-coordinate {m}
-    0.000000000000;          !- Vertex 4 Z-coordinate {m}
 
 !
 !
@@ -2437,13 +2181,13 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     Wall_ldb_1.unit1_FrontRow_BottomFloor,  !- Name
     Wall,                    !- Surface Type
-    Interior Wall,           !- Construction Name
+    Exterior Wall,           !- Construction Name
     living_unit1_FrontRow_BottomFloor,  !- Zone Name
-    Zone,                    !- Outside Boundary Condition
-    G Corridor,              !- Outside Boundary Condition Object
-    NoSun,                   !- Sun Exposure
-    NoWind,                  !- Wind Exposure
-    0.0,                     !- View Factor to Ground
+    Outdoors,                !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
+    SunExposed,              !- Sun Exposure
+    WindExposed,             !- Wind Exposure
+    ,                        !- View Factor to Ground
     4,                       !- Number of Vertices
     12.178962909315,         !- Vertex 1 X-coordinate {m}
     9.157114969410,          !- Vertex 1 Y-coordinate {m}
@@ -2512,13 +2256,13 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     Wall_ldb_1.unit2_FrontRow_BottomFloor,  !- Name
     Wall,                    !- Surface Type
-    Interior Wall,           !- Construction Name
+    Exterior Wall,           !- Construction Name
     living_unit2_FrontRow_BottomFloor,  !- Zone Name
-    Zone,                    !- Outside Boundary Condition
-    G Corridor,              !- Outside Boundary Condition Object
-    NoSun,                   !- Sun Exposure
-    NoWind,                  !- Wind Exposure
-    0.0,                     !- View Factor to Ground
+    Outdoors,                !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
+    SunExposed,              !- Sun Exposure
+    WindExposed,             !- Wind Exposure
+    ,                        !- View Factor to Ground
     4,                       !- Number of Vertices
     24.357925818630,         !- Vertex 1 X-coordinate {m}
     9.157114969410,          !- Vertex 1 Y-coordinate {m}
@@ -2587,13 +2331,13 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     Wall_ldb_1.unit3_FrontRow_BottomFloor,  !- Name
     Wall,                    !- Surface Type
-    Interior Wall,           !- Construction Name
+    Exterior Wall,           !- Construction Name
     living_unit3_FrontRow_BottomFloor,  !- Zone Name
-    Zone,                    !- Outside Boundary Condition
-    G Corridor,              !- Outside Boundary Condition Object
-    NoSun,                   !- Sun Exposure
-    NoWind,                  !- Wind Exposure
-    0.0,                     !- View Factor to Ground
+    Outdoors,                !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
+    SunExposed,              !- Sun Exposure
+    WindExposed,             !- Wind Exposure
+    ,                        !- View Factor to Ground
     4,                       !- Number of Vertices
     36.536888727945,         !- Vertex 1 X-coordinate {m}
     9.157114969410,          !- Vertex 1 Y-coordinate {m}
@@ -2637,13 +2381,13 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     Wall_ldf_1.unit1_BackRow_BottomFloor,  !- Name
     Wall,                    !- Surface Type
-    Interior Wall,           !- Construction Name
+    Exterior Wall,           !- Construction Name
     living_unit1_BackRow_BottomFloor,  !- Zone Name
-    Zone,                    !- Outside Boundary Condition
-    G Corridor,              !- Outside Boundary Condition Object
-    NoSun,                   !- Sun Exposure
-    NoWind,                  !- Wind Exposure
-    0.0,                     !- View Factor to Ground
+    Outdoors,                !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
+    SunExposed,              !- Sun Exposure
+    WindExposed,             !- Wind Exposure
+    ,                        !- View Factor to Ground
     4,                       !- Number of Vertices
     0.000000000000,          !- Vertex 1 X-coordinate {m}
     10.681505213312,         !- Vertex 1 Y-coordinate {m}
@@ -2737,13 +2481,13 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     Wall_ldf_1.unit2_BackRow_BottomFloor,  !- Name
     Wall,                    !- Surface Type
-    Interior Wall,           !- Construction Name
+    Exterior Wall,           !- Construction Name
     living_unit2_BackRow_BottomFloor,  !- Zone Name
-    Zone,                    !- Outside Boundary Condition
-    G Corridor,              !- Outside Boundary Condition Object
-    NoSun,                   !- Sun Exposure
-    NoWind,                  !- Wind Exposure
-    0.0,                     !- View Factor to Ground
+    Outdoors,                !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
+    SunExposed,              !- Sun Exposure
+    WindExposed,             !- Wind Exposure
+    ,                        !- View Factor to Ground
     4,                       !- Number of Vertices
     12.178962909315,         !- Vertex 1 X-coordinate {m}
     10.681505213312,         !- Vertex 1 Y-coordinate {m}
@@ -2787,13 +2531,13 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     Wall_ldf_1.unit3_BackRow_BottomFloor,  !- Name
     Wall,                    !- Surface Type
-    Interior Wall,           !- Construction Name
+    Exterior Wall,           !- Construction Name
     living_unit3_BackRow_BottomFloor,  !- Zone Name
-    Zone,                    !- Outside Boundary Condition
-    G Corridor,              !- Outside Boundary Condition Object
-    NoSun,                   !- Sun Exposure
-    NoWind,                  !- Wind Exposure
-    0.0,                     !- View Factor to Ground
+    Outdoors,                !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
+    SunExposed,              !- Sun Exposure
+    WindExposed,             !- Wind Exposure
+    ,                        !- View Factor to Ground
     4,                       !- Number of Vertices
     24.357925818630,         !- Vertex 1 X-coordinate {m}
     10.681505213312,         !- Vertex 1 Y-coordinate {m}
@@ -2937,13 +2681,13 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     Wall_ldb_1.unit1_FrontRow_MiddleFloor,  !- Name
     Wall,                    !- Surface Type
-    Interior Wall,           !- Construction Name
+    Exterior Wall,           !- Construction Name
     living_unit1_FrontRow_MiddleFloor,  !- Zone Name
-    Zone,                    !- Outside Boundary Condition
-    M Corridor,              !- Outside Boundary Condition Object
-    NoSun,                   !- Sun Exposure
-    NoWind,                  !- Wind Exposure
-    0.0,                     !- View Factor to Ground
+    Outdoors,                !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
+    SunExposed,              !- Sun Exposure
+    WindExposed,             !- Wind Exposure
+    ,                        !- View Factor to Ground
     4,                       !- Number of Vertices
     12.178962909315,         !- Vertex 1 X-coordinate {m}
     9.157114969410,          !- Vertex 1 Y-coordinate {m}
@@ -3012,13 +2756,13 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     Wall_ldb_1.unit2_FrontRow_MiddleFloor,  !- Name
     Wall,                    !- Surface Type
-    Interior Wall,           !- Construction Name
+    Exterior Wall,           !- Construction Name
     living_unit2_FrontRow_MiddleFloor,  !- Zone Name
-    Zone,                    !- Outside Boundary Condition
-    M Corridor,              !- Outside Boundary Condition Object
-    NoSun,                   !- Sun Exposure
-    NoWind,                  !- Wind Exposure
-    0.0,                     !- View Factor to Ground
+    Outdoors,                !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
+    SunExposed,              !- Sun Exposure
+    WindExposed,             !- Wind Exposure
+    ,                        !- View Factor to Ground
     4,                       !- Number of Vertices
     24.357925818630,         !- Vertex 1 X-coordinate {m}
     9.157114969410,          !- Vertex 1 Y-coordinate {m}
@@ -3087,13 +2831,13 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     Wall_ldb_1.unit3_FrontRow_MiddleFloor,  !- Name
     Wall,                    !- Surface Type
-    Interior Wall,           !- Construction Name
+    Exterior Wall,           !- Construction Name
     living_unit3_FrontRow_MiddleFloor,  !- Zone Name
-    Zone,                    !- Outside Boundary Condition
-    M Corridor,              !- Outside Boundary Condition Object
-    NoSun,                   !- Sun Exposure
-    NoWind,                  !- Wind Exposure
-    0.0,                     !- View Factor to Ground
+    Outdoors,                !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
+    SunExposed,              !- Sun Exposure
+    WindExposed,             !- Wind Exposure
+    ,                        !- View Factor to Ground
     4,                       !- Number of Vertices
     36.536888727945,         !- Vertex 1 X-coordinate {m}
     9.157114969410,          !- Vertex 1 Y-coordinate {m}
@@ -3137,13 +2881,13 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     Wall_ldf_1.unit1_BackRow_MiddleFloor,  !- Name
     Wall,                    !- Surface Type
-    Interior Wall,           !- Construction Name
+    Exterior Wall,           !- Construction Name
     living_unit1_BackRow_MiddleFloor,  !- Zone Name
-    Zone,                    !- Outside Boundary Condition
-    M Corridor,              !- Outside Boundary Condition Object
-    NoSun,                   !- Sun Exposure
-    NoWind,                  !- Wind Exposure
-    0.0,                     !- View Factor to Ground
+    Outdoors,                !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
+    SunExposed,              !- Sun Exposure
+    WindExposed,             !- Wind Exposure
+    ,                        !- View Factor to Ground
     4,                       !- Number of Vertices
     0.000000000000,          !- Vertex 1 X-coordinate {m}
     10.681505213312,         !- Vertex 1 Y-coordinate {m}
@@ -3237,13 +2981,13 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     Wall_ldf_1.unit2_BackRow_MiddleFloor,  !- Name
     Wall,                    !- Surface Type
-    Interior Wall,           !- Construction Name
+    Exterior Wall,           !- Construction Name
     living_unit2_BackRow_MiddleFloor,  !- Zone Name
-    Zone,                    !- Outside Boundary Condition
-    M Corridor,              !- Outside Boundary Condition Object
-    NoSun,                   !- Sun Exposure
-    NoWind,                  !- Wind Exposure
-    0.0,                     !- View Factor to Ground
+    Outdoors,                !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
+    SunExposed,              !- Sun Exposure
+    WindExposed,             !- Wind Exposure
+    ,                        !- View Factor to Ground
     4,                       !- Number of Vertices
     12.178962909315,         !- Vertex 1 X-coordinate {m}
     10.681505213312,         !- Vertex 1 Y-coordinate {m}
@@ -3287,13 +3031,13 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     Wall_ldf_1.unit3_BackRow_MiddleFloor,  !- Name
     Wall,                    !- Surface Type
-    Interior Wall,           !- Construction Name
+    Exterior Wall,           !- Construction Name
     living_unit3_BackRow_MiddleFloor,  !- Zone Name
-    Zone,                    !- Outside Boundary Condition
-    M Corridor,              !- Outside Boundary Condition Object
-    NoSun,                   !- Sun Exposure
-    NoWind,                  !- Wind Exposure
-    0.0,                     !- View Factor to Ground
+    Outdoors,                !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
+    SunExposed,              !- Sun Exposure
+    WindExposed,             !- Wind Exposure
+    ,                        !- View Factor to Ground
     4,                       !- Number of Vertices
     24.357925818630,         !- Vertex 1 X-coordinate {m}
     10.681505213312,         !- Vertex 1 Y-coordinate {m}
@@ -3535,12 +3279,113 @@ BuildingSurface:Detailed,
 
 !
 BuildingSurface:Detailed,
+    Breezeway_BottomFloor,   !- Name
+    Floor,                   !- Surface Type
+    Exterior Floor,          !- Construction Name
+    Breezeway,               !- Zone Name
+    Outdoors,                !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
+    SunExposed,              !- Sun Exposure
+    WindExposed,             !- Wind Exposure
+    autocalculate,           !- View Factor to Ground
+    4,                       !- Number of Vertices
+    36.536118163187,         !- Vertex 1 X-coordinate {m}
+    9.156233137945,          !- Vertex 1 Y-coordinate {m}
+    0.152392567938,          !- Vertex 1 Z-coordinate {m}
+    0.000000000000,          !- Vertex 2 X-coordinate {m}
+    9.156233137945,          !- Vertex 2 Y-coordinate {m}
+    0.152392567938,          !- Vertex 2 Z-coordinate {m}
+    0.000000000000,          !- Vertex 3 X-coordinate {m}
+    10.680158817328,         !- Vertex 3 Y-coordinate {m}
+    0.152392567938,          !- Vertex 3 Z-coordinate {m}
+    36.536118163187,         !- Vertex 4 X-coordinate {m}
+    10.680158817328,         !- Vertex 4 Y-coordinate {m}
+    0.152392567938;          !- Vertex 4 Z-coordinate {m}
+
+!
+BuildingSurface:Detailed,
+    Breezeway_MiddleFloor,   !- Name
+    Floor,                   !- Surface Type
+    Exterior Floor,          !- Construction Name
+    Breezeway,               !- Zone Name
+    Outdoors,                !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
+    SunExposed,              !- Sun Exposure
+    WindExposed,             !- Wind Exposure
+    autocalculate,           !- View Factor to Ground
+    4,                       !- Number of Vertices
+    36.536118163187,         !- Vertex 1 X-coordinate {m}
+    9.156233137945,          !- Vertex 1 Y-coordinate {m}
+    2.741460000000,          !- Vertex 1 Z-coordinate {m}
+    0.000000000000,          !- Vertex 2 X-coordinate {m}
+    9.156233137945,          !- Vertex 2 Y-coordinate {m}
+    2.741460000000,          !- Vertex 2 Z-coordinate {m}
+    0.000000000000,          !- Vertex 3 X-coordinate {m}
+    10.680158817328,         !- Vertex 3 Y-coordinate {m}
+    2.741460000000,          !- Vertex 3 Z-coordinate {m}
+    36.536118163187,         !- Vertex 4 X-coordinate {m}
+    10.680158817328,         !- Vertex 4 Y-coordinate {m}
+    2.741460000000;          !- Vertex 4 Z-coordinate {m}
+
+!
+BuildingSurface:Detailed,
+    Breezeway_TopFloor,      !- Name
+    Floor,                   !- Surface Type
+    Exterior Floor,          !- Construction Name
+    Breezeway,               !- Zone Name
+    Outdoors,                !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
+    SunExposed,              !- Sun Exposure
+    WindExposed,             !- Wind Exposure
+    autocalculate,           !- View Factor to Ground
+    4,                       !- Number of Vertices
+    36.536118163187,         !- Vertex 1 X-coordinate {m}
+    9.156233137945,          !- Vertex 1 Y-coordinate {m}
+    5.330000000000,          !- Vertex 1 Z-coordinate {m}
+    0.000000000000,          !- Vertex 2 X-coordinate {m}
+    9.156233137945,          !- Vertex 2 Y-coordinate {m}
+    5.330000000000,          !- Vertex 2 Z-coordinate {m}
+    0.000000000000,          !- Vertex 3 X-coordinate {m}
+    10.680158817328,         !- Vertex 3 Y-coordinate {m}
+    5.330000000000,          !- Vertex 3 Z-coordinate {m}
+    36.536118163187,         !- Vertex 4 X-coordinate {m}
+    10.680158817328,         !- Vertex 4 Y-coordinate {m}
+    5.330000000000;          !- Vertex 4 Z-coordinate {m}
+
+!
+BuildingSurface:Detailed,
+    BreezewayRoof,           !- Name
+    Ceiling,                 !- Surface Type
+    Interior Ceiling,        !- Construction Name
+    Breezeway,               !- Zone Name
+    Zone,                    !- Outside Boundary Condition
+    attic,                   !- Outside Boundary Condition Object
+    NoSun,                   !- Sun Exposure
+    NoWind,                  !- Wind Exposure
+    0.0,                     !- View Factor to Ground
+    4,                       !- Number of Vertices
+    0.000000000000,          !- Vertex 1 X-coordinate {m}
+    9.156233137945,          !- Vertex 1 Y-coordinate {m}
+    7.920000000000,          !- Vertex 1 Z-coordinate {m}
+    36.536118163187,         !- Vertex 2 X-coordinate {m}
+    9.156233137945,          !- Vertex 2 Y-coordinate {m}
+    7.920000000000,          !- Vertex 2 Z-coordinate {m}
+    36.536118163187,         !- Vertex 3 X-coordinate {m}
+    10.680158817328,         !- Vertex 3 Y-coordinate {m}
+    7.920000000000,          !- Vertex 3 Z-coordinate {m}
+    0.000000000000,          !- Vertex 4 X-coordinate {m}
+    10.680158817328,         !- Vertex 4 Y-coordinate {m}
+    7.920000000000;          !- Vertex 4 Z-coordinate {m}
+
+!
+!
+BuildingSurface:Detailed,
     Floor_unit1_FrontRow_BottomFloor,  !- Name
     Floor,                   !- Surface Type
     Exterior Floor,          !- Construction Name
     living_unit1_FrontRow_BottomFloor,  !- Zone Name
-    Zone,                    !- Outside Boundary Condition
-    heatedbsmt,              !- Outside Boundary Condition Object
+    GroundSlabPreprocessorAverage,  !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
     NoSun,                   !- Sun Exposure
     NoWind,                  !- Wind Exposure
     0.0,                     !- View Factor to Ground
@@ -3564,8 +3409,8 @@ BuildingSurface:Detailed,
     Floor,                   !- Surface Type
     Exterior Floor,          !- Construction Name
     living_unit2_FrontRow_BottomFloor,  !- Zone Name
-    Zone,                    !- Outside Boundary Condition
-    heatedbsmt,              !- Outside Boundary Condition Object
+    GroundSlabPreprocessorAverage,  !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
     NoSun,                   !- Sun Exposure
     NoWind,                  !- Wind Exposure
     0.0,                     !- View Factor to Ground
@@ -3589,8 +3434,8 @@ BuildingSurface:Detailed,
     Floor,                   !- Surface Type
     Exterior Floor,          !- Construction Name
     living_unit3_FrontRow_BottomFloor,  !- Zone Name
-    Zone,                    !- Outside Boundary Condition
-    heatedbsmt,              !- Outside Boundary Condition Object
+    GroundSlabPreprocessorAverage,  !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
     NoSun,                   !- Sun Exposure
     NoWind,                  !- Wind Exposure
     0.0,                     !- View Factor to Ground
@@ -3614,8 +3459,8 @@ BuildingSurface:Detailed,
     Floor,                   !- Surface Type
     Exterior Floor,          !- Construction Name
     living_unit1_BackRow_BottomFloor,  !- Zone Name
-    Zone,                    !- Outside Boundary Condition
-    heatedbsmt,              !- Outside Boundary Condition Object
+    GroundSlabPreprocessorAverage,  !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
     NoSun,                   !- Sun Exposure
     NoWind,                  !- Wind Exposure
     0.0,                     !- View Factor to Ground
@@ -3639,8 +3484,8 @@ BuildingSurface:Detailed,
     Floor,                   !- Surface Type
     Exterior Floor,          !- Construction Name
     living_unit2_BackRow_BottomFloor,  !- Zone Name
-    Zone,                    !- Outside Boundary Condition
-    heatedbsmt,              !- Outside Boundary Condition Object
+    GroundSlabPreprocessorAverage,  !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
     NoSun,                   !- Sun Exposure
     NoWind,                  !- Wind Exposure
     0.0,                     !- View Factor to Ground
@@ -3664,8 +3509,8 @@ BuildingSurface:Detailed,
     Floor,                   !- Surface Type
     Exterior Floor,          !- Construction Name
     living_unit3_BackRow_BottomFloor,  !- Zone Name
-    Zone,                    !- Outside Boundary Condition
-    heatedbsmt,              !- Outside Boundary Condition Object
+    GroundSlabPreprocessorAverage,  !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
     NoSun,                   !- Sun Exposure
     NoWind,                  !- Wind Exposure
     0.0,                     !- View Factor to Ground
@@ -3779,7 +3624,7 @@ BuildingSurface:Detailed,
     ceiling-floor-layer,     !- Construction Name
     living_unit3_FrontRow_BottomFloor,  !- Zone Name
     Surface,                 !- Outside Boundary Condition
-    Floor_unit3_FrontRow_MiddleFloor,  !- Outside Boundary Condition Object
+    Floor_unit3_FrontRow_MiddleFloor,                        !- Outside Boundary Condition Object
     NoSun,                   !- Sun Exposure
     NoWind,                  !- Wind Exposure
     0.0,                     !- View Factor to Ground
@@ -3803,7 +3648,7 @@ BuildingSurface:Detailed,
     ceiling-floor-layer,     !- Construction Name
     living_unit3_BackRow_BottomFloor,  !- Zone Name
     Surface,                 !- Outside Boundary Condition
-    Floor_unit3_BackRow_MiddleFloor,  !- Outside Boundary Condition Object
+    Floor_unit3_BackRow_MiddleFloor,                        !- Outside Boundary Condition Object
     NoSun,                   !- Sun Exposure
     NoWind,                  !- Wind Exposure
     0.0,                     !- View Factor to Ground
@@ -4404,13 +4249,13 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     Wall_ldf_1.unit3_BackRow_TopFloor,  !- Name
     Wall,                    !- Surface Type
-    Interior Wall,           !- Construction Name
+    Exterior Wall,           !- Construction Name
     living_unit3_BackRow_TopFloor,  !- Zone Name
-    Zone,                    !- Outside Boundary Condition
-    T Corridor,              !- Outside Boundary Condition Object
-    NoSun,                   !- Sun Exposure
-    NoWind,                  !- Wind Exposure
-    0.0,                     !- View Factor to Ground
+    Outdoors,                !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
+    SunExposed,              !- Sun Exposure
+    WindExposed,             !- Wind Exposure
+    ,                        !- View Factor to Ground
     4,                       !- Number of Vertices
     24.357925818630,         !- Vertex 1 X-coordinate {m}
     10.681505213312,         !- Vertex 1 Y-coordinate {m}
@@ -4527,13 +4372,13 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     Wall_ldb_1.unit3_FrontRow_TopFloor,  !- Name
     Wall,                    !- Surface Type
-    Interior Wall,           !- Construction Name
+    Exterior Wall,           !- Construction Name
     living_unit3_FrontRow_TopFloor,  !- Zone Name
-    Zone,                    !- Outside Boundary Condition
-    T Corridor,              !- Outside Boundary Condition Object
-    NoSun,                   !- Sun Exposure
-    NoWind,                  !- Wind Exposure
-    0.0,                     !- View Factor to Ground
+    Outdoors,                !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
+    SunExposed,              !- Sun Exposure
+    WindExposed,             !- Wind Exposure
+    ,                        !- View Factor to Ground
     4,                       !- Number of Vertices
     36.536888727945,         !- Vertex 1 X-coordinate {m}
     9.157114969410,          !- Vertex 1 Y-coordinate {m}
@@ -4698,13 +4543,13 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     Wall_ldb_1.unit1_FrontRow_TopFloor,  !- Name
     Wall,                    !- Surface Type
-    Interior Wall,           !- Construction Name
+    Exterior Wall,           !- Construction Name
     living_unit1_FrontRow_TopFloor,  !- Zone Name
-    Zone,                    !- Outside Boundary Condition
-    T Corridor,              !- Outside Boundary Condition Object
-    NoSun,                   !- Sun Exposure
-    NoWind,                  !- Wind Exposure
-    0.0,                     !- View Factor to Ground
+    Outdoors,                !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
+    SunExposed,              !- Sun Exposure
+    WindExposed,             !- Wind Exposure
+    ,                        !- View Factor to Ground
     4,                       !- Number of Vertices
     12.178962909315,         !- Vertex 1 X-coordinate {m}
     9.157114969410,          !- Vertex 1 Y-coordinate {m}
@@ -4819,13 +4664,13 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     Wall_ldf_1.unit2_BackRow_TopFloor,  !- Name
     Wall,                    !- Surface Type
-    Interior Wall,           !- Construction Name
+    Exterior Wall,           !- Construction Name
     living_unit2_BackRow_TopFloor,  !- Zone Name
-    Zone,                    !- Outside Boundary Condition
-    T Corridor,              !- Outside Boundary Condition Object
-    NoSun,                   !- Sun Exposure
-    NoWind,                  !- Wind Exposure
-    0.0,                     !- View Factor to Ground
+    Outdoors,                !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
+    SunExposed,              !- Sun Exposure
+    WindExposed,             !- Wind Exposure
+    ,                        !- View Factor to Ground
     4,                       !- Number of Vertices
     12.178962909315,         !- Vertex 1 X-coordinate {m}
     10.681505213312,         !- Vertex 1 Y-coordinate {m}
@@ -4964,13 +4809,13 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     Wall_ldb_1.unit2_FrontRow_TopFloor,  !- Name
     Wall,                    !- Surface Type
-    Interior Wall,           !- Construction Name
+    Exterior Wall,           !- Construction Name
     living_unit2_FrontRow_TopFloor,  !- Zone Name
-    Zone,                    !- Outside Boundary Condition
-    T Corridor,              !- Outside Boundary Condition Object
-    NoSun,                   !- Sun Exposure
-    NoWind,                  !- Wind Exposure
-    0.0,                     !- View Factor to Ground
+    Outdoors,                !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
+    SunExposed,              !- Sun Exposure
+    WindExposed,             !- Wind Exposure
+    ,                        !- View Factor to Ground
     4,                       !- Number of Vertices
     24.357925818630,         !- Vertex 1 X-coordinate {m}
     9.157114969410,          !- Vertex 1 Y-coordinate {m}
@@ -5112,13 +4957,13 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     Wall_ldf_1.unit1_BackRow_TopFloor,  !- Name
     Wall,                    !- Surface Type
-    Interior Wall,           !- Construction Name
+    Exterior Wall,           !- Construction Name
     living_unit1_BackRow_TopFloor,  !- Zone Name
-    Zone,                    !- Outside Boundary Condition
-    T Corridor,              !- Outside Boundary Condition Object
-    NoSun,                   !- Sun Exposure
-    NoWind,                  !- Wind Exposure
-    0.0,                     !- View Factor to Ground
+    Outdoors,                !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
+    SunExposed,              !- Sun Exposure
+    WindExposed,             !- Wind Exposure
+    ,                        !- View Factor to Ground
     4,                       !- Number of Vertices
     0.000000000000,          !- Vertex 1 X-coordinate {m}
     10.681505213312,         !- Vertex 1 Y-coordinate {m}
@@ -5157,283 +5002,7 @@ BuildingSurface:Detailed,
     19.838620182722,         !- Vertex 4 Y-coordinate {m}
     7.924336585000;          !- Vertex 4 Z-coordinate {m}
 
-BuildingSurface:Detailed,
-    g Floor C,               !- Name
-    Floor,                   !- Surface Type
-    Exterior Floor,          !- Construction Name
-    G Corridor,              !- Zone Name
-    GroundSlabPreprocessorAverage,  !- Outside Boundary Condition
-    ,                        !- Outside Boundary Condition Object
-    NoSun,                   !- Sun Exposure
-    NoWind,                  !- Wind Exposure
-    0.0,                     !- View Factor to Ground
-    4,                       !- Number of Vertices
-    36.536888727945,         !- Vertex 1 X-coordinate {m}
-    9.157114969410,          !- Vertex 1 Y-coordinate {m}
-    0.152439024390,          !- Vertex 1 Z-coordinate {m}
-    0.000000000000,          !- Vertex 2 X-coordinate {m}
-    9.157114969410,          !- Vertex 2 Y-coordinate {m}
-    0.152439024390,          !- Vertex 2 Z-coordinate {m}
-    0.000000000000,          !- Vertex 3 X-coordinate {m}
-    10.681505213312,         !- Vertex 3 Y-coordinate {m}
-    0.152439024390,          !- Vertex 3 Z-coordinate {m}
-    36.536888727945,         !- Vertex 4 X-coordinate {m}
-    10.681505213312,         !- Vertex 4 Y-coordinate {m}
-    0.152439024390;          !- Vertex 4 Z-coordinate {m}
 
-BuildingSurface:Detailed,
-    g EWall C,               !- Name
-    Wall,                    !- Surface Type
-    Exterior Wall,           !- Construction Name
-    G Corridor,              !- Zone Name
-    Outdoors,                !- Outside Boundary Condition
-    ,                        !- Outside Boundary Condition Object
-    SunExposed,              !- Sun Exposure
-    WindExposed,             !- Wind Exposure
-    autocalculate,           !- View Factor to Ground
-    4,                       !- Number of Vertices
-    36.536888727945,         !- Vertex 1 X-coordinate {m}
-    9.157114969410,          !- Vertex 1 Y-coordinate {m}
-    0.152439024390,          !- Vertex 1 Z-coordinate {m}
-    36.536888727945,         !- Vertex 2 X-coordinate {m}
-    10.681505213312,         !- Vertex 2 Y-coordinate {m}
-    0.152439024390,          !- Vertex 2 Z-coordinate {m}
-    36.536888727945,         !- Vertex 3 X-coordinate {m}
-    10.681505213312,         !- Vertex 3 Y-coordinate {m}
-    2.743902439024,          !- Vertex 3 Z-coordinate {m}
-    36.536888727945,         !- Vertex 4 X-coordinate {m}
-    9.157114969410,          !- Vertex 4 Y-coordinate {m}
-    2.743902439024;          !- Vertex 4 Z-coordinate {m}
-BuildingSurface:Detailed,
-    g WWall C,               !- Name
-    Wall,                    !- Surface Type
-    Exterior Wall,           !- Construction Name
-    G Corridor,              !- Zone Name
-    Outdoors,                !- Outside Boundary Condition
-    ,                        !- Outside Boundary Condition Object
-    SunExposed,              !- Sun Exposure
-    WindExposed,             !- Wind Exposure
-    autocalculate,           !- View Factor to Ground
-    4,                       !- Number of Vertices
-    0.000000000000,          !- Vertex 1 X-coordinate {m}
-    10.681505213312,         !- Vertex 1 Y-coordinate {m}
-    0.152439024390,          !- Vertex 1 Z-coordinate {m}
-    0.000000000000,          !- Vertex 2 X-coordinate {m}
-    9.157114969410,          !- Vertex 2 Y-coordinate {m}
-    0.152439024390,          !- Vertex 2 Z-coordinate {m}
-    0.000000000000,          !- Vertex 3 X-coordinate {m}
-    9.157114969410,          !- Vertex 3 Y-coordinate {m}
-    2.743902439024,          !- Vertex 3 Z-coordinate {m}
-    0.000000000000,          !- Vertex 4 X-coordinate {m}
-    10.681505213312,         !- Vertex 4 Y-coordinate {m}
-    2.743902439024;          !- Vertex 4 Z-coordinate {m}
-BuildingSurface:Detailed,
-    g Ceiling C,             !- Name
-    Ceiling,                 !- Surface Type
-    ceiling-floor-layer,        !- Construction Name
-    G Corridor,              !- Zone Name
-    Surface,                 !- Outside Boundary Condition
-    m Floor C,               !- Outside Boundary Condition Object
-    NoSun,                   !- Sun Exposure
-    NoWind,                  !- Wind Exposure
-    0.0,                     !- View Factor to Ground
-    4,                       !- Number of Vertices
-    0.000000000000,          !- Vertex 1 X-coordinate {m}
-    9.157114969410,          !- Vertex 1 Y-coordinate {m}
-    2.743902439024,          !- Vertex 1 Z-coordinate {m}
-    36.536888727945,         !- Vertex 2 X-coordinate {m}
-    9.157114969410,          !- Vertex 2 Y-coordinate {m}
-    2.743902439024,          !- Vertex 2 Z-coordinate {m}
-    36.536888727945,         !- Vertex 3 X-coordinate {m}
-    10.681505213312,         !- Vertex 3 Y-coordinate {m}
-    2.743902439024,          !- Vertex 3 Z-coordinate {m}
-    0.000000000000,          !- Vertex 4 X-coordinate {m}
-    10.681505213312,         !- Vertex 4 Y-coordinate {m}
-    2.743902439024;          !- Vertex 4 Z-coordinate {m}
-BuildingSurface:Detailed,
-    m WWall C,               !- Name
-    Wall,                    !- Surface Type
-    Exterior Wall,           !- Construction Name
-    M Corridor,              !- Zone Name
-    Outdoors,                !- Outside Boundary Condition
-    ,                        !- Outside Boundary Condition Object
-    SunExposed,              !- Sun Exposure
-    WindExposed,             !- Wind Exposure
-    autocalculate,           !- View Factor to Ground
-    4,                       !- Number of Vertices
-    0.000000000000,          !- Vertex 1 X-coordinate {m}
-    10.681505213312,         !- Vertex 1 Y-coordinate {m}
-    0.000000439024,          !- Vertex 1 Z-coordinate {m}
-    0.000000000000,          !- Vertex 2 X-coordinate {m}
-    9.157114969410,          !- Vertex 2 Y-coordinate {m}
-    0.000000439024,          !- Vertex 2 Z-coordinate {m}
-    0.000000000000,          !- Vertex 3 X-coordinate {m}
-    9.157114969410,          !- Vertex 3 Y-coordinate {m}
-    2.591463853658,          !- Vertex 3 Z-coordinate {m}
-    0.000000000000,          !- Vertex 4 X-coordinate {m}
-    10.681505213312,         !- Vertex 4 Y-coordinate {m}
-    2.591463853658;          !- Vertex 4 Z-coordinate {m}
-BuildingSurface:Detailed,
-    m Ceiling C,             !- Name
-    Ceiling,                 !- Surface Type
-    ceiling-floor-layer,        !- Construction Name
-    M Corridor,              !- Zone Name
-    Surface,                 !- Outside Boundary Condition
-    T Floor C,               !- Outside Boundary Condition Object
-    NoSun,                   !- Sun Exposure
-    NoWind,                  !- Wind Exposure
-    0.0,                     !- View Factor to Ground
-    4,                       !- Number of Vertices
-    0.000000000000,          !- Vertex 1 X-coordinate {m}
-    9.157114969410,          !- Vertex 1 Y-coordinate {m}
-    2.591463853658,          !- Vertex 1 Z-coordinate {m}
-    36.536888727945,         !- Vertex 2 X-coordinate {m}
-    9.157114969410,          !- Vertex 2 Y-coordinate {m}
-    2.591463853658,          !- Vertex 2 Z-coordinate {m}
-    36.536888727945,         !- Vertex 3 X-coordinate {m}
-    10.681505213312,         !- Vertex 3 Y-coordinate {m}
-    2.591463853658,          !- Vertex 3 Z-coordinate {m}
-    0.000000000000,          !- Vertex 4 X-coordinate {m}
-    10.681505213312,         !- Vertex 4 Y-coordinate {m}
-    2.591463853658;          !- Vertex 4 Z-coordinate {m}
-BuildingSurface:Detailed,
-    m EWall C,               !- Name
-    Wall,                    !- Surface Type
-    Exterior Wall,           !- Construction Name
-    M Corridor,              !- Zone Name
-    Outdoors,                !- Outside Boundary Condition
-    ,                        !- Outside Boundary Condition Object
-    SunExposed,              !- Sun Exposure
-    WindExposed,             !- Wind Exposure
-    autocalculate,           !- View Factor to Ground
-    4,                       !- Number of Vertices
-    36.536888727945,         !- Vertex 1 X-coordinate {m}
-    9.157114969410,          !- Vertex 1 Y-coordinate {m}
-    0.000000439024,          !- Vertex 1 Z-coordinate {m}
-    36.536888727945,         !- Vertex 2 X-coordinate {m}
-    10.681505213312,         !- Vertex 2 Y-coordinate {m}
-    0.000000439024,          !- Vertex 2 Z-coordinate {m}
-    36.536888727945,         !- Vertex 3 X-coordinate {m}
-    10.681505213312,         !- Vertex 3 Y-coordinate {m}
-    2.591463853658,          !- Vertex 3 Z-coordinate {m}
-    36.536888727945,         !- Vertex 4 X-coordinate {m}
-    9.157114969410,          !- Vertex 4 Y-coordinate {m}
-    2.591463853658;          !- Vertex 4 Z-coordinate {m}
-BuildingSurface:Detailed,
-    m Floor C,               !- Name
-    Floor,                   !- Surface Type
-    ceiling-floor-layer,          !- Construction Name
-    M Corridor,              !- Zone Name
-    Surface,                 !- Outside Boundary Condition
-    g Ceiling C,             !- Outside Boundary Condition Object
-    NoSun,                   !- Sun Exposure
-    NoWind,                  !- Wind Exposure
-    0.0,                     !- View Factor to Ground
-    4,                       !- Number of Vertices
-    36.536888727945,         !- Vertex 1 X-coordinate {m}
-    9.157114969410,          !- Vertex 1 Y-coordinate {m}
-    0.000000439024,          !- Vertex 1 Z-coordinate {m}
-    0.000000000000,          !- Vertex 2 X-coordinate {m}
-    9.157114969410,          !- Vertex 2 Y-coordinate {m}
-    0.000000439024,          !- Vertex 2 Z-coordinate {m}
-    0.000000000000,          !- Vertex 3 X-coordinate {m}
-    10.681505213312,         !- Vertex 3 Y-coordinate {m}
-    0.000000439024,          !- Vertex 3 Z-coordinate {m}
-    36.536888727945,         !- Vertex 4 X-coordinate {m}
-    10.681505213312,         !- Vertex 4 Y-coordinate {m}
-    0.000000439024;          !- Vertex 4 Z-coordinate {m}
-BuildingSurface:Detailed,
-    T Floor C,               !- Name
-    Floor,                   !- Surface Type
-    ceiling-floor-layer,          !- Construction Name
-    T Corridor,              !- Zone Name
-    Surface,                 !- Outside Boundary Condition
-    m Ceiling C,             !- Outside Boundary Condition Object
-    NoSun,                   !- Sun Exposure
-    NoWind,                  !- Wind Exposure
-    0.0,                     !- View Factor to Ground
-    4,                       !- Number of Vertices
-    -0.000000272055,         !- Vertex 1 X-coordinate {m}
-    -10.681505030590,        !- Vertex 1 Y-coordinate {m}
-    0.002465853658,          !- Vertex 1 Z-coordinate {m}
-    -36.536889000000,        !- Vertex 2 X-coordinate {m}
-    -10.681505030590,        !- Vertex 2 Y-coordinate {m}
-    0.002465853658,          !- Vertex 2 Z-coordinate {m}
-    -36.536889000000,        !- Vertex 3 X-coordinate {m}
-    -9.157114786688,         !- Vertex 3 Y-coordinate {m}
-    0.002465853658,          !- Vertex 3 Z-coordinate {m}
-    -0.000000272055,         !- Vertex 4 X-coordinate {m}
-    -9.157114786688,         !- Vertex 4 Y-coordinate {m}
-    0.002465853658;          !- Vertex 4 Z-coordinate {m}
-BuildingSurface:Detailed,
-    T WWall C,               !- Name
-    Wall,                    !- Surface Type
-    Exterior Wall,           !- Construction Name
-    T Corridor,              !- Zone Name
-    Outdoors,                !- Outside Boundary Condition
-    ,                        !- Outside Boundary Condition Object
-    SunExposed,              !- Sun Exposure
-    WindExposed,             !- Wind Exposure
-    autocalculate,           !- View Factor to Ground
-    4,                       !- Number of Vertices
-    -36.536889000000,        !- Vertex 1 X-coordinate {m}
-    -9.157114786688,         !- Vertex 1 Y-coordinate {m}
-    0.002465853658,          !- Vertex 1 Z-coordinate {m}
-    -36.536889000000,        !- Vertex 2 X-coordinate {m}
-    -10.681505030590,        !- Vertex 2 Y-coordinate {m}
-    0.002465853658,          !- Vertex 2 Z-coordinate {m}
-    -36.536889000000,        !- Vertex 3 X-coordinate {m}
-    -10.681505030590,        !- Vertex 3 Y-coordinate {m}
-    2.593929268292,          !- Vertex 3 Z-coordinate {m}
-    -36.536889000000,        !- Vertex 4 X-coordinate {m}
-    -9.157114786688,         !- Vertex 4 Y-coordinate {m}
-    2.593929268292;          !- Vertex 4 Z-coordinate {m}
-BuildingSurface:Detailed,
-    T EWall C,               !- Name
-    Wall,                    !- Surface Type
-    Exterior Wall,           !- Construction Name
-    T Corridor,              !- Zone Name
-    Outdoors,                !- Outside Boundary Condition
-    ,                        !- Outside Boundary Condition Object
-    SunExposed,              !- Sun Exposure
-    WindExposed,             !- Wind Exposure
-    autocalculate,           !- View Factor to Ground
-    4,                       !- Number of Vertices
-    -0.000000272055,         !- Vertex 1 X-coordinate {m}
-    -10.681505030590,        !- Vertex 1 Y-coordinate {m}
-    0.002465853658,          !- Vertex 1 Z-coordinate {m}
-    -0.000000272055,         !- Vertex 2 X-coordinate {m}
-    -9.157114786688,         !- Vertex 2 Y-coordinate {m}
-    0.002465853658,          !- Vertex 2 Z-coordinate {m}
-    -0.000000272055,         !- Vertex 3 X-coordinate {m}
-    -9.157114786688,         !- Vertex 3 Y-coordinate {m}
-    2.593929268292,          !- Vertex 3 Z-coordinate {m}
-    -0.000000272055,         !- Vertex 4 X-coordinate {m}
-    -10.681505030590,        !- Vertex 4 Y-coordinate {m}
-    2.593929268292;          !- Vertex 4 Z-coordinate {m}
-BuildingSurface:Detailed,
-    T Ceiling C,                !- Name
-    Ceiling,                 !- Surface Type
-    Interior Ceiling,        !- Construction Name
-    T Corridor,              !- Zone Name
-    Zone,                    !- Outside Boundary Condition
-    attic,                   !- Outside Boundary Condition Object
-    NoSun,                   !- Sun Exposure
-    NoWind,                  !- Wind Exposure
-    0.0,                     !- View Factor to Ground
-    4,                       !- Number of Vertices
-    -36.536889000000,        !- Vertex 1 X-coordinate {m}
-    -10.681505030590,        !- Vertex 1 Y-coordinate {m}
-    2.593929268292,          !- Vertex 1 Z-coordinate {m}
-    -0.000000272055,         !- Vertex 2 X-coordinate {m}
-    -10.681505030590,        !- Vertex 2 Y-coordinate {m}
-    2.593929268292,          !- Vertex 2 Z-coordinate {m}
-    -0.000000272055,         !- Vertex 3 X-coordinate {m}
-    -9.157114786688,         !- Vertex 3 Y-coordinate {m}
-    2.593929268292,          !- Vertex 3 Z-coordinate {m}
-    -36.536889000000,        !- Vertex 4 X-coordinate {m}
-    -9.157114786688,         !- Vertex 4 Y-coordinate {m}
-    2.593929268292;          !- Vertex 4 Z-coordinate {m}
 !-   ===========  ALL OBJECTS IN CLASS: WINDOW ===========
 
   FenestrationSurface:Detailed,
@@ -6162,7 +5731,7 @@ BuildingSurface:Detailed,
   FenestrationSurface:Detailed,
     Door_ldb_unit1_FrontRow_BottomFloor,  !- Name
     Door,  !- Surface Type
-    Interior Door,  !- Construction Name
+    Exterior Door,  !- Construction Name
     Wall_ldb_1.unit1_FrontRow_BottomFloor,  !- Building Surface Name
     ,  !- Outside Boundary Condition Object
     ,  !- View Factor to Ground
@@ -6186,7 +5755,7 @@ BuildingSurface:Detailed,
   FenestrationSurface:Detailed,
     Door_ldb_unit2_FrontRow_BottomFloor,  !- Name
     Door,  !- Surface Type
-    Interior Door,  !- Construction Name
+    Exterior Door,  !- Construction Name
     Wall_ldb_1.unit2_FrontRow_BottomFloor,  !- Building Surface Name
     ,  !- Outside Boundary Condition Object
     ,  !- View Factor to Ground
@@ -6210,7 +5779,7 @@ BuildingSurface:Detailed,
   FenestrationSurface:Detailed,
     Door_ldb_unit3_FrontRow_BottomFloor,  !- Name
     Door,  !- Surface Type
-    Interior Door,  !- Construction Name
+    Exterior Door,  !- Construction Name
     Wall_ldb_1.unit3_FrontRow_BottomFloor,  !- Building Surface Name
     ,  !- Outside Boundary Condition Object
     ,  !- View Factor to Ground
@@ -6234,7 +5803,7 @@ BuildingSurface:Detailed,
   FenestrationSurface:Detailed,
     Door_ldf_unit1_BackRow_BottomFloor,  !- Name
     Door,  !- Surface Type
-    Interior Door,  !- Construction Name
+    Exterior Door,  !- Construction Name
     Wall_ldf_1.unit1_BackRow_BottomFloor,  !- Building Surface Name
     ,  !- Outside Boundary Condition Object
     ,  !- View Factor to Ground
@@ -6258,7 +5827,7 @@ BuildingSurface:Detailed,
   FenestrationSurface:Detailed,
     Door_ldf_unit2_BackRow_BottomFloor,  !- Name
     Door,  !- Surface Type
-    Interior Door,  !- Construction Name
+    Exterior Door,  !- Construction Name
     Wall_ldf_1.unit2_BackRow_BottomFloor,  !- Building Surface Name
     ,  !- Outside Boundary Condition Object
     ,  !- View Factor to Ground
@@ -6282,7 +5851,7 @@ BuildingSurface:Detailed,
   FenestrationSurface:Detailed,
     Door_ldf_unit3_BackRow_BottomFloor,  !- Name
     Door,  !- Surface Type
-    Interior Door,  !- Construction Name
+    Exterior Door,  !- Construction Name
     Wall_ldf_1.unit3_BackRow_BottomFloor,  !- Building Surface Name
     ,  !- Outside Boundary Condition Object
     ,  !- View Factor to Ground
@@ -6306,7 +5875,7 @@ BuildingSurface:Detailed,
   FenestrationSurface:Detailed,
     Door_ldb_unit1_FrontRow_MiddleFloor,  !- Name
     Door,  !- Surface Type
-    Interior Door,  !- Construction Name
+    Exterior Door,  !- Construction Name
     Wall_ldb_1.unit1_FrontRow_MiddleFloor,  !- Building Surface Name
     ,  !- Outside Boundary Condition Object
     ,  !- View Factor to Ground
@@ -6330,7 +5899,7 @@ BuildingSurface:Detailed,
   FenestrationSurface:Detailed,
     Door_ldb_unit2_FrontRow_MiddleFloor,  !- Name
     Door,  !- Surface Type
-    Interior Door,  !- Construction Name
+    Exterior Door,  !- Construction Name
     Wall_ldb_1.unit2_FrontRow_MiddleFloor,  !- Building Surface Name
     ,  !- Outside Boundary Condition Object
     ,  !- View Factor to Ground
@@ -6354,7 +5923,7 @@ BuildingSurface:Detailed,
   FenestrationSurface:Detailed,
     Door_ldb_unit3_FrontRow_MiddleFloor,  !- Name
     Door,  !- Surface Type
-    Interior Door,  !- Construction Name
+    Exterior Door,  !- Construction Name
     Wall_ldb_1.unit3_FrontRow_MiddleFloor,  !- Building Surface Name
     ,  !- Outside Boundary Condition Object
     ,  !- View Factor to Ground
@@ -6378,7 +5947,7 @@ BuildingSurface:Detailed,
   FenestrationSurface:Detailed,
     Door_ldf_unit1_BackRow_MiddleFloor,  !- Name
     Door,  !- Surface Type
-    Interior Door,  !- Construction Name
+    Exterior Door,  !- Construction Name
     Wall_ldf_1.unit1_BackRow_MiddleFloor,  !- Building Surface Name
     ,  !- Outside Boundary Condition Object
     ,  !- View Factor to Ground
@@ -6402,7 +5971,7 @@ BuildingSurface:Detailed,
   FenestrationSurface:Detailed,
     Door_ldf_unit2_BackRow_MiddleFloor,  !- Name
     Door,  !- Surface Type
-    Interior Door,  !- Construction Name
+    Exterior Door,  !- Construction Name
     Wall_ldf_1.unit2_BackRow_MiddleFloor,  !- Building Surface Name
     ,  !- Outside Boundary Condition Object
     ,  !- View Factor to Ground
@@ -6426,7 +5995,7 @@ BuildingSurface:Detailed,
   FenestrationSurface:Detailed,
     Door_ldf_unit3_BackRow_MiddleFloor,  !- Name
     Door,  !- Surface Type
-    Interior Door,  !- Construction Name
+    Exterior Door,  !- Construction Name
     Wall_ldf_1.unit3_BackRow_MiddleFloor,  !- Building Surface Name
     ,  !- Outside Boundary Condition Object
     ,  !- View Factor to Ground
@@ -6450,7 +6019,7 @@ BuildingSurface:Detailed,
   FenestrationSurface:Detailed,
     Door_ldb_unit1_FrontRow_TopFloor,  !- Name
     Door,  !- Surface Type
-    Interior Door,  !- Construction Name
+    Exterior Door,  !- Construction Name
     Wall_ldb_1.unit1_FrontRow_TopFloor,  !- Building Surface Name
     ,  !- Outside Boundary Condition Object
     ,  !- View Factor to Ground
@@ -6474,7 +6043,7 @@ BuildingSurface:Detailed,
   FenestrationSurface:Detailed,
     Door_ldb_unit2_FrontRow_TopFloor,  !- Name
     Door,  !- Surface Type
-    Interior Door,  !- Construction Name
+    Exterior Door,  !- Construction Name
     Wall_ldb_1.unit2_FrontRow_TopFloor,  !- Building Surface Name
     ,  !- Outside Boundary Condition Object
     ,  !- View Factor to Ground
@@ -6498,7 +6067,7 @@ BuildingSurface:Detailed,
   FenestrationSurface:Detailed,
     Door_ldb_unit3_FrontRow_TopFloor,  !- Name
     Door,  !- Surface Type
-    Interior Door,  !- Construction Name
+    Exterior Door,  !- Construction Name
     Wall_ldb_1.unit3_FrontRow_TopFloor,  !- Building Surface Name
     ,  !- Outside Boundary Condition Object
     ,  !- View Factor to Ground
@@ -6522,7 +6091,7 @@ BuildingSurface:Detailed,
   FenestrationSurface:Detailed,
     Door_ldf_unit1_BackRow_TopFloor,  !- Name
     Door,  !- Surface Type
-    Interior Door,  !- Construction Name
+    Exterior Door,  !- Construction Name
     Wall_ldf_1.unit1_BackRow_TopFloor,  !- Building Surface Name
     ,  !- Outside Boundary Condition Object
     ,  !- View Factor to Ground
@@ -6546,7 +6115,7 @@ BuildingSurface:Detailed,
   FenestrationSurface:Detailed,
     Door_ldf_unit2_BackRow_TopFloor,  !- Name
     Door,  !- Surface Type
-    Interior Door,  !- Construction Name
+    Exterior Door,  !- Construction Name
     Wall_ldf_1.unit2_BackRow_TopFloor,  !- Building Surface Name
     ,  !- Outside Boundary Condition Object
     ,  !- View Factor to Ground
@@ -6570,7 +6139,7 @@ BuildingSurface:Detailed,
   FenestrationSurface:Detailed,
     Door_ldf_unit3_BackRow_TopFloor,  !- Name
     Door,  !- Surface Type
-    Interior Door,  !- Construction Name
+    Exterior Door,  !- Construction Name
     Wall_ldf_1.unit3_BackRow_TopFloor,  !- Building Surface Name
     ,  !- Outside Boundary Condition Object
     ,  !- View Factor to Ground
@@ -6590,144 +6159,6 @@ BuildingSurface:Detailed,
     24.857925818630,  !- Vertex 4 X-coordinate {m}
     10.681505213312,  !- Vertex 4 Y-coordinate {m}
     7.467046341463;  !- Vertex 4 Z-coordinate {m}
-FenestrationSurface:Detailed,
-    Entrance Door E,         !- Name
-    Window,                  !- Surface Type
-    Exterior Window,         !- Construction Name
-    g EWall C,               !- Building Surface Name
-    ,                        !- Outside Boundary Condition Object
-    autocalculate,           !- View Factor to Ground
-    ,                        !- Shading Control Name
-    ,                        !- Frame and Divider Name
-    1,                       !- Multiplier
-    4,                       !- Number of Vertices
-    36.536888727945,         !- Vertex 1 X-coordinate {m}
-    9.461914969410,          !- Vertex 1 Y-coordinate {m}
-    0.228639024390,          !- Vertex 1 Z-coordinate {m}
-    36.536888727945,         !- Vertex 2 X-coordinate {m}
-    10.376314969410,         !- Vertex 2 Y-coordinate {m}
-    0.228639024390,          !- Vertex 2 Z-coordinate {m}
-    36.536888727945,         !- Vertex 3 X-coordinate {m}
-    10.376314969410,         !- Vertex 3 Y-coordinate {m}
-    2.514639024390,          !- Vertex 3 Z-coordinate {m}
-    36.536888727945,         !- Vertex 4 X-coordinate {m}
-    9.461914969410,          !- Vertex 4 Y-coordinate {m}
-    2.514639024390;          !- Vertex 4 Z-coordinate {m}
-FenestrationSurface:Detailed,
-    Entrance Door W,         !- Name
-    Window,                  !- Surface Type
-    Exterior Window,         !- Construction Name
-    g WWall C,               !- Building Surface Name
-    ,                        !- Outside Boundary Condition Object
-    autocalculate,           !- View Factor to Ground
-    ,                        !- Shading Control Name
-    ,                        !- Frame and Divider Name
-    1,                       !- Multiplier
-    4,                       !- Number of Vertices
-    0.000000000000,          !- Vertex 1 X-coordinate {m}
-    10.376705213312,         !- Vertex 1 Y-coordinate {m}
-    0.228639024390,          !- Vertex 1 Z-coordinate {m}
-    0.000000000000,          !- Vertex 2 X-coordinate {m}
-    9.462305213312,          !- Vertex 2 Y-coordinate {m}
-    0.228639024390,          !- Vertex 2 Z-coordinate {m}
-    0.000000000000,          !- Vertex 3 X-coordinate {m}
-    9.462305213312,          !- Vertex 3 Y-coordinate {m}
-    2.514639024390,          !- Vertex 3 Z-coordinate {m}
-    0.000000000000,          !- Vertex 4 X-coordinate {m}
-    10.376705213312,         !- Vertex 4 Y-coordinate {m}
-    2.514639024390;          !- Vertex 4 Z-coordinate {m}
-FenestrationSurface:Detailed,
-    T Corridor Win E,        !- Name
-    Window,                  !- Surface Type
-    Exterior Window,         !- Construction Name
-    T EWall C,               !- Building Surface Name
-    ,                        !- Outside Boundary Condition Object
-    autocalculate,           !- View Factor to Ground
-    ,                        !- Shading Control Name
-    ,                        !- Frame and Divider Name
-    1,                       !- Multiplier
-    4,                       !- Number of Vertices
-    -0.000000272055,         !- Vertex 1 X-coordinate {m}
-    -10.376705030590,        !- Vertex 1 Y-coordinate {m}
-    0.916865853658,          !- Vertex 1 Z-coordinate {m}
-    -0.000000272055,         !- Vertex 2 X-coordinate {m}
-    -9.462305030590,         !- Vertex 2 Y-coordinate {m}
-    0.916865853658,          !- Vertex 2 Z-coordinate {m}
-    -0.000000272055,         !- Vertex 3 X-coordinate {m}
-    -9.462305030590,         !- Vertex 3 Y-coordinate {m}
-    2.136065853658,          !- Vertex 3 Z-coordinate {m}
-    -0.000000272055,         !- Vertex 4 X-coordinate {m}
-    -10.376705030590,        !- Vertex 4 Y-coordinate {m}
-    2.136065853658;          !- Vertex 4 Z-coordinate {m}
-FenestrationSurface:Detailed,
-    T Corridor Win W,        !- Name
-    Window,                  !- Surface Type
-    Exterior Window,         !- Construction Name
-    T WWall C,               !- Building Surface Name
-    ,                        !- Outside Boundary Condition Object
-    autocalculate,           !- View Factor to Ground
-    ,                        !- Shading Control Name
-    ,                        !- Frame and Divider Name
-    1,                       !- Multiplier
-    4,                       !- Number of Vertices
-    -36.536889000000,        !- Vertex 1 X-coordinate {m}
-    -9.461914786688,         !- Vertex 1 Y-coordinate {m}
-    0.916865853658,          !- Vertex 1 Z-coordinate {m}
-    -36.536889000000,        !- Vertex 2 X-coordinate {m}
-    -10.376314786688,        !- Vertex 2 Y-coordinate {m}
-    0.916865853658,          !- Vertex 2 Z-coordinate {m}
-    -36.536889000000,        !- Vertex 3 X-coordinate {m}
-    -10.376314786688,        !- Vertex 3 Y-coordinate {m}
-    2.136065853658,          !- Vertex 3 Z-coordinate {m}
-    -36.536889000000,        !- Vertex 4 X-coordinate {m}
-    -9.461914786688,         !- Vertex 4 Y-coordinate {m}
-    2.136065853658;          !- Vertex 4 Z-coordinate {m}
-FenestrationSurface:Detailed,
-    M Corridor Win E,                  !- Name
-    Window,                  !- Surface Type
-    Exterior Window,         !- Construction Name
-    m EWall C,               !- Building Surface Name
-    ,                        !- Outside Boundary Condition Object
-    ,                        !- View Factor to Ground
-    ,                        !- Shading Control Name
-    ,                        !- Frame and Divider Name
-    ,                        !- Multiplier
-    4,                       !- Number of Vertices
-    36.536888727945,         !- Vertex 1 X-coordinate {m}
-    9.461914969410,          !- Vertex 1 Y-coordinate {m}
-    0.914400439024,          !- Vertex 1 Z-coordinate {m}
-    36.536888727945,         !- Vertex 2 X-coordinate {m}
-    10.376314969410,         !- Vertex 2 Y-coordinate {m}
-    0.914400439024,          !- Vertex 2 Z-coordinate {m}
-    36.536888727945,         !- Vertex 3 X-coordinate {m}
-    10.376314969410,         !- Vertex 3 Y-coordinate {m}
-    2.133600439024,          !- Vertex 3 Z-coordinate {m}
-    36.536888727945,         !- Vertex 4 X-coordinate {m}
-    9.461914969410,          !- Vertex 4 Y-coordinate {m}
-    2.133600439024;          !- Vertex 4 Z-coordinate {m}
-FenestrationSurface:Detailed,
-    M Corridor Win W,                  !- Name
-    Window,                  !- Surface Type
-    Exterior Window,         !- Construction Name
-    m WWall C,               !- Building Surface Name
-    ,                        !- Outside Boundary Condition Object
-    ,                        !- View Factor to Ground
-    ,                        !- Shading Control Name
-    ,                        !- Frame and Divider Name
-    ,                        !- Multiplier
-    4,                       !- Number of Vertices
-    0.000000000000,          !- Vertex 1 X-coordinate {m}
-    10.376705213312,         !- Vertex 1 Y-coordinate {m}
-    0.914400439024,          !- Vertex 1 Z-coordinate {m}
-    0.000000000000,          !- Vertex 2 X-coordinate {m}
-    9.462305213312,          !- Vertex 2 Y-coordinate {m}
-    0.914400439024,          !- Vertex 2 Z-coordinate {m}
-    0.000000000000,          !- Vertex 3 X-coordinate {m}
-    9.462305213312,          !- Vertex 3 Y-coordinate {m}
-    2.133600439024,          !- Vertex 3 Z-coordinate {m}
-    0.000000000000,          !- Vertex 4 X-coordinate {m}
-    10.376705213312,         !- Vertex 4 Y-coordinate {m}
-    2.133600439024;          !- Vertex 4 Z-coordinate {m}
 
 
 !-   ===========  ALL OBJECTS IN CLASS: WINDOWPROPERTY:SHADINGCONTROL ===========
@@ -6750,8 +6181,8 @@ WindowProperty:ShadingControl,
 
 GroundHeatTransfer:Control,
     gtp_control,             !- Name
-    yes,                     !- Run Basement Preprocessor
-    no;                      !- Run Slab Preprocessor
+    no,                      !- Run Basement Preprocessor
+    yes;                     !- Run Slab Preprocessor
 
 
 !-   ===========  ALL OBJECTS IN CLASS: GROUNDHEATTRANSFER:SLAB:MATERIALS ===========
@@ -10214,34 +9645,6 @@ ZoneVentilation:DesignFlowRate,
     ,                        !- Maximum Outdoor Temperature Schedule Name
     40;                      !- Maximum Wind Speed {m/s}
 
-ZoneVentilation:DesignFlowRate,
-    Ventilation_unitheatedbsmt,  !- Name
-    heatedbsmt,              !- Zone or ZoneList Name
-    always_off,              !- Schedule Name
-    Flow/Zone,               !- Design Flow Rate Calculation Method
-    0.0212524794559365,      !- Design Flow Rate {m3/s}
-    ,                        !- Flow Rate per Zone Floor Area {m3/s-m2}
-    ,                        !- Flow Rate per Person {m3/s-person}
-    ,                        !- Air Changes per Hour {1/hr}
-    Exhaust,                 !- Ventilation Type
-    0,                       !- Fan Pressure Rise {Pa}
-    1,                       !- Fan Total Efficiency
-    1,                       !- Constant Term Coefficient
-    0,                       !- Temperature Term Coefficient
-    0,                       !- Velocity Term Coefficient
-    0,                       !- Velocity Squared Term Coefficient
-    -100,                    !- Minimum Indoor Temperature {C}
-    ,                        !- Minimum Indoor Temperature Schedule Name
-    100,                     !- Maximum Indoor Temperature {C}
-    ,                        !- Maximum Indoor Temperature Schedule Name
-    -100,                    !- Delta Temperature {deltaC}
-    ,                        !- Delta Temperature Schedule Name
-    -100,                    !- Minimum Outdoor Temperature {C}
-    ,                        !- Minimum Outdoor Temperature Schedule Name
-    100,                     !- Maximum Outdoor Temperature {C}
-    ,                        !- Maximum Outdoor Temperature Schedule Name
-    40;                      !- Maximum Wind Speed {m/s}
-
 
 !-   ===========  ALL OBJECTS IN CLASS: EXTERIOR:LIGHTS ===========
 
@@ -10621,13 +10024,6 @@ DesignSpecification:OutdoorAir,
 
 DesignSpecification:OutdoorAir,
     SZ DSOA living_unit3_BackRow_TopFloor,  !- Name
-    Flow/Zone,               !- Outdoor Air Method
-    0,                       !- Outdoor Air Flow per Person {m3/s-person}
-    ,                        !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
-    0;                       !- Outdoor Air Flow per Zone {m3/s}
-
-DesignSpecification:OutdoorAir,
-    SZ DSOA heatedbsmt,      !- Name
     Flow/Zone,               !- Outdoor Air Method
     0,                       !- Outdoor Air Flow per Person {m3/s-person}
     ,                        !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
@@ -11055,30 +10451,6 @@ Sizing:Zone,
     0.008,                   !- Zone Cooling Design Supply Air Humidity Ratio {kgWater/kgDryAir}
     0.008,                   !- Zone Heating Design Supply Air Humidity Ratio {kgWater/kgDryAir}
     SZ DSOA living_unit3_BackRow_TopFloor,  !- Design Specification Outdoor Air Object Name
-    ,                        !- Zone Heating Sizing Factor
-    ,                        !- Zone Cooling Sizing Factor
-    DesignDay,               !- Cooling Design Air Flow Method
-    ,                        !- Cooling Design Air Flow Rate {m3/s}
-    0.000762,                !- Cooling Minimum Air Flow per Zone Floor Area {m3/s-m2}
-    ,                        !- Cooling Minimum Air Flow {m3/s}
-    ,                        !- Cooling Minimum Air Flow Fraction
-    DesignDay,               !- Heating Design Air Flow Method
-    ,                        !- Heating Design Air Flow Rate {m3/s}
-    0.002032,                !- Heating Maximum Air Flow per Zone Floor Area {m3/s-m2}
-    0.1415762,               !- Heating Maximum Air Flow {m3/s}
-    0.3;                     !- Heating Maximum Air Flow Fraction
-
-Sizing:Zone,
-    heatedbsmt,              !- Zone or ZoneList Name
-    SupplyAirTemperature,    !- Zone Cooling Design Supply Air Temperature Input Method
-    12,                      !- Zone Cooling Design Supply Air Temperature {C}
-    ,                        !- Zone Cooling Design Supply Air Temperature Difference {deltaC}
-    SupplyAirTemperature,    !- Zone Heating Design Supply Air Temperature Input Method
-    50,                      !- Zone Heating Design Supply Air Temperature {C}
-    ,                        !- Zone Heating Design Supply Air Temperature Difference {deltaC}
-    0.008,                   !- Zone Cooling Design Supply Air Humidity Ratio {kgWater/kgDryAir}
-    0.008,                   !- Zone Heating Design Supply Air Humidity Ratio {kgWater/kgDryAir}
-    SZ DSOA heatedbsmt,      !- Design Specification Outdoor Air Object Name
     ,                        !- Zone Heating Sizing Factor
     ,                        !- Zone Cooling Sizing Factor
     DesignDay,               !- Cooling Design Air Flow Method
@@ -11797,45 +11169,6 @@ Sizing:System,
     ,                        !- Fraction of Autosized Heating Design Capacity
     OnOff;                   !- Central Cooling Capacity Control Method
 
-Sizing:System,
-    Central System_unitheatedbsmt,  !- AirLoop Name
-    Sensible,                !- Type of Load to Size On
-    autosize,                !- Design Outdoor Air Flow Rate {m3/s}
-    1,                       !- Central Heating Maximum System Air Flow Ratio
-    7,                       !- Preheat Design Temperature {C}
-    0.008,                   !- Preheat Design Humidity Ratio {kgWater/kgDryAir}
-    11,                      !- Precool Design Temperature {C}
-    0.008,                   !- Precool Design Humidity Ratio {kgWater/kgDryAir}
-    12,                      !- Central Cooling Design Supply Air Temperature {C}
-    50,                      !- Central Heating Design Supply Air Temperature {C}
-    NonCoincident,           !- Type of Zone Sum to Use
-    No,                      !- 100% Outdoor Air in Cooling
-    No,                      !- 100% Outdoor Air in Heating
-    0.008,                   !- Central Cooling Design Supply Air Humidity Ratio {kgWater/kgDryAir}
-    0.008,                   !- Central Heating Design Supply Air Humidity Ratio {kgWater/kgDryAir}
-    DesignDay,               !- Cooling Supply Air Flow Rate Method
-    ,                        !- Cooling Supply Air Flow Rate {m3/s}
-    ,                        !- Cooling Supply Air Flow Rate Per Floor Area {m3/s-m2}
-    ,                        !- Cooling Fraction of Autosized Cooling Supply Air Flow Rate
-    ,                        !- Cooling Supply Air Flow Rate Per Unit Cooling Capacity {m3/s-W}
-    DesignDay,               !- Heating Supply Air Flow Rate Method
-    ,                        !- Heating Supply Air Flow Rate {m3/s}
-    ,                        !- Heating Supply Air Flow Rate Per Floor Area {m3/s-m2}
-    ,                        !- Heating Fraction of Autosized Heating Supply Air Flow Rate
-    ,                        !- Heating Fraction of Autosized Cooling Supply Air Flow Rate
-    ,                        !- Heating Supply Air Flow Rate Per Unit Heating Capacity {m3/s-W}
-    ZoneSum,                 !- System Outdoor Air Method
-    1.0,                     !- Zone Maximum Outdoor Air Fraction {dimensionless}
-    CoolingDesignCapacity,   !- Cooling Design Capacity Method
-    autosize,                !- Cooling Design Capacity {W}
-    ,                        !- Cooling Design Capacity Per Floor Area {W/m2}
-    ,                        !- Fraction of Autosized Cooling Design Capacity
-    HeatingDesignCapacity,   !- Heating Design Capacity Method
-    autosize,                !- Heating Design Capacity {W}
-    ,                        !- Heating Design Capacity Per Floor Area {W/m2}
-    ,                        !- Fraction of Autosized Heating Design Capacity
-    OnOff;                   !- Central Cooling Capacity Control Method
-
 
 !-   ===========  ALL OBJECTS IN CLASS: SIZING:PLANT ===========
 
@@ -12076,13 +11409,6 @@ ZoneControl:Thermostat,
     ThermostatSetpoint:DualSetpoint,  !- Control 1 Object Type
     thermostat_living Dual SP Control;  !- Control 1 Name
 
-ZoneControl:Thermostat,
-    Zone Thermostat_unitheatedbsmt,  !- Name
-    heatedbsmt,              !- Zone or ZoneList Name
-    zone_control_type,       !- Control Type Schedule Name
-    ThermostatSetpoint:DualSetpoint,  !- Control 1 Object Type
-    thermostat_living Dual SP Control;  !- Control 1 Name
-
 
 !-   ===========  ALL OBJECTS IN CLASS: THERMOSTATSETPOINT:DUALSETPOINT ===========
 
@@ -12200,12 +11526,6 @@ AirTerminal:SingleDuct:Uncontrolled,
     ZoneDirectAir_unit3_BackRow_TopFloor,  !- Name
     always_avail,            !- Availability Schedule Name
     Zone Inlet Node_unit3_BackRow_TopFloor,  !- Zone Supply Air Node Name
-    autosize;                !- Maximum Air Flow Rate {m3/s}
-
-AirTerminal:SingleDuct:Uncontrolled,
-    ZoneDirectAir_unitheatedbsmt,  !- Name
-    always_avail,            !- Availability Schedule Name
-    Zone Inlet Node_unitheatedbsmt,  !- Zone Supply Air Node Name
     autosize;                !- Maximum Air Flow Rate {m3/s}
 
 
@@ -12334,13 +11654,6 @@ ZoneHVAC:EquipmentList,
     ZONEEQUIPMENT_unit3_BackRow_TopFloor,  !- Name
     AirTerminal:SingleDuct:Uncontrolled,  !- Zone Equipment 1 Object Type
     ZoneDirectAir_unit3_BackRow_TopFloor,  !- Zone Equipment 1 Name
-    1,                       !- Zone Equipment 1 Cooling Sequence
-    1;                       !- Zone Equipment 1 Heating or No-Load Sequence
-
-ZoneHVAC:EquipmentList,
-    ZONEEQUIPMENT_unitheatedbsmt,  !- Name
-    AirTerminal:SingleDuct:Uncontrolled,  !- Zone Equipment 1 Object Type
-    ZoneDirectAir_unitheatedbsmt,  !- Zone Equipment 1 Name
     1,                       !- Zone Equipment 1 Cooling Sequence
     1;                       !- Zone Equipment 1 Heating or No-Load Sequence
 
@@ -12490,14 +11803,6 @@ ZoneHVAC:EquipmentConnections,
     ,                        !- Zone Air Exhaust Node or NodeList Name
     Zone Node_unit3_BackRow_TopFloor,  !- Zone Air Node Name
     Zone Outlet Node_unit3_BackRow_TopFloor;  !- Zone Return Air Node Name
-
-ZoneHVAC:EquipmentConnections,
-    heatedbsmt,              !- Zone Name
-    ZONEEQUIPMENT_unitheatedbsmt,  !- Zone Conditioning Equipment List Name
-    zone inlet nodes_unitheatedbsmt,  !- Zone Air Inlet Node or NodeList Name
-    ,                        !- Zone Air Exhaust Node or NodeList Name
-    Zone Node_unitheatedbsmt,!- Zone Air Node Name
-    Zone Outlet Node_unitheatedbsmt;  !- Zone Return Air Node Name
 
 
 !-   ===========  ALL OBJECTS IN CLASS: FAN:ONOFF ===========
@@ -12750,20 +12055,6 @@ Fan:OnOff,
     1,                       !- Motor In Airstream Fraction
     air loop inlet node_unit3_BackRow_TopFloor,  !- Air Inlet Node Name
     cooling coil air inlet node_unit3_BackRow_TopFloor,  !- Air Outlet Node Name
-    ,                        !- Fan Power Ratio Function of Speed Ratio Curve Name
-    ,                        !- Fan Efficiency Ratio Function of Speed Ratio Curve Name
-    General;                 !- End-Use Subcategory
-
-Fan:OnOff,
-    Supply Fan_unitheatedbsmt,  !- Name
-    always_avail,            !- Availability Schedule Name
-    0.377,                   !- Fan Total Efficiency
-    400,                     !- Pressure Rise {Pa}
-    autosize,                !- Maximum Flow Rate {m3/s}
-    0.65,                    !- Motor Efficiency
-    1,                       !- Motor In Airstream Fraction
-    air loop inlet node_unitheatedbsmt,  !- Air Inlet Node Name
-    cooling coil air inlet node_unitheatedbsmt,  !- Air Outlet Node Name
     ,                        !- Fan Power Ratio Function of Speed Ratio Curve Name
     ,                        !- Fan Efficiency Ratio Function of Speed Ratio Curve Name
     General;                 !- End-Use Subcategory
@@ -13059,22 +12350,6 @@ Coil:Cooling:DX:SingleSpeed,
     HPACCOOLEIRFFF,          !- Energy Input Ratio Function of Flow Fraction Curve Name
     HPACCOOLPLFFPLR;         !- Part Load Fraction Correlation Curve Name
 
-Coil:Cooling:DX:SingleSpeed,
-    DX Cooling Coil_unitheatedbsmt,  !- Name
-    always_avail,            !- Availability Schedule Name
-    autosize,                !- Gross Rated Total Cooling Capacity {W}
-    autosize,                !- Gross Rated Sensible Heat Ratio
-    3.97008850025305,        !- Gross Rated Cooling COP {W/W}
-    autosize,                !- Rated Air Flow Rate {m3/s}
-    ,                        !- Rated Evaporator Fan Power Per Volume Flow Rate {W/(m3/s)}
-    Cooling Coil Air Inlet Node_unitheatedbsmt,  !- Air Inlet Node Name
-    Heating Coil Air Inlet Node_unitheatedbsmt,  !- Air Outlet Node Name
-    HPACCoolCapFT,           !- Total Cooling Capacity Function of Temperature Curve Name
-    HPACCoolCapFFF,          !- Total Cooling Capacity Function of Flow Fraction Curve Name
-    HPACCOOLEIRFT,           !- Energy Input Ratio Function of Temperature Curve Name
-    HPACCOOLEIRFFF,          !- Energy Input Ratio Function of Flow Fraction Curve Name
-    HPACCOOLPLFFPLR;         !- Part Load Fraction Correlation Curve Name
-
 
 !-   ===========  ALL OBJECTS IN CLASS: COIL:HEATING:ELECTRIC ===========
 
@@ -13221,14 +12496,6 @@ Coil:Heating:Electric,
     autosize,                !- Nominal Capacity {W}
     Supp Heating Coil Air Inlet Node_unit3_BackRow_TopFloor,  !- Air Inlet Node Name
     Air Loop Outlet Node_unit3_BackRow_TopFloor;  !- Air Outlet Node Name
-
-Coil:Heating:Electric,
-    Supp Heating Coil_unitheatedbsmt,  !- Name
-    always_avail,            !- Availability Schedule Name
-    1,                       !- Efficiency
-    autosize,                !- Nominal Capacity {W}
-    Supp Heating Coil Air Inlet Node_unitheatedbsmt,  !- Air Inlet Node Name
-    Air Loop Outlet Node_unitheatedbsmt;  !- Air Outlet Node Name
 
 
 !-   ===========  ALL OBJECTS IN CLASS: COIL:HEATING:DX:SINGLESPEED ===========
@@ -13647,29 +12914,6 @@ Coil:Heating:DX:SingleSpeed,
     ReverseCycle,            !- Defrost Strategy
     OnDemand;                !- Defrost Control
 
-Coil:Heating:DX:SingleSpeed,
-    Main DX Heating Coil_unitheatedbsmt,  !- Name
-    always_avail,            !- Availability Schedule Name
-    autosize,                !- Gross Rated Heating Capacity {W}
-    3.63216498787731,        !- Gross Rated Heating COP {W/W}
-    autosize,                !- Rated Air Flow Rate {m3/s}
-    ,                        !- Rated Supply Fan Power Per Volume Flow Rate {W/(m3/s)}
-    Heating Coil Air Inlet Node_unitheatedbsmt,  !- Air Inlet Node Name
-    Supp Heating Coil Air Inlet Node_unitheatedbsmt,  !- Air Outlet Node Name
-    HPACHeatCapFT,           !- Heating Capacity Function of Temperature Curve Name
-    HPACHeatCapFFF,          !- Heating Capacity Function of Flow Fraction Curve Name
-    HPACHeatEIRFT,           !- Energy Input Ratio Function of Temperature Curve Name
-    HPACHeatEIRFFF,          !- Energy Input Ratio Function of Flow Fraction Curve Name
-    HPACCOOLPLFFPLR,         !- Part Load Fraction Correlation Curve Name
-    Defrost_EIR_FT,          !- Defrost Energy Input Ratio Function of Temperature Curve Name
-    -17.78,                  !- Minimum Outdoor Dry-Bulb Temperature for Compressor Operation {C}
-    ,                        !- Outdoor Dry-Bulb Temperature to Turn On Compressor {C}
-    5.0,                     !- Maximum Outdoor Dry-Bulb Temperature for Defrost Operation {C}
-    200.0,                   !- Crankcase Heater Capacity {W}
-    10.0,                    !- Maximum Outdoor Dry-Bulb Temperature for Crankcase Heater Operation {C}
-    ReverseCycle,            !- Defrost Strategy
-    OnDemand;                !- Defrost Control
-
 
 !-   ===========  ALL OBJECTS IN CLASS: AIRLOOPHVAC:UNITARYHEATPUMP:AIRTOAIR ===========
 
@@ -14069,28 +13313,6 @@ AirLoopHVAC:UnitaryHeatPump:AirToAir,
     BlowThrough,             !- Fan Placement
     fan_cycle;               !- Supply Air Fan Operating Mode Schedule Name
 
-AirLoopHVAC:UnitaryHeatPump:AirToAir,
-    Heat Pump_unitheatedbsmt,!- Name
-    always_avail,            !- Availability Schedule Name
-    Air Loop Inlet node_unitheatedbsmt,  !- Air Inlet Node Name
-    Air Loop Outlet Node_unitheatedbsmt,  !- Air Outlet Node Name
-    autosize,                !- Cooling Supply Air Flow Rate {m3/s}
-    autosize,                !- Heating Supply Air Flow Rate {m3/s}
-    0.0,                     !- No Load Supply Air Flow Rate {m3/s}
-    heatedbsmt,              !- Controlling Zone or Thermostat Location
-    Fan:OnOff,               !- Supply Air Fan Object Type
-    Supply Fan_unitheatedbsmt,  !- Supply Air Fan Name
-    Coil:Heating:DX:SingleSpeed,  !- Heating Coil Object Type
-    Main DX Heating Coil_unitheatedbsmt,  !- Heating Coil Name
-    Coil:Cooling:DX:SingleSpeed,  !- Cooling Coil Object Type
-    DX Cooling Coil_unitheatedbsmt,  !- Cooling Coil Name
-    Coil:Heating:Electric,   !- Supplemental Heating Coil Object Type
-    Supp Heating Coil_unitheatedbsmt,  !- Supplemental Heating Coil Name
-    50,                      !- Maximum Supply Air Temperature from Supplemental Heater {C}
-    10,                      !- Maximum Outdoor Dry-Bulb Temperature for Supplemental Heater Operation {C}
-    BlowThrough,             !- Fan Placement
-    fan_cycle;               !- Supply Air Fan Operating Mode Schedule Name
-
 
 !-   ===========  ALL OBJECTS IN CLASS: AIRLOOPHVAC ===========
 
@@ -14310,18 +13532,6 @@ AirLoopHVAC,
     Zone Equipment Inlet Node_unit3_BackRow_TopFloor,  !- Demand Side Inlet Node Names
     Air Loop Outlet Node_unit3_BackRow_TopFloor;  !- Supply Side Outlet Node Names
 
-AirLoopHVAC,
-    Central System_unitheatedbsmt,  !- Name
-    ,                        !- Controller List Name
-    availability list,       !- Availability Manager List Name
-    autosize,                !- Design Supply Air Flow Rate {m3/s}
-    Air Loop Branches_unitheatedbsmt,  !- Branch List Name
-    ,                        !- Connector List Name
-    Air Loop Inlet Node_unitheatedbsmt,  !- Supply Side Inlet Node Name
-    Return Air Mixer Outlet_unitheatedbsmt,  !- Demand Side Outlet Node Name
-    Zone Equipment Inlet Node_unitheatedbsmt,  !- Demand Side Inlet Node Names
-    Air Loop Outlet Node_unitheatedbsmt;  !- Supply Side Outlet Node Names
-
 
 !-   ===========  ALL OBJECTS IN CLASS: AIRLOOPHVAC:ZONESPLITTER ===========
 
@@ -14414,11 +13624,6 @@ AirLoopHVAC:ZoneSplitter,
     Zone Supply Air Splitter_unit3_BackRow_TopFloor,  !- Name
     Zone Equipment Inlet Node_unit3_BackRow_TopFloor,  !- Inlet Node Name
     Zone Inlet Node_unit3_BackRow_TopFloor;  !- Outlet 1 Node Name
-
-AirLoopHVAC:ZoneSplitter,
-    Zone Supply Air Splitter_unitheatedbsmt,  !- Name
-    Zone Equipment Inlet Node_unitheatedbsmt,  !- Inlet Node Name
-    Zone Inlet Node_unitheatedbsmt;  !- Outlet 1 Node Name
 
 
 !-   ===========  ALL OBJECTS IN CLASS: AIRLOOPHVAC:SUPPLYPATH ===========
@@ -14531,12 +13736,6 @@ AirLoopHVAC:SupplyPath,
     AirLoopHVAC:ZoneSplitter,!- Component 1 Object Type
     Zone Supply Air Splitter_unit3_BackRow_TopFloor;  !- Component 1 Name
 
-AirLoopHVAC:SupplyPath,
-    SupplyPath_unitheatedbsmt,  !- Name
-    Zone Equipment Inlet Node_unitheatedbsmt,  !- Supply Air Path Inlet Node Name
-    AirLoopHVAC:ZoneSplitter,!- Component 1 Object Type
-    Zone Supply Air Splitter_unitheatedbsmt;  !- Component 1 Name
-
 
 !-   ===========  ALL OBJECTS IN CLASS: AIRLOOPHVAC:ZONEMIXER ===========
 
@@ -14629,11 +13828,6 @@ AirLoopHVAC:ZoneMixer,
     Zone Return Air Mixer_unit3_BackRow_TopFloor,  !- Name
     Return Air Mixer Outlet_unit3_BackRow_TopFloor,  !- Outlet Node Name
     Zone Outlet Node_unit3_BackRow_TopFloor;  !- Inlet 1 Node Name
-
-AirLoopHVAC:ZoneMixer,
-    Zone Return Air Mixer_unitheatedbsmt,  !- Name
-    Return Air Mixer Outlet_unitheatedbsmt,  !- Outlet Node Name
-    Zone Outlet Node_unitheatedbsmt;  !- Inlet 1 Node Name
 
 
 !-   ===========  ALL OBJECTS IN CLASS: AIRLOOPHVAC:RETURNPATH ===========
@@ -14745,12 +13939,6 @@ AirLoopHVAC:ReturnPath,
     Return Air Mixer Outlet_unit3_BackRow_TopFloor,  !- Return Air Path Outlet Node Name
     AirLoopHVAC:ZoneMixer,   !- Component 1 Object Type
     Zone Return Air Mixer_unit3_BackRow_TopFloor;  !- Component 1 Name
-
-AirLoopHVAC:ReturnPath,
-    ReturnPath_unitheatedbsmt,  !- Name
-    Return Air Mixer Outlet_unitheatedbsmt,  !- Return Air Path Outlet Node Name
-    AirLoopHVAC:ZoneMixer,   !- Component 1 Object Type
-    Zone Return Air Mixer_unitheatedbsmt;  !- Component 1 Name
 
 
 !-   ===========  ALL OBJECTS IN CLASS: BRANCH ===========
@@ -14898,14 +14086,6 @@ Branch,
     Heat Pump_unit3_BackRow_TopFloor,  !- Component 1 Name
     Air Loop Inlet Node_unit3_BackRow_TopFloor,  !- Component 1 Inlet Node Name
     Air Loop Outlet Node_unit3_BackRow_TopFloor;  !- Component 1 Outlet Node Name
-
-Branch,
-    Air Loop Main Branch_unitheatedbsmt,  !- Name
-    ,                        !- Pressure Drop Curve Name
-    AirLoopHVAC:UnitaryHeatPump:AirtoAir,  !- Component 1 Object Type
-    Heat Pump_unitheatedbsmt,!- Component 1 Name
-    Air Loop Inlet Node_unitheatedbsmt,  !- Component 1 Inlet Node Name
-    Air Loop Outlet Node_unitheatedbsmt;  !- Component 1 Outlet Node Name
 
 Branch,
     Mains Inlet Branch_unit1_FrontRow_BottomFloor,  !- Name
@@ -16423,10 +15603,6 @@ BranchList,
     Air Loop Main Branch_unit3_BackRow_TopFloor;  !- Branch 1 Name
 
 BranchList,
-    Air Loop Branches_unitheatedbsmt,  !- Name
-    Air Loop Main Branch_unitheatedbsmt;  !- Branch 1 Name
-
-BranchList,
     DHW Supply Branches_unit1_FrontRow_BottomFloor,  !- Name
     Mains Inlet Branch_unit1_FrontRow_BottomFloor,  !- Branch 1 Name
     Water Heater Branch_unit1_FrontRow_BottomFloor,  !- Branch 2 Name
@@ -17553,10 +16729,6 @@ NodeList,
 NodeList,
     Zone Inlet Nodes_unit3_BackRow_TopFloor,  !- Name
     Zone Inlet Node_unit3_BackRow_TopFloor;  !- Node 1 Name
-
-NodeList,
-    Zone Inlet Nodes_unitheatedbsmt,  !- Name
-    Zone Inlet Node_unitheatedbsmt;  !- Node 1 Name
 
 
 !-   ===========  ALL OBJECTS IN CLASS: PIPE:ADIABATIC ===========
@@ -21878,40 +21050,3 @@ Output:Table:Monthly,
 OutputControl:Table:Style,
     CommaAndHTML,            !- Column Separator
     InchPound;               !- Unit Conversion
-!-   ===========  ALL OBJECTS IN CLASS: OUTPUT:METER ===========
-Output:Meter,
-    Heating:Electricity ,    !- Name
-    Monthly;                 !- Reporting Frequency
-Output:Meter,
-    Cooling:Electricity ,    !- Name
-    Monthly;                 !- Reporting Frequency
-Output:Meter,
-    InteriorLights:Electricity ,  !- Name
-    Monthly;                 !- Reporting Frequency
-Output:Meter,
-    ExteriorLights:Electricity ,  !- Name
-    Monthly;                 !- Reporting Frequency
-Output:Meter,
-    Misc:InteriorEquipment:Electricity ,  !- Name
-    Monthly;                 !- Reporting Frequency
-Output:Meter,
-    Appl:InteriorEquipment:Electricity ,  !- Name
-    Monthly;                 !- Reporting Frequency
-Output:Meter,
-    InteriorEquipment:Electricity ,  !- Name
-    Monthly;                 !- Reporting Frequency
-Output:Meter,
-    Fans:Electricity ,       !- Name
-    Monthly;                 !- Reporting Frequency
-Output:Meter,
-    Pumps:Electricity ,      !- Name
-    Monthly;                 !- Reporting Frequency
-Output:Meter,
-    WaterSystems:Electricity ,  !- Name
-    Monthly;                 !- Reporting Frequency
-Output:Meter,
-    Electricity:Building ,   !- Name
-    Monthly;                 !- Reporting Frequency
-Output:Meter,
-    Electricity:Facility ,   !- Name
-    Monthly;                 !- Reporting Frequency
