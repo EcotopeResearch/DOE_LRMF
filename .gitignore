@@ -16,3 +16,5 @@
 *.slab
 *.eso
 *.mtr
+*.sql
+SEED_Models/**.csv

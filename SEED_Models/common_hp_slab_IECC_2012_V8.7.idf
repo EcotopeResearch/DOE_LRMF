@@ -1,6 +1,6 @@
 !-Generator IDFEditor 1.49
 !-Option SortedOrder ViewInIPunits
-
+!-    8.7;                     !- Version Identifier
 !-NOTE: All comments with '!-' are ignored by the IDFEditor and are generated automatically.
 !-      Use '!' comments if they need to be retained when using the IDFEditor.
 
@@ -58,7 +58,7 @@ Site:Location,
     Seattle Seattle Tacoma Intl A_WA_USA Design_Conditions,  !- Name
     47.47,                   !- Latitude {deg}
     -122.32,                 !- Longitude {deg}
-    -8.0,                   !- Time Zone {hr}
+    -8.0,                    !- Time Zone {hr}
     122.00;                  !- Elevation {m}
 
 
@@ -1967,15 +1967,6 @@ GlobalGeometryRules,
 !-   ===========  ALL OBJECTS IN CLASS: ZONE ===========
 
 Zone,
-    Breezeway,               !- Name
-    0.0,                     !- Direction of Relative North {deg}
-    0.0,                     !- X Origin {m}
-    0.0,                     !- Y Origin {m}
-    0.0,                     !- Z Origin {m}
-    ,                        !- Type
-    1;                       !- Multiplier
-
-Zone,
     living_unit1_FrontRow_BottomFloor,  !- Name
     0.0,                     !- Direction of Relative North {deg}
     0.0,                     !- X Origin {m}
@@ -2147,6 +2138,33 @@ Zone,
     ,                        !- Type
     1;                       !- Multiplier
 
+Zone,
+    G Corridor,              !- Name
+    0.0,                     !- Direction of Relative North {deg}
+    0.0,                     !- X Origin {m}
+    0.0,                     !- Y Origin {m}
+    0.0,                     !- Z Origin {m}
+    ,                        !- Type
+    1;                       !- Multiplier
+
+Zone,
+    M Corridor,              !- Name
+    0.0,                     !- Direction of Relative North {deg}
+    0.0,                     !- X Origin {m}
+    0.0,                     !- Y Origin {m}
+    2.743902,                !- Z Origin {m}
+    ,                        !- Type
+    1;                       !- Multiplier
+
+Zone,
+    T Corridor,              !- Name
+    0.0,                     !- Direction of Relative North {deg}
+    36.536889,               !- X Origin {m}
+    19.83862,                !- Y Origin {m}
+    5.3329,                  !- Z Origin {m}
+    ,                        !- Type
+    1;                       !- Multiplier
+
 
 !-   ===========  ALL OBJECTS IN CLASS: BUILDINGSURFACE:DETAILED ===========
 
@@ -2181,13 +2199,13 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     Wall_ldb_1.unit1_FrontRow_BottomFloor,  !- Name
     Wall,                    !- Surface Type
-    Exterior Wall,           !- Construction Name
+    Interior Wall,           !- Construction Name
     living_unit1_FrontRow_BottomFloor,  !- Zone Name
-    Outdoors,                !- Outside Boundary Condition
-    ,                        !- Outside Boundary Condition Object
-    SunExposed,              !- Sun Exposure
-    WindExposed,             !- Wind Exposure
-    ,                        !- View Factor to Ground
+    Zone,                    !- Outside Boundary Condition
+    G Corridor,              !- Outside Boundary Condition Object
+    NoSun,                   !- Sun Exposure
+    NoWind,                  !- Wind Exposure
+    0.0,                     !- View Factor to Ground
     4,                       !- Number of Vertices
     12.178962909315,         !- Vertex 1 X-coordinate {m}
     9.157114969410,          !- Vertex 1 Y-coordinate {m}
@@ -2256,13 +2274,13 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     Wall_ldb_1.unit2_FrontRow_BottomFloor,  !- Name
     Wall,                    !- Surface Type
-    Exterior Wall,           !- Construction Name
+    Interior Wall,           !- Construction Name
     living_unit2_FrontRow_BottomFloor,  !- Zone Name
-    Outdoors,                !- Outside Boundary Condition
-    ,                        !- Outside Boundary Condition Object
-    SunExposed,              !- Sun Exposure
-    WindExposed,             !- Wind Exposure
-    ,                        !- View Factor to Ground
+    Zone,                    !- Outside Boundary Condition
+    G Corridor,              !- Outside Boundary Condition Object
+    NoSun,                   !- Sun Exposure
+    NoWind,                  !- Wind Exposure
+    0.0,                     !- View Factor to Ground
     4,                       !- Number of Vertices
     24.357925818630,         !- Vertex 1 X-coordinate {m}
     9.157114969410,          !- Vertex 1 Y-coordinate {m}
@@ -2331,13 +2349,13 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     Wall_ldb_1.unit3_FrontRow_BottomFloor,  !- Name
     Wall,                    !- Surface Type
-    Exterior Wall,           !- Construction Name
+    Interior Wall,           !- Construction Name
     living_unit3_FrontRow_BottomFloor,  !- Zone Name
-    Outdoors,                !- Outside Boundary Condition
-    ,                        !- Outside Boundary Condition Object
-    SunExposed,              !- Sun Exposure
-    WindExposed,             !- Wind Exposure
-    ,                        !- View Factor to Ground
+    Zone,                    !- Outside Boundary Condition
+    G Corridor,              !- Outside Boundary Condition Object
+    NoSun,                   !- Sun Exposure
+    NoWind,                  !- Wind Exposure
+    0.0,                     !- View Factor to Ground
     4,                       !- Number of Vertices
     36.536888727945,         !- Vertex 1 X-coordinate {m}
     9.157114969410,          !- Vertex 1 Y-coordinate {m}
@@ -2381,13 +2399,13 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     Wall_ldf_1.unit1_BackRow_BottomFloor,  !- Name
     Wall,                    !- Surface Type
-    Exterior Wall,           !- Construction Name
+    Interior Wall,           !- Construction Name
     living_unit1_BackRow_BottomFloor,  !- Zone Name
-    Outdoors,                !- Outside Boundary Condition
-    ,                        !- Outside Boundary Condition Object
-    SunExposed,              !- Sun Exposure
-    WindExposed,             !- Wind Exposure
-    ,                        !- View Factor to Ground
+    Zone,                    !- Outside Boundary Condition
+    G Corridor,              !- Outside Boundary Condition Object
+    NoSun,                   !- Sun Exposure
+    NoWind,                  !- Wind Exposure
+    0.0,                     !- View Factor to Ground
     4,                       !- Number of Vertices
     0.000000000000,          !- Vertex 1 X-coordinate {m}
     10.681505213312,         !- Vertex 1 Y-coordinate {m}
@@ -2481,13 +2499,13 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     Wall_ldf_1.unit2_BackRow_BottomFloor,  !- Name
     Wall,                    !- Surface Type
-    Exterior Wall,           !- Construction Name
+    Interior Wall,           !- Construction Name
     living_unit2_BackRow_BottomFloor,  !- Zone Name
-    Outdoors,                !- Outside Boundary Condition
-    ,                        !- Outside Boundary Condition Object
-    SunExposed,              !- Sun Exposure
-    WindExposed,             !- Wind Exposure
-    ,                        !- View Factor to Ground
+    Zone,                    !- Outside Boundary Condition
+    G Corridor,              !- Outside Boundary Condition Object
+    NoSun,                   !- Sun Exposure
+    NoWind,                  !- Wind Exposure
+    0.0,                     !- View Factor to Ground
     4,                       !- Number of Vertices
     12.178962909315,         !- Vertex 1 X-coordinate {m}
     10.681505213312,         !- Vertex 1 Y-coordinate {m}
@@ -2531,13 +2549,13 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     Wall_ldf_1.unit3_BackRow_BottomFloor,  !- Name
     Wall,                    !- Surface Type
-    Exterior Wall,           !- Construction Name
+    Interior Wall,           !- Construction Name
     living_unit3_BackRow_BottomFloor,  !- Zone Name
-    Outdoors,                !- Outside Boundary Condition
-    ,                        !- Outside Boundary Condition Object
-    SunExposed,              !- Sun Exposure
-    WindExposed,             !- Wind Exposure
-    ,                        !- View Factor to Ground
+    Zone,                    !- Outside Boundary Condition
+    G Corridor,              !- Outside Boundary Condition Object
+    NoSun,                   !- Sun Exposure
+    NoWind,                  !- Wind Exposure
+    0.0,                     !- View Factor to Ground
     4,                       !- Number of Vertices
     24.357925818630,         !- Vertex 1 X-coordinate {m}
     10.681505213312,         !- Vertex 1 Y-coordinate {m}
@@ -2681,13 +2699,13 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     Wall_ldb_1.unit1_FrontRow_MiddleFloor,  !- Name
     Wall,                    !- Surface Type
-    Exterior Wall,           !- Construction Name
+    Interior Wall,           !- Construction Name
     living_unit1_FrontRow_MiddleFloor,  !- Zone Name
-    Outdoors,                !- Outside Boundary Condition
-    ,                        !- Outside Boundary Condition Object
-    SunExposed,              !- Sun Exposure
-    WindExposed,             !- Wind Exposure
-    ,                        !- View Factor to Ground
+    Zone,                    !- Outside Boundary Condition
+    M Corridor,              !- Outside Boundary Condition Object
+    NoSun,                   !- Sun Exposure
+    NoWind,                  !- Wind Exposure
+    0.0,                     !- View Factor to Ground
     4,                       !- Number of Vertices
     12.178962909315,         !- Vertex 1 X-coordinate {m}
     9.157114969410,          !- Vertex 1 Y-coordinate {m}
@@ -2756,13 +2774,13 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     Wall_ldb_1.unit2_FrontRow_MiddleFloor,  !- Name
     Wall,                    !- Surface Type
-    Exterior Wall,           !- Construction Name
+    Interior Wall,           !- Construction Name
     living_unit2_FrontRow_MiddleFloor,  !- Zone Name
-    Outdoors,                !- Outside Boundary Condition
-    ,                        !- Outside Boundary Condition Object
-    SunExposed,              !- Sun Exposure
-    WindExposed,             !- Wind Exposure
-    ,                        !- View Factor to Ground
+    Zone,                    !- Outside Boundary Condition
+    M Corridor,              !- Outside Boundary Condition Object
+    NoSun,                   !- Sun Exposure
+    NoWind,                  !- Wind Exposure
+    0.0,                     !- View Factor to Ground
     4,                       !- Number of Vertices
     24.357925818630,         !- Vertex 1 X-coordinate {m}
     9.157114969410,          !- Vertex 1 Y-coordinate {m}
@@ -2831,13 +2849,13 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     Wall_ldb_1.unit3_FrontRow_MiddleFloor,  !- Name
     Wall,                    !- Surface Type
-    Exterior Wall,           !- Construction Name
+    Interior Wall,           !- Construction Name
     living_unit3_FrontRow_MiddleFloor,  !- Zone Name
-    Outdoors,                !- Outside Boundary Condition
-    ,                        !- Outside Boundary Condition Object
-    SunExposed,              !- Sun Exposure
-    WindExposed,             !- Wind Exposure
-    ,                        !- View Factor to Ground
+    Zone,                    !- Outside Boundary Condition
+    M Corridor,              !- Outside Boundary Condition Object
+    NoSun,                   !- Sun Exposure
+    NoWind,                  !- Wind Exposure
+    0.0,                     !- View Factor to Ground
     4,                       !- Number of Vertices
     36.536888727945,         !- Vertex 1 X-coordinate {m}
     9.157114969410,          !- Vertex 1 Y-coordinate {m}
@@ -2881,13 +2899,13 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     Wall_ldf_1.unit1_BackRow_MiddleFloor,  !- Name
     Wall,                    !- Surface Type
-    Exterior Wall,           !- Construction Name
+    Interior Wall,           !- Construction Name
     living_unit1_BackRow_MiddleFloor,  !- Zone Name
-    Outdoors,                !- Outside Boundary Condition
-    ,                        !- Outside Boundary Condition Object
-    SunExposed,              !- Sun Exposure
-    WindExposed,             !- Wind Exposure
-    ,                        !- View Factor to Ground
+    Zone,                    !- Outside Boundary Condition
+    M Corridor,              !- Outside Boundary Condition Object
+    NoSun,                   !- Sun Exposure
+    NoWind,                  !- Wind Exposure
+    0.0,                     !- View Factor to Ground
     4,                       !- Number of Vertices
     0.000000000000,          !- Vertex 1 X-coordinate {m}
     10.681505213312,         !- Vertex 1 Y-coordinate {m}
@@ -2981,13 +2999,13 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     Wall_ldf_1.unit2_BackRow_MiddleFloor,  !- Name
     Wall,                    !- Surface Type
-    Exterior Wall,           !- Construction Name
+    Interior Wall,           !- Construction Name
     living_unit2_BackRow_MiddleFloor,  !- Zone Name
-    Outdoors,                !- Outside Boundary Condition
-    ,                        !- Outside Boundary Condition Object
-    SunExposed,              !- Sun Exposure
-    WindExposed,             !- Wind Exposure
-    ,                        !- View Factor to Ground
+    Zone,                    !- Outside Boundary Condition
+    M Corridor,              !- Outside Boundary Condition Object
+    NoSun,                   !- Sun Exposure
+    NoWind,                  !- Wind Exposure
+    0.0,                     !- View Factor to Ground
     4,                       !- Number of Vertices
     12.178962909315,         !- Vertex 1 X-coordinate {m}
     10.681505213312,         !- Vertex 1 Y-coordinate {m}
@@ -3031,13 +3049,13 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     Wall_ldf_1.unit3_BackRow_MiddleFloor,  !- Name
     Wall,                    !- Surface Type
-    Exterior Wall,           !- Construction Name
+    Interior Wall,           !- Construction Name
     living_unit3_BackRow_MiddleFloor,  !- Zone Name
-    Outdoors,                !- Outside Boundary Condition
-    ,                        !- Outside Boundary Condition Object
-    SunExposed,              !- Sun Exposure
-    WindExposed,             !- Wind Exposure
-    ,                        !- View Factor to Ground
+    Zone,                    !- Outside Boundary Condition
+    M Corridor,              !- Outside Boundary Condition Object
+    NoSun,                   !- Sun Exposure
+    NoWind,                  !- Wind Exposure
+    0.0,                     !- View Factor to Ground
     4,                       !- Number of Vertices
     24.357925818630,         !- Vertex 1 X-coordinate {m}
     10.681505213312,         !- Vertex 1 Y-coordinate {m}
@@ -3277,107 +3295,6 @@ BuildingSurface:Detailed,
     19.838620182722,         !- Vertex 4 Y-coordinate {m}
     2.741463415000;          !- Vertex 4 Z-coordinate {m}
 
-!
-BuildingSurface:Detailed,
-    Breezeway_BottomFloor,   !- Name
-    Floor,                   !- Surface Type
-    Exterior Floor,          !- Construction Name
-    Breezeway,               !- Zone Name
-    Outdoors,                !- Outside Boundary Condition
-    ,                        !- Outside Boundary Condition Object
-    SunExposed,              !- Sun Exposure
-    WindExposed,             !- Wind Exposure
-    autocalculate,           !- View Factor to Ground
-    4,                       !- Number of Vertices
-    36.536118163187,         !- Vertex 1 X-coordinate {m}
-    9.156233137945,          !- Vertex 1 Y-coordinate {m}
-    0.152392567938,          !- Vertex 1 Z-coordinate {m}
-    0.000000000000,          !- Vertex 2 X-coordinate {m}
-    9.156233137945,          !- Vertex 2 Y-coordinate {m}
-    0.152392567938,          !- Vertex 2 Z-coordinate {m}
-    0.000000000000,          !- Vertex 3 X-coordinate {m}
-    10.680158817328,         !- Vertex 3 Y-coordinate {m}
-    0.152392567938,          !- Vertex 3 Z-coordinate {m}
-    36.536118163187,         !- Vertex 4 X-coordinate {m}
-    10.680158817328,         !- Vertex 4 Y-coordinate {m}
-    0.152392567938;          !- Vertex 4 Z-coordinate {m}
-
-!
-BuildingSurface:Detailed,
-    Breezeway_MiddleFloor,   !- Name
-    Floor,                   !- Surface Type
-    Exterior Floor,          !- Construction Name
-    Breezeway,               !- Zone Name
-    Outdoors,                !- Outside Boundary Condition
-    ,                        !- Outside Boundary Condition Object
-    SunExposed,              !- Sun Exposure
-    WindExposed,             !- Wind Exposure
-    autocalculate,           !- View Factor to Ground
-    4,                       !- Number of Vertices
-    36.536118163187,         !- Vertex 1 X-coordinate {m}
-    9.156233137945,          !- Vertex 1 Y-coordinate {m}
-    2.741460000000,          !- Vertex 1 Z-coordinate {m}
-    0.000000000000,          !- Vertex 2 X-coordinate {m}
-    9.156233137945,          !- Vertex 2 Y-coordinate {m}
-    2.741460000000,          !- Vertex 2 Z-coordinate {m}
-    0.000000000000,          !- Vertex 3 X-coordinate {m}
-    10.680158817328,         !- Vertex 3 Y-coordinate {m}
-    2.741460000000,          !- Vertex 3 Z-coordinate {m}
-    36.536118163187,         !- Vertex 4 X-coordinate {m}
-    10.680158817328,         !- Vertex 4 Y-coordinate {m}
-    2.741460000000;          !- Vertex 4 Z-coordinate {m}
-
-!
-BuildingSurface:Detailed,
-    Breezeway_TopFloor,      !- Name
-    Floor,                   !- Surface Type
-    Exterior Floor,          !- Construction Name
-    Breezeway,               !- Zone Name
-    Outdoors,                !- Outside Boundary Condition
-    ,                        !- Outside Boundary Condition Object
-    SunExposed,              !- Sun Exposure
-    WindExposed,             !- Wind Exposure
-    autocalculate,           !- View Factor to Ground
-    4,                       !- Number of Vertices
-    36.536118163187,         !- Vertex 1 X-coordinate {m}
-    9.156233137945,          !- Vertex 1 Y-coordinate {m}
-    5.330000000000,          !- Vertex 1 Z-coordinate {m}
-    0.000000000000,          !- Vertex 2 X-coordinate {m}
-    9.156233137945,          !- Vertex 2 Y-coordinate {m}
-    5.330000000000,          !- Vertex 2 Z-coordinate {m}
-    0.000000000000,          !- Vertex 3 X-coordinate {m}
-    10.680158817328,         !- Vertex 3 Y-coordinate {m}
-    5.330000000000,          !- Vertex 3 Z-coordinate {m}
-    36.536118163187,         !- Vertex 4 X-coordinate {m}
-    10.680158817328,         !- Vertex 4 Y-coordinate {m}
-    5.330000000000;          !- Vertex 4 Z-coordinate {m}
-
-!
-BuildingSurface:Detailed,
-    BreezewayRoof,           !- Name
-    Ceiling,                 !- Surface Type
-    Interior Ceiling,        !- Construction Name
-    Breezeway,               !- Zone Name
-    Zone,                    !- Outside Boundary Condition
-    attic,                   !- Outside Boundary Condition Object
-    NoSun,                   !- Sun Exposure
-    NoWind,                  !- Wind Exposure
-    0.0,                     !- View Factor to Ground
-    4,                       !- Number of Vertices
-    0.000000000000,          !- Vertex 1 X-coordinate {m}
-    9.156233137945,          !- Vertex 1 Y-coordinate {m}
-    7.920000000000,          !- Vertex 1 Z-coordinate {m}
-    36.536118163187,         !- Vertex 2 X-coordinate {m}
-    9.156233137945,          !- Vertex 2 Y-coordinate {m}
-    7.920000000000,          !- Vertex 2 Z-coordinate {m}
-    36.536118163187,         !- Vertex 3 X-coordinate {m}
-    10.680158817328,         !- Vertex 3 Y-coordinate {m}
-    7.920000000000,          !- Vertex 3 Z-coordinate {m}
-    0.000000000000,          !- Vertex 4 X-coordinate {m}
-    10.680158817328,         !- Vertex 4 Y-coordinate {m}
-    7.920000000000;          !- Vertex 4 Z-coordinate {m}
-
-!
 !
 BuildingSurface:Detailed,
     Floor_unit1_FrontRow_BottomFloor,  !- Name
@@ -3624,7 +3541,7 @@ BuildingSurface:Detailed,
     ceiling-floor-layer,     !- Construction Name
     living_unit3_FrontRow_BottomFloor,  !- Zone Name
     Surface,                 !- Outside Boundary Condition
-    Floor_unit3_FrontRow_MiddleFloor,                        !- Outside Boundary Condition Object
+    Floor_unit3_FrontRow_MiddleFloor,  !- Outside Boundary Condition Object
     NoSun,                   !- Sun Exposure
     NoWind,                  !- Wind Exposure
     0.0,                     !- View Factor to Ground
@@ -3648,7 +3565,7 @@ BuildingSurface:Detailed,
     ceiling-floor-layer,     !- Construction Name
     living_unit3_BackRow_BottomFloor,  !- Zone Name
     Surface,                 !- Outside Boundary Condition
-    Floor_unit3_BackRow_MiddleFloor,                        !- Outside Boundary Condition Object
+    Floor_unit3_BackRow_MiddleFloor,  !- Outside Boundary Condition Object
     NoSun,                   !- Sun Exposure
     NoWind,                  !- Wind Exposure
     0.0,                     !- View Factor to Ground
@@ -4249,13 +4166,13 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     Wall_ldf_1.unit3_BackRow_TopFloor,  !- Name
     Wall,                    !- Surface Type
-    Exterior Wall,           !- Construction Name
+    Interior Wall,           !- Construction Name
     living_unit3_BackRow_TopFloor,  !- Zone Name
-    Outdoors,                !- Outside Boundary Condition
-    ,                        !- Outside Boundary Condition Object
-    SunExposed,              !- Sun Exposure
-    WindExposed,             !- Wind Exposure
-    ,                        !- View Factor to Ground
+    Zone,                    !- Outside Boundary Condition
+    T Corridor,              !- Outside Boundary Condition Object
+    NoSun,                   !- Sun Exposure
+    NoWind,                  !- Wind Exposure
+    0.0,                     !- View Factor to Ground
     4,                       !- Number of Vertices
     24.357925818630,         !- Vertex 1 X-coordinate {m}
     10.681505213312,         !- Vertex 1 Y-coordinate {m}
@@ -4372,13 +4289,13 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     Wall_ldb_1.unit3_FrontRow_TopFloor,  !- Name
     Wall,                    !- Surface Type
-    Exterior Wall,           !- Construction Name
+    Interior Wall,           !- Construction Name
     living_unit3_FrontRow_TopFloor,  !- Zone Name
-    Outdoors,                !- Outside Boundary Condition
-    ,                        !- Outside Boundary Condition Object
-    SunExposed,              !- Sun Exposure
-    WindExposed,             !- Wind Exposure
-    ,                        !- View Factor to Ground
+    Zone,                    !- Outside Boundary Condition
+    T Corridor,              !- Outside Boundary Condition Object
+    NoSun,                   !- Sun Exposure
+    NoWind,                  !- Wind Exposure
+    0.0,                     !- View Factor to Ground
     4,                       !- Number of Vertices
     36.536888727945,         !- Vertex 1 X-coordinate {m}
     9.157114969410,          !- Vertex 1 Y-coordinate {m}
@@ -4543,13 +4460,13 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     Wall_ldb_1.unit1_FrontRow_TopFloor,  !- Name
     Wall,                    !- Surface Type
-    Exterior Wall,           !- Construction Name
+    Interior Wall,           !- Construction Name
     living_unit1_FrontRow_TopFloor,  !- Zone Name
-    Outdoors,                !- Outside Boundary Condition
-    ,                        !- Outside Boundary Condition Object
-    SunExposed,              !- Sun Exposure
-    WindExposed,             !- Wind Exposure
-    ,                        !- View Factor to Ground
+    Zone,                    !- Outside Boundary Condition
+    T Corridor,              !- Outside Boundary Condition Object
+    NoSun,                   !- Sun Exposure
+    NoWind,                  !- Wind Exposure
+    0.0,                     !- View Factor to Ground
     4,                       !- Number of Vertices
     12.178962909315,         !- Vertex 1 X-coordinate {m}
     9.157114969410,          !- Vertex 1 Y-coordinate {m}
@@ -4664,13 +4581,13 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     Wall_ldf_1.unit2_BackRow_TopFloor,  !- Name
     Wall,                    !- Surface Type
-    Exterior Wall,           !- Construction Name
+    Interior Wall,           !- Construction Name
     living_unit2_BackRow_TopFloor,  !- Zone Name
-    Outdoors,                !- Outside Boundary Condition
-    ,                        !- Outside Boundary Condition Object
-    SunExposed,              !- Sun Exposure
-    WindExposed,             !- Wind Exposure
-    ,                        !- View Factor to Ground
+    Zone,                    !- Outside Boundary Condition
+    T Corridor,              !- Outside Boundary Condition Object
+    NoSun,                   !- Sun Exposure
+    NoWind,                  !- Wind Exposure
+    0.0,                     !- View Factor to Ground
     4,                       !- Number of Vertices
     12.178962909315,         !- Vertex 1 X-coordinate {m}
     10.681505213312,         !- Vertex 1 Y-coordinate {m}
@@ -4809,13 +4726,13 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     Wall_ldb_1.unit2_FrontRow_TopFloor,  !- Name
     Wall,                    !- Surface Type
-    Exterior Wall,           !- Construction Name
+    Interior Wall,           !- Construction Name
     living_unit2_FrontRow_TopFloor,  !- Zone Name
-    Outdoors,                !- Outside Boundary Condition
-    ,                        !- Outside Boundary Condition Object
-    SunExposed,              !- Sun Exposure
-    WindExposed,             !- Wind Exposure
-    ,                        !- View Factor to Ground
+    Zone,                    !- Outside Boundary Condition
+    T Corridor,              !- Outside Boundary Condition Object
+    NoSun,                   !- Sun Exposure
+    NoWind,                  !- Wind Exposure
+    0.0,                     !- View Factor to Ground
     4,                       !- Number of Vertices
     24.357925818630,         !- Vertex 1 X-coordinate {m}
     9.157114969410,          !- Vertex 1 Y-coordinate {m}
@@ -4957,13 +4874,13 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     Wall_ldf_1.unit1_BackRow_TopFloor,  !- Name
     Wall,                    !- Surface Type
-    Exterior Wall,           !- Construction Name
+    Interior Wall,           !- Construction Name
     living_unit1_BackRow_TopFloor,  !- Zone Name
-    Outdoors,                !- Outside Boundary Condition
-    ,                        !- Outside Boundary Condition Object
-    SunExposed,              !- Sun Exposure
-    WindExposed,             !- Wind Exposure
-    ,                        !- View Factor to Ground
+    Zone,                    !- Outside Boundary Condition
+    T Corridor,              !- Outside Boundary Condition Object
+    NoSun,                   !- Sun Exposure
+    NoWind,                  !- Wind Exposure
+    0.0,                     !- View Factor to Ground
     4,                       !- Number of Vertices
     0.000000000000,          !- Vertex 1 X-coordinate {m}
     10.681505213312,         !- Vertex 1 Y-coordinate {m}
@@ -5002,1163 +4919,1592 @@ BuildingSurface:Detailed,
     19.838620182722,         !- Vertex 4 Y-coordinate {m}
     7.924336585000;          !- Vertex 4 Z-coordinate {m}
 
+BuildingSurface:Detailed,
+    g Floor C,               !- Name
+    Floor,                   !- Surface Type
+    Exterior Floor,          !- Construction Name
+    G Corridor,              !- Zone Name
+    GroundSlabPreprocessorAverage,  !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
+    NoSun,                   !- Sun Exposure
+    NoWind,                  !- Wind Exposure
+    0.0,                     !- View Factor to Ground
+    4,                       !- Number of Vertices
+    36.536888727945,         !- Vertex 1 X-coordinate {m}
+    9.157114969410,          !- Vertex 1 Y-coordinate {m}
+    0.152439024390,          !- Vertex 1 Z-coordinate {m}
+    0.000000000000,          !- Vertex 2 X-coordinate {m}
+    9.157114969410,          !- Vertex 2 Y-coordinate {m}
+    0.152439024390,          !- Vertex 2 Z-coordinate {m}
+    0.000000000000,          !- Vertex 3 X-coordinate {m}
+    10.681505213312,         !- Vertex 3 Y-coordinate {m}
+    0.152439024390,          !- Vertex 3 Z-coordinate {m}
+    36.536888727945,         !- Vertex 4 X-coordinate {m}
+    10.681505213312,         !- Vertex 4 Y-coordinate {m}
+    0.152439024390;          !- Vertex 4 Z-coordinate {m}
 
-!-   ===========  ALL OBJECTS IN CLASS: WINDOW ===========
+BuildingSurface:Detailed,
+    g EWall C,               !- Name
+    Wall,                    !- Surface Type
+    Exterior Wall,           !- Construction Name
+    G Corridor,              !- Zone Name
+    Outdoors,                !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
+    SunExposed,              !- Sun Exposure
+    WindExposed,             !- Wind Exposure
+    autocalculate,           !- View Factor to Ground
+    4,                       !- Number of Vertices
+    36.536888727945,         !- Vertex 1 X-coordinate {m}
+    9.157114969410,          !- Vertex 1 Y-coordinate {m}
+    0.152439024390,          !- Vertex 1 Z-coordinate {m}
+    36.536888727945,         !- Vertex 2 X-coordinate {m}
+    10.681505213312,         !- Vertex 2 Y-coordinate {m}
+    0.152439024390,          !- Vertex 2 Z-coordinate {m}
+    36.536888727945,         !- Vertex 3 X-coordinate {m}
+    10.681505213312,         !- Vertex 3 Y-coordinate {m}
+    2.743902439024,          !- Vertex 3 Z-coordinate {m}
+    36.536888727945,         !- Vertex 4 X-coordinate {m}
+    9.157114969410,          !- Vertex 4 Y-coordinate {m}
+    2.743902439024;          !- Vertex 4 Z-coordinate {m}
 
-  FenestrationSurface:Detailed,
+BuildingSurface:Detailed,
+    g WWall C,               !- Name
+    Wall,                    !- Surface Type
+    Exterior Wall,           !- Construction Name
+    G Corridor,              !- Zone Name
+    Outdoors,                !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
+    SunExposed,              !- Sun Exposure
+    WindExposed,             !- Wind Exposure
+    autocalculate,           !- View Factor to Ground
+    4,                       !- Number of Vertices
+    0.000000000000,          !- Vertex 1 X-coordinate {m}
+    10.681505213312,         !- Vertex 1 Y-coordinate {m}
+    0.152439024390,          !- Vertex 1 Z-coordinate {m}
+    0.000000000000,          !- Vertex 2 X-coordinate {m}
+    9.157114969410,          !- Vertex 2 Y-coordinate {m}
+    0.152439024390,          !- Vertex 2 Z-coordinate {m}
+    0.000000000000,          !- Vertex 3 X-coordinate {m}
+    9.157114969410,          !- Vertex 3 Y-coordinate {m}
+    2.743902439024,          !- Vertex 3 Z-coordinate {m}
+    0.000000000000,          !- Vertex 4 X-coordinate {m}
+    10.681505213312,         !- Vertex 4 Y-coordinate {m}
+    2.743902439024;          !- Vertex 4 Z-coordinate {m}
+
+BuildingSurface:Detailed,
+    g Ceiling C,             !- Name
+    Ceiling,                 !- Surface Type
+    ceiling-floor-layer,     !- Construction Name
+    G Corridor,              !- Zone Name
+    Surface,                 !- Outside Boundary Condition
+    m Floor C,               !- Outside Boundary Condition Object
+    NoSun,                   !- Sun Exposure
+    NoWind,                  !- Wind Exposure
+    0.0,                     !- View Factor to Ground
+    4,                       !- Number of Vertices
+    0.000000000000,          !- Vertex 1 X-coordinate {m}
+    9.157114969410,          !- Vertex 1 Y-coordinate {m}
+    2.743902439024,          !- Vertex 1 Z-coordinate {m}
+    36.536888727945,         !- Vertex 2 X-coordinate {m}
+    9.157114969410,          !- Vertex 2 Y-coordinate {m}
+    2.743902439024,          !- Vertex 2 Z-coordinate {m}
+    36.536888727945,         !- Vertex 3 X-coordinate {m}
+    10.681505213312,         !- Vertex 3 Y-coordinate {m}
+    2.743902439024,          !- Vertex 3 Z-coordinate {m}
+    0.000000000000,          !- Vertex 4 X-coordinate {m}
+    10.681505213312,         !- Vertex 4 Y-coordinate {m}
+    2.743902439024;          !- Vertex 4 Z-coordinate {m}
+
+BuildingSurface:Detailed,
+    m WWall C,               !- Name
+    Wall,                    !- Surface Type
+    Exterior Wall,           !- Construction Name
+    M Corridor,              !- Zone Name
+    Outdoors,                !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
+    SunExposed,              !- Sun Exposure
+    WindExposed,             !- Wind Exposure
+    autocalculate,           !- View Factor to Ground
+    4,                       !- Number of Vertices
+    0.000000000000,          !- Vertex 1 X-coordinate {m}
+    10.681505213312,         !- Vertex 1 Y-coordinate {m}
+    0.000000439024,          !- Vertex 1 Z-coordinate {m}
+    0.000000000000,          !- Vertex 2 X-coordinate {m}
+    9.157114969410,          !- Vertex 2 Y-coordinate {m}
+    0.000000439024,          !- Vertex 2 Z-coordinate {m}
+    0.000000000000,          !- Vertex 3 X-coordinate {m}
+    9.157114969410,          !- Vertex 3 Y-coordinate {m}
+    2.591463853658,          !- Vertex 3 Z-coordinate {m}
+    0.000000000000,          !- Vertex 4 X-coordinate {m}
+    10.681505213312,         !- Vertex 4 Y-coordinate {m}
+    2.591463853658;          !- Vertex 4 Z-coordinate {m}
+
+BuildingSurface:Detailed,
+    m Ceiling C,             !- Name
+    Ceiling,                 !- Surface Type
+    ceiling-floor-layer,     !- Construction Name
+    M Corridor,              !- Zone Name
+    Surface,                 !- Outside Boundary Condition
+    T Floor C,               !- Outside Boundary Condition Object
+    NoSun,                   !- Sun Exposure
+    NoWind,                  !- Wind Exposure
+    0.0,                     !- View Factor to Ground
+    4,                       !- Number of Vertices
+    0.000000000000,          !- Vertex 1 X-coordinate {m}
+    9.157114969410,          !- Vertex 1 Y-coordinate {m}
+    2.591463853658,          !- Vertex 1 Z-coordinate {m}
+    36.536888727945,         !- Vertex 2 X-coordinate {m}
+    9.157114969410,          !- Vertex 2 Y-coordinate {m}
+    2.591463853658,          !- Vertex 2 Z-coordinate {m}
+    36.536888727945,         !- Vertex 3 X-coordinate {m}
+    10.681505213312,         !- Vertex 3 Y-coordinate {m}
+    2.591463853658,          !- Vertex 3 Z-coordinate {m}
+    0.000000000000,          !- Vertex 4 X-coordinate {m}
+    10.681505213312,         !- Vertex 4 Y-coordinate {m}
+    2.591463853658;          !- Vertex 4 Z-coordinate {m}
+
+BuildingSurface:Detailed,
+    m EWall C,               !- Name
+    Wall,                    !- Surface Type
+    Exterior Wall,           !- Construction Name
+    M Corridor,              !- Zone Name
+    Outdoors,                !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
+    SunExposed,              !- Sun Exposure
+    WindExposed,             !- Wind Exposure
+    autocalculate,           !- View Factor to Ground
+    4,                       !- Number of Vertices
+    36.536888727945,         !- Vertex 1 X-coordinate {m}
+    9.157114969410,          !- Vertex 1 Y-coordinate {m}
+    0.000000439024,          !- Vertex 1 Z-coordinate {m}
+    36.536888727945,         !- Vertex 2 X-coordinate {m}
+    10.681505213312,         !- Vertex 2 Y-coordinate {m}
+    0.000000439024,          !- Vertex 2 Z-coordinate {m}
+    36.536888727945,         !- Vertex 3 X-coordinate {m}
+    10.681505213312,         !- Vertex 3 Y-coordinate {m}
+    2.591463853658,          !- Vertex 3 Z-coordinate {m}
+    36.536888727945,         !- Vertex 4 X-coordinate {m}
+    9.157114969410,          !- Vertex 4 Y-coordinate {m}
+    2.591463853658;          !- Vertex 4 Z-coordinate {m}
+
+BuildingSurface:Detailed,
+    m Floor C,               !- Name
+    Floor,                   !- Surface Type
+    ceiling-floor-layer,     !- Construction Name
+    M Corridor,              !- Zone Name
+    Surface,                 !- Outside Boundary Condition
+    g Ceiling C,             !- Outside Boundary Condition Object
+    NoSun,                   !- Sun Exposure
+    NoWind,                  !- Wind Exposure
+    0.0,                     !- View Factor to Ground
+    4,                       !- Number of Vertices
+    36.536888727945,         !- Vertex 1 X-coordinate {m}
+    9.157114969410,          !- Vertex 1 Y-coordinate {m}
+    0.000000439024,          !- Vertex 1 Z-coordinate {m}
+    0.000000000000,          !- Vertex 2 X-coordinate {m}
+    9.157114969410,          !- Vertex 2 Y-coordinate {m}
+    0.000000439024,          !- Vertex 2 Z-coordinate {m}
+    0.000000000000,          !- Vertex 3 X-coordinate {m}
+    10.681505213312,         !- Vertex 3 Y-coordinate {m}
+    0.000000439024,          !- Vertex 3 Z-coordinate {m}
+    36.536888727945,         !- Vertex 4 X-coordinate {m}
+    10.681505213312,         !- Vertex 4 Y-coordinate {m}
+    0.000000439024;          !- Vertex 4 Z-coordinate {m}
+
+BuildingSurface:Detailed,
+    T Floor C,               !- Name
+    Floor,                   !- Surface Type
+    ceiling-floor-layer,     !- Construction Name
+    T Corridor,              !- Zone Name
+    Surface,                 !- Outside Boundary Condition
+    m Ceiling C,             !- Outside Boundary Condition Object
+    NoSun,                   !- Sun Exposure
+    NoWind,                  !- Wind Exposure
+    0.0,                     !- View Factor to Ground
+    4,                       !- Number of Vertices
+    -0.000000272055,         !- Vertex 1 X-coordinate {m}
+    -10.681505030590,        !- Vertex 1 Y-coordinate {m}
+    0.002465853658,          !- Vertex 1 Z-coordinate {m}
+    -36.536889000000,        !- Vertex 2 X-coordinate {m}
+    -10.681505030590,        !- Vertex 2 Y-coordinate {m}
+    0.002465853658,          !- Vertex 2 Z-coordinate {m}
+    -36.536889000000,        !- Vertex 3 X-coordinate {m}
+    -9.157114786688,         !- Vertex 3 Y-coordinate {m}
+    0.002465853658,          !- Vertex 3 Z-coordinate {m}
+    -0.000000272055,         !- Vertex 4 X-coordinate {m}
+    -9.157114786688,         !- Vertex 4 Y-coordinate {m}
+    0.002465853658;          !- Vertex 4 Z-coordinate {m}
+
+BuildingSurface:Detailed,
+    T WWall C,               !- Name
+    Wall,                    !- Surface Type
+    Exterior Wall,           !- Construction Name
+    T Corridor,              !- Zone Name
+    Outdoors,                !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
+    SunExposed,              !- Sun Exposure
+    WindExposed,             !- Wind Exposure
+    autocalculate,           !- View Factor to Ground
+    4,                       !- Number of Vertices
+    -36.536889000000,        !- Vertex 1 X-coordinate {m}
+    -9.157114786688,         !- Vertex 1 Y-coordinate {m}
+    0.002465853658,          !- Vertex 1 Z-coordinate {m}
+    -36.536889000000,        !- Vertex 2 X-coordinate {m}
+    -10.681505030590,        !- Vertex 2 Y-coordinate {m}
+    0.002465853658,          !- Vertex 2 Z-coordinate {m}
+    -36.536889000000,        !- Vertex 3 X-coordinate {m}
+    -10.681505030590,        !- Vertex 3 Y-coordinate {m}
+    2.593929268292,          !- Vertex 3 Z-coordinate {m}
+    -36.536889000000,        !- Vertex 4 X-coordinate {m}
+    -9.157114786688,         !- Vertex 4 Y-coordinate {m}
+    2.593929268292;          !- Vertex 4 Z-coordinate {m}
+
+BuildingSurface:Detailed,
+    T EWall C,               !- Name
+    Wall,                    !- Surface Type
+    Exterior Wall,           !- Construction Name
+    T Corridor,              !- Zone Name
+    Outdoors,                !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
+    SunExposed,              !- Sun Exposure
+    WindExposed,             !- Wind Exposure
+    autocalculate,           !- View Factor to Ground
+    4,                       !- Number of Vertices
+    -0.000000272055,         !- Vertex 1 X-coordinate {m}
+    -10.681505030590,        !- Vertex 1 Y-coordinate {m}
+    0.002465853658,          !- Vertex 1 Z-coordinate {m}
+    -0.000000272055,         !- Vertex 2 X-coordinate {m}
+    -9.157114786688,         !- Vertex 2 Y-coordinate {m}
+    0.002465853658,          !- Vertex 2 Z-coordinate {m}
+    -0.000000272055,         !- Vertex 3 X-coordinate {m}
+    -9.157114786688,         !- Vertex 3 Y-coordinate {m}
+    2.593929268292,          !- Vertex 3 Z-coordinate {m}
+    -0.000000272055,         !- Vertex 4 X-coordinate {m}
+    -10.681505030590,        !- Vertex 4 Y-coordinate {m}
+    2.593929268292;          !- Vertex 4 Z-coordinate {m}
+
+BuildingSurface:Detailed,
+    T Ceiling C,             !- Name
+    Ceiling,                 !- Surface Type
+    Interior Ceiling,        !- Construction Name
+    T Corridor,              !- Zone Name
+    Zone,                    !- Outside Boundary Condition
+    attic,                   !- Outside Boundary Condition Object
+    NoSun,                   !- Sun Exposure
+    NoWind,                  !- Wind Exposure
+    0.0,                     !- View Factor to Ground
+    4,                       !- Number of Vertices
+    -36.536889000000,        !- Vertex 1 X-coordinate {m}
+    -10.681505030590,        !- Vertex 1 Y-coordinate {m}
+    2.593929268292,          !- Vertex 1 Z-coordinate {m}
+    -0.000000272055,         !- Vertex 2 X-coordinate {m}
+    -10.681505030590,        !- Vertex 2 Y-coordinate {m}
+    2.593929268292,          !- Vertex 2 Z-coordinate {m}
+    -0.000000272055,         !- Vertex 3 X-coordinate {m}
+    -9.157114786688,         !- Vertex 3 Y-coordinate {m}
+    2.593929268292,          !- Vertex 3 Z-coordinate {m}
+    -36.536889000000,        !- Vertex 4 X-coordinate {m}
+    -9.157114786688,         !- Vertex 4 Y-coordinate {m}
+    2.593929268292;          !- Vertex 4 Z-coordinate {m}
+
+
+!-   ===========  ALL OBJECTS IN CLASS: FENESTRATIONSURFACE:DETAILED ===========
+
+FenestrationSurface:Detailed,
     Window_ldf_unit1_FrontRow_BottomFloor,  !- Name
-    Window,  !- Surface Type
-    Exterior Window,  !- Construction Name
+    Window,                  !- Surface Type
+    Exterior Window,         !- Construction Name
     Wall_ldf_1.unit1_FrontRow_BottomFloor,  !- Building Surface Name
-    ,  !- Outside Boundary Condition Object
-    ,  !- View Factor to Ground
-    Shades,  !- Shading Control Name
-    ,  !- Frame and Divider Name
-    1,  !- Multiplier
-    4,  !- Number of Vertices
-    1.457249070632,  !- Vertex 1 X-coordinate {m}
-    0.000000000000,  !- Vertex 1 Y-coordinate {m}
-    1.067073170731,  !- Vertex 1 Z-coordinate {m}
-    5.957249070632,  !- Vertex 2 X-coordinate {m}
-    0.000000000000,  !- Vertex 2 Y-coordinate {m}
-    1.067073170731,  !- Vertex 2 Z-coordinate {m}
-    5.957249070632,  !- Vertex 3 X-coordinate {m}
-    0.000000000000,  !- Vertex 3 Y-coordinate {m}
-    2.591463414634,  !- Vertex 3 Z-coordinate {m}
-    1.457249070632,  !- Vertex 4 X-coordinate {m}
-    0.000000000000,  !- Vertex 4 Y-coordinate {m}
-    2.591463414634;  !- Vertex 4 Z-coordinate {m}
+    ,                        !- Outside Boundary Condition Object
+    ,                        !- View Factor to Ground
+    Shades,                  !- Shading Control Name
+    ,                        !- Frame and Divider Name
+    1,                       !- Multiplier
+    4,                       !- Number of Vertices
+    1.457249070632,          !- Vertex 1 X-coordinate {m}
+    0.000000000000,          !- Vertex 1 Y-coordinate {m}
+    1.067073170731,          !- Vertex 1 Z-coordinate {m}
+    5.957249070632,          !- Vertex 2 X-coordinate {m}
+    0.000000000000,          !- Vertex 2 Y-coordinate {m}
+    1.067073170731,          !- Vertex 2 Z-coordinate {m}
+    5.957249070632,          !- Vertex 3 X-coordinate {m}
+    0.000000000000,          !- Vertex 3 Y-coordinate {m}
+    2.591463414634,          !- Vertex 3 Z-coordinate {m}
+    1.457249070632,          !- Vertex 4 X-coordinate {m}
+    0.000000000000,          !- Vertex 4 Y-coordinate {m}
+    2.591463414634;          !- Vertex 4 Z-coordinate {m}
 
-  FenestrationSurface:Detailed,
+FenestrationSurface:Detailed,
     Window_ldf_unit2_FrontRow_BottomFloor,  !- Name
-    Window,  !- Surface Type
-    Exterior Window,  !- Construction Name
+    Window,                  !- Surface Type
+    Exterior Window,         !- Construction Name
     Wall_ldf_1.unit2_FrontRow_BottomFloor,  !- Building Surface Name
-    ,  !- Outside Boundary Condition Object
-    ,  !- View Factor to Ground
-    Shades,  !- Shading Control Name
-    ,  !- Frame and Divider Name
-    1,  !- Multiplier
-    4,  !- Number of Vertices
-    13.636211979947,  !- Vertex 1 X-coordinate {m}
-    0.000000000000,  !- Vertex 1 Y-coordinate {m}
-    1.067073170731,  !- Vertex 1 Z-coordinate {m}
-    18.136211979947,  !- Vertex 2 X-coordinate {m}
-    0.000000000000,  !- Vertex 2 Y-coordinate {m}
-    1.067073170731,  !- Vertex 2 Z-coordinate {m}
-    18.136211979947,  !- Vertex 3 X-coordinate {m}
-    0.000000000000,  !- Vertex 3 Y-coordinate {m}
-    2.591463414634,  !- Vertex 3 Z-coordinate {m}
-    13.636211979947,  !- Vertex 4 X-coordinate {m}
-    0.000000000000,  !- Vertex 4 Y-coordinate {m}
-    2.591463414634;  !- Vertex 4 Z-coordinate {m}
+    ,                        !- Outside Boundary Condition Object
+    ,                        !- View Factor to Ground
+    Shades,                  !- Shading Control Name
+    ,                        !- Frame and Divider Name
+    1,                       !- Multiplier
+    4,                       !- Number of Vertices
+    13.636211979947,         !- Vertex 1 X-coordinate {m}
+    0.000000000000,          !- Vertex 1 Y-coordinate {m}
+    1.067073170731,          !- Vertex 1 Z-coordinate {m}
+    18.136211979947,         !- Vertex 2 X-coordinate {m}
+    0.000000000000,          !- Vertex 2 Y-coordinate {m}
+    1.067073170731,          !- Vertex 2 Z-coordinate {m}
+    18.136211979947,         !- Vertex 3 X-coordinate {m}
+    0.000000000000,          !- Vertex 3 Y-coordinate {m}
+    2.591463414634,          !- Vertex 3 Z-coordinate {m}
+    13.636211979947,         !- Vertex 4 X-coordinate {m}
+    0.000000000000,          !- Vertex 4 Y-coordinate {m}
+    2.591463414634;          !- Vertex 4 Z-coordinate {m}
 
-  FenestrationSurface:Detailed,
+FenestrationSurface:Detailed,
     Window_sdr_unit3_FrontRow_BottomFloor,  !- Name
-    Window,  !- Surface Type
-    Exterior Window,  !- Construction Name
+    Window,                  !- Surface Type
+    Exterior Window,         !- Construction Name
     Wall_sdr_1.unit3_FrontRow_BottomFloor,  !- Building Surface Name
-    ,  !- Outside Boundary Condition Object
-    ,  !- View Factor to Ground
-    Shades,  !- Shading Control Name
-    ,  !- Frame and Divider Name
-    1,  !- Multiplier
-    4,  !- Number of Vertices
-    36.536888727945,  !- Vertex 1 X-coordinate {m}
-    1.000000000000,  !- Vertex 1 Y-coordinate {m}
-    1.067073170731,  !- Vertex 1 Z-coordinate {m}
-    36.536888727945,  !- Vertex 2 X-coordinate {m}
-    7.750000000000,  !- Vertex 2 Y-coordinate {m}
-    1.067073170731,  !- Vertex 2 Z-coordinate {m}
-    36.536888727945,  !- Vertex 3 X-coordinate {m}
-    7.750000000000,  !- Vertex 3 Y-coordinate {m}
-    2.591463414634,  !- Vertex 3 Z-coordinate {m}
-    36.536888727945,  !- Vertex 4 X-coordinate {m}
-    1.000000000000,  !- Vertex 4 Y-coordinate {m}
-    2.591463414634;  !- Vertex 4 Z-coordinate {m}
+    ,                        !- Outside Boundary Condition Object
+    ,                        !- View Factor to Ground
+    Shades,                  !- Shading Control Name
+    ,                        !- Frame and Divider Name
+    1,                       !- Multiplier
+    4,                       !- Number of Vertices
+    36.536888727945,         !- Vertex 1 X-coordinate {m}
+    1.000000000000,          !- Vertex 1 Y-coordinate {m}
+    1.067073170731,          !- Vertex 1 Z-coordinate {m}
+    36.536888727945,         !- Vertex 2 X-coordinate {m}
+    7.750000000000,          !- Vertex 2 Y-coordinate {m}
+    1.067073170731,          !- Vertex 2 Z-coordinate {m}
+    36.536888727945,         !- Vertex 3 X-coordinate {m}
+    7.750000000000,          !- Vertex 3 Y-coordinate {m}
+    2.591463414634,          !- Vertex 3 Z-coordinate {m}
+    36.536888727945,         !- Vertex 4 X-coordinate {m}
+    1.000000000000,          !- Vertex 4 Y-coordinate {m}
+    2.591463414634;          !- Vertex 4 Z-coordinate {m}
 
-  FenestrationSurface:Detailed,
+FenestrationSurface:Detailed,
     Window_sdl_unit3_FrontRow_BottomFloor,  !- Name
-    Window,  !- Surface Type
-    Exterior Window,  !- Construction Name
+    Window,                  !- Surface Type
+    Exterior Window,         !- Construction Name
     Wall_sdl_1.unit1_FrontRow_BottomFloor,  !- Building Surface Name
-    ,  !- Outside Boundary Condition Object
-    ,  !- View Factor to Ground
-    Shades,  !- Shading Control Name
-    ,  !- Frame and Divider Name
-    1,  !- Multiplier
-    4,  !- Number of Vertices
-    0.000000000000,  !- Vertex 1 X-coordinate {m}
-    8.157114969410,  !- Vertex 1 Y-coordinate {m}
-    1.067073170731,  !- Vertex 1 Z-coordinate {m}
-    0.000000000000,  !- Vertex 2 X-coordinate {m}
-    1.407114969410,  !- Vertex 2 Y-coordinate {m}
-    1.067073170731,  !- Vertex 2 Z-coordinate {m}
-    0.000000000000,  !- Vertex 3 X-coordinate {m}
-    1.407114969410,  !- Vertex 3 Y-coordinate {m}
-    2.591463414634,  !- Vertex 3 Z-coordinate {m}
-    0.000000000000,  !- Vertex 4 X-coordinate {m}
-    8.157114969410,  !- Vertex 4 Y-coordinate {m}
-    2.591463414634;  !- Vertex 4 Z-coordinate {m}
+    ,                        !- Outside Boundary Condition Object
+    ,                        !- View Factor to Ground
+    Shades,                  !- Shading Control Name
+    ,                        !- Frame and Divider Name
+    1,                       !- Multiplier
+    4,                       !- Number of Vertices
+    0.000000000000,          !- Vertex 1 X-coordinate {m}
+    8.157114969410,          !- Vertex 1 Y-coordinate {m}
+    1.067073170731,          !- Vertex 1 Z-coordinate {m}
+    0.000000000000,          !- Vertex 2 X-coordinate {m}
+    1.407114969410,          !- Vertex 2 Y-coordinate {m}
+    1.067073170731,          !- Vertex 2 Z-coordinate {m}
+    0.000000000000,          !- Vertex 3 X-coordinate {m}
+    1.407114969410,          !- Vertex 3 Y-coordinate {m}
+    2.591463414634,          !- Vertex 3 Z-coordinate {m}
+    0.000000000000,          !- Vertex 4 X-coordinate {m}
+    8.157114969410,          !- Vertex 4 Y-coordinate {m}
+    2.591463414634;          !- Vertex 4 Z-coordinate {m}
 
-  FenestrationSurface:Detailed,
+FenestrationSurface:Detailed,
     Window_ldf_unit3_FrontRow_BottomFloor,  !- Name
-    Window,  !- Surface Type
-    Exterior Window,  !- Construction Name
+    Window,                  !- Surface Type
+    Exterior Window,         !- Construction Name
     Wall_ldf_1.unit3_FrontRow_BottomFloor,  !- Building Surface Name
-    ,  !- Outside Boundary Condition Object
-    ,  !- View Factor to Ground
-    Shades,  !- Shading Control Name
-    ,  !- Frame and Divider Name
-    1,  !- Multiplier
-    4,  !- Number of Vertices
-    25.815174889262,  !- Vertex 1 X-coordinate {m}
-    0.000000000000,  !- Vertex 1 Y-coordinate {m}
-    1.067073170731,  !- Vertex 1 Z-coordinate {m}
-    30.315174889262,  !- Vertex 2 X-coordinate {m}
-    0.000000000000,  !- Vertex 2 Y-coordinate {m}
-    1.067073170731,  !- Vertex 2 Z-coordinate {m}
-    30.315174889262,  !- Vertex 3 X-coordinate {m}
-    0.000000000000,  !- Vertex 3 Y-coordinate {m}
-    2.591463414634,  !- Vertex 3 Z-coordinate {m}
-    25.815174889262,  !- Vertex 4 X-coordinate {m}
-    0.000000000000,  !- Vertex 4 Y-coordinate {m}
-    2.591463414634;  !- Vertex 4 Z-coordinate {m}
+    ,                        !- Outside Boundary Condition Object
+    ,                        !- View Factor to Ground
+    Shades,                  !- Shading Control Name
+    ,                        !- Frame and Divider Name
+    1,                       !- Multiplier
+    4,                       !- Number of Vertices
+    25.815174889262,         !- Vertex 1 X-coordinate {m}
+    0.000000000000,          !- Vertex 1 Y-coordinate {m}
+    1.067073170731,          !- Vertex 1 Z-coordinate {m}
+    30.315174889262,         !- Vertex 2 X-coordinate {m}
+    0.000000000000,          !- Vertex 2 Y-coordinate {m}
+    1.067073170731,          !- Vertex 2 Z-coordinate {m}
+    30.315174889262,         !- Vertex 3 X-coordinate {m}
+    0.000000000000,          !- Vertex 3 Y-coordinate {m}
+    2.591463414634,          !- Vertex 3 Z-coordinate {m}
+    25.815174889262,         !- Vertex 4 X-coordinate {m}
+    0.000000000000,          !- Vertex 4 Y-coordinate {m}
+    2.591463414634;          !- Vertex 4 Z-coordinate {m}
 
-  FenestrationSurface:Detailed,
+FenestrationSurface:Detailed,
     Window_ldb_unit1_BackRow_BottomFloor,  !- Name
-    Window,  !- Surface Type
-    Exterior Window,  !- Construction Name
+    Window,                  !- Surface Type
+    Exterior Window,         !- Construction Name
     Wall_ldb_1.unit1_BackRow_BottomFloor,  !- Building Surface Name
-    ,  !- Outside Boundary Condition Object
-    ,  !- View Factor to Ground
-    Shades,  !- Shading Control Name
-    ,  !- Frame and Divider Name
-    1,  !- Multiplier
-    4,  !- Number of Vertices
-    10.721713838683,  !- Vertex 1 X-coordinate {m}
-    19.838620182722,  !- Vertex 1 Y-coordinate {m}
-    1.067073170731,  !- Vertex 1 Z-coordinate {m}
-    6.221713838683,  !- Vertex 2 X-coordinate {m}
-    19.838620182722,  !- Vertex 2 Y-coordinate {m}
-    1.067073170731,  !- Vertex 2 Z-coordinate {m}
-    6.221713838683,  !- Vertex 3 X-coordinate {m}
-    19.838620182722,  !- Vertex 3 Y-coordinate {m}
-    2.591463414634,  !- Vertex 3 Z-coordinate {m}
-    10.721713838683,  !- Vertex 4 X-coordinate {m}
-    19.838620182722,  !- Vertex 4 Y-coordinate {m}
-    2.591463414634;  !- Vertex 4 Z-coordinate {m}
+    ,                        !- Outside Boundary Condition Object
+    ,                        !- View Factor to Ground
+    Shades,                  !- Shading Control Name
+    ,                        !- Frame and Divider Name
+    1,                       !- Multiplier
+    4,                       !- Number of Vertices
+    10.721713838683,         !- Vertex 1 X-coordinate {m}
+    19.838620182722,         !- Vertex 1 Y-coordinate {m}
+    1.067073170731,          !- Vertex 1 Z-coordinate {m}
+    6.221713838683,          !- Vertex 2 X-coordinate {m}
+    19.838620182722,         !- Vertex 2 Y-coordinate {m}
+    1.067073170731,          !- Vertex 2 Z-coordinate {m}
+    6.221713838683,          !- Vertex 3 X-coordinate {m}
+    19.838620182722,         !- Vertex 3 Y-coordinate {m}
+    2.591463414634,          !- Vertex 3 Z-coordinate {m}
+    10.721713838683,         !- Vertex 4 X-coordinate {m}
+    19.838620182722,         !- Vertex 4 Y-coordinate {m}
+    2.591463414634;          !- Vertex 4 Z-coordinate {m}
 
-  FenestrationSurface:Detailed,
+FenestrationSurface:Detailed,
     Window_ldb_unit2_BackRow_BottomFloor,  !- Name
-    Window,  !- Surface Type
-    Exterior Window,  !- Construction Name
+    Window,                  !- Surface Type
+    Exterior Window,         !- Construction Name
     Wall_ldb_1.unit2_BackRow_BottomFloor,  !- Building Surface Name
-    ,  !- Outside Boundary Condition Object
-    ,  !- View Factor to Ground
-    Shades,  !- Shading Control Name
-    ,  !- Frame and Divider Name
-    1,  !- Multiplier
-    4,  !- Number of Vertices
-    22.900676747998,  !- Vertex 1 X-coordinate {m}
-    19.838620182722,  !- Vertex 1 Y-coordinate {m}
-    1.067073170731,  !- Vertex 1 Z-coordinate {m}
-    18.400676747998,  !- Vertex 2 X-coordinate {m}
-    19.838620182722,  !- Vertex 2 Y-coordinate {m}
-    1.067073170731,  !- Vertex 2 Z-coordinate {m}
-    18.400676747998,  !- Vertex 3 X-coordinate {m}
-    19.838620182722,  !- Vertex 3 Y-coordinate {m}
-    2.591463414634,  !- Vertex 3 Z-coordinate {m}
-    22.900676747998,  !- Vertex 4 X-coordinate {m}
-    19.838620182722,  !- Vertex 4 Y-coordinate {m}
-    2.591463414634;  !- Vertex 4 Z-coordinate {m}
+    ,                        !- Outside Boundary Condition Object
+    ,                        !- View Factor to Ground
+    Shades,                  !- Shading Control Name
+    ,                        !- Frame and Divider Name
+    1,                       !- Multiplier
+    4,                       !- Number of Vertices
+    22.900676747998,         !- Vertex 1 X-coordinate {m}
+    19.838620182722,         !- Vertex 1 Y-coordinate {m}
+    1.067073170731,          !- Vertex 1 Z-coordinate {m}
+    18.400676747998,         !- Vertex 2 X-coordinate {m}
+    19.838620182722,         !- Vertex 2 Y-coordinate {m}
+    1.067073170731,          !- Vertex 2 Z-coordinate {m}
+    18.400676747998,         !- Vertex 3 X-coordinate {m}
+    19.838620182722,         !- Vertex 3 Y-coordinate {m}
+    2.591463414634,          !- Vertex 3 Z-coordinate {m}
+    22.900676747998,         !- Vertex 4 X-coordinate {m}
+    19.838620182722,         !- Vertex 4 Y-coordinate {m}
+    2.591463414634;          !- Vertex 4 Z-coordinate {m}
 
-  FenestrationSurface:Detailed,
+FenestrationSurface:Detailed,
     Window_sdr_unit3_BackRow_BottomFloor,  !- Name
-    Window,  !- Surface Type
-    Exterior Window,  !- Construction Name
+    Window,                  !- Surface Type
+    Exterior Window,         !- Construction Name
     Wall_sdr_1.unit3_BackRow_BottomFloor,  !- Building Surface Name
-    ,  !- Outside Boundary Condition Object
-    ,  !- View Factor to Ground
-    Shades,  !- Shading Control Name
-    ,  !- Frame and Divider Name
-    1,  !- Multiplier
-    4,  !- Number of Vertices
-    36.536888727945,  !- Vertex 1 X-coordinate {m}
-    11.681505213312,  !- Vertex 1 Y-coordinate {m}
-    1.067073170731,  !- Vertex 1 Z-coordinate {m}
-    36.536888727945,  !- Vertex 2 X-coordinate {m}
-    18.431505213312,  !- Vertex 2 Y-coordinate {m}
-    1.067073170731,  !- Vertex 2 Z-coordinate {m}
-    36.536888727945,  !- Vertex 3 X-coordinate {m}
-    18.431505213312,  !- Vertex 3 Y-coordinate {m}
-    2.591463414634,  !- Vertex 3 Z-coordinate {m}
-    36.536888727945,  !- Vertex 4 X-coordinate {m}
-    11.681505213312,  !- Vertex 4 Y-coordinate {m}
-    2.591463414634;  !- Vertex 4 Z-coordinate {m}
+    ,                        !- Outside Boundary Condition Object
+    ,                        !- View Factor to Ground
+    Shades,                  !- Shading Control Name
+    ,                        !- Frame and Divider Name
+    1,                       !- Multiplier
+    4,                       !- Number of Vertices
+    36.536888727945,         !- Vertex 1 X-coordinate {m}
+    11.681505213312,         !- Vertex 1 Y-coordinate {m}
+    1.067073170731,          !- Vertex 1 Z-coordinate {m}
+    36.536888727945,         !- Vertex 2 X-coordinate {m}
+    18.431505213312,         !- Vertex 2 Y-coordinate {m}
+    1.067073170731,          !- Vertex 2 Z-coordinate {m}
+    36.536888727945,         !- Vertex 3 X-coordinate {m}
+    18.431505213312,         !- Vertex 3 Y-coordinate {m}
+    2.591463414634,          !- Vertex 3 Z-coordinate {m}
+    36.536888727945,         !- Vertex 4 X-coordinate {m}
+    11.681505213312,         !- Vertex 4 Y-coordinate {m}
+    2.591463414634;          !- Vertex 4 Z-coordinate {m}
 
-  FenestrationSurface:Detailed,
+FenestrationSurface:Detailed,
     Window_sdl_unit3_BackRow_BottomFloor,  !- Name
-    Window,  !- Surface Type
-    Exterior Window,  !- Construction Name
+    Window,                  !- Surface Type
+    Exterior Window,         !- Construction Name
     Wall_sdl_1.unit1_BackRow_BottomFloor,  !- Building Surface Name
-    ,  !- Outside Boundary Condition Object
-    ,  !- View Factor to Ground
-    Shades,  !- Shading Control Name
-    ,  !- Frame and Divider Name
-    1,  !- Multiplier
-    4,  !- Number of Vertices
-    0.000000000000,  !- Vertex 1 X-coordinate {m}
-    18.838620182722,  !- Vertex 1 Y-coordinate {m}
-    1.067073170731,  !- Vertex 1 Z-coordinate {m}
-    0.000000000000,  !- Vertex 2 X-coordinate {m}
-    12.088620182722,  !- Vertex 2 Y-coordinate {m}
-    1.067073170731,  !- Vertex 2 Z-coordinate {m}
-    0.000000000000,  !- Vertex 3 X-coordinate {m}
-    12.088620182722,  !- Vertex 3 Y-coordinate {m}
-    2.591463414634,  !- Vertex 3 Z-coordinate {m}
-    0.000000000000,  !- Vertex 4 X-coordinate {m}
-    18.838620182722,  !- Vertex 4 Y-coordinate {m}
-    2.591463414634;  !- Vertex 4 Z-coordinate {m}
+    ,                        !- Outside Boundary Condition Object
+    ,                        !- View Factor to Ground
+    Shades,                  !- Shading Control Name
+    ,                        !- Frame and Divider Name
+    1,                       !- Multiplier
+    4,                       !- Number of Vertices
+    0.000000000000,          !- Vertex 1 X-coordinate {m}
+    18.838620182722,         !- Vertex 1 Y-coordinate {m}
+    1.067073170731,          !- Vertex 1 Z-coordinate {m}
+    0.000000000000,          !- Vertex 2 X-coordinate {m}
+    12.088620182722,         !- Vertex 2 Y-coordinate {m}
+    1.067073170731,          !- Vertex 2 Z-coordinate {m}
+    0.000000000000,          !- Vertex 3 X-coordinate {m}
+    12.088620182722,         !- Vertex 3 Y-coordinate {m}
+    2.591463414634,          !- Vertex 3 Z-coordinate {m}
+    0.000000000000,          !- Vertex 4 X-coordinate {m}
+    18.838620182722,         !- Vertex 4 Y-coordinate {m}
+    2.591463414634;          !- Vertex 4 Z-coordinate {m}
 
-  FenestrationSurface:Detailed,
+FenestrationSurface:Detailed,
     Window_ldb_unit3_BackRow_BottomFloor,  !- Name
-    Window,  !- Surface Type
-    Exterior Window,  !- Construction Name
+    Window,                  !- Surface Type
+    Exterior Window,         !- Construction Name
     Wall_ldb_1.unit3_BackRow_BottomFloor,  !- Building Surface Name
-    ,  !- Outside Boundary Condition Object
-    ,  !- View Factor to Ground
-    Shades,  !- Shading Control Name
-    ,  !- Frame and Divider Name
-    1,  !- Multiplier
-    4,  !- Number of Vertices
-    35.079639657313,  !- Vertex 1 X-coordinate {m}
-    19.838620182722,  !- Vertex 1 Y-coordinate {m}
-    1.067073170731,  !- Vertex 1 Z-coordinate {m}
-    30.579639657313,  !- Vertex 2 X-coordinate {m}
-    19.838620182722,  !- Vertex 2 Y-coordinate {m}
-    1.067073170731,  !- Vertex 2 Z-coordinate {m}
-    30.579639657313,  !- Vertex 3 X-coordinate {m}
-    19.838620182722,  !- Vertex 3 Y-coordinate {m}
-    2.591463414634,  !- Vertex 3 Z-coordinate {m}
-    35.079639657313,  !- Vertex 4 X-coordinate {m}
-    19.838620182722,  !- Vertex 4 Y-coordinate {m}
-    2.591463414634;  !- Vertex 4 Z-coordinate {m}
+    ,                        !- Outside Boundary Condition Object
+    ,                        !- View Factor to Ground
+    Shades,                  !- Shading Control Name
+    ,                        !- Frame and Divider Name
+    1,                       !- Multiplier
+    4,                       !- Number of Vertices
+    35.079639657313,         !- Vertex 1 X-coordinate {m}
+    19.838620182722,         !- Vertex 1 Y-coordinate {m}
+    1.067073170731,          !- Vertex 1 Z-coordinate {m}
+    30.579639657313,         !- Vertex 2 X-coordinate {m}
+    19.838620182722,         !- Vertex 2 Y-coordinate {m}
+    1.067073170731,          !- Vertex 2 Z-coordinate {m}
+    30.579639657313,         !- Vertex 3 X-coordinate {m}
+    19.838620182722,         !- Vertex 3 Y-coordinate {m}
+    2.591463414634,          !- Vertex 3 Z-coordinate {m}
+    35.079639657313,         !- Vertex 4 X-coordinate {m}
+    19.838620182722,         !- Vertex 4 Y-coordinate {m}
+    2.591463414634;          !- Vertex 4 Z-coordinate {m}
 
-  FenestrationSurface:Detailed,
+FenestrationSurface:Detailed,
     Window_ldf_unit1_FrontRow_MiddleFloor,  !- Name
-    Window,  !- Surface Type
-    Exterior Window,  !- Construction Name
+    Window,                  !- Surface Type
+    Exterior Window,         !- Construction Name
     Wall_ldf_1.unit1_FrontRow_MiddleFloor,  !- Building Surface Name
-    ,  !- Outside Boundary Condition Object
-    ,  !- View Factor to Ground
-    Shades,  !- Shading Control Name
-    ,  !- Frame and Divider Name
-    1,  !- Multiplier
-    4,  !- Number of Vertices
-    1.457249070632,  !- Vertex 1 X-coordinate {m}
-    0.000000000000,  !- Vertex 1 Y-coordinate {m}
-    3.656097561341,  !- Vertex 1 Z-coordinate {m}
-    5.957249070632,  !- Vertex 2 X-coordinate {m}
-    0.000000000000,  !- Vertex 2 Y-coordinate {m}
-    3.656097561341,  !- Vertex 2 Z-coordinate {m}
-    5.957249070632,  !- Vertex 3 X-coordinate {m}
-    0.000000000000,  !- Vertex 3 Y-coordinate {m}
-    5.180487805244,  !- Vertex 3 Z-coordinate {m}
-    1.457249070632,  !- Vertex 4 X-coordinate {m}
-    0.000000000000,  !- Vertex 4 Y-coordinate {m}
-    5.180487805244;  !- Vertex 4 Z-coordinate {m}
+    ,                        !- Outside Boundary Condition Object
+    ,                        !- View Factor to Ground
+    Shades,                  !- Shading Control Name
+    ,                        !- Frame and Divider Name
+    1,                       !- Multiplier
+    4,                       !- Number of Vertices
+    1.457249070632,          !- Vertex 1 X-coordinate {m}
+    0.000000000000,          !- Vertex 1 Y-coordinate {m}
+    3.656097561341,          !- Vertex 1 Z-coordinate {m}
+    5.957249070632,          !- Vertex 2 X-coordinate {m}
+    0.000000000000,          !- Vertex 2 Y-coordinate {m}
+    3.656097561341,          !- Vertex 2 Z-coordinate {m}
+    5.957249070632,          !- Vertex 3 X-coordinate {m}
+    0.000000000000,          !- Vertex 3 Y-coordinate {m}
+    5.180487805244,          !- Vertex 3 Z-coordinate {m}
+    1.457249070632,          !- Vertex 4 X-coordinate {m}
+    0.000000000000,          !- Vertex 4 Y-coordinate {m}
+    5.180487805244;          !- Vertex 4 Z-coordinate {m}
 
-  FenestrationSurface:Detailed,
+FenestrationSurface:Detailed,
     Window_ldf_unit2_FrontRow_MiddleFloor,  !- Name
-    Window,  !- Surface Type
-    Exterior Window,  !- Construction Name
+    Window,                  !- Surface Type
+    Exterior Window,         !- Construction Name
     Wall_ldf_1.unit2_FrontRow_MiddleFloor,  !- Building Surface Name
-    ,  !- Outside Boundary Condition Object
-    ,  !- View Factor to Ground
-    Shades,  !- Shading Control Name
-    ,  !- Frame and Divider Name
-    1,  !- Multiplier
-    4,  !- Number of Vertices
-    13.636211979947,  !- Vertex 1 X-coordinate {m}
-    0.000000000000,  !- Vertex 1 Y-coordinate {m}
-    3.656097561341,  !- Vertex 1 Z-coordinate {m}
-    18.136211979947,  !- Vertex 2 X-coordinate {m}
-    0.000000000000,  !- Vertex 2 Y-coordinate {m}
-    3.656097561341,  !- Vertex 2 Z-coordinate {m}
-    18.136211979947,  !- Vertex 3 X-coordinate {m}
-    0.000000000000,  !- Vertex 3 Y-coordinate {m}
-    5.180487805244,  !- Vertex 3 Z-coordinate {m}
-    13.636211979947,  !- Vertex 4 X-coordinate {m}
-    0.000000000000,  !- Vertex 4 Y-coordinate {m}
-    5.180487805244;  !- Vertex 4 Z-coordinate {m}
+    ,                        !- Outside Boundary Condition Object
+    ,                        !- View Factor to Ground
+    Shades,                  !- Shading Control Name
+    ,                        !- Frame and Divider Name
+    1,                       !- Multiplier
+    4,                       !- Number of Vertices
+    13.636211979947,         !- Vertex 1 X-coordinate {m}
+    0.000000000000,          !- Vertex 1 Y-coordinate {m}
+    3.656097561341,          !- Vertex 1 Z-coordinate {m}
+    18.136211979947,         !- Vertex 2 X-coordinate {m}
+    0.000000000000,          !- Vertex 2 Y-coordinate {m}
+    3.656097561341,          !- Vertex 2 Z-coordinate {m}
+    18.136211979947,         !- Vertex 3 X-coordinate {m}
+    0.000000000000,          !- Vertex 3 Y-coordinate {m}
+    5.180487805244,          !- Vertex 3 Z-coordinate {m}
+    13.636211979947,         !- Vertex 4 X-coordinate {m}
+    0.000000000000,          !- Vertex 4 Y-coordinate {m}
+    5.180487805244;          !- Vertex 4 Z-coordinate {m}
 
-  FenestrationSurface:Detailed,
+FenestrationSurface:Detailed,
     Window_sdr_unit3_FrontRow_MiddleFloor,  !- Name
-    Window,  !- Surface Type
-    Exterior Window,  !- Construction Name
+    Window,                  !- Surface Type
+    Exterior Window,         !- Construction Name
     Wall_sdr_1.unit3_FrontRow_MiddleFloor,  !- Building Surface Name
-    ,  !- Outside Boundary Condition Object
-    ,  !- View Factor to Ground
-    Shades,  !- Shading Control Name
-    ,  !- Frame and Divider Name
-    1,  !- Multiplier
-    4,  !- Number of Vertices
-    36.536888727945,  !- Vertex 1 X-coordinate {m}
-    1.000000000000,  !- Vertex 1 Y-coordinate {m}
-    3.656097561341,  !- Vertex 1 Z-coordinate {m}
-    36.536888727945,  !- Vertex 2 X-coordinate {m}
-    7.750000000000,  !- Vertex 2 Y-coordinate {m}
-    3.656097561341,  !- Vertex 2 Z-coordinate {m}
-    36.536888727945,  !- Vertex 3 X-coordinate {m}
-    7.750000000000,  !- Vertex 3 Y-coordinate {m}
-    5.180487805244,  !- Vertex 3 Z-coordinate {m}
-    36.536888727945,  !- Vertex 4 X-coordinate {m}
-    1.000000000000,  !- Vertex 4 Y-coordinate {m}
-    5.180487805244;  !- Vertex 4 Z-coordinate {m}
+    ,                        !- Outside Boundary Condition Object
+    ,                        !- View Factor to Ground
+    Shades,                  !- Shading Control Name
+    ,                        !- Frame and Divider Name
+    1,                       !- Multiplier
+    4,                       !- Number of Vertices
+    36.536888727945,         !- Vertex 1 X-coordinate {m}
+    1.000000000000,          !- Vertex 1 Y-coordinate {m}
+    3.656097561341,          !- Vertex 1 Z-coordinate {m}
+    36.536888727945,         !- Vertex 2 X-coordinate {m}
+    7.750000000000,          !- Vertex 2 Y-coordinate {m}
+    3.656097561341,          !- Vertex 2 Z-coordinate {m}
+    36.536888727945,         !- Vertex 3 X-coordinate {m}
+    7.750000000000,          !- Vertex 3 Y-coordinate {m}
+    5.180487805244,          !- Vertex 3 Z-coordinate {m}
+    36.536888727945,         !- Vertex 4 X-coordinate {m}
+    1.000000000000,          !- Vertex 4 Y-coordinate {m}
+    5.180487805244;          !- Vertex 4 Z-coordinate {m}
 
-  FenestrationSurface:Detailed,
+FenestrationSurface:Detailed,
     Window_sdl_unit3_FrontRow_MiddleFloor,  !- Name
-    Window,  !- Surface Type
-    Exterior Window,  !- Construction Name
+    Window,                  !- Surface Type
+    Exterior Window,         !- Construction Name
     Wall_sdl_1.unit1_FrontRow_MiddleFloor,  !- Building Surface Name
-    ,  !- Outside Boundary Condition Object
-    ,  !- View Factor to Ground
-    Shades,  !- Shading Control Name
-    ,  !- Frame and Divider Name
-    1,  !- Multiplier
-    4,  !- Number of Vertices
-    0.000000000000,  !- Vertex 1 X-coordinate {m}
-    8.157114969410,  !- Vertex 1 Y-coordinate {m}
-    3.656097561341,  !- Vertex 1 Z-coordinate {m}
-    0.000000000000,  !- Vertex 2 X-coordinate {m}
-    1.407114969410,  !- Vertex 2 Y-coordinate {m}
-    3.656097561341,  !- Vertex 2 Z-coordinate {m}
-    0.000000000000,  !- Vertex 3 X-coordinate {m}
-    1.407114969410,  !- Vertex 3 Y-coordinate {m}
-    5.180487805244,  !- Vertex 3 Z-coordinate {m}
-    0.000000000000,  !- Vertex 4 X-coordinate {m}
-    8.157114969410,  !- Vertex 4 Y-coordinate {m}
-    5.180487805244;  !- Vertex 4 Z-coordinate {m}
+    ,                        !- Outside Boundary Condition Object
+    ,                        !- View Factor to Ground
+    Shades,                  !- Shading Control Name
+    ,                        !- Frame and Divider Name
+    1,                       !- Multiplier
+    4,                       !- Number of Vertices
+    0.000000000000,          !- Vertex 1 X-coordinate {m}
+    8.157114969410,          !- Vertex 1 Y-coordinate {m}
+    3.656097561341,          !- Vertex 1 Z-coordinate {m}
+    0.000000000000,          !- Vertex 2 X-coordinate {m}
+    1.407114969410,          !- Vertex 2 Y-coordinate {m}
+    3.656097561341,          !- Vertex 2 Z-coordinate {m}
+    0.000000000000,          !- Vertex 3 X-coordinate {m}
+    1.407114969410,          !- Vertex 3 Y-coordinate {m}
+    5.180487805244,          !- Vertex 3 Z-coordinate {m}
+    0.000000000000,          !- Vertex 4 X-coordinate {m}
+    8.157114969410,          !- Vertex 4 Y-coordinate {m}
+    5.180487805244;          !- Vertex 4 Z-coordinate {m}
 
-  FenestrationSurface:Detailed,
+FenestrationSurface:Detailed,
     Window_ldf_unit3_FrontRow_MiddleFloor,  !- Name
-    Window,  !- Surface Type
-    Exterior Window,  !- Construction Name
+    Window,                  !- Surface Type
+    Exterior Window,         !- Construction Name
     Wall_ldf_1.unit3_FrontRow_MiddleFloor,  !- Building Surface Name
-    ,  !- Outside Boundary Condition Object
-    ,  !- View Factor to Ground
-    Shades,  !- Shading Control Name
-    ,  !- Frame and Divider Name
-    1,  !- Multiplier
-    4,  !- Number of Vertices
-    25.815174889262,  !- Vertex 1 X-coordinate {m}
-    0.000000000000,  !- Vertex 1 Y-coordinate {m}
-    3.656097561341,  !- Vertex 1 Z-coordinate {m}
-    30.315174889262,  !- Vertex 2 X-coordinate {m}
-    0.000000000000,  !- Vertex 2 Y-coordinate {m}
-    3.656097561341,  !- Vertex 2 Z-coordinate {m}
-    30.315174889262,  !- Vertex 3 X-coordinate {m}
-    0.000000000000,  !- Vertex 3 Y-coordinate {m}
-    5.180487805244,  !- Vertex 3 Z-coordinate {m}
-    25.815174889262,  !- Vertex 4 X-coordinate {m}
-    0.000000000000,  !- Vertex 4 Y-coordinate {m}
-    5.180487805244;  !- Vertex 4 Z-coordinate {m}
+    ,                        !- Outside Boundary Condition Object
+    ,                        !- View Factor to Ground
+    Shades,                  !- Shading Control Name
+    ,                        !- Frame and Divider Name
+    1,                       !- Multiplier
+    4,                       !- Number of Vertices
+    25.815174889262,         !- Vertex 1 X-coordinate {m}
+    0.000000000000,          !- Vertex 1 Y-coordinate {m}
+    3.656097561341,          !- Vertex 1 Z-coordinate {m}
+    30.315174889262,         !- Vertex 2 X-coordinate {m}
+    0.000000000000,          !- Vertex 2 Y-coordinate {m}
+    3.656097561341,          !- Vertex 2 Z-coordinate {m}
+    30.315174889262,         !- Vertex 3 X-coordinate {m}
+    0.000000000000,          !- Vertex 3 Y-coordinate {m}
+    5.180487805244,          !- Vertex 3 Z-coordinate {m}
+    25.815174889262,         !- Vertex 4 X-coordinate {m}
+    0.000000000000,          !- Vertex 4 Y-coordinate {m}
+    5.180487805244;          !- Vertex 4 Z-coordinate {m}
 
-  FenestrationSurface:Detailed,
+FenestrationSurface:Detailed,
     Window_ldb_unit1_BackRow_MiddleFloor,  !- Name
-    Window,  !- Surface Type
-    Exterior Window,  !- Construction Name
+    Window,                  !- Surface Type
+    Exterior Window,         !- Construction Name
     Wall_ldb_1.unit1_BackRow_MiddleFloor,  !- Building Surface Name
-    ,  !- Outside Boundary Condition Object
-    ,  !- View Factor to Ground
-    Shades,  !- Shading Control Name
-    ,  !- Frame and Divider Name
-    1,  !- Multiplier
-    4,  !- Number of Vertices
-    10.721713838683,  !- Vertex 1 X-coordinate {m}
-    19.838620182722,  !- Vertex 1 Y-coordinate {m}
-    3.656097561341,  !- Vertex 1 Z-coordinate {m}
-    6.221713838683,  !- Vertex 2 X-coordinate {m}
-    19.838620182722,  !- Vertex 2 Y-coordinate {m}
-    3.656097561341,  !- Vertex 2 Z-coordinate {m}
-    6.221713838683,  !- Vertex 3 X-coordinate {m}
-    19.838620182722,  !- Vertex 3 Y-coordinate {m}
-    5.180487805244,  !- Vertex 3 Z-coordinate {m}
-    10.721713838683,  !- Vertex 4 X-coordinate {m}
-    19.838620182722,  !- Vertex 4 Y-coordinate {m}
-    5.180487805244;  !- Vertex 4 Z-coordinate {m}
+    ,                        !- Outside Boundary Condition Object
+    ,                        !- View Factor to Ground
+    Shades,                  !- Shading Control Name
+    ,                        !- Frame and Divider Name
+    1,                       !- Multiplier
+    4,                       !- Number of Vertices
+    10.721713838683,         !- Vertex 1 X-coordinate {m}
+    19.838620182722,         !- Vertex 1 Y-coordinate {m}
+    3.656097561341,          !- Vertex 1 Z-coordinate {m}
+    6.221713838683,          !- Vertex 2 X-coordinate {m}
+    19.838620182722,         !- Vertex 2 Y-coordinate {m}
+    3.656097561341,          !- Vertex 2 Z-coordinate {m}
+    6.221713838683,          !- Vertex 3 X-coordinate {m}
+    19.838620182722,         !- Vertex 3 Y-coordinate {m}
+    5.180487805244,          !- Vertex 3 Z-coordinate {m}
+    10.721713838683,         !- Vertex 4 X-coordinate {m}
+    19.838620182722,         !- Vertex 4 Y-coordinate {m}
+    5.180487805244;          !- Vertex 4 Z-coordinate {m}
 
-  FenestrationSurface:Detailed,
+FenestrationSurface:Detailed,
     Window_ldb_unit2_BackRow_MiddleFloor,  !- Name
-    Window,  !- Surface Type
-    Exterior Window,  !- Construction Name
+    Window,                  !- Surface Type
+    Exterior Window,         !- Construction Name
     Wall_ldb_1.unit2_BackRow_MiddleFloor,  !- Building Surface Name
-    ,  !- Outside Boundary Condition Object
-    ,  !- View Factor to Ground
-    Shades,  !- Shading Control Name
-    ,  !- Frame and Divider Name
-    1,  !- Multiplier
-    4,  !- Number of Vertices
-    22.900676747998,  !- Vertex 1 X-coordinate {m}
-    19.838620182722,  !- Vertex 1 Y-coordinate {m}
-    3.656097561341,  !- Vertex 1 Z-coordinate {m}
-    18.400676747998,  !- Vertex 2 X-coordinate {m}
-    19.838620182722,  !- Vertex 2 Y-coordinate {m}
-    3.656097561341,  !- Vertex 2 Z-coordinate {m}
-    18.400676747998,  !- Vertex 3 X-coordinate {m}
-    19.838620182722,  !- Vertex 3 Y-coordinate {m}
-    5.180487805244,  !- Vertex 3 Z-coordinate {m}
-    22.900676747998,  !- Vertex 4 X-coordinate {m}
-    19.838620182722,  !- Vertex 4 Y-coordinate {m}
-    5.180487805244;  !- Vertex 4 Z-coordinate {m}
+    ,                        !- Outside Boundary Condition Object
+    ,                        !- View Factor to Ground
+    Shades,                  !- Shading Control Name
+    ,                        !- Frame and Divider Name
+    1,                       !- Multiplier
+    4,                       !- Number of Vertices
+    22.900676747998,         !- Vertex 1 X-coordinate {m}
+    19.838620182722,         !- Vertex 1 Y-coordinate {m}
+    3.656097561341,          !- Vertex 1 Z-coordinate {m}
+    18.400676747998,         !- Vertex 2 X-coordinate {m}
+    19.838620182722,         !- Vertex 2 Y-coordinate {m}
+    3.656097561341,          !- Vertex 2 Z-coordinate {m}
+    18.400676747998,         !- Vertex 3 X-coordinate {m}
+    19.838620182722,         !- Vertex 3 Y-coordinate {m}
+    5.180487805244,          !- Vertex 3 Z-coordinate {m}
+    22.900676747998,         !- Vertex 4 X-coordinate {m}
+    19.838620182722,         !- Vertex 4 Y-coordinate {m}
+    5.180487805244;          !- Vertex 4 Z-coordinate {m}
 
-  FenestrationSurface:Detailed,
+FenestrationSurface:Detailed,
     Window_sdr_unit3_BackRow_MiddleFloor,  !- Name
-    Window,  !- Surface Type
-    Exterior Window,  !- Construction Name
+    Window,                  !- Surface Type
+    Exterior Window,         !- Construction Name
     Wall_sdr_1.unit3_BackRow_MiddleFloor,  !- Building Surface Name
-    ,  !- Outside Boundary Condition Object
-    ,  !- View Factor to Ground
-    Shades,  !- Shading Control Name
-    ,  !- Frame and Divider Name
-    1,  !- Multiplier
-    4,  !- Number of Vertices
-    36.536888727945,  !- Vertex 1 X-coordinate {m}
-    11.681505213312,  !- Vertex 1 Y-coordinate {m}
-    3.656097561341,  !- Vertex 1 Z-coordinate {m}
-    36.536888727945,  !- Vertex 2 X-coordinate {m}
-    18.431505213312,  !- Vertex 2 Y-coordinate {m}
-    3.656097561341,  !- Vertex 2 Z-coordinate {m}
-    36.536888727945,  !- Vertex 3 X-coordinate {m}
-    18.431505213312,  !- Vertex 3 Y-coordinate {m}
-    5.180487805244,  !- Vertex 3 Z-coordinate {m}
-    36.536888727945,  !- Vertex 4 X-coordinate {m}
-    11.681505213312,  !- Vertex 4 Y-coordinate {m}
-    5.180487805244;  !- Vertex 4 Z-coordinate {m}
+    ,                        !- Outside Boundary Condition Object
+    ,                        !- View Factor to Ground
+    Shades,                  !- Shading Control Name
+    ,                        !- Frame and Divider Name
+    1,                       !- Multiplier
+    4,                       !- Number of Vertices
+    36.536888727945,         !- Vertex 1 X-coordinate {m}
+    11.681505213312,         !- Vertex 1 Y-coordinate {m}
+    3.656097561341,          !- Vertex 1 Z-coordinate {m}
+    36.536888727945,         !- Vertex 2 X-coordinate {m}
+    18.431505213312,         !- Vertex 2 Y-coordinate {m}
+    3.656097561341,          !- Vertex 2 Z-coordinate {m}
+    36.536888727945,         !- Vertex 3 X-coordinate {m}
+    18.431505213312,         !- Vertex 3 Y-coordinate {m}
+    5.180487805244,          !- Vertex 3 Z-coordinate {m}
+    36.536888727945,         !- Vertex 4 X-coordinate {m}
+    11.681505213312,         !- Vertex 4 Y-coordinate {m}
+    5.180487805244;          !- Vertex 4 Z-coordinate {m}
 
-  FenestrationSurface:Detailed,
+FenestrationSurface:Detailed,
     Window_sdl_unit3_BackRow_MiddleFloor,  !- Name
-    Window,  !- Surface Type
-    Exterior Window,  !- Construction Name
+    Window,                  !- Surface Type
+    Exterior Window,         !- Construction Name
     Wall_sdl_1.unit1_BackRow_MiddleFloor,  !- Building Surface Name
-    ,  !- Outside Boundary Condition Object
-    ,  !- View Factor to Ground
-    Shades,  !- Shading Control Name
-    ,  !- Frame and Divider Name
-    1,  !- Multiplier
-    4,  !- Number of Vertices
-    0.000000000000,  !- Vertex 1 X-coordinate {m}
-    18.838620182722,  !- Vertex 1 Y-coordinate {m}
-    3.656097561341,  !- Vertex 1 Z-coordinate {m}
-    0.000000000000,  !- Vertex 2 X-coordinate {m}
-    12.088620182722,  !- Vertex 2 Y-coordinate {m}
-    3.656097561341,  !- Vertex 2 Z-coordinate {m}
-    0.000000000000,  !- Vertex 3 X-coordinate {m}
-    12.088620182722,  !- Vertex 3 Y-coordinate {m}
-    5.180487805244,  !- Vertex 3 Z-coordinate {m}
-    0.000000000000,  !- Vertex 4 X-coordinate {m}
-    18.838620182722,  !- Vertex 4 Y-coordinate {m}
-    5.180487805244;  !- Vertex 4 Z-coordinate {m}
+    ,                        !- Outside Boundary Condition Object
+    ,                        !- View Factor to Ground
+    Shades,                  !- Shading Control Name
+    ,                        !- Frame and Divider Name
+    1,                       !- Multiplier
+    4,                       !- Number of Vertices
+    0.000000000000,          !- Vertex 1 X-coordinate {m}
+    18.838620182722,         !- Vertex 1 Y-coordinate {m}
+    3.656097561341,          !- Vertex 1 Z-coordinate {m}
+    0.000000000000,          !- Vertex 2 X-coordinate {m}
+    12.088620182722,         !- Vertex 2 Y-coordinate {m}
+    3.656097561341,          !- Vertex 2 Z-coordinate {m}
+    0.000000000000,          !- Vertex 3 X-coordinate {m}
+    12.088620182722,         !- Vertex 3 Y-coordinate {m}
+    5.180487805244,          !- Vertex 3 Z-coordinate {m}
+    0.000000000000,          !- Vertex 4 X-coordinate {m}
+    18.838620182722,         !- Vertex 4 Y-coordinate {m}
+    5.180487805244;          !- Vertex 4 Z-coordinate {m}
 
-  FenestrationSurface:Detailed,
+FenestrationSurface:Detailed,
     Window_ldb_unit3_BackRow_MiddleFloor,  !- Name
-    Window,  !- Surface Type
-    Exterior Window,  !- Construction Name
+    Window,                  !- Surface Type
+    Exterior Window,         !- Construction Name
     Wall_ldb_1.unit3_BackRow_MiddleFloor,  !- Building Surface Name
-    ,  !- Outside Boundary Condition Object
-    ,  !- View Factor to Ground
-    Shades,  !- Shading Control Name
-    ,  !- Frame and Divider Name
-    1,  !- Multiplier
-    4,  !- Number of Vertices
-    35.079639657313,  !- Vertex 1 X-coordinate {m}
-    19.838620182722,  !- Vertex 1 Y-coordinate {m}
-    3.656097561341,  !- Vertex 1 Z-coordinate {m}
-    30.579639657313,  !- Vertex 2 X-coordinate {m}
-    19.838620182722,  !- Vertex 2 Y-coordinate {m}
-    3.656097561341,  !- Vertex 2 Z-coordinate {m}
-    30.579639657313,  !- Vertex 3 X-coordinate {m}
-    19.838620182722,  !- Vertex 3 Y-coordinate {m}
-    5.180487805244,  !- Vertex 3 Z-coordinate {m}
-    35.079639657313,  !- Vertex 4 X-coordinate {m}
-    19.838620182722,  !- Vertex 4 Y-coordinate {m}
-    5.180487805244;  !- Vertex 4 Z-coordinate {m}
+    ,                        !- Outside Boundary Condition Object
+    ,                        !- View Factor to Ground
+    Shades,                  !- Shading Control Name
+    ,                        !- Frame and Divider Name
+    1,                       !- Multiplier
+    4,                       !- Number of Vertices
+    35.079639657313,         !- Vertex 1 X-coordinate {m}
+    19.838620182722,         !- Vertex 1 Y-coordinate {m}
+    3.656097561341,          !- Vertex 1 Z-coordinate {m}
+    30.579639657313,         !- Vertex 2 X-coordinate {m}
+    19.838620182722,         !- Vertex 2 Y-coordinate {m}
+    3.656097561341,          !- Vertex 2 Z-coordinate {m}
+    30.579639657313,         !- Vertex 3 X-coordinate {m}
+    19.838620182722,         !- Vertex 3 Y-coordinate {m}
+    5.180487805244,          !- Vertex 3 Z-coordinate {m}
+    35.079639657313,         !- Vertex 4 X-coordinate {m}
+    19.838620182722,         !- Vertex 4 Y-coordinate {m}
+    5.180487805244;          !- Vertex 4 Z-coordinate {m}
 
-  FenestrationSurface:Detailed,
+FenestrationSurface:Detailed,
     Window_ldf_unit1_FrontRow_TopFloor,  !- Name
-    Window,  !- Surface Type
-    Exterior Window,  !- Construction Name
+    Window,                  !- Surface Type
+    Exterior Window,         !- Construction Name
     Wall_ldf_1.unit1_FrontRow_TopFloor,  !- Building Surface Name
-    ,  !- Outside Boundary Condition Object
-    ,  !- View Factor to Ground
-    Shades,  !- Shading Control Name
-    ,  !- Frame and Divider Name
-    1,  !- Multiplier
-    4,  !- Number of Vertices
-    1.457249070632,  !- Vertex 1 X-coordinate {m}
-    0.000000000000,  !- Vertex 1 Y-coordinate {m}
-    6.247534146341,  !- Vertex 1 Z-coordinate {m}
-    5.957249070632,  !- Vertex 2 X-coordinate {m}
-    0.000000000000,  !- Vertex 2 Y-coordinate {m}
-    6.247534146341,  !- Vertex 2 Z-coordinate {m}
-    5.957249070632,  !- Vertex 3 X-coordinate {m}
-    0.000000000000,  !- Vertex 3 Y-coordinate {m}
-    7.771924390244,  !- Vertex 3 Z-coordinate {m}
-    1.457249070632,  !- Vertex 4 X-coordinate {m}
-    0.000000000000,  !- Vertex 4 Y-coordinate {m}
-    7.771924390244;  !- Vertex 4 Z-coordinate {m}
+    ,                        !- Outside Boundary Condition Object
+    ,                        !- View Factor to Ground
+    Shades,                  !- Shading Control Name
+    ,                        !- Frame and Divider Name
+    1,                       !- Multiplier
+    4,                       !- Number of Vertices
+    1.457249070632,          !- Vertex 1 X-coordinate {m}
+    0.000000000000,          !- Vertex 1 Y-coordinate {m}
+    6.247534146341,          !- Vertex 1 Z-coordinate {m}
+    5.957249070632,          !- Vertex 2 X-coordinate {m}
+    0.000000000000,          !- Vertex 2 Y-coordinate {m}
+    6.247534146341,          !- Vertex 2 Z-coordinate {m}
+    5.957249070632,          !- Vertex 3 X-coordinate {m}
+    0.000000000000,          !- Vertex 3 Y-coordinate {m}
+    7.771924390244,          !- Vertex 3 Z-coordinate {m}
+    1.457249070632,          !- Vertex 4 X-coordinate {m}
+    0.000000000000,          !- Vertex 4 Y-coordinate {m}
+    7.771924390244;          !- Vertex 4 Z-coordinate {m}
 
-  FenestrationSurface:Detailed,
+FenestrationSurface:Detailed,
     Window_ldf_unit2_FrontRow_TopFloor,  !- Name
-    Window,  !- Surface Type
-    Exterior Window,  !- Construction Name
+    Window,                  !- Surface Type
+    Exterior Window,         !- Construction Name
     Wall_ldf_1.unit2_FrontRow_TopFloor,  !- Building Surface Name
-    ,  !- Outside Boundary Condition Object
-    ,  !- View Factor to Ground
-    Shades,  !- Shading Control Name
-    ,  !- Frame and Divider Name
-    1,  !- Multiplier
-    4,  !- Number of Vertices
-    13.636211979947,  !- Vertex 1 X-coordinate {m}
-    0.000000000000,  !- Vertex 1 Y-coordinate {m}
-    6.247534146341,  !- Vertex 1 Z-coordinate {m}
-    18.136211979947,  !- Vertex 2 X-coordinate {m}
-    0.000000000000,  !- Vertex 2 Y-coordinate {m}
-    6.247534146341,  !- Vertex 2 Z-coordinate {m}
-    18.136211979947,  !- Vertex 3 X-coordinate {m}
-    0.000000000000,  !- Vertex 3 Y-coordinate {m}
-    7.771924390244,  !- Vertex 3 Z-coordinate {m}
-    13.636211979947,  !- Vertex 4 X-coordinate {m}
-    0.000000000000,  !- Vertex 4 Y-coordinate {m}
-    7.771924390244;  !- Vertex 4 Z-coordinate {m}
+    ,                        !- Outside Boundary Condition Object
+    ,                        !- View Factor to Ground
+    Shades,                  !- Shading Control Name
+    ,                        !- Frame and Divider Name
+    1,                       !- Multiplier
+    4,                       !- Number of Vertices
+    13.636211979947,         !- Vertex 1 X-coordinate {m}
+    0.000000000000,          !- Vertex 1 Y-coordinate {m}
+    6.247534146341,          !- Vertex 1 Z-coordinate {m}
+    18.136211979947,         !- Vertex 2 X-coordinate {m}
+    0.000000000000,          !- Vertex 2 Y-coordinate {m}
+    6.247534146341,          !- Vertex 2 Z-coordinate {m}
+    18.136211979947,         !- Vertex 3 X-coordinate {m}
+    0.000000000000,          !- Vertex 3 Y-coordinate {m}
+    7.771924390244,          !- Vertex 3 Z-coordinate {m}
+    13.636211979947,         !- Vertex 4 X-coordinate {m}
+    0.000000000000,          !- Vertex 4 Y-coordinate {m}
+    7.771924390244;          !- Vertex 4 Z-coordinate {m}
 
-  FenestrationSurface:Detailed,
+FenestrationSurface:Detailed,
     Window_sdr_unit3_FrontRow_TopFloor,  !- Name
-    Window,  !- Surface Type
-    Exterior Window,  !- Construction Name
+    Window,                  !- Surface Type
+    Exterior Window,         !- Construction Name
     Wall_sdr_1.unit3_FrontRow_TopFloor,  !- Building Surface Name
-    ,  !- Outside Boundary Condition Object
-    ,  !- View Factor to Ground
-    Shades,  !- Shading Control Name
-    ,  !- Frame and Divider Name
-    1,  !- Multiplier
-    4,  !- Number of Vertices
-    36.536888727945,  !- Vertex 1 X-coordinate {m}
-    1.000000000000,  !- Vertex 1 Y-coordinate {m}
-    6.247534146341,  !- Vertex 1 Z-coordinate {m}
-    36.536888727945,  !- Vertex 2 X-coordinate {m}
-    7.750000000000,  !- Vertex 2 Y-coordinate {m}
-    6.247534146341,  !- Vertex 2 Z-coordinate {m}
-    36.536888727945,  !- Vertex 3 X-coordinate {m}
-    7.750000000000,  !- Vertex 3 Y-coordinate {m}
-    7.771924390244,  !- Vertex 3 Z-coordinate {m}
-    36.536888727945,  !- Vertex 4 X-coordinate {m}
-    1.000000000000,  !- Vertex 4 Y-coordinate {m}
-    7.771924390244;  !- Vertex 4 Z-coordinate {m}
+    ,                        !- Outside Boundary Condition Object
+    ,                        !- View Factor to Ground
+    Shades,                  !- Shading Control Name
+    ,                        !- Frame and Divider Name
+    1,                       !- Multiplier
+    4,                       !- Number of Vertices
+    36.536888727945,         !- Vertex 1 X-coordinate {m}
+    1.000000000000,          !- Vertex 1 Y-coordinate {m}
+    6.247534146341,          !- Vertex 1 Z-coordinate {m}
+    36.536888727945,         !- Vertex 2 X-coordinate {m}
+    7.750000000000,          !- Vertex 2 Y-coordinate {m}
+    6.247534146341,          !- Vertex 2 Z-coordinate {m}
+    36.536888727945,         !- Vertex 3 X-coordinate {m}
+    7.750000000000,          !- Vertex 3 Y-coordinate {m}
+    7.771924390244,          !- Vertex 3 Z-coordinate {m}
+    36.536888727945,         !- Vertex 4 X-coordinate {m}
+    1.000000000000,          !- Vertex 4 Y-coordinate {m}
+    7.771924390244;          !- Vertex 4 Z-coordinate {m}
 
-  FenestrationSurface:Detailed,
+FenestrationSurface:Detailed,
     Window_sdl_unit3_FrontRow_TopFloor,  !- Name
-    Window,  !- Surface Type
-    Exterior Window,  !- Construction Name
+    Window,                  !- Surface Type
+    Exterior Window,         !- Construction Name
     Wall_sdl_1.unit1_FrontRow_TopFloor,  !- Building Surface Name
-    ,  !- Outside Boundary Condition Object
-    ,  !- View Factor to Ground
-    Shades,  !- Shading Control Name
-    ,  !- Frame and Divider Name
-    1,  !- Multiplier
-    4,  !- Number of Vertices
-    0.000000000000,  !- Vertex 1 X-coordinate {m}
-    8.157114969410,  !- Vertex 1 Y-coordinate {m}
-    6.247534146341,  !- Vertex 1 Z-coordinate {m}
-    0.000000000000,  !- Vertex 2 X-coordinate {m}
-    1.407114969410,  !- Vertex 2 Y-coordinate {m}
-    6.247534146341,  !- Vertex 2 Z-coordinate {m}
-    0.000000000000,  !- Vertex 3 X-coordinate {m}
-    1.407114969410,  !- Vertex 3 Y-coordinate {m}
-    7.771924390244,  !- Vertex 3 Z-coordinate {m}
-    0.000000000000,  !- Vertex 4 X-coordinate {m}
-    8.157114969410,  !- Vertex 4 Y-coordinate {m}
-    7.771924390244;  !- Vertex 4 Z-coordinate {m}
+    ,                        !- Outside Boundary Condition Object
+    ,                        !- View Factor to Ground
+    Shades,                  !- Shading Control Name
+    ,                        !- Frame and Divider Name
+    1,                       !- Multiplier
+    4,                       !- Number of Vertices
+    0.000000000000,          !- Vertex 1 X-coordinate {m}
+    8.157114969410,          !- Vertex 1 Y-coordinate {m}
+    6.247534146341,          !- Vertex 1 Z-coordinate {m}
+    0.000000000000,          !- Vertex 2 X-coordinate {m}
+    1.407114969410,          !- Vertex 2 Y-coordinate {m}
+    6.247534146341,          !- Vertex 2 Z-coordinate {m}
+    0.000000000000,          !- Vertex 3 X-coordinate {m}
+    1.407114969410,          !- Vertex 3 Y-coordinate {m}
+    7.771924390244,          !- Vertex 3 Z-coordinate {m}
+    0.000000000000,          !- Vertex 4 X-coordinate {m}
+    8.157114969410,          !- Vertex 4 Y-coordinate {m}
+    7.771924390244;          !- Vertex 4 Z-coordinate {m}
 
-  FenestrationSurface:Detailed,
+FenestrationSurface:Detailed,
     Window_ldf_unit3_FrontRow_TopFloor,  !- Name
-    Window,  !- Surface Type
-    Exterior Window,  !- Construction Name
+    Window,                  !- Surface Type
+    Exterior Window,         !- Construction Name
     Wall_ldf_1.unit3_FrontRow_TopFloor,  !- Building Surface Name
-    ,  !- Outside Boundary Condition Object
-    ,  !- View Factor to Ground
-    Shades,  !- Shading Control Name
-    ,  !- Frame and Divider Name
-    1,  !- Multiplier
-    4,  !- Number of Vertices
-    25.815174889262,  !- Vertex 1 X-coordinate {m}
-    0.000000000000,  !- Vertex 1 Y-coordinate {m}
-    6.247534146341,  !- Vertex 1 Z-coordinate {m}
-    30.315174889262,  !- Vertex 2 X-coordinate {m}
-    0.000000000000,  !- Vertex 2 Y-coordinate {m}
-    6.247534146341,  !- Vertex 2 Z-coordinate {m}
-    30.315174889262,  !- Vertex 3 X-coordinate {m}
-    0.000000000000,  !- Vertex 3 Y-coordinate {m}
-    7.771924390244,  !- Vertex 3 Z-coordinate {m}
-    25.815174889262,  !- Vertex 4 X-coordinate {m}
-    0.000000000000,  !- Vertex 4 Y-coordinate {m}
-    7.771924390244;  !- Vertex 4 Z-coordinate {m}
+    ,                        !- Outside Boundary Condition Object
+    ,                        !- View Factor to Ground
+    Shades,                  !- Shading Control Name
+    ,                        !- Frame and Divider Name
+    1,                       !- Multiplier
+    4,                       !- Number of Vertices
+    25.815174889262,         !- Vertex 1 X-coordinate {m}
+    0.000000000000,          !- Vertex 1 Y-coordinate {m}
+    6.247534146341,          !- Vertex 1 Z-coordinate {m}
+    30.315174889262,         !- Vertex 2 X-coordinate {m}
+    0.000000000000,          !- Vertex 2 Y-coordinate {m}
+    6.247534146341,          !- Vertex 2 Z-coordinate {m}
+    30.315174889262,         !- Vertex 3 X-coordinate {m}
+    0.000000000000,          !- Vertex 3 Y-coordinate {m}
+    7.771924390244,          !- Vertex 3 Z-coordinate {m}
+    25.815174889262,         !- Vertex 4 X-coordinate {m}
+    0.000000000000,          !- Vertex 4 Y-coordinate {m}
+    7.771924390244;          !- Vertex 4 Z-coordinate {m}
 
-  FenestrationSurface:Detailed,
+FenestrationSurface:Detailed,
     Window_ldb_unit1_BackRow_TopFloor,  !- Name
-    Window,  !- Surface Type
-    Exterior Window,  !- Construction Name
+    Window,                  !- Surface Type
+    Exterior Window,         !- Construction Name
     Wall_ldb_1.unit1_BackRow_TopFloor,  !- Building Surface Name
-    ,  !- Outside Boundary Condition Object
-    ,  !- View Factor to Ground
-    Shades,  !- Shading Control Name
-    ,  !- Frame and Divider Name
-    1,  !- Multiplier
-    4,  !- Number of Vertices
-    10.721713838683,  !- Vertex 1 X-coordinate {m}
-    19.838620182722,  !- Vertex 1 Y-coordinate {m}
-    6.247534146341,  !- Vertex 1 Z-coordinate {m}
-    6.221713838683,  !- Vertex 2 X-coordinate {m}
-    19.838620182722,  !- Vertex 2 Y-coordinate {m}
-    6.247534146341,  !- Vertex 2 Z-coordinate {m}
-    6.221713838683,  !- Vertex 3 X-coordinate {m}
-    19.838620182722,  !- Vertex 3 Y-coordinate {m}
-    7.771924390244,  !- Vertex 3 Z-coordinate {m}
-    10.721713838683,  !- Vertex 4 X-coordinate {m}
-    19.838620182722,  !- Vertex 4 Y-coordinate {m}
-    7.771924390244;  !- Vertex 4 Z-coordinate {m}
+    ,                        !- Outside Boundary Condition Object
+    ,                        !- View Factor to Ground
+    Shades,                  !- Shading Control Name
+    ,                        !- Frame and Divider Name
+    1,                       !- Multiplier
+    4,                       !- Number of Vertices
+    10.721713838683,         !- Vertex 1 X-coordinate {m}
+    19.838620182722,         !- Vertex 1 Y-coordinate {m}
+    6.247534146341,          !- Vertex 1 Z-coordinate {m}
+    6.221713838683,          !- Vertex 2 X-coordinate {m}
+    19.838620182722,         !- Vertex 2 Y-coordinate {m}
+    6.247534146341,          !- Vertex 2 Z-coordinate {m}
+    6.221713838683,          !- Vertex 3 X-coordinate {m}
+    19.838620182722,         !- Vertex 3 Y-coordinate {m}
+    7.771924390244,          !- Vertex 3 Z-coordinate {m}
+    10.721713838683,         !- Vertex 4 X-coordinate {m}
+    19.838620182722,         !- Vertex 4 Y-coordinate {m}
+    7.771924390244;          !- Vertex 4 Z-coordinate {m}
 
-  FenestrationSurface:Detailed,
+FenestrationSurface:Detailed,
     Window_ldb_unit2_BackRow_TopFloor,  !- Name
-    Window,  !- Surface Type
-    Exterior Window,  !- Construction Name
+    Window,                  !- Surface Type
+    Exterior Window,         !- Construction Name
     Wall_ldb_1.unit2_BackRow_TopFloor,  !- Building Surface Name
-    ,  !- Outside Boundary Condition Object
-    ,  !- View Factor to Ground
-    Shades,  !- Shading Control Name
-    ,  !- Frame and Divider Name
-    1,  !- Multiplier
-    4,  !- Number of Vertices
-    22.900676747998,  !- Vertex 1 X-coordinate {m}
-    19.838620182722,  !- Vertex 1 Y-coordinate {m}
-    6.247534146341,  !- Vertex 1 Z-coordinate {m}
-    18.400676747998,  !- Vertex 2 X-coordinate {m}
-    19.838620182722,  !- Vertex 2 Y-coordinate {m}
-    6.247534146341,  !- Vertex 2 Z-coordinate {m}
-    18.400676747998,  !- Vertex 3 X-coordinate {m}
-    19.838620182722,  !- Vertex 3 Y-coordinate {m}
-    7.771924390244,  !- Vertex 3 Z-coordinate {m}
-    22.900676747998,  !- Vertex 4 X-coordinate {m}
-    19.838620182722,  !- Vertex 4 Y-coordinate {m}
-    7.771924390244;  !- Vertex 4 Z-coordinate {m}
+    ,                        !- Outside Boundary Condition Object
+    ,                        !- View Factor to Ground
+    Shades,                  !- Shading Control Name
+    ,                        !- Frame and Divider Name
+    1,                       !- Multiplier
+    4,                       !- Number of Vertices
+    22.900676747998,         !- Vertex 1 X-coordinate {m}
+    19.838620182722,         !- Vertex 1 Y-coordinate {m}
+    6.247534146341,          !- Vertex 1 Z-coordinate {m}
+    18.400676747998,         !- Vertex 2 X-coordinate {m}
+    19.838620182722,         !- Vertex 2 Y-coordinate {m}
+    6.247534146341,          !- Vertex 2 Z-coordinate {m}
+    18.400676747998,         !- Vertex 3 X-coordinate {m}
+    19.838620182722,         !- Vertex 3 Y-coordinate {m}
+    7.771924390244,          !- Vertex 3 Z-coordinate {m}
+    22.900676747998,         !- Vertex 4 X-coordinate {m}
+    19.838620182722,         !- Vertex 4 Y-coordinate {m}
+    7.771924390244;          !- Vertex 4 Z-coordinate {m}
 
-  FenestrationSurface:Detailed,
+FenestrationSurface:Detailed,
     Window_sdr_unit3_BackRow_TopFloor,  !- Name
-    Window,  !- Surface Type
-    Exterior Window,  !- Construction Name
+    Window,                  !- Surface Type
+    Exterior Window,         !- Construction Name
     Wall_sdr_1.unit3_BackRow_TopFloor,  !- Building Surface Name
-    ,  !- Outside Boundary Condition Object
-    ,  !- View Factor to Ground
-    Shades,  !- Shading Control Name
-    ,  !- Frame and Divider Name
-    1,  !- Multiplier
-    4,  !- Number of Vertices
-    36.536888727945,  !- Vertex 1 X-coordinate {m}
-    11.681505213312,  !- Vertex 1 Y-coordinate {m}
-    6.247534146341,  !- Vertex 1 Z-coordinate {m}
-    36.536888727945,  !- Vertex 2 X-coordinate {m}
-    18.431505213312,  !- Vertex 2 Y-coordinate {m}
-    6.247534146341,  !- Vertex 2 Z-coordinate {m}
-    36.536888727945,  !- Vertex 3 X-coordinate {m}
-    18.431505213312,  !- Vertex 3 Y-coordinate {m}
-    7.771924390244,  !- Vertex 3 Z-coordinate {m}
-    36.536888727945,  !- Vertex 4 X-coordinate {m}
-    11.681505213312,  !- Vertex 4 Y-coordinate {m}
-    7.771924390244;  !- Vertex 4 Z-coordinate {m}
+    ,                        !- Outside Boundary Condition Object
+    ,                        !- View Factor to Ground
+    Shades,                  !- Shading Control Name
+    ,                        !- Frame and Divider Name
+    1,                       !- Multiplier
+    4,                       !- Number of Vertices
+    36.536888727945,         !- Vertex 1 X-coordinate {m}
+    11.681505213312,         !- Vertex 1 Y-coordinate {m}
+    6.247534146341,          !- Vertex 1 Z-coordinate {m}
+    36.536888727945,         !- Vertex 2 X-coordinate {m}
+    18.431505213312,         !- Vertex 2 Y-coordinate {m}
+    6.247534146341,          !- Vertex 2 Z-coordinate {m}
+    36.536888727945,         !- Vertex 3 X-coordinate {m}
+    18.431505213312,         !- Vertex 3 Y-coordinate {m}
+    7.771924390244,          !- Vertex 3 Z-coordinate {m}
+    36.536888727945,         !- Vertex 4 X-coordinate {m}
+    11.681505213312,         !- Vertex 4 Y-coordinate {m}
+    7.771924390244;          !- Vertex 4 Z-coordinate {m}
 
-  FenestrationSurface:Detailed,
+FenestrationSurface:Detailed,
     Window_sdl_unit3_BackRow_TopFloor,  !- Name
-    Window,  !- Surface Type
-    Exterior Window,  !- Construction Name
+    Window,                  !- Surface Type
+    Exterior Window,         !- Construction Name
     Wall_sdl_1.unit1_BackRow_TopFloor,  !- Building Surface Name
-    ,  !- Outside Boundary Condition Object
-    ,  !- View Factor to Ground
-    Shades,  !- Shading Control Name
-    ,  !- Frame and Divider Name
-    1,  !- Multiplier
-    4,  !- Number of Vertices
-    0.000000000000,  !- Vertex 1 X-coordinate {m}
-    18.838620182722,  !- Vertex 1 Y-coordinate {m}
-    6.247534146341,  !- Vertex 1 Z-coordinate {m}
-    0.000000000000,  !- Vertex 2 X-coordinate {m}
-    12.088620182722,  !- Vertex 2 Y-coordinate {m}
-    6.247534146341,  !- Vertex 2 Z-coordinate {m}
-    0.000000000000,  !- Vertex 3 X-coordinate {m}
-    12.088620182722,  !- Vertex 3 Y-coordinate {m}
-    7.771924390244,  !- Vertex 3 Z-coordinate {m}
-    0.000000000000,  !- Vertex 4 X-coordinate {m}
-    18.838620182722,  !- Vertex 4 Y-coordinate {m}
-    7.771924390244;  !- Vertex 4 Z-coordinate {m}
+    ,                        !- Outside Boundary Condition Object
+    ,                        !- View Factor to Ground
+    Shades,                  !- Shading Control Name
+    ,                        !- Frame and Divider Name
+    1,                       !- Multiplier
+    4,                       !- Number of Vertices
+    0.000000000000,          !- Vertex 1 X-coordinate {m}
+    18.838620182722,         !- Vertex 1 Y-coordinate {m}
+    6.247534146341,          !- Vertex 1 Z-coordinate {m}
+    0.000000000000,          !- Vertex 2 X-coordinate {m}
+    12.088620182722,         !- Vertex 2 Y-coordinate {m}
+    6.247534146341,          !- Vertex 2 Z-coordinate {m}
+    0.000000000000,          !- Vertex 3 X-coordinate {m}
+    12.088620182722,         !- Vertex 3 Y-coordinate {m}
+    7.771924390244,          !- Vertex 3 Z-coordinate {m}
+    0.000000000000,          !- Vertex 4 X-coordinate {m}
+    18.838620182722,         !- Vertex 4 Y-coordinate {m}
+    7.771924390244;          !- Vertex 4 Z-coordinate {m}
 
-  FenestrationSurface:Detailed,
+FenestrationSurface:Detailed,
     Window_ldb_unit3_BackRow_TopFloor,  !- Name
-    Window,  !- Surface Type
-    Exterior Window,  !- Construction Name
+    Window,                  !- Surface Type
+    Exterior Window,         !- Construction Name
     Wall_ldb_1.unit3_BackRow_TopFloor,  !- Building Surface Name
-    ,  !- Outside Boundary Condition Object
-    ,  !- View Factor to Ground
-    Shades,  !- Shading Control Name
-    ,  !- Frame and Divider Name
-    1,  !- Multiplier
-    4,  !- Number of Vertices
-    35.079639657313,  !- Vertex 1 X-coordinate {m}
-    19.838620182722,  !- Vertex 1 Y-coordinate {m}
-    6.247534146341,  !- Vertex 1 Z-coordinate {m}
-    30.579639657313,  !- Vertex 2 X-coordinate {m}
-    19.838620182722,  !- Vertex 2 Y-coordinate {m}
-    6.247534146341,  !- Vertex 2 Z-coordinate {m}
-    30.579639657313,  !- Vertex 3 X-coordinate {m}
-    19.838620182722,  !- Vertex 3 Y-coordinate {m}
-    7.771924390244,  !- Vertex 3 Z-coordinate {m}
-    35.079639657313,  !- Vertex 4 X-coordinate {m}
-    19.838620182722,  !- Vertex 4 Y-coordinate {m}
-    7.771924390244;  !- Vertex 4 Z-coordinate {m}
+    ,                        !- Outside Boundary Condition Object
+    ,                        !- View Factor to Ground
+    Shades,                  !- Shading Control Name
+    ,                        !- Frame and Divider Name
+    1,                       !- Multiplier
+    4,                       !- Number of Vertices
+    35.079639657313,         !- Vertex 1 X-coordinate {m}
+    19.838620182722,         !- Vertex 1 Y-coordinate {m}
+    6.247534146341,          !- Vertex 1 Z-coordinate {m}
+    30.579639657313,         !- Vertex 2 X-coordinate {m}
+    19.838620182722,         !- Vertex 2 Y-coordinate {m}
+    6.247534146341,          !- Vertex 2 Z-coordinate {m}
+    30.579639657313,         !- Vertex 3 X-coordinate {m}
+    19.838620182722,         !- Vertex 3 Y-coordinate {m}
+    7.771924390244,          !- Vertex 3 Z-coordinate {m}
+    35.079639657313,         !- Vertex 4 X-coordinate {m}
+    19.838620182722,         !- Vertex 4 Y-coordinate {m}
+    7.771924390244;          !- Vertex 4 Z-coordinate {m}
 
-
-!-   ===========  ALL OBJECTS IN CLASS: DOOR ===========
-
-  FenestrationSurface:Detailed,
+FenestrationSurface:Detailed,
     Door_ldb_unit1_FrontRow_BottomFloor,  !- Name
-    Door,  !- Surface Type
-    Exterior Door,  !- Construction Name
+    Door,                    !- Surface Type
+    Interior Door,           !- Construction Name
     Wall_ldb_1.unit1_FrontRow_BottomFloor,  !- Building Surface Name
-    ,  !- Outside Boundary Condition Object
-    ,  !- View Factor to Ground
-    ,  !- Shading Control Name
-    ,  !- Frame and Divider Name
-    1,  !- Multiplier
-    4,  !- Number of Vertices
-    11.678962909315,  !- Vertex 1 X-coordinate {m}
-    9.157114969410,  !- Vertex 1 Y-coordinate {m}
-    0.152439024390,  !- Vertex 1 Z-coordinate {m}
-    10.764362909315,  !- Vertex 2 X-coordinate {m}
-    9.157114969410,  !- Vertex 2 Y-coordinate {m}
-    0.152439024390,  !- Vertex 2 Z-coordinate {m}
-    10.764362909315,  !- Vertex 3 X-coordinate {m}
-    9.157114969410,  !- Vertex 3 Y-coordinate {m}
-    2.286585365853,  !- Vertex 3 Z-coordinate {m}
-    11.678962909315,  !- Vertex 4 X-coordinate {m}
-    9.157114969410,  !- Vertex 4 Y-coordinate {m}
-    2.286585365853;  !- Vertex 4 Z-coordinate {m}
+    ,                        !- Outside Boundary Condition Object
+    ,                        !- View Factor to Ground
+    ,                        !- Shading Control Name
+    ,                        !- Frame and Divider Name
+    1,                       !- Multiplier
+    4,                       !- Number of Vertices
+    11.678962909315,         !- Vertex 1 X-coordinate {m}
+    9.157114969410,          !- Vertex 1 Y-coordinate {m}
+    0.152439024390,          !- Vertex 1 Z-coordinate {m}
+    10.764362909315,         !- Vertex 2 X-coordinate {m}
+    9.157114969410,          !- Vertex 2 Y-coordinate {m}
+    0.152439024390,          !- Vertex 2 Z-coordinate {m}
+    10.764362909315,         !- Vertex 3 X-coordinate {m}
+    9.157114969410,          !- Vertex 3 Y-coordinate {m}
+    2.286585365853,          !- Vertex 3 Z-coordinate {m}
+    11.678962909315,         !- Vertex 4 X-coordinate {m}
+    9.157114969410,          !- Vertex 4 Y-coordinate {m}
+    2.286585365853;          !- Vertex 4 Z-coordinate {m}
 
-  FenestrationSurface:Detailed,
+FenestrationSurface:Detailed,
     Door_ldb_unit2_FrontRow_BottomFloor,  !- Name
-    Door,  !- Surface Type
-    Exterior Door,  !- Construction Name
+    Door,                    !- Surface Type
+    Interior Door,           !- Construction Name
     Wall_ldb_1.unit2_FrontRow_BottomFloor,  !- Building Surface Name
-    ,  !- Outside Boundary Condition Object
-    ,  !- View Factor to Ground
-    ,  !- Shading Control Name
-    ,  !- Frame and Divider Name
-    1,  !- Multiplier
-    4,  !- Number of Vertices
-    23.857925818630,  !- Vertex 1 X-coordinate {m}
-    9.157114969410,  !- Vertex 1 Y-coordinate {m}
-    0.152439024390,  !- Vertex 1 Z-coordinate {m}
-    22.943325818630,  !- Vertex 2 X-coordinate {m}
-    9.157114969410,  !- Vertex 2 Y-coordinate {m}
-    0.152439024390,  !- Vertex 2 Z-coordinate {m}
-    22.943325818630,  !- Vertex 3 X-coordinate {m}
-    9.157114969410,  !- Vertex 3 Y-coordinate {m}
-    2.286585365853,  !- Vertex 3 Z-coordinate {m}
-    23.857925818630,  !- Vertex 4 X-coordinate {m}
-    9.157114969410,  !- Vertex 4 Y-coordinate {m}
-    2.286585365853;  !- Vertex 4 Z-coordinate {m}
+    ,                        !- Outside Boundary Condition Object
+    ,                        !- View Factor to Ground
+    ,                        !- Shading Control Name
+    ,                        !- Frame and Divider Name
+    1,                       !- Multiplier
+    4,                       !- Number of Vertices
+    23.857925818630,         !- Vertex 1 X-coordinate {m}
+    9.157114969410,          !- Vertex 1 Y-coordinate {m}
+    0.152439024390,          !- Vertex 1 Z-coordinate {m}
+    22.943325818630,         !- Vertex 2 X-coordinate {m}
+    9.157114969410,          !- Vertex 2 Y-coordinate {m}
+    0.152439024390,          !- Vertex 2 Z-coordinate {m}
+    22.943325818630,         !- Vertex 3 X-coordinate {m}
+    9.157114969410,          !- Vertex 3 Y-coordinate {m}
+    2.286585365853,          !- Vertex 3 Z-coordinate {m}
+    23.857925818630,         !- Vertex 4 X-coordinate {m}
+    9.157114969410,          !- Vertex 4 Y-coordinate {m}
+    2.286585365853;          !- Vertex 4 Z-coordinate {m}
 
-  FenestrationSurface:Detailed,
+FenestrationSurface:Detailed,
     Door_ldb_unit3_FrontRow_BottomFloor,  !- Name
-    Door,  !- Surface Type
-    Exterior Door,  !- Construction Name
+    Door,                    !- Surface Type
+    Interior Door,           !- Construction Name
     Wall_ldb_1.unit3_FrontRow_BottomFloor,  !- Building Surface Name
-    ,  !- Outside Boundary Condition Object
-    ,  !- View Factor to Ground
-    ,  !- Shading Control Name
-    ,  !- Frame and Divider Name
-    1,  !- Multiplier
-    4,  !- Number of Vertices
-    36.036888727945,  !- Vertex 1 X-coordinate {m}
-    9.157114969410,  !- Vertex 1 Y-coordinate {m}
-    0.152439024390,  !- Vertex 1 Z-coordinate {m}
-    35.122288727945,  !- Vertex 2 X-coordinate {m}
-    9.157114969410,  !- Vertex 2 Y-coordinate {m}
-    0.152439024390,  !- Vertex 2 Z-coordinate {m}
-    35.122288727945,  !- Vertex 3 X-coordinate {m}
-    9.157114969410,  !- Vertex 3 Y-coordinate {m}
-    2.286585365853,  !- Vertex 3 Z-coordinate {m}
-    36.036888727945,  !- Vertex 4 X-coordinate {m}
-    9.157114969410,  !- Vertex 4 Y-coordinate {m}
-    2.286585365853;  !- Vertex 4 Z-coordinate {m}
+    ,                        !- Outside Boundary Condition Object
+    ,                        !- View Factor to Ground
+    ,                        !- Shading Control Name
+    ,                        !- Frame and Divider Name
+    1,                       !- Multiplier
+    4,                       !- Number of Vertices
+    36.036888727945,         !- Vertex 1 X-coordinate {m}
+    9.157114969410,          !- Vertex 1 Y-coordinate {m}
+    0.152439024390,          !- Vertex 1 Z-coordinate {m}
+    35.122288727945,         !- Vertex 2 X-coordinate {m}
+    9.157114969410,          !- Vertex 2 Y-coordinate {m}
+    0.152439024390,          !- Vertex 2 Z-coordinate {m}
+    35.122288727945,         !- Vertex 3 X-coordinate {m}
+    9.157114969410,          !- Vertex 3 Y-coordinate {m}
+    2.286585365853,          !- Vertex 3 Z-coordinate {m}
+    36.036888727945,         !- Vertex 4 X-coordinate {m}
+    9.157114969410,          !- Vertex 4 Y-coordinate {m}
+    2.286585365853;          !- Vertex 4 Z-coordinate {m}
 
-  FenestrationSurface:Detailed,
+FenestrationSurface:Detailed,
     Door_ldf_unit1_BackRow_BottomFloor,  !- Name
-    Door,  !- Surface Type
-    Exterior Door,  !- Construction Name
+    Door,                    !- Surface Type
+    Interior Door,           !- Construction Name
     Wall_ldf_1.unit1_BackRow_BottomFloor,  !- Building Surface Name
-    ,  !- Outside Boundary Condition Object
-    ,  !- View Factor to Ground
-    ,  !- Shading Control Name
-    ,  !- Frame and Divider Name
-    1,  !- Multiplier
-    4,  !- Number of Vertices
-    0.500000000000,  !- Vertex 1 X-coordinate {m}
-    10.681505213312,  !- Vertex 1 Y-coordinate {m}
-    0.152439024390,  !- Vertex 1 Z-coordinate {m}
-    1.414600000000,  !- Vertex 2 X-coordinate {m}
-    10.681505213312,  !- Vertex 2 Y-coordinate {m}
-    0.152439024390,  !- Vertex 2 Z-coordinate {m}
-    1.414600000000,  !- Vertex 3 X-coordinate {m}
-    10.681505213312,  !- Vertex 3 Y-coordinate {m}
-    2.286585365853,  !- Vertex 3 Z-coordinate {m}
-    0.500000000000,  !- Vertex 4 X-coordinate {m}
-    10.681505213312,  !- Vertex 4 Y-coordinate {m}
-    2.286585365853;  !- Vertex 4 Z-coordinate {m}
+    ,                        !- Outside Boundary Condition Object
+    ,                        !- View Factor to Ground
+    ,                        !- Shading Control Name
+    ,                        !- Frame and Divider Name
+    1,                       !- Multiplier
+    4,                       !- Number of Vertices
+    0.500000000000,          !- Vertex 1 X-coordinate {m}
+    10.681505213312,         !- Vertex 1 Y-coordinate {m}
+    0.152439024390,          !- Vertex 1 Z-coordinate {m}
+    1.414600000000,          !- Vertex 2 X-coordinate {m}
+    10.681505213312,         !- Vertex 2 Y-coordinate {m}
+    0.152439024390,          !- Vertex 2 Z-coordinate {m}
+    1.414600000000,          !- Vertex 3 X-coordinate {m}
+    10.681505213312,         !- Vertex 3 Y-coordinate {m}
+    2.286585365853,          !- Vertex 3 Z-coordinate {m}
+    0.500000000000,          !- Vertex 4 X-coordinate {m}
+    10.681505213312,         !- Vertex 4 Y-coordinate {m}
+    2.286585365853;          !- Vertex 4 Z-coordinate {m}
 
-  FenestrationSurface:Detailed,
+FenestrationSurface:Detailed,
     Door_ldf_unit2_BackRow_BottomFloor,  !- Name
-    Door,  !- Surface Type
-    Exterior Door,  !- Construction Name
+    Door,                    !- Surface Type
+    Interior Door,           !- Construction Name
     Wall_ldf_1.unit2_BackRow_BottomFloor,  !- Building Surface Name
-    ,  !- Outside Boundary Condition Object
-    ,  !- View Factor to Ground
-    ,  !- Shading Control Name
-    ,  !- Frame and Divider Name
-    1,  !- Multiplier
-    4,  !- Number of Vertices
-    12.678962909315,  !- Vertex 1 X-coordinate {m}
-    10.681505213312,  !- Vertex 1 Y-coordinate {m}
-    0.152439024390,  !- Vertex 1 Z-coordinate {m}
-    13.593562909315,  !- Vertex 2 X-coordinate {m}
-    10.681505213312,  !- Vertex 2 Y-coordinate {m}
-    0.152439024390,  !- Vertex 2 Z-coordinate {m}
-    13.593562909315,  !- Vertex 3 X-coordinate {m}
-    10.681505213312,  !- Vertex 3 Y-coordinate {m}
-    2.286585365853,  !- Vertex 3 Z-coordinate {m}
-    12.678962909315,  !- Vertex 4 X-coordinate {m}
-    10.681505213312,  !- Vertex 4 Y-coordinate {m}
-    2.286585365853;  !- Vertex 4 Z-coordinate {m}
+    ,                        !- Outside Boundary Condition Object
+    ,                        !- View Factor to Ground
+    ,                        !- Shading Control Name
+    ,                        !- Frame and Divider Name
+    1,                       !- Multiplier
+    4,                       !- Number of Vertices
+    12.678962909315,         !- Vertex 1 X-coordinate {m}
+    10.681505213312,         !- Vertex 1 Y-coordinate {m}
+    0.152439024390,          !- Vertex 1 Z-coordinate {m}
+    13.593562909315,         !- Vertex 2 X-coordinate {m}
+    10.681505213312,         !- Vertex 2 Y-coordinate {m}
+    0.152439024390,          !- Vertex 2 Z-coordinate {m}
+    13.593562909315,         !- Vertex 3 X-coordinate {m}
+    10.681505213312,         !- Vertex 3 Y-coordinate {m}
+    2.286585365853,          !- Vertex 3 Z-coordinate {m}
+    12.678962909315,         !- Vertex 4 X-coordinate {m}
+    10.681505213312,         !- Vertex 4 Y-coordinate {m}
+    2.286585365853;          !- Vertex 4 Z-coordinate {m}
 
-  FenestrationSurface:Detailed,
+FenestrationSurface:Detailed,
     Door_ldf_unit3_BackRow_BottomFloor,  !- Name
-    Door,  !- Surface Type
-    Exterior Door,  !- Construction Name
+    Door,                    !- Surface Type
+    Interior Door,           !- Construction Name
     Wall_ldf_1.unit3_BackRow_BottomFloor,  !- Building Surface Name
-    ,  !- Outside Boundary Condition Object
-    ,  !- View Factor to Ground
-    ,  !- Shading Control Name
-    ,  !- Frame and Divider Name
-    1,  !- Multiplier
-    4,  !- Number of Vertices
-    24.857925818630,  !- Vertex 1 X-coordinate {m}
-    10.681505213312,  !- Vertex 1 Y-coordinate {m}
-    0.152439024390,  !- Vertex 1 Z-coordinate {m}
-    25.772525818630,  !- Vertex 2 X-coordinate {m}
-    10.681505213312,  !- Vertex 2 Y-coordinate {m}
-    0.152439024390,  !- Vertex 2 Z-coordinate {m}
-    25.772525818630,  !- Vertex 3 X-coordinate {m}
-    10.681505213312,  !- Vertex 3 Y-coordinate {m}
-    2.286585365853,  !- Vertex 3 Z-coordinate {m}
-    24.857925818630,  !- Vertex 4 X-coordinate {m}
-    10.681505213312,  !- Vertex 4 Y-coordinate {m}
-    2.286585365853;  !- Vertex 4 Z-coordinate {m}
+    ,                        !- Outside Boundary Condition Object
+    ,                        !- View Factor to Ground
+    ,                        !- Shading Control Name
+    ,                        !- Frame and Divider Name
+    1,                       !- Multiplier
+    4,                       !- Number of Vertices
+    24.857925818630,         !- Vertex 1 X-coordinate {m}
+    10.681505213312,         !- Vertex 1 Y-coordinate {m}
+    0.152439024390,          !- Vertex 1 Z-coordinate {m}
+    25.772525818630,         !- Vertex 2 X-coordinate {m}
+    10.681505213312,         !- Vertex 2 Y-coordinate {m}
+    0.152439024390,          !- Vertex 2 Z-coordinate {m}
+    25.772525818630,         !- Vertex 3 X-coordinate {m}
+    10.681505213312,         !- Vertex 3 Y-coordinate {m}
+    2.286585365853,          !- Vertex 3 Z-coordinate {m}
+    24.857925818630,         !- Vertex 4 X-coordinate {m}
+    10.681505213312,         !- Vertex 4 Y-coordinate {m}
+    2.286585365853;          !- Vertex 4 Z-coordinate {m}
 
-  FenestrationSurface:Detailed,
+FenestrationSurface:Detailed,
     Door_ldb_unit1_FrontRow_MiddleFloor,  !- Name
-    Door,  !- Surface Type
-    Exterior Door,  !- Construction Name
+    Door,                    !- Surface Type
+    Interior Door,           !- Construction Name
     Wall_ldb_1.unit1_FrontRow_MiddleFloor,  !- Building Surface Name
-    ,  !- Outside Boundary Condition Object
-    ,  !- View Factor to Ground
-    ,  !- Shading Control Name
-    ,  !- Frame and Divider Name
-    1,  !- Multiplier
-    4,  !- Number of Vertices
-    11.678962909315,  !- Vertex 1 X-coordinate {m}
-    9.157114969410,  !- Vertex 1 Y-coordinate {m}
-    2.741463415000,  !- Vertex 1 Z-coordinate {m}
-    10.764362909315,  !- Vertex 2 X-coordinate {m}
-    9.157114969410,  !- Vertex 2 Y-coordinate {m}
-    2.741463415000,  !- Vertex 2 Z-coordinate {m}
-    10.764362909315,  !- Vertex 3 X-coordinate {m}
-    9.157114969410,  !- Vertex 3 Y-coordinate {m}
-    4.875609756463,  !- Vertex 3 Z-coordinate {m}
-    11.678962909315,  !- Vertex 4 X-coordinate {m}
-    9.157114969410,  !- Vertex 4 Y-coordinate {m}
-    4.875609756463;  !- Vertex 4 Z-coordinate {m}
+    ,                        !- Outside Boundary Condition Object
+    ,                        !- View Factor to Ground
+    ,                        !- Shading Control Name
+    ,                        !- Frame and Divider Name
+    1,                       !- Multiplier
+    4,                       !- Number of Vertices
+    11.678962909315,         !- Vertex 1 X-coordinate {m}
+    9.157114969410,          !- Vertex 1 Y-coordinate {m}
+    2.741463415000,          !- Vertex 1 Z-coordinate {m}
+    10.764362909315,         !- Vertex 2 X-coordinate {m}
+    9.157114969410,          !- Vertex 2 Y-coordinate {m}
+    2.741463415000,          !- Vertex 2 Z-coordinate {m}
+    10.764362909315,         !- Vertex 3 X-coordinate {m}
+    9.157114969410,          !- Vertex 3 Y-coordinate {m}
+    4.875609756463,          !- Vertex 3 Z-coordinate {m}
+    11.678962909315,         !- Vertex 4 X-coordinate {m}
+    9.157114969410,          !- Vertex 4 Y-coordinate {m}
+    4.875609756463;          !- Vertex 4 Z-coordinate {m}
 
-  FenestrationSurface:Detailed,
+FenestrationSurface:Detailed,
     Door_ldb_unit2_FrontRow_MiddleFloor,  !- Name
-    Door,  !- Surface Type
-    Exterior Door,  !- Construction Name
+    Door,                    !- Surface Type
+    Interior Door,           !- Construction Name
     Wall_ldb_1.unit2_FrontRow_MiddleFloor,  !- Building Surface Name
-    ,  !- Outside Boundary Condition Object
-    ,  !- View Factor to Ground
-    ,  !- Shading Control Name
-    ,  !- Frame and Divider Name
-    1,  !- Multiplier
-    4,  !- Number of Vertices
-    23.857925818630,  !- Vertex 1 X-coordinate {m}
-    9.157114969410,  !- Vertex 1 Y-coordinate {m}
-    2.741463415000,  !- Vertex 1 Z-coordinate {m}
-    22.943325818630,  !- Vertex 2 X-coordinate {m}
-    9.157114969410,  !- Vertex 2 Y-coordinate {m}
-    2.741463415000,  !- Vertex 2 Z-coordinate {m}
-    22.943325818630,  !- Vertex 3 X-coordinate {m}
-    9.157114969410,  !- Vertex 3 Y-coordinate {m}
-    4.875609756463,  !- Vertex 3 Z-coordinate {m}
-    23.857925818630,  !- Vertex 4 X-coordinate {m}
-    9.157114969410,  !- Vertex 4 Y-coordinate {m}
-    4.875609756463;  !- Vertex 4 Z-coordinate {m}
+    ,                        !- Outside Boundary Condition Object
+    ,                        !- View Factor to Ground
+    ,                        !- Shading Control Name
+    ,                        !- Frame and Divider Name
+    1,                       !- Multiplier
+    4,                       !- Number of Vertices
+    23.857925818630,         !- Vertex 1 X-coordinate {m}
+    9.157114969410,          !- Vertex 1 Y-coordinate {m}
+    2.741463415000,          !- Vertex 1 Z-coordinate {m}
+    22.943325818630,         !- Vertex 2 X-coordinate {m}
+    9.157114969410,          !- Vertex 2 Y-coordinate {m}
+    2.741463415000,          !- Vertex 2 Z-coordinate {m}
+    22.943325818630,         !- Vertex 3 X-coordinate {m}
+    9.157114969410,          !- Vertex 3 Y-coordinate {m}
+    4.875609756463,          !- Vertex 3 Z-coordinate {m}
+    23.857925818630,         !- Vertex 4 X-coordinate {m}
+    9.157114969410,          !- Vertex 4 Y-coordinate {m}
+    4.875609756463;          !- Vertex 4 Z-coordinate {m}
 
-  FenestrationSurface:Detailed,
+FenestrationSurface:Detailed,
     Door_ldb_unit3_FrontRow_MiddleFloor,  !- Name
-    Door,  !- Surface Type
-    Exterior Door,  !- Construction Name
+    Door,                    !- Surface Type
+    Interior Door,           !- Construction Name
     Wall_ldb_1.unit3_FrontRow_MiddleFloor,  !- Building Surface Name
-    ,  !- Outside Boundary Condition Object
-    ,  !- View Factor to Ground
-    ,  !- Shading Control Name
-    ,  !- Frame and Divider Name
-    1,  !- Multiplier
-    4,  !- Number of Vertices
-    36.036888727945,  !- Vertex 1 X-coordinate {m}
-    9.157114969410,  !- Vertex 1 Y-coordinate {m}
-    2.741463415000,  !- Vertex 1 Z-coordinate {m}
-    35.122288727945,  !- Vertex 2 X-coordinate {m}
-    9.157114969410,  !- Vertex 2 Y-coordinate {m}
-    2.741463415000,  !- Vertex 2 Z-coordinate {m}
-    35.122288727945,  !- Vertex 3 X-coordinate {m}
-    9.157114969410,  !- Vertex 3 Y-coordinate {m}
-    4.875609756463,  !- Vertex 3 Z-coordinate {m}
-    36.036888727945,  !- Vertex 4 X-coordinate {m}
-    9.157114969410,  !- Vertex 4 Y-coordinate {m}
-    4.875609756463;  !- Vertex 4 Z-coordinate {m}
+    ,                        !- Outside Boundary Condition Object
+    ,                        !- View Factor to Ground
+    ,                        !- Shading Control Name
+    ,                        !- Frame and Divider Name
+    1,                       !- Multiplier
+    4,                       !- Number of Vertices
+    36.036888727945,         !- Vertex 1 X-coordinate {m}
+    9.157114969410,          !- Vertex 1 Y-coordinate {m}
+    2.741463415000,          !- Vertex 1 Z-coordinate {m}
+    35.122288727945,         !- Vertex 2 X-coordinate {m}
+    9.157114969410,          !- Vertex 2 Y-coordinate {m}
+    2.741463415000,          !- Vertex 2 Z-coordinate {m}
+    35.122288727945,         !- Vertex 3 X-coordinate {m}
+    9.157114969410,          !- Vertex 3 Y-coordinate {m}
+    4.875609756463,          !- Vertex 3 Z-coordinate {m}
+    36.036888727945,         !- Vertex 4 X-coordinate {m}
+    9.157114969410,          !- Vertex 4 Y-coordinate {m}
+    4.875609756463;          !- Vertex 4 Z-coordinate {m}
 
-  FenestrationSurface:Detailed,
+FenestrationSurface:Detailed,
     Door_ldf_unit1_BackRow_MiddleFloor,  !- Name
-    Door,  !- Surface Type
-    Exterior Door,  !- Construction Name
+    Door,                    !- Surface Type
+    Interior Door,           !- Construction Name
     Wall_ldf_1.unit1_BackRow_MiddleFloor,  !- Building Surface Name
-    ,  !- Outside Boundary Condition Object
-    ,  !- View Factor to Ground
-    ,  !- Shading Control Name
-    ,  !- Frame and Divider Name
-    1,  !- Multiplier
-    4,  !- Number of Vertices
-    0.500000000000,  !- Vertex 1 X-coordinate {m}
-    10.681505213312,  !- Vertex 1 Y-coordinate {m}
-    2.741463415000,  !- Vertex 1 Z-coordinate {m}
-    1.414600000000,  !- Vertex 2 X-coordinate {m}
-    10.681505213312,  !- Vertex 2 Y-coordinate {m}
-    2.741463415000,  !- Vertex 2 Z-coordinate {m}
-    1.414600000000,  !- Vertex 3 X-coordinate {m}
-    10.681505213312,  !- Vertex 3 Y-coordinate {m}
-    4.875609756463,  !- Vertex 3 Z-coordinate {m}
-    0.500000000000,  !- Vertex 4 X-coordinate {m}
-    10.681505213312,  !- Vertex 4 Y-coordinate {m}
-    4.875609756463;  !- Vertex 4 Z-coordinate {m}
+    ,                        !- Outside Boundary Condition Object
+    ,                        !- View Factor to Ground
+    ,                        !- Shading Control Name
+    ,                        !- Frame and Divider Name
+    1,                       !- Multiplier
+    4,                       !- Number of Vertices
+    0.500000000000,          !- Vertex 1 X-coordinate {m}
+    10.681505213312,         !- Vertex 1 Y-coordinate {m}
+    2.741463415000,          !- Vertex 1 Z-coordinate {m}
+    1.414600000000,          !- Vertex 2 X-coordinate {m}
+    10.681505213312,         !- Vertex 2 Y-coordinate {m}
+    2.741463415000,          !- Vertex 2 Z-coordinate {m}
+    1.414600000000,          !- Vertex 3 X-coordinate {m}
+    10.681505213312,         !- Vertex 3 Y-coordinate {m}
+    4.875609756463,          !- Vertex 3 Z-coordinate {m}
+    0.500000000000,          !- Vertex 4 X-coordinate {m}
+    10.681505213312,         !- Vertex 4 Y-coordinate {m}
+    4.875609756463;          !- Vertex 4 Z-coordinate {m}
 
-  FenestrationSurface:Detailed,
+FenestrationSurface:Detailed,
     Door_ldf_unit2_BackRow_MiddleFloor,  !- Name
-    Door,  !- Surface Type
-    Exterior Door,  !- Construction Name
+    Door,                    !- Surface Type
+    Interior Wall,           !- Construction Name
     Wall_ldf_1.unit2_BackRow_MiddleFloor,  !- Building Surface Name
-    ,  !- Outside Boundary Condition Object
-    ,  !- View Factor to Ground
-    ,  !- Shading Control Name
-    ,  !- Frame and Divider Name
-    1,  !- Multiplier
-    4,  !- Number of Vertices
-    12.678962909315,  !- Vertex 1 X-coordinate {m}
-    10.681505213312,  !- Vertex 1 Y-coordinate {m}
-    2.741463415000,  !- Vertex 1 Z-coordinate {m}
-    13.593562909315,  !- Vertex 2 X-coordinate {m}
-    10.681505213312,  !- Vertex 2 Y-coordinate {m}
-    2.741463415000,  !- Vertex 2 Z-coordinate {m}
-    13.593562909315,  !- Vertex 3 X-coordinate {m}
-    10.681505213312,  !- Vertex 3 Y-coordinate {m}
-    4.875609756463,  !- Vertex 3 Z-coordinate {m}
-    12.678962909315,  !- Vertex 4 X-coordinate {m}
-    10.681505213312,  !- Vertex 4 Y-coordinate {m}
-    4.875609756463;  !- Vertex 4 Z-coordinate {m}
+    ,                        !- Outside Boundary Condition Object
+    ,                        !- View Factor to Ground
+    ,                        !- Shading Control Name
+    ,                        !- Frame and Divider Name
+    1,                       !- Multiplier
+    4,                       !- Number of Vertices
+    12.678962909315,         !- Vertex 1 X-coordinate {m}
+    10.681505213312,         !- Vertex 1 Y-coordinate {m}
+    2.741463415000,          !- Vertex 1 Z-coordinate {m}
+    13.593562909315,         !- Vertex 2 X-coordinate {m}
+    10.681505213312,         !- Vertex 2 Y-coordinate {m}
+    2.741463415000,          !- Vertex 2 Z-coordinate {m}
+    13.593562909315,         !- Vertex 3 X-coordinate {m}
+    10.681505213312,         !- Vertex 3 Y-coordinate {m}
+    4.875609756463,          !- Vertex 3 Z-coordinate {m}
+    12.678962909315,         !- Vertex 4 X-coordinate {m}
+    10.681505213312,         !- Vertex 4 Y-coordinate {m}
+    4.875609756463;          !- Vertex 4 Z-coordinate {m}
 
-  FenestrationSurface:Detailed,
+FenestrationSurface:Detailed,
     Door_ldf_unit3_BackRow_MiddleFloor,  !- Name
-    Door,  !- Surface Type
-    Exterior Door,  !- Construction Name
+    Door,                    !- Surface Type
+    Interior Door,           !- Construction Name
     Wall_ldf_1.unit3_BackRow_MiddleFloor,  !- Building Surface Name
-    ,  !- Outside Boundary Condition Object
-    ,  !- View Factor to Ground
-    ,  !- Shading Control Name
-    ,  !- Frame and Divider Name
-    1,  !- Multiplier
-    4,  !- Number of Vertices
-    24.857925818630,  !- Vertex 1 X-coordinate {m}
-    10.681505213312,  !- Vertex 1 Y-coordinate {m}
-    2.741463415000,  !- Vertex 1 Z-coordinate {m}
-    25.772525818630,  !- Vertex 2 X-coordinate {m}
-    10.681505213312,  !- Vertex 2 Y-coordinate {m}
-    2.741463415000,  !- Vertex 2 Z-coordinate {m}
-    25.772525818630,  !- Vertex 3 X-coordinate {m}
-    10.681505213312,  !- Vertex 3 Y-coordinate {m}
-    4.875609756463,  !- Vertex 3 Z-coordinate {m}
-    24.857925818630,  !- Vertex 4 X-coordinate {m}
-    10.681505213312,  !- Vertex 4 Y-coordinate {m}
-    4.875609756463;  !- Vertex 4 Z-coordinate {m}
+    ,                        !- Outside Boundary Condition Object
+    ,                        !- View Factor to Ground
+    ,                        !- Shading Control Name
+    ,                        !- Frame and Divider Name
+    1,                       !- Multiplier
+    4,                       !- Number of Vertices
+    24.857925818630,         !- Vertex 1 X-coordinate {m}
+    10.681505213312,         !- Vertex 1 Y-coordinate {m}
+    2.741463415000,          !- Vertex 1 Z-coordinate {m}
+    25.772525818630,         !- Vertex 2 X-coordinate {m}
+    10.681505213312,         !- Vertex 2 Y-coordinate {m}
+    2.741463415000,          !- Vertex 2 Z-coordinate {m}
+    25.772525818630,         !- Vertex 3 X-coordinate {m}
+    10.681505213312,         !- Vertex 3 Y-coordinate {m}
+    4.875609756463,          !- Vertex 3 Z-coordinate {m}
+    24.857925818630,         !- Vertex 4 X-coordinate {m}
+    10.681505213312,         !- Vertex 4 Y-coordinate {m}
+    4.875609756463;          !- Vertex 4 Z-coordinate {m}
 
-  FenestrationSurface:Detailed,
+FenestrationSurface:Detailed,
     Door_ldb_unit1_FrontRow_TopFloor,  !- Name
-    Door,  !- Surface Type
-    Exterior Door,  !- Construction Name
+    Door,                    !- Surface Type
+    Interior Door,           !- Construction Name
     Wall_ldb_1.unit1_FrontRow_TopFloor,  !- Building Surface Name
-    ,  !- Outside Boundary Condition Object
-    ,  !- View Factor to Ground
-    ,  !- Shading Control Name
-    ,  !- Frame and Divider Name
-    1,  !- Multiplier
-    4,  !- Number of Vertices
-    11.678962909315,  !- Vertex 1 X-coordinate {m}
-    9.157114969410,  !- Vertex 1 Y-coordinate {m}
-    5.332900000000,  !- Vertex 1 Z-coordinate {m}
-    10.764362909315,  !- Vertex 2 X-coordinate {m}
-    9.157114969410,  !- Vertex 2 Y-coordinate {m}
-    5.332900000000,  !- Vertex 2 Z-coordinate {m}
-    10.764362909315,  !- Vertex 3 X-coordinate {m}
-    9.157114969410,  !- Vertex 3 Y-coordinate {m}
-    7.467046341463,  !- Vertex 3 Z-coordinate {m}
-    11.678962909315,  !- Vertex 4 X-coordinate {m}
-    9.157114969410,  !- Vertex 4 Y-coordinate {m}
-    7.467046341463;  !- Vertex 4 Z-coordinate {m}
+    ,                        !- Outside Boundary Condition Object
+    ,                        !- View Factor to Ground
+    ,                        !- Shading Control Name
+    ,                        !- Frame and Divider Name
+    1,                       !- Multiplier
+    4,                       !- Number of Vertices
+    11.678962909315,         !- Vertex 1 X-coordinate {m}
+    9.157114969410,          !- Vertex 1 Y-coordinate {m}
+    5.332900000000,          !- Vertex 1 Z-coordinate {m}
+    10.764362909315,         !- Vertex 2 X-coordinate {m}
+    9.157114969410,          !- Vertex 2 Y-coordinate {m}
+    5.332900000000,          !- Vertex 2 Z-coordinate {m}
+    10.764362909315,         !- Vertex 3 X-coordinate {m}
+    9.157114969410,          !- Vertex 3 Y-coordinate {m}
+    7.467046341463,          !- Vertex 3 Z-coordinate {m}
+    11.678962909315,         !- Vertex 4 X-coordinate {m}
+    9.157114969410,          !- Vertex 4 Y-coordinate {m}
+    7.467046341463;          !- Vertex 4 Z-coordinate {m}
 
-  FenestrationSurface:Detailed,
+FenestrationSurface:Detailed,
     Door_ldb_unit2_FrontRow_TopFloor,  !- Name
-    Door,  !- Surface Type
-    Exterior Door,  !- Construction Name
+    Door,                    !- Surface Type
+    Interior Door,           !- Construction Name
     Wall_ldb_1.unit2_FrontRow_TopFloor,  !- Building Surface Name
-    ,  !- Outside Boundary Condition Object
-    ,  !- View Factor to Ground
-    ,  !- Shading Control Name
-    ,  !- Frame and Divider Name
-    1,  !- Multiplier
-    4,  !- Number of Vertices
-    23.857925818630,  !- Vertex 1 X-coordinate {m}
-    9.157114969410,  !- Vertex 1 Y-coordinate {m}
-    5.332900000000,  !- Vertex 1 Z-coordinate {m}
-    22.943325818630,  !- Vertex 2 X-coordinate {m}
-    9.157114969410,  !- Vertex 2 Y-coordinate {m}
-    5.332900000000,  !- Vertex 2 Z-coordinate {m}
-    22.943325818630,  !- Vertex 3 X-coordinate {m}
-    9.157114969410,  !- Vertex 3 Y-coordinate {m}
-    7.467046341463,  !- Vertex 3 Z-coordinate {m}
-    23.857925818630,  !- Vertex 4 X-coordinate {m}
-    9.157114969410,  !- Vertex 4 Y-coordinate {m}
-    7.467046341463;  !- Vertex 4 Z-coordinate {m}
+    ,                        !- Outside Boundary Condition Object
+    ,                        !- View Factor to Ground
+    ,                        !- Shading Control Name
+    ,                        !- Frame and Divider Name
+    1,                       !- Multiplier
+    4,                       !- Number of Vertices
+    23.857925818630,         !- Vertex 1 X-coordinate {m}
+    9.157114969410,          !- Vertex 1 Y-coordinate {m}
+    5.332900000000,          !- Vertex 1 Z-coordinate {m}
+    22.943325818630,         !- Vertex 2 X-coordinate {m}
+    9.157114969410,          !- Vertex 2 Y-coordinate {m}
+    5.332900000000,          !- Vertex 2 Z-coordinate {m}
+    22.943325818630,         !- Vertex 3 X-coordinate {m}
+    9.157114969410,          !- Vertex 3 Y-coordinate {m}
+    7.467046341463,          !- Vertex 3 Z-coordinate {m}
+    23.857925818630,         !- Vertex 4 X-coordinate {m}
+    9.157114969410,          !- Vertex 4 Y-coordinate {m}
+    7.467046341463;          !- Vertex 4 Z-coordinate {m}
 
-  FenestrationSurface:Detailed,
+FenestrationSurface:Detailed,
     Door_ldb_unit3_FrontRow_TopFloor,  !- Name
-    Door,  !- Surface Type
-    Exterior Door,  !- Construction Name
+    Door,                    !- Surface Type
+    Interior Door,           !- Construction Name
     Wall_ldb_1.unit3_FrontRow_TopFloor,  !- Building Surface Name
-    ,  !- Outside Boundary Condition Object
-    ,  !- View Factor to Ground
-    ,  !- Shading Control Name
-    ,  !- Frame and Divider Name
-    1,  !- Multiplier
-    4,  !- Number of Vertices
-    36.036888727945,  !- Vertex 1 X-coordinate {m}
-    9.157114969410,  !- Vertex 1 Y-coordinate {m}
-    5.332900000000,  !- Vertex 1 Z-coordinate {m}
-    35.122288727945,  !- Vertex 2 X-coordinate {m}
-    9.157114969410,  !- Vertex 2 Y-coordinate {m}
-    5.332900000000,  !- Vertex 2 Z-coordinate {m}
-    35.122288727945,  !- Vertex 3 X-coordinate {m}
-    9.157114969410,  !- Vertex 3 Y-coordinate {m}
-    7.467046341463,  !- Vertex 3 Z-coordinate {m}
-    36.036888727945,  !- Vertex 4 X-coordinate {m}
-    9.157114969410,  !- Vertex 4 Y-coordinate {m}
-    7.467046341463;  !- Vertex 4 Z-coordinate {m}
+    ,                        !- Outside Boundary Condition Object
+    ,                        !- View Factor to Ground
+    ,                        !- Shading Control Name
+    ,                        !- Frame and Divider Name
+    1,                       !- Multiplier
+    4,                       !- Number of Vertices
+    36.036888727945,         !- Vertex 1 X-coordinate {m}
+    9.157114969410,          !- Vertex 1 Y-coordinate {m}
+    5.332900000000,          !- Vertex 1 Z-coordinate {m}
+    35.122288727945,         !- Vertex 2 X-coordinate {m}
+    9.157114969410,          !- Vertex 2 Y-coordinate {m}
+    5.332900000000,          !- Vertex 2 Z-coordinate {m}
+    35.122288727945,         !- Vertex 3 X-coordinate {m}
+    9.157114969410,          !- Vertex 3 Y-coordinate {m}
+    7.467046341463,          !- Vertex 3 Z-coordinate {m}
+    36.036888727945,         !- Vertex 4 X-coordinate {m}
+    9.157114969410,          !- Vertex 4 Y-coordinate {m}
+    7.467046341463;          !- Vertex 4 Z-coordinate {m}
 
-  FenestrationSurface:Detailed,
+FenestrationSurface:Detailed,
     Door_ldf_unit1_BackRow_TopFloor,  !- Name
-    Door,  !- Surface Type
-    Exterior Door,  !- Construction Name
+    Door,                    !- Surface Type
+    Interior Door,           !- Construction Name
     Wall_ldf_1.unit1_BackRow_TopFloor,  !- Building Surface Name
-    ,  !- Outside Boundary Condition Object
-    ,  !- View Factor to Ground
-    ,  !- Shading Control Name
-    ,  !- Frame and Divider Name
-    1,  !- Multiplier
-    4,  !- Number of Vertices
-    0.500000000000,  !- Vertex 1 X-coordinate {m}
-    10.681505213312,  !- Vertex 1 Y-coordinate {m}
-    5.332900000000,  !- Vertex 1 Z-coordinate {m}
-    1.414600000000,  !- Vertex 2 X-coordinate {m}
-    10.681505213312,  !- Vertex 2 Y-coordinate {m}
-    5.332900000000,  !- Vertex 2 Z-coordinate {m}
-    1.414600000000,  !- Vertex 3 X-coordinate {m}
-    10.681505213312,  !- Vertex 3 Y-coordinate {m}
-    7.467046341463,  !- Vertex 3 Z-coordinate {m}
-    0.500000000000,  !- Vertex 4 X-coordinate {m}
-    10.681505213312,  !- Vertex 4 Y-coordinate {m}
-    7.467046341463;  !- Vertex 4 Z-coordinate {m}
+    ,                        !- Outside Boundary Condition Object
+    ,                        !- View Factor to Ground
+    ,                        !- Shading Control Name
+    ,                        !- Frame and Divider Name
+    1,                       !- Multiplier
+    4,                       !- Number of Vertices
+    0.500000000000,          !- Vertex 1 X-coordinate {m}
+    10.681505213312,         !- Vertex 1 Y-coordinate {m}
+    5.332900000000,          !- Vertex 1 Z-coordinate {m}
+    1.414600000000,          !- Vertex 2 X-coordinate {m}
+    10.681505213312,         !- Vertex 2 Y-coordinate {m}
+    5.332900000000,          !- Vertex 2 Z-coordinate {m}
+    1.414600000000,          !- Vertex 3 X-coordinate {m}
+    10.681505213312,         !- Vertex 3 Y-coordinate {m}
+    7.467046341463,          !- Vertex 3 Z-coordinate {m}
+    0.500000000000,          !- Vertex 4 X-coordinate {m}
+    10.681505213312,         !- Vertex 4 Y-coordinate {m}
+    7.467046341463;          !- Vertex 4 Z-coordinate {m}
 
-  FenestrationSurface:Detailed,
+FenestrationSurface:Detailed,
     Door_ldf_unit2_BackRow_TopFloor,  !- Name
-    Door,  !- Surface Type
-    Exterior Door,  !- Construction Name
+    Door,                    !- Surface Type
+    Interior Door,           !- Construction Name
     Wall_ldf_1.unit2_BackRow_TopFloor,  !- Building Surface Name
-    ,  !- Outside Boundary Condition Object
-    ,  !- View Factor to Ground
-    ,  !- Shading Control Name
-    ,  !- Frame and Divider Name
-    1,  !- Multiplier
-    4,  !- Number of Vertices
-    12.678962909315,  !- Vertex 1 X-coordinate {m}
-    10.681505213312,  !- Vertex 1 Y-coordinate {m}
-    5.332900000000,  !- Vertex 1 Z-coordinate {m}
-    13.593562909315,  !- Vertex 2 X-coordinate {m}
-    10.681505213312,  !- Vertex 2 Y-coordinate {m}
-    5.332900000000,  !- Vertex 2 Z-coordinate {m}
-    13.593562909315,  !- Vertex 3 X-coordinate {m}
-    10.681505213312,  !- Vertex 3 Y-coordinate {m}
-    7.467046341463,  !- Vertex 3 Z-coordinate {m}
-    12.678962909315,  !- Vertex 4 X-coordinate {m}
-    10.681505213312,  !- Vertex 4 Y-coordinate {m}
-    7.467046341463;  !- Vertex 4 Z-coordinate {m}
+    ,                        !- Outside Boundary Condition Object
+    ,                        !- View Factor to Ground
+    ,                        !- Shading Control Name
+    ,                        !- Frame and Divider Name
+    1,                       !- Multiplier
+    4,                       !- Number of Vertices
+    12.678962909315,         !- Vertex 1 X-coordinate {m}
+    10.681505213312,         !- Vertex 1 Y-coordinate {m}
+    5.332900000000,          !- Vertex 1 Z-coordinate {m}
+    13.593562909315,         !- Vertex 2 X-coordinate {m}
+    10.681505213312,         !- Vertex 2 Y-coordinate {m}
+    5.332900000000,          !- Vertex 2 Z-coordinate {m}
+    13.593562909315,         !- Vertex 3 X-coordinate {m}
+    10.681505213312,         !- Vertex 3 Y-coordinate {m}
+    7.467046341463,          !- Vertex 3 Z-coordinate {m}
+    12.678962909315,         !- Vertex 4 X-coordinate {m}
+    10.681505213312,         !- Vertex 4 Y-coordinate {m}
+    7.467046341463;          !- Vertex 4 Z-coordinate {m}
 
-  FenestrationSurface:Detailed,
+FenestrationSurface:Detailed,
     Door_ldf_unit3_BackRow_TopFloor,  !- Name
-    Door,  !- Surface Type
-    Exterior Door,  !- Construction Name
+    Door,                    !- Surface Type
+    Interior Door,           !- Construction Name
     Wall_ldf_1.unit3_BackRow_TopFloor,  !- Building Surface Name
-    ,  !- Outside Boundary Condition Object
-    ,  !- View Factor to Ground
-    ,  !- Shading Control Name
-    ,  !- Frame and Divider Name
-    1,  !- Multiplier
-    4,  !- Number of Vertices
-    24.857925818630,  !- Vertex 1 X-coordinate {m}
-    10.681505213312,  !- Vertex 1 Y-coordinate {m}
-    5.332900000000,  !- Vertex 1 Z-coordinate {m}
-    25.772525818630,  !- Vertex 2 X-coordinate {m}
-    10.681505213312,  !- Vertex 2 Y-coordinate {m}
-    5.332900000000,  !- Vertex 2 Z-coordinate {m}
-    25.772525818630,  !- Vertex 3 X-coordinate {m}
-    10.681505213312,  !- Vertex 3 Y-coordinate {m}
-    7.467046341463,  !- Vertex 3 Z-coordinate {m}
-    24.857925818630,  !- Vertex 4 X-coordinate {m}
-    10.681505213312,  !- Vertex 4 Y-coordinate {m}
-    7.467046341463;  !- Vertex 4 Z-coordinate {m}
+    ,                        !- Outside Boundary Condition Object
+    ,                        !- View Factor to Ground
+    ,                        !- Shading Control Name
+    ,                        !- Frame and Divider Name
+    1,                       !- Multiplier
+    4,                       !- Number of Vertices
+    24.857925818630,         !- Vertex 1 X-coordinate {m}
+    10.681505213312,         !- Vertex 1 Y-coordinate {m}
+    5.332900000000,          !- Vertex 1 Z-coordinate {m}
+    25.772525818630,         !- Vertex 2 X-coordinate {m}
+    10.681505213312,         !- Vertex 2 Y-coordinate {m}
+    5.332900000000,          !- Vertex 2 Z-coordinate {m}
+    25.772525818630,         !- Vertex 3 X-coordinate {m}
+    10.681505213312,         !- Vertex 3 Y-coordinate {m}
+    7.467046341463,          !- Vertex 3 Z-coordinate {m}
+    24.857925818630,         !- Vertex 4 X-coordinate {m}
+    10.681505213312,         !- Vertex 4 Y-coordinate {m}
+    7.467046341463;          !- Vertex 4 Z-coordinate {m}
+
+FenestrationSurface:Detailed,
+    Entrance Door E,         !- Name
+    Window,                  !- Surface Type
+    Exterior Window,         !- Construction Name
+    g EWall C,               !- Building Surface Name
+    ,                        !- Outside Boundary Condition Object
+    autocalculate,           !- View Factor to Ground
+    ,                        !- Shading Control Name
+    ,                        !- Frame and Divider Name
+    1,                       !- Multiplier
+    4,                       !- Number of Vertices
+    36.536888727945,         !- Vertex 1 X-coordinate {m}
+    9.461914969410,          !- Vertex 1 Y-coordinate {m}
+    0.228639024390,          !- Vertex 1 Z-coordinate {m}
+    36.536888727945,         !- Vertex 2 X-coordinate {m}
+    10.376314969410,         !- Vertex 2 Y-coordinate {m}
+    0.228639024390,          !- Vertex 2 Z-coordinate {m}
+    36.536888727945,         !- Vertex 3 X-coordinate {m}
+    10.376314969410,         !- Vertex 3 Y-coordinate {m}
+    2.514639024390,          !- Vertex 3 Z-coordinate {m}
+    36.536888727945,         !- Vertex 4 X-coordinate {m}
+    9.461914969410,          !- Vertex 4 Y-coordinate {m}
+    2.514639024390;          !- Vertex 4 Z-coordinate {m}
+
+FenestrationSurface:Detailed,
+    Entrance Door W,         !- Name
+    Window,                  !- Surface Type
+    Exterior Window,         !- Construction Name
+    g WWall C,               !- Building Surface Name
+    ,                        !- Outside Boundary Condition Object
+    autocalculate,           !- View Factor to Ground
+    ,                        !- Shading Control Name
+    ,                        !- Frame and Divider Name
+    1,                       !- Multiplier
+    4,                       !- Number of Vertices
+    0.000000000000,          !- Vertex 1 X-coordinate {m}
+    10.376705213312,         !- Vertex 1 Y-coordinate {m}
+    0.228639024390,          !- Vertex 1 Z-coordinate {m}
+    0.000000000000,          !- Vertex 2 X-coordinate {m}
+    9.462305213312,          !- Vertex 2 Y-coordinate {m}
+    0.228639024390,          !- Vertex 2 Z-coordinate {m}
+    0.000000000000,          !- Vertex 3 X-coordinate {m}
+    9.462305213312,          !- Vertex 3 Y-coordinate {m}
+    2.514639024390,          !- Vertex 3 Z-coordinate {m}
+    0.000000000000,          !- Vertex 4 X-coordinate {m}
+    10.376705213312,         !- Vertex 4 Y-coordinate {m}
+    2.514639024390;          !- Vertex 4 Z-coordinate {m}
+
+FenestrationSurface:Detailed,
+    T Corridor Win E,        !- Name
+    Window,                  !- Surface Type
+    Exterior Window,         !- Construction Name
+    T EWall C,               !- Building Surface Name
+    ,                        !- Outside Boundary Condition Object
+    autocalculate,           !- View Factor to Ground
+    ,                        !- Shading Control Name
+    ,                        !- Frame and Divider Name
+    1,                       !- Multiplier
+    4,                       !- Number of Vertices
+    -0.000000272055,         !- Vertex 1 X-coordinate {m}
+    -10.376705030590,        !- Vertex 1 Y-coordinate {m}
+    0.916865853658,          !- Vertex 1 Z-coordinate {m}
+    -0.000000272055,         !- Vertex 2 X-coordinate {m}
+    -9.462305030590,         !- Vertex 2 Y-coordinate {m}
+    0.916865853658,          !- Vertex 2 Z-coordinate {m}
+    -0.000000272055,         !- Vertex 3 X-coordinate {m}
+    -9.462305030590,         !- Vertex 3 Y-coordinate {m}
+    2.136065853658,          !- Vertex 3 Z-coordinate {m}
+    -0.000000272055,         !- Vertex 4 X-coordinate {m}
+    -10.376705030590,        !- Vertex 4 Y-coordinate {m}
+    2.136065853658;          !- Vertex 4 Z-coordinate {m}
+
+FenestrationSurface:Detailed,
+    T Corridor Win W,        !- Name
+    Window,                  !- Surface Type
+    Exterior Window,         !- Construction Name
+    T WWall C,               !- Building Surface Name
+    ,                        !- Outside Boundary Condition Object
+    autocalculate,           !- View Factor to Ground
+    ,                        !- Shading Control Name
+    ,                        !- Frame and Divider Name
+    1,                       !- Multiplier
+    4,                       !- Number of Vertices
+    -36.536889000000,        !- Vertex 1 X-coordinate {m}
+    -9.461914786688,         !- Vertex 1 Y-coordinate {m}
+    0.916865853658,          !- Vertex 1 Z-coordinate {m}
+    -36.536889000000,        !- Vertex 2 X-coordinate {m}
+    -10.376314786688,        !- Vertex 2 Y-coordinate {m}
+    0.916865853658,          !- Vertex 2 Z-coordinate {m}
+    -36.536889000000,        !- Vertex 3 X-coordinate {m}
+    -10.376314786688,        !- Vertex 3 Y-coordinate {m}
+    2.136065853658,          !- Vertex 3 Z-coordinate {m}
+    -36.536889000000,        !- Vertex 4 X-coordinate {m}
+    -9.461914786688,         !- Vertex 4 Y-coordinate {m}
+    2.136065853658;          !- Vertex 4 Z-coordinate {m}
+
+FenestrationSurface:Detailed,
+    M Corridor Win E,        !- Name
+    Window,                  !- Surface Type
+    Exterior Window,         !- Construction Name
+    m EWall C,               !- Building Surface Name
+    ,                        !- Outside Boundary Condition Object
+    ,                        !- View Factor to Ground
+    ,                        !- Shading Control Name
+    ,                        !- Frame and Divider Name
+    ,                        !- Multiplier
+    4,                       !- Number of Vertices
+    36.536888727945,         !- Vertex 1 X-coordinate {m}
+    9.461914969410,          !- Vertex 1 Y-coordinate {m}
+    0.914400439024,          !- Vertex 1 Z-coordinate {m}
+    36.536888727945,         !- Vertex 2 X-coordinate {m}
+    10.376314969410,         !- Vertex 2 Y-coordinate {m}
+    0.914400439024,          !- Vertex 2 Z-coordinate {m}
+    36.536888727945,         !- Vertex 3 X-coordinate {m}
+    10.376314969410,         !- Vertex 3 Y-coordinate {m}
+    2.133600439024,          !- Vertex 3 Z-coordinate {m}
+    36.536888727945,         !- Vertex 4 X-coordinate {m}
+    9.461914969410,          !- Vertex 4 Y-coordinate {m}
+    2.133600439024;          !- Vertex 4 Z-coordinate {m}
+
+FenestrationSurface:Detailed,
+    M Corridor Win W,        !- Name
+    Window,                  !- Surface Type
+    Exterior Window,         !- Construction Name
+    m WWall C,               !- Building Surface Name
+    ,                        !- Outside Boundary Condition Object
+    ,                        !- View Factor to Ground
+    ,                        !- Shading Control Name
+    ,                        !- Frame and Divider Name
+    ,                        !- Multiplier
+    4,                       !- Number of Vertices
+    0.000000000000,          !- Vertex 1 X-coordinate {m}
+    10.376705213312,         !- Vertex 1 Y-coordinate {m}
+    0.914400439024,          !- Vertex 1 Z-coordinate {m}
+    0.000000000000,          !- Vertex 2 X-coordinate {m}
+    9.462305213312,          !- Vertex 2 Y-coordinate {m}
+    0.914400439024,          !- Vertex 2 Z-coordinate {m}
+    0.000000000000,          !- Vertex 3 X-coordinate {m}
+    9.462305213312,          !- Vertex 3 Y-coordinate {m}
+    2.133600439024,          !- Vertex 3 Z-coordinate {m}
+    0.000000000000,          !- Vertex 4 X-coordinate {m}
+    10.376705213312,         !- Vertex 4 Y-coordinate {m}
+    2.133600439024;          !- Vertex 4 Z-coordinate {m}
 
 
 !-   ===========  ALL OBJECTS IN CLASS: WINDOWPROPERTY:SHADINGCONTROL ===========
@@ -21048,5 +21394,58 @@ Output:Table:Monthly,
 !-   ===========  ALL OBJECTS IN CLASS: OUTPUTCONTROL:TABLE:STYLE ===========
 
 OutputControl:Table:Style,
-    CommaAndHTML,            !- Column Separator
+    HTML,                    !- Column Separator
     InchPound;               !- Unit Conversion
+
+Output:SQLite,
+    SimpleAndTabular;                       !- Option Type
+
+!-   ===========  ALL OBJECTS IN CLASS: OUTPUT:METER ===========
+
+Output:Meter,
+    Heating:Electricity ,    !- Name
+    Monthly;                 !- Reporting Frequency
+
+Output:Meter,
+    Cooling:Electricity ,    !- Name
+    Monthly;                 !- Reporting Frequency
+
+Output:Meter,
+    InteriorLights:Electricity ,  !- Name
+    Monthly;                 !- Reporting Frequency
+
+Output:Meter,
+    ExteriorLights:Electricity ,  !- Name
+    Monthly;                 !- Reporting Frequency
+
+Output:Meter,
+    Misc:InteriorEquipment:Electricity ,  !- Name
+    Monthly;                 !- Reporting Frequency
+
+Output:Meter,
+    Appl:InteriorEquipment:Electricity ,  !- Name
+    Monthly;                 !- Reporting Frequency
+
+Output:Meter,
+    InteriorEquipment:Electricity ,  !- Name
+    Monthly;                 !- Reporting Frequency
+
+Output:Meter,
+    Fans:Electricity ,       !- Name
+    Monthly;                 !- Reporting Frequency
+
+Output:Meter,
+    Pumps:Electricity ,      !- Name
+    Monthly;                 !- Reporting Frequency
+
+Output:Meter,
+    WaterSystems:Electricity ,  !- Name
+    Monthly;                 !- Reporting Frequency
+
+Output:Meter,
+    Electricity:Building ,   !- Name
+    Monthly;                 !- Reporting Frequency
+
+Output:Meter,
+    Electricity:Facility ,   !- Name
+    Monthly;                 !- Reporting Frequency

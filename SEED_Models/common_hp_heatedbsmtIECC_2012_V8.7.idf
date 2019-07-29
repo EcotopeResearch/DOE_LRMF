@@ -1,6 +1,6 @@
 !-Generator IDFEditor 1.49
 !-Option SortedOrder ViewInIPunits
-
+!-    8.7;                     !- Version Identifier
 !-NOTE: All comments with '!-' are ignored by the IDFEditor and are generated automatically.
 !-      Use '!' comments if they need to be retained when using the IDFEditor.
 
@@ -21895,6 +21895,8 @@ OutputControl:Table:Style,
     HTML,                    !- Column Separator
     InchPound;               !- Unit Conversion
 
+Output:SQLite,
+  SimpleAndTabular;                       !- Option Type
 
 !-   ===========  ALL OBJECTS IN CLASS: OUTPUT:METER ===========
 
@@ -21945,4 +21947,3 @@ Output:Meter,
 Output:Meter,
     Electricity:Facility ,   !- Name
     Monthly;                 !- Reporting Frequency
-
