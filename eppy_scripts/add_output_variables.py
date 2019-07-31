@@ -85,7 +85,7 @@ reportingFrequency = 'hourly'
 
 for i in range(0, len(keyValue)):
 
-    # create a new thermostat control
+    # create a idf object
     idf.newidfobject('Output:Variable')
 
     # alter inputs to the newly crated idf object
@@ -109,10 +109,10 @@ reportingFrequency = 'hourly'
 
 for i in range(0, len(keyValue)):
 
-    # create a new output variable
+    # create a idf object
     idf.newidfobject('Output:Variable')
 
-    # alter inputs to the newly crated idf object
+    # alter inputs to the newly created idf object
     idf.idfobjects['Output:Variable'][-1].Key_Value = keyValue[i]
     idf.idfobjects['Output:Variable'][-1].Variable_Name = variableName
     idf.idfobjects['Output:Variable'][-1].Reporting_Frequency = reportingFrequency
@@ -135,22 +135,30 @@ coolingCoilNames = [x.Name for x in coolingCoil]
 
 #add Cooling Coil Total Cooling Energy for corridors
 keyValue = coolingCoilNames
-variableName = 'Cooling Coil Total Cooling Energy'
+variableName1 = 'Cooling Coil Total Cooling Energy'
+variableName2 = 'Cooling Coil Electric Energy'
 reportingFrequency = 'hourly'
 
 
 for i in range(0, len(keyValue)):
 
-    # create a new thermostat control
+    # create a idf object
     idf.newidfobject('Output:Variable')
 
-    # alter inputs to the newly crated idf object
+    # alter inputs to the newly created idf object
     idf.idfobjects['Output:Variable'][-1].Key_Value = keyValue[i]
-    idf.idfobjects['Output:Variable'][-1].Variable_Name = variableName
+    idf.idfobjects['Output:Variable'][-1].Variable_Name = variableName1
+    idf.idfobjects['Output:Variable'][-1].Reporting_Frequency = reportingFrequency
+
+    # create a idf object
+    idf.newidfobject('Output:Variable')
+
+    # alter inputs to the newly created idf object
+    idf.idfobjects['Output:Variable'][-1].Key_Value = keyValue[i]
+    idf.idfobjects['Output:Variable'][-1].Variable_Name = variableName2
     idf.idfobjects['Output:Variable'][-1].Reporting_Frequency = reportingFrequency
 
 idf.save()
-
 
 # ## Add Heating Coil Total Heating Energy to Corridor HPs
 
@@ -165,23 +173,61 @@ heatingCoilNames = [x.Name for x in heatingCoil]
 # In[ ]:
 
 
-#add Cooling Coil Total Cooling Energy for corridors
-keyValue = ['Main DX Heating Coil_G Corridor', 'Main DX Heating Coil_M Corridor', 'Main DX Heating Coil_T Corridor']
-variableName = 'Heating Coil Total Heating Energy'
+#add Heating Coil Total Cooling Energy
+keyValue = heatingCoilNames
+variableName1 = 'Heating Coil Total Heating Energy'
+variableName2 = 'Heating Coil Electric Energy'
 reportingFrequency = 'hourly'
-
 
 for i in range(0, len(keyValue)):
 
-    # create a new thermostat control
+    # create a idf object
     idf.newidfobject('Output:Variable')
 
-    # alter inputs to the newly crated idf object
+    # alter inputs to the newly created idf object
     idf.idfobjects['Output:Variable'][-1].Key_Value = keyValue[i]
-    idf.idfobjects['Output:Variable'][-1].Variable_Name = variableName
+    idf.idfobjects['Output:Variable'][-1].Variable_Name = variableName1
+    idf.idfobjects['Output:Variable'][-1].Reporting_Frequency = reportingFrequency
+    
+    # create a idf object
+    idf.newidfobject('Output:Variable')
+
+    # alter inputs to the newly created idf object
+    idf.idfobjects['Output:Variable'][-1].Key_Value = keyValue[i]
+    idf.idfobjects['Output:Variable'][-1].Variable_Name = variableName2
     idf.idfobjects['Output:Variable'][-1].Reporting_Frequency = reportingFrequency
 
 idf.save()
 
 
 # In[ ]:
+
+# use eppy to get a list of Electric Heating Coil Names
+heatingCoil = idf.idfobjects['Coil:Heating:Electric']
+heatingCoilNames = [x.Name for x in heatingCoil]
+
+#add Electric Heating Coil Energy Usage
+keyValue = heatingCoilNames
+variableName1 = 'Heating Coil Total Heating Energy'
+variableName2 = 'Heating Coil Electric Energy'
+reportingFrequency = 'hourly'
+
+for i in range(0, len(keyValue)):
+
+    # create a idf object
+    idf.newidfobject('Output:Variable')
+
+    # alter inputs to the newly created idf object
+    idf.idfobjects['Output:Variable'][-1].Key_Value = keyValue[i]
+    idf.idfobjects['Output:Variable'][-1].Variable_Name = variableName1
+    idf.idfobjects['Output:Variable'][-1].Reporting_Frequency = reportingFrequency
+    
+    # create a idf object
+    idf.newidfobject('Output:Variable')
+
+    # alter inputs to the newly created idf object
+    idf.idfobjects['Output:Variable'][-1].Key_Value = keyValue[i]
+    idf.idfobjects['Output:Variable'][-1].Variable_Name = variableName2
+    idf.idfobjects['Output:Variable'][-1].Reporting_Frequency = reportingFrequency
+
+idf.save()
