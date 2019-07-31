@@ -18,3 +18,4 @@
 *.mtr
 *.sql
 SEED_Models/**.csv
+results_check/*
