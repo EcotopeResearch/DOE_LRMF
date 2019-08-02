@@ -1279,7 +1279,7 @@ Schedule:Compact,
     0;                        !- Field 4
 
 Schedule:Compact,
-    heating_sch,              !- Name
+    heating_sch_unit,         !- Name
     Temperature,              !- Schedule Type Limits Name
     Through: 12/31,           !- Field 1
     For: AllDays,             !- Field 2
@@ -1287,7 +1287,7 @@ Schedule:Compact,
     22.22;                    !- Field 4
 
 Schedule:Compact,
-    cooling_sch,              !- Name
+    cooling_sch_unit,         !- Name
     Temperature,              !- Schedule Type Limits Name
     Through: 12/31,           !- Field 1
     For: AllDays,             !- Field 2
@@ -1301,6 +1301,38 @@ Schedule:Compact,
     For: AllDays,             !- Field 2
     Until: 24:00,             !- Field 3
     0;                        !- Field 4
+
+SCHEDULE:COMPACT,
+    heating_sch_corr,         !- Name
+    Temperature,              !- Schedule Type Limits Name
+    Through: 12/31,           !- Field 1
+    For: AllDays,             !- Field 2
+    Until: 24:00,             !- Field 3
+    22.22;                    !- Field 4
+
+SCHEDULE:COMPACT,
+    cooling_sch_corr,         !- Name
+    Temperature,              !- Schedule Type Limits Name
+    Through: 12/31,           !- Field 1
+    For: AllDays,             !- Field 2
+    Until: 24:00,             !- Field 3
+    23.88;                    !- Field 4
+
+SCHEDULE:COMPACT,
+    heating_sch_bsmt,         !- Name
+    Temperature,              !- Schedule Type Limits Name
+    Through: 12/31,           !- Field 1
+    For: AllDays,             !- Field 2
+    Until: 24:00,             !- Field 3
+    22.22;                    !- Field 4
+
+SCHEDULE:COMPACT,
+    cooling_sch_bsmt,         !- Name
+    Temperature,              !- Schedule Type Limits Name
+    Through: 12/31,           !- Field 1
+    For: AllDays,             !- Field 2
+    Until: 24:00,             !- Field 3
+    23.88;                    !- Field 4
 
 Schedule:Constant,
     DWWaterTempSchedule,      !- Name
@@ -10150,255 +10182,24 @@ ZoneVentilation:DesignFlowRate,
     ,                         !- Maximum Outdoor Temperature Schedule Name
     40;                       !- Maximum Wind Speed
 
-Exterior:Lights,
-    Exterior-Lights_unit1_FrontRow_BottomFloor,    !- Name
+EXTERIOR:LIGHTS,
+    stairLights,              !- Name
     ExteriorLightingProfile,    !- Schedule Name
-    29,                       !- Design Level
+    500,                      !- Design Level
     ,                         !- Control Option
     Exterior-Lights;          !- EndUse Subcategory
 
-Exterior:Lights,
-    Garage-Lights_unit1_FrontRow_BottomFloor,    !- Name
-    LightingProfile_EELighting,    !- Schedule Name
-    5.86,                     !- Design Level
-    ,                         !- Control Option
-    Exterior-Lights;          !- EndUse Subcategory
-
-Exterior:Lights,
-    Exterior-Lights_unit2_FrontRow_BottomFloor,    !- Name
+EXTERIOR:LIGHTS,
+    intPrkLights,             !- Name
     ExteriorLightingProfile,    !- Schedule Name
-    29,                       !- Design Level
+    500,                      !- Design Level
     ,                         !- Control Option
     Exterior-Lights;          !- EndUse Subcategory
 
-Exterior:Lights,
-    Garage-Lights_unit2_FrontRow_BottomFloor,    !- Name
-    LightingProfile_EELighting,    !- Schedule Name
-    5.86,                     !- Design Level
-    ,                         !- Control Option
-    Exterior-Lights;          !- EndUse Subcategory
-
-Exterior:Lights,
-    Exterior-Lights_unit3_FrontRow_BottomFloor,    !- Name
+EXTERIOR:LIGHTS,
+    extPrkLights,             !- Name
     ExteriorLightingProfile,    !- Schedule Name
-    29,                       !- Design Level
-    ,                         !- Control Option
-    Exterior-Lights;          !- EndUse Subcategory
-
-Exterior:Lights,
-    Garage-Lights_unit3_FrontRow_BottomFloor,    !- Name
-    LightingProfile_EELighting,    !- Schedule Name
-    5.86,                     !- Design Level
-    ,                         !- Control Option
-    Exterior-Lights;          !- EndUse Subcategory
-
-Exterior:Lights,
-    Exterior-Lights_unit1_BackRow_BottomFloor,    !- Name
-    ExteriorLightingProfile,    !- Schedule Name
-    29,                       !- Design Level
-    ,                         !- Control Option
-    Exterior-Lights;          !- EndUse Subcategory
-
-Exterior:Lights,
-    Garage-Lights_unit1_BackRow_BottomFloor,    !- Name
-    LightingProfile_EELighting,    !- Schedule Name
-    5.86,                     !- Design Level
-    ,                         !- Control Option
-    Exterior-Lights;          !- EndUse Subcategory
-
-Exterior:Lights,
-    Exterior-Lights_unit2_BackRow_BottomFloor,    !- Name
-    ExteriorLightingProfile,    !- Schedule Name
-    29,                       !- Design Level
-    ,                         !- Control Option
-    Exterior-Lights;          !- EndUse Subcategory
-
-Exterior:Lights,
-    Garage-Lights_unit2_BackRow_BottomFloor,    !- Name
-    LightingProfile_EELighting,    !- Schedule Name
-    5.86,                     !- Design Level
-    ,                         !- Control Option
-    Exterior-Lights;          !- EndUse Subcategory
-
-Exterior:Lights,
-    Exterior-Lights_unit3_BackRow_BottomFloor,    !- Name
-    ExteriorLightingProfile,    !- Schedule Name
-    29,                       !- Design Level
-    ,                         !- Control Option
-    Exterior-Lights;          !- EndUse Subcategory
-
-Exterior:Lights,
-    Garage-Lights_unit3_BackRow_BottomFloor,    !- Name
-    LightingProfile_EELighting,    !- Schedule Name
-    5.86,                     !- Design Level
-    ,                         !- Control Option
-    Exterior-Lights;          !- EndUse Subcategory
-
-Exterior:Lights,
-    Exterior-Lights_unit1_FrontRow_MiddleFloor,    !- Name
-    ExteriorLightingProfile,    !- Schedule Name
-    29,                       !- Design Level
-    ,                         !- Control Option
-    Exterior-Lights;          !- EndUse Subcategory
-
-Exterior:Lights,
-    Garage-Lights_unit1_FrontRow_MiddleFloor,    !- Name
-    LightingProfile_EELighting,    !- Schedule Name
-    5.86,                     !- Design Level
-    ,                         !- Control Option
-    Exterior-Lights;          !- EndUse Subcategory
-
-Exterior:Lights,
-    Exterior-Lights_unit2_FrontRow_MiddleFloor,    !- Name
-    ExteriorLightingProfile,    !- Schedule Name
-    29,                       !- Design Level
-    ,                         !- Control Option
-    Exterior-Lights;          !- EndUse Subcategory
-
-Exterior:Lights,
-    Garage-Lights_unit2_FrontRow_MiddleFloor,    !- Name
-    LightingProfile_EELighting,    !- Schedule Name
-    5.86,                     !- Design Level
-    ,                         !- Control Option
-    Exterior-Lights;          !- EndUse Subcategory
-
-Exterior:Lights,
-    Exterior-Lights_unit3_FrontRow_MiddleFloor,    !- Name
-    ExteriorLightingProfile,    !- Schedule Name
-    29,                       !- Design Level
-    ,                         !- Control Option
-    Exterior-Lights;          !- EndUse Subcategory
-
-Exterior:Lights,
-    Garage-Lights_unit3_FrontRow_MiddleFloor,    !- Name
-    LightingProfile_EELighting,    !- Schedule Name
-    5.86,                     !- Design Level
-    ,                         !- Control Option
-    Exterior-Lights;          !- EndUse Subcategory
-
-Exterior:Lights,
-    Exterior-Lights_unit1_BackRow_MiddleFloor,    !- Name
-    ExteriorLightingProfile,    !- Schedule Name
-    29,                       !- Design Level
-    ,                         !- Control Option
-    Exterior-Lights;          !- EndUse Subcategory
-
-Exterior:Lights,
-    Garage-Lights_unit1_BackRow_MiddleFloor,    !- Name
-    LightingProfile_EELighting,    !- Schedule Name
-    5.86,                     !- Design Level
-    ,                         !- Control Option
-    Exterior-Lights;          !- EndUse Subcategory
-
-Exterior:Lights,
-    Exterior-Lights_unit2_BackRow_MiddleFloor,    !- Name
-    ExteriorLightingProfile,    !- Schedule Name
-    29,                       !- Design Level
-    ,                         !- Control Option
-    Exterior-Lights;          !- EndUse Subcategory
-
-Exterior:Lights,
-    Garage-Lights_unit2_BackRow_MiddleFloor,    !- Name
-    LightingProfile_EELighting,    !- Schedule Name
-    5.86,                     !- Design Level
-    ,                         !- Control Option
-    Exterior-Lights;          !- EndUse Subcategory
-
-Exterior:Lights,
-    Exterior-Lights_unit3_BackRow_MiddleFloor,    !- Name
-    ExteriorLightingProfile,    !- Schedule Name
-    29,                       !- Design Level
-    ,                         !- Control Option
-    Exterior-Lights;          !- EndUse Subcategory
-
-Exterior:Lights,
-    Garage-Lights_unit3_BackRow_MiddleFloor,    !- Name
-    LightingProfile_EELighting,    !- Schedule Name
-    5.86,                     !- Design Level
-    ,                         !- Control Option
-    Exterior-Lights;          !- EndUse Subcategory
-
-Exterior:Lights,
-    Exterior-Lights_unit1_FrontRow_TopFloor,    !- Name
-    ExteriorLightingProfile,    !- Schedule Name
-    29,                       !- Design Level
-    ,                         !- Control Option
-    Exterior-Lights;          !- EndUse Subcategory
-
-Exterior:Lights,
-    Garage-Lights_unit1_FrontRow_TopFloor,    !- Name
-    LightingProfile_EELighting,    !- Schedule Name
-    5.86,                     !- Design Level
-    ,                         !- Control Option
-    Exterior-Lights;          !- EndUse Subcategory
-
-Exterior:Lights,
-    Exterior-Lights_unit2_FrontRow_TopFloor,    !- Name
-    ExteriorLightingProfile,    !- Schedule Name
-    29,                       !- Design Level
-    ,                         !- Control Option
-    Exterior-Lights;          !- EndUse Subcategory
-
-Exterior:Lights,
-    Garage-Lights_unit2_FrontRow_TopFloor,    !- Name
-    LightingProfile_EELighting,    !- Schedule Name
-    5.86,                     !- Design Level
-    ,                         !- Control Option
-    Exterior-Lights;          !- EndUse Subcategory
-
-Exterior:Lights,
-    Exterior-Lights_unit3_FrontRow_TopFloor,    !- Name
-    ExteriorLightingProfile,    !- Schedule Name
-    29,                       !- Design Level
-    ,                         !- Control Option
-    Exterior-Lights;          !- EndUse Subcategory
-
-Exterior:Lights,
-    Garage-Lights_unit3_FrontRow_TopFloor,    !- Name
-    LightingProfile_EELighting,    !- Schedule Name
-    5.86,                     !- Design Level
-    ,                         !- Control Option
-    Exterior-Lights;          !- EndUse Subcategory
-
-Exterior:Lights,
-    Exterior-Lights_unit1_BackRow_TopFloor,    !- Name
-    ExteriorLightingProfile,    !- Schedule Name
-    29,                       !- Design Level
-    ,                         !- Control Option
-    Exterior-Lights;          !- EndUse Subcategory
-
-Exterior:Lights,
-    Garage-Lights_unit1_BackRow_TopFloor,    !- Name
-    LightingProfile_EELighting,    !- Schedule Name
-    5.86,                     !- Design Level
-    ,                         !- Control Option
-    Exterior-Lights;          !- EndUse Subcategory
-
-Exterior:Lights,
-    Exterior-Lights_unit2_BackRow_TopFloor,    !- Name
-    ExteriorLightingProfile,    !- Schedule Name
-    29,                       !- Design Level
-    ,                         !- Control Option
-    Exterior-Lights;          !- EndUse Subcategory
-
-Exterior:Lights,
-    Garage-Lights_unit2_BackRow_TopFloor,    !- Name
-    LightingProfile_EELighting,    !- Schedule Name
-    5.86,                     !- Design Level
-    ,                         !- Control Option
-    Exterior-Lights;          !- EndUse Subcategory
-
-Exterior:Lights,
-    Exterior-Lights_unit3_BackRow_TopFloor,    !- Name
-    ExteriorLightingProfile,    !- Schedule Name
-    29,                       !- Design Level
-    ,                         !- Control Option
-    Exterior-Lights;          !- EndUse Subcategory
-
-Exterior:Lights,
-    Garage-Lights_unit3_BackRow_TopFloor,    !- Name
-    LightingProfile_EELighting,    !- Schedule Name
-    5.86,                     !- Design Level
+    500,                      !- Design Level
     ,                         !- Control Option
     Exterior-Lights;          !- EndUse Subcategory
 
@@ -11971,33 +11772,43 @@ ZoneControl:Thermostat,
     heatedbsmt,               !- Zone or ZoneList Name
     zone_control_type,        !- Control Type Schedule Name
     ThermostatSetpoint:DualSetpoint,    !- Control 1 Object Type
-    thermostat_living Dual SP Control;    !- Control 1 Name
+    thermostat_bsmt Dual SP Control;    !- Control 1 Name
 
 ZoneControl:Thermostat,
     Zone Thermostat_G Corridor,    !- Name
     G Corridor,               !- Zone or ZoneList Name
     zone_control_type,        !- Control Type Schedule Name
     ThermostatSetpoint:DualSetpoint,    !- Control 1 Object Type
-    thermostat_living Dual SP Control;    !- Control 1 Name
+    thermostat_corr Dual SP Control;    !- Control 1 Name
 
 ZoneControl:Thermostat,
     Zone Thermostat_M Corridor,    !- Name
     M Corridor,               !- Zone or ZoneList Name
     zone_control_type,        !- Control Type Schedule Name
     ThermostatSetpoint:DualSetpoint,    !- Control 1 Object Type
-    thermostat_living Dual SP Control;    !- Control 1 Name
+    thermostat_corr Dual SP Control;    !- Control 1 Name
 
 ZoneControl:Thermostat,
     Zone Thermostat_T Corridor,    !- Name
     T Corridor,               !- Zone or ZoneList Name
     zone_control_type,        !- Control Type Schedule Name
     ThermostatSetpoint:DualSetpoint,    !- Control 1 Object Type
-    thermostat_living Dual SP Control;    !- Control 1 Name
+    thermostat_corr Dual SP Control;    !- Control 1 Name
 
 ThermostatSetpoint:DualSetpoint,
     thermostat_living Dual SP Control,    !- Name
-    heating_sch,              !- Heating Setpoint Temperature Schedule Name
-    cooling_sch;              !- Cooling Setpoint Temperature Schedule Name
+    heating_sch_unit,         !- Heating Setpoint Temperature Schedule Name
+    cooling_sch_unit;         !- Cooling Setpoint Temperature Schedule Name
+
+THERMOSTATSETPOINT:DUALSETPOINT,
+    thermostat_corr Dual SP Control,    !- Name
+    heating_sch_corr,         !- Heating Setpoint Temperature Schedule Name
+    cooling_sch_corr;         !- Cooling Setpoint Temperature Schedule Name
+
+THERMOSTATSETPOINT:DUALSETPOINT,
+    thermostat_bsmt Dual SP Control,    !- Name
+    heating_sch_bsmt,         !- Heating Setpoint Temperature Schedule Name
+    cooling_sch_bsmt;         !- Cooling Setpoint Temperature Schedule Name
 
 AirTerminal:SingleDuct:Uncontrolled,
     ZoneDirectAir_unit1_FrontRow_BottomFloor,    !- Name
