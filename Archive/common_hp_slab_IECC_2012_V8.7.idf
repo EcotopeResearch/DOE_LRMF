@@ -1,4 +1,4 @@
-!- Windows Line endings 
+!- Windows Line endings
 
 Version,
     8.7;                      !- Version Identifier
@@ -1279,7 +1279,7 @@ Schedule:Compact,
     0;                        !- Field 4
 
 Schedule:Compact,
-    heating_sch_unit,         !- Name
+    heating_sch,              !- Name
     Temperature,              !- Schedule Type Limits Name
     Through: 12/31,           !- Field 1
     For: AllDays,             !- Field 2
@@ -1287,7 +1287,7 @@ Schedule:Compact,
     22.22;                    !- Field 4
 
 Schedule:Compact,
-    cooling_sch_unit,         !- Name
+    cooling_sch,              !- Name
     Temperature,              !- Schedule Type Limits Name
     Through: 12/31,           !- Field 1
     For: AllDays,             !- Field 2
@@ -1301,22 +1301,6 @@ Schedule:Compact,
     For: AllDays,             !- Field 2
     Until: 24:00,             !- Field 3
     0;                        !- Field 4
-
-Schedule:Compact,
-    heating_sch_corr,         !- Name
-    Temperature,              !- Schedule Type Limits Name
-    Through: 12/31,           !- Field 1
-    For: AllDays,             !- Field 2
-    Until: 24:00,             !- Field 3
-    22.22;                    !- Field 4
-
-Schedule:Compact,
-    cooling_sch_corr,         !- Name
-    Temperature,              !- Schedule Type Limits Name
-    Through: 12/31,           !- Field 1
-    For: AllDays,             !- Field 2
-    Until: 24:00,             !- Field 3
-    23.88;                    !- Field 4
 
 Schedule:Constant,
     DWWaterTempSchedule,      !- Name
@@ -1419,6 +1403,14 @@ Material,
     0.0485233,                !- Conductivity
     55.074,                   !- Density
     916.9311;                 !- Specific Heat
+
+Material,
+    slab_consol_layer,      !- Name
+    Rough,                   !- Roughness
+    0.23495,                 !- Thickness {m}
+    0.0485233,               !- Conductivity {W/m-K}
+    55.074,                  !- Density {kg/m3}
+    916.9311;                !- Specific Heat {J/kg-K}
 
 Material,
     bsmtwall_consol_layer,    !- Name
@@ -1781,6 +1773,13 @@ Construction,
     floor_consol_layer,       !- Outside Layer
     Plywood_3/4in,            !- Layer 2
     Carpet_n_pad;             !- Layer 3
+
+Construction,
+    Slab,          !- Name
+    slab_consol_layer,      !- Outside Layer
+    Plywood_3/4in,           !- Layer 2
+    Carpet_n_pad;            !- Layer 3
+
 
 Construction,
     Interior Floor,           !- Name
@@ -2192,7 +2191,7 @@ BuildingSurface:Detailed,
     G Corridor,               !- Outside Boundary Condition Object
     NoSun,                    !- Sun Exposure
     NoWind,                   !- Wind Exposure
-    0,                        !- View Factor to Ground
+    0.0,                        !- View Factor to Ground
     4,                        !- Number of Vertices
     24.357925818630,           !- Vertex 1 Xcoordinate
     9.157114969410,            !- Vertex 1 Ycoordinate
@@ -3170,13 +3169,13 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     Floor_unit1_FrontRow_BottomFloor,    !- Name
     Floor,                    !- Surface Type
-    Slab,                     !- Construction Name
+    Slab,           !- Construction Name
     living_unit1_FrontRow_BottomFloor,    !- Zone Name
     GroundSlabPreprocessorAverage,    !- Outside Boundary Condition
     ,                         !- Outside Boundary Condition Object
     NoSun,                    !- Sun Exposure
     NoWind,                   !- Wind Exposure
-    0,                        !- View Factor to Ground
+    0.0,                        !- View Factor to Ground
     4,                        !- Number of Vertices
     12.178962909315,          !- Vertex 1 Xcoordinate
     0.000000000000,                        !- Vertex 1 Ycoordinate
@@ -3194,13 +3193,13 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     Floor_unit2_FrontRow_BottomFloor,    !- Name
     Floor,                    !- Surface Type
-    Slab,                     !- Construction Name
+    Slab,           !- Construction Name
     living_unit2_FrontRow_BottomFloor,    !- Zone Name
     GroundSlabPreprocessorAverage,    !- Outside Boundary Condition
     ,                         !- Outside Boundary Condition Object
     NoSun,                    !- Sun Exposure
     NoWind,                   !- Wind Exposure
-    0,                        !- View Factor to Ground
+    0.0,                        !- View Factor to Ground
     4,                        !- Number of Vertices
     24.357925818630,           !- Vertex 1 Xcoordinate
     0.000000000000,                        !- Vertex 1 Ycoordinate
@@ -3218,13 +3217,13 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     Floor_unit3_FrontRow_BottomFloor,    !- Name
     Floor,                    !- Surface Type
-    Slab,                     !- Construction Name
+    Slab,           !- Construction Name
     living_unit3_FrontRow_BottomFloor,    !- Zone Name
     GroundSlabPreprocessorAverage,    !- Outside Boundary Condition
     ,                         !- Outside Boundary Condition Object
     NoSun,                    !- Sun Exposure
     NoWind,                   !- Wind Exposure
-    0,                        !- View Factor to Ground
+    0.0,                        !- View Factor to Ground
     4,                        !- Number of Vertices
     36.536888727945,          !- Vertex 1 Xcoordinate
     0.000000000000,                        !- Vertex 1 Ycoordinate
@@ -3242,13 +3241,13 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     Floor_unit1_BackRow_BottomFloor,    !- Name
     Floor,                    !- Surface Type
-    Slab,                     !- Construction Name
+    Slab,           !- Construction Name
     living_unit1_BackRow_BottomFloor,    !- Zone Name
     GroundSlabPreprocessorAverage,    !- Outside Boundary Condition
     ,                         !- Outside Boundary Condition Object
     NoSun,                    !- Sun Exposure
     NoWind,                   !- Wind Exposure
-    0,                        !- View Factor to Ground
+    0.0,                        !- View Factor to Ground
     4,                        !- Number of Vertices
     12.178962909315,          !- Vertex 1 Xcoordinate
     10.681505213312,          !- Vertex 1 Ycoordinate
@@ -3266,13 +3265,13 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     Floor_unit2_BackRow_BottomFloor,    !- Name
     Floor,                    !- Surface Type
-    Slab,                     !- Construction Name
+    Slab,           !- Construction Name
     living_unit2_BackRow_BottomFloor,    !- Zone Name
     GroundSlabPreprocessorAverage,    !- Outside Boundary Condition
     ,                         !- Outside Boundary Condition Object
     NoSun,                    !- Sun Exposure
     NoWind,                   !- Wind Exposure
-    0,                        !- View Factor to Ground
+    0.0,                        !- View Factor to Ground
     4,                        !- Number of Vertices
     24.357925818630,           !- Vertex 1 Xcoordinate
     10.681505213312,          !- Vertex 1 Ycoordinate
@@ -3290,13 +3289,13 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     Floor_unit3_BackRow_BottomFloor,    !- Name
     Floor,                    !- Surface Type
-    Slab,                     !- Construction Name
+    Slab,           !- Construction Name
     living_unit3_BackRow_BottomFloor,    !- Zone Name
     GroundSlabPreprocessorAverage,    !- Outside Boundary Condition
     ,                         !- Outside Boundary Condition Object
     NoSun,                    !- Sun Exposure
     NoWind,                   !- Wind Exposure
-    0,                        !- View Factor to Ground
+    0.0,                        !- View Factor to Ground
     4,                        !- Number of Vertices
     36.536888727945,          !- Vertex 1 Xcoordinate
     10.681505213312,          !- Vertex 1 Ycoordinate
@@ -4772,13 +4771,13 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     g Floor C,                !- Name
     Floor,                    !- Surface Type
-    Slab,                     !- Construction Name
+    Slab,           !- Construction Name
     G Corridor,               !- Zone Name
     GroundSlabPreprocessorAverage,    !- Outside Boundary Condition
     ,                         !- Outside Boundary Condition Object
     NoSun,                    !- Sun Exposure
     NoWind,                   !- Wind Exposure
-    0,                        !- View Factor to Ground
+    0.0,                        !- View Factor to Ground
     4,                        !- Number of Vertices
     36.536888727945,          !- Vertex 1 Xcoordinate
     9.157114969410,            !- Vertex 1 Ycoordinate
@@ -9908,23 +9907,254 @@ ZoneVentilation:DesignFlowRate,
     40;                       !- Maximum Wind Speed
 
 Exterior:Lights,
-    stairLights,              !- Name
+    Exterior-Lights_unit1_FrontRow_BottomFloor,    !- Name
     ExteriorLightingProfile,    !- Schedule Name
-    500,                      !- Design Level
+    29,                       !- Design Level
     ,                         !- Control Option
     Exterior-Lights;          !- EndUse Subcategory
 
 Exterior:Lights,
-    intPrkLights,             !- Name
-    ExteriorLightingProfile,    !- Schedule Name
-    500,                      !- Design Level
+    Garage-Lights_unit1_FrontRow_BottomFloor,    !- Name
+    LightingProfile_EELighting,    !- Schedule Name
+    5.86,                     !- Design Level
     ,                         !- Control Option
     Exterior-Lights;          !- EndUse Subcategory
 
 Exterior:Lights,
-    extPrkLights,             !- Name
+    Exterior-Lights_unit2_FrontRow_BottomFloor,    !- Name
     ExteriorLightingProfile,    !- Schedule Name
-    500,                      !- Design Level
+    29,                       !- Design Level
+    ,                         !- Control Option
+    Exterior-Lights;          !- EndUse Subcategory
+
+Exterior:Lights,
+    Garage-Lights_unit2_FrontRow_BottomFloor,    !- Name
+    LightingProfile_EELighting,    !- Schedule Name
+    5.86,                     !- Design Level
+    ,                         !- Control Option
+    Exterior-Lights;          !- EndUse Subcategory
+
+Exterior:Lights,
+    Exterior-Lights_unit3_FrontRow_BottomFloor,    !- Name
+    ExteriorLightingProfile,    !- Schedule Name
+    29,                       !- Design Level
+    ,                         !- Control Option
+    Exterior-Lights;          !- EndUse Subcategory
+
+Exterior:Lights,
+    Garage-Lights_unit3_FrontRow_BottomFloor,    !- Name
+    LightingProfile_EELighting,    !- Schedule Name
+    5.86,                     !- Design Level
+    ,                         !- Control Option
+    Exterior-Lights;          !- EndUse Subcategory
+
+Exterior:Lights,
+    Exterior-Lights_unit1_BackRow_BottomFloor,    !- Name
+    ExteriorLightingProfile,    !- Schedule Name
+    29,                       !- Design Level
+    ,                         !- Control Option
+    Exterior-Lights;          !- EndUse Subcategory
+
+Exterior:Lights,
+    Garage-Lights_unit1_BackRow_BottomFloor,    !- Name
+    LightingProfile_EELighting,    !- Schedule Name
+    5.86,                     !- Design Level
+    ,                         !- Control Option
+    Exterior-Lights;          !- EndUse Subcategory
+
+Exterior:Lights,
+    Exterior-Lights_unit2_BackRow_BottomFloor,    !- Name
+    ExteriorLightingProfile,    !- Schedule Name
+    29,                       !- Design Level
+    ,                         !- Control Option
+    Exterior-Lights;          !- EndUse Subcategory
+
+Exterior:Lights,
+    Garage-Lights_unit2_BackRow_BottomFloor,    !- Name
+    LightingProfile_EELighting,    !- Schedule Name
+    5.86,                     !- Design Level
+    ,                         !- Control Option
+    Exterior-Lights;          !- EndUse Subcategory
+
+Exterior:Lights,
+    Exterior-Lights_unit3_BackRow_BottomFloor,    !- Name
+    ExteriorLightingProfile,    !- Schedule Name
+    29,                       !- Design Level
+    ,                         !- Control Option
+    Exterior-Lights;          !- EndUse Subcategory
+
+Exterior:Lights,
+    Garage-Lights_unit3_BackRow_BottomFloor,    !- Name
+    LightingProfile_EELighting,    !- Schedule Name
+    5.86,                     !- Design Level
+    ,                         !- Control Option
+    Exterior-Lights;          !- EndUse Subcategory
+
+Exterior:Lights,
+    Exterior-Lights_unit1_FrontRow_MiddleFloor,    !- Name
+    ExteriorLightingProfile,    !- Schedule Name
+    29,                       !- Design Level
+    ,                         !- Control Option
+    Exterior-Lights;          !- EndUse Subcategory
+
+Exterior:Lights,
+    Garage-Lights_unit1_FrontRow_MiddleFloor,    !- Name
+    LightingProfile_EELighting,    !- Schedule Name
+    5.86,                     !- Design Level
+    ,                         !- Control Option
+    Exterior-Lights;          !- EndUse Subcategory
+
+Exterior:Lights,
+    Exterior-Lights_unit2_FrontRow_MiddleFloor,    !- Name
+    ExteriorLightingProfile,    !- Schedule Name
+    29,                       !- Design Level
+    ,                         !- Control Option
+    Exterior-Lights;          !- EndUse Subcategory
+
+Exterior:Lights,
+    Garage-Lights_unit2_FrontRow_MiddleFloor,    !- Name
+    LightingProfile_EELighting,    !- Schedule Name
+    5.86,                     !- Design Level
+    ,                         !- Control Option
+    Exterior-Lights;          !- EndUse Subcategory
+
+Exterior:Lights,
+    Exterior-Lights_unit3_FrontRow_MiddleFloor,    !- Name
+    ExteriorLightingProfile,    !- Schedule Name
+    29,                       !- Design Level
+    ,                         !- Control Option
+    Exterior-Lights;          !- EndUse Subcategory
+
+Exterior:Lights,
+    Garage-Lights_unit3_FrontRow_MiddleFloor,    !- Name
+    LightingProfile_EELighting,    !- Schedule Name
+    5.86,                     !- Design Level
+    ,                         !- Control Option
+    Exterior-Lights;          !- EndUse Subcategory
+
+Exterior:Lights,
+    Exterior-Lights_unit1_BackRow_MiddleFloor,    !- Name
+    ExteriorLightingProfile,    !- Schedule Name
+    29,                       !- Design Level
+    ,                         !- Control Option
+    Exterior-Lights;          !- EndUse Subcategory
+
+Exterior:Lights,
+    Garage-Lights_unit1_BackRow_MiddleFloor,    !- Name
+    LightingProfile_EELighting,    !- Schedule Name
+    5.86,                     !- Design Level
+    ,                         !- Control Option
+    Exterior-Lights;          !- EndUse Subcategory
+
+Exterior:Lights,
+    Exterior-Lights_unit2_BackRow_MiddleFloor,    !- Name
+    ExteriorLightingProfile,    !- Schedule Name
+    29,                       !- Design Level
+    ,                         !- Control Option
+    Exterior-Lights;          !- EndUse Subcategory
+
+Exterior:Lights,
+    Garage-Lights_unit2_BackRow_MiddleFloor,    !- Name
+    LightingProfile_EELighting,    !- Schedule Name
+    5.86,                     !- Design Level
+    ,                         !- Control Option
+    Exterior-Lights;          !- EndUse Subcategory
+
+Exterior:Lights,
+    Exterior-Lights_unit3_BackRow_MiddleFloor,    !- Name
+    ExteriorLightingProfile,    !- Schedule Name
+    29,                       !- Design Level
+    ,                         !- Control Option
+    Exterior-Lights;          !- EndUse Subcategory
+
+Exterior:Lights,
+    Garage-Lights_unit3_BackRow_MiddleFloor,    !- Name
+    LightingProfile_EELighting,    !- Schedule Name
+    5.86,                     !- Design Level
+    ,                         !- Control Option
+    Exterior-Lights;          !- EndUse Subcategory
+
+Exterior:Lights,
+    Exterior-Lights_unit1_FrontRow_TopFloor,    !- Name
+    ExteriorLightingProfile,    !- Schedule Name
+    29,                       !- Design Level
+    ,                         !- Control Option
+    Exterior-Lights;          !- EndUse Subcategory
+
+Exterior:Lights,
+    Garage-Lights_unit1_FrontRow_TopFloor,    !- Name
+    LightingProfile_EELighting,    !- Schedule Name
+    5.86,                     !- Design Level
+    ,                         !- Control Option
+    Exterior-Lights;          !- EndUse Subcategory
+
+Exterior:Lights,
+    Exterior-Lights_unit2_FrontRow_TopFloor,    !- Name
+    ExteriorLightingProfile,    !- Schedule Name
+    29,                       !- Design Level
+    ,                         !- Control Option
+    Exterior-Lights;          !- EndUse Subcategory
+
+Exterior:Lights,
+    Garage-Lights_unit2_FrontRow_TopFloor,    !- Name
+    LightingProfile_EELighting,    !- Schedule Name
+    5.86,                     !- Design Level
+    ,                         !- Control Option
+    Exterior-Lights;          !- EndUse Subcategory
+
+Exterior:Lights,
+    Exterior-Lights_unit3_FrontRow_TopFloor,    !- Name
+    ExteriorLightingProfile,    !- Schedule Name
+    29,                       !- Design Level
+    ,                         !- Control Option
+    Exterior-Lights;          !- EndUse Subcategory
+
+Exterior:Lights,
+    Garage-Lights_unit3_FrontRow_TopFloor,    !- Name
+    LightingProfile_EELighting,    !- Schedule Name
+    5.86,                     !- Design Level
+    ,                         !- Control Option
+    Exterior-Lights;          !- EndUse Subcategory
+
+Exterior:Lights,
+    Exterior-Lights_unit1_BackRow_TopFloor,    !- Name
+    ExteriorLightingProfile,    !- Schedule Name
+    29,                       !- Design Level
+    ,                         !- Control Option
+    Exterior-Lights;          !- EndUse Subcategory
+
+Exterior:Lights,
+    Garage-Lights_unit1_BackRow_TopFloor,    !- Name
+    LightingProfile_EELighting,    !- Schedule Name
+    5.86,                     !- Design Level
+    ,                         !- Control Option
+    Exterior-Lights;          !- EndUse Subcategory
+
+Exterior:Lights,
+    Exterior-Lights_unit2_BackRow_TopFloor,    !- Name
+    ExteriorLightingProfile,    !- Schedule Name
+    29,                       !- Design Level
+    ,                         !- Control Option
+    Exterior-Lights;          !- EndUse Subcategory
+
+Exterior:Lights,
+    Garage-Lights_unit2_BackRow_TopFloor,    !- Name
+    LightingProfile_EELighting,    !- Schedule Name
+    5.86,                     !- Design Level
+    ,                         !- Control Option
+    Exterior-Lights;          !- EndUse Subcategory
+
+Exterior:Lights,
+    Exterior-Lights_unit3_BackRow_TopFloor,    !- Name
+    ExteriorLightingProfile,    !- Schedule Name
+    29,                       !- Design Level
+    ,                         !- Control Option
+    Exterior-Lights;          !- EndUse Subcategory
+
+Exterior:Lights,
+    Garage-Lights_unit3_BackRow_TopFloor,    !- Name
+    LightingProfile_EELighting,    !- Schedule Name
+    5.86,                     !- Design Level
     ,                         !- Control Option
     Exterior-Lights;          !- EndUse Subcategory
 
@@ -11427,31 +11657,26 @@ ZoneControl:Thermostat,
     G Corridor,               !- Zone or ZoneList Name
     zone_control_type,        !- Control Type Schedule Name
     ThermostatSetpoint:DualSetpoint,    !- Control 1 Object Type
-    thermostat_corr Dual SP Control;    !- Control 1 Name
+    thermostat_living Dual SP Control;    !- Control 1 Name
 
 ZoneControl:Thermostat,
     Zone Thermostat_M Corridor,    !- Name
     M Corridor,               !- Zone or ZoneList Name
     zone_control_type,        !- Control Type Schedule Name
     ThermostatSetpoint:DualSetpoint,    !- Control 1 Object Type
-    thermostat_corr Dual SP Control;    !- Control 1 Name
+    thermostat_living Dual SP Control;    !- Control 1 Name
 
 ZoneControl:Thermostat,
     Zone Thermostat_T Corridor,    !- Name
     T Corridor,               !- Zone or ZoneList Name
     zone_control_type,        !- Control Type Schedule Name
     ThermostatSetpoint:DualSetpoint,    !- Control 1 Object Type
-    thermostat_corr Dual SP Control;    !- Control 1 Name
+    thermostat_living Dual SP Control;    !- Control 1 Name
 
 ThermostatSetpoint:DualSetpoint,
     thermostat_living Dual SP Control,    !- Name
-    heating_sch_unit,         !- Heating Setpoint Temperature Schedule Name
-    cooling_sch_unit;         !- Cooling Setpoint Temperature Schedule Name
-
-ThermostatSetpoint:DualSetpoint,
-    thermostat_corr Dual SP Control,    !- Name
-    heating_sch_corr,         !- Heating Setpoint Temperature Schedule Name
-    cooling_sch_corr;         !- Cooling Setpoint Temperature Schedule Name
+    heating_sch,              !- Heating Setpoint Temperature Schedule Name
+    cooling_sch;              !- Cooling Setpoint Temperature Schedule Name
 
 AirTerminal:SingleDuct:Uncontrolled,
     ZoneDirectAir_unit1_FrontRow_BottomFloor,    !- Name
