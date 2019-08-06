@@ -19,3 +19,4 @@
 *.sql
 SEED_Models/**.csv
 results_check/*
+Archive/*
