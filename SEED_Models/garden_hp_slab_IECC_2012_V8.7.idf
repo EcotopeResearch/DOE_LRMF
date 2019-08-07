@@ -1664,6 +1664,17 @@ Material,
     0.5,                      !- Solar Absorptance
     0.5;                      !- Visible Absorptance
 
+MATERIAL,
+    slab_consol_layer,        !- Name
+    Rough,                    !- Roughness
+    0.23495,                  !- Thickness
+    0.0485233,                !- Conductivity
+    55.074,                   !- Density
+    916.9311,                 !- Specific Heat
+    0.9,                      !- Thermal Absorptance
+    0.7,                      !- Solar Absorptance
+    0.7;                      !- Visible Absorptance
+
 Material:NoMass,
     Manf_wall_airgap,         !- Name
     Smooth,                   !- Roughness
@@ -1867,6 +1878,12 @@ Construction,
 Construction,
     TDD Diffuser,             !- Name
     Diffusing Acrylic Plastic;    !- Outside Layer
+
+CONSTRUCTION,
+    Slab,                     !- Name
+    slab_consol_layer,        !- Outside Layer
+    Plywood_3/4in,            !- Layer 2
+    Carpet_n_pad;             !- Layer 3
 
 GlobalGeometryRules,
     LowerLeftCorner,          !- Starting Vertex Position
@@ -3232,7 +3249,7 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     Floor_unit1_FrontRow_BottomFloor,    !- Name
     Floor,                    !- Surface Type
-    Exterior Floor,           !- Construction Name
+    Slab,                     !- Construction Name
     living_unit1_FrontRow_BottomFloor,    !- Zone Name
     GroundSlabPreprocessorAverage,    !- Outside Boundary Condition
     ,                         !- Outside Boundary Condition Object
@@ -3256,7 +3273,7 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     Floor_unit2_FrontRow_BottomFloor,    !- Name
     Floor,                    !- Surface Type
-    Exterior Floor,           !- Construction Name
+    Slab,                     !- Construction Name
     living_unit2_FrontRow_BottomFloor,    !- Zone Name
     GroundSlabPreprocessorAverage,    !- Outside Boundary Condition
     ,                         !- Outside Boundary Condition Object
@@ -3280,7 +3297,7 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     Floor_unit3_FrontRow_BottomFloor,    !- Name
     Floor,                    !- Surface Type
-    Exterior Floor,           !- Construction Name
+    Slab,                     !- Construction Name
     living_unit3_FrontRow_BottomFloor,    !- Zone Name
     GroundSlabPreprocessorAverage,    !- Outside Boundary Condition
     ,                         !- Outside Boundary Condition Object
@@ -3304,7 +3321,7 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     Floor_unit1_BackRow_BottomFloor,    !- Name
     Floor,                    !- Surface Type
-    Exterior Floor,           !- Construction Name
+    Slab,                     !- Construction Name
     living_unit1_BackRow_BottomFloor,    !- Zone Name
     GroundSlabPreprocessorAverage,    !- Outside Boundary Condition
     ,                         !- Outside Boundary Condition Object
@@ -3328,7 +3345,7 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     Floor_unit2_BackRow_BottomFloor,    !- Name
     Floor,                    !- Surface Type
-    Exterior Floor,           !- Construction Name
+    Slab,                     !- Construction Name
     living_unit2_BackRow_BottomFloor,    !- Zone Name
     GroundSlabPreprocessorAverage,    !- Outside Boundary Condition
     ,                         !- Outside Boundary Condition Object
@@ -3352,7 +3369,7 @@ BuildingSurface:Detailed,
 BuildingSurface:Detailed,
     Floor_unit3_BackRow_BottomFloor,    !- Name
     Floor,                    !- Surface Type
-    Exterior Floor,           !- Construction Name
+    Slab,                     !- Construction Name
     living_unit3_BackRow_BottomFloor,    !- Zone Name
     GroundSlabPreprocessorAverage,    !- Outside Boundary Condition
     ,                         !- Outside Boundary Condition Object
