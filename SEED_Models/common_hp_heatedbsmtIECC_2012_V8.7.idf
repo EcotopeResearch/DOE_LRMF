@@ -2140,7 +2140,7 @@ BuildingSurface:Detailed,
     Floor,                    !- Surface Type
     Slab,                     !- Construction Name
     heatedbsmt,               !- Zone Name
-    GroundBasementPreprocessorAverageFloor,    !- Outside Boundary Condition
+    Ground,                   !- Outside Boundary Condition
     ,                         !- Outside Boundary Condition Object
     NoSun,                    !- Sun Exposure
     NoWind,                   !- Wind Exposure
@@ -2188,7 +2188,7 @@ BuildingSurface:Detailed,
     Wall,                     !- Surface Type
     Basement Wall,            !- Construction Name
     heatedbsmt,               !- Zone Name
-    GroundBasementPreprocessorAverageWall,    !- Outside Boundary Condition
+    Ground,                   !- Outside Boundary Condition
     ,                         !- Outside Boundary Condition Object
     NoSun,                    !- Sun Exposure
     NoWind,                   !- Wind Exposure
@@ -2236,7 +2236,7 @@ BuildingSurface:Detailed,
     Wall,                     !- Surface Type
     Basement Wall,            !- Construction Name
     heatedbsmt,               !- Zone Name
-    GroundBasementPreprocessorAverageWall,    !- Outside Boundary Condition
+    Ground,                   !- Outside Boundary Condition
     ,                         !- Outside Boundary Condition Object
     NoSun,                    !- Sun Exposure
     NoWind,                   !- Wind Exposure
@@ -2284,7 +2284,7 @@ BuildingSurface:Detailed,
     Wall,                     !- Surface Type
     Basement Wall,            !- Construction Name
     heatedbsmt,               !- Zone Name
-    GroundBasementPreprocessorAverageWall,    !- Outside Boundary Condition
+    Ground,                   !- Outside Boundary Condition
     ,                         !- Outside Boundary Condition Object
     NoSun,                    !- Sun Exposure
     NoWind,                   !- Wind Exposure
@@ -2332,7 +2332,7 @@ BuildingSurface:Detailed,
     Wall,                     !- Surface Type
     Basement Wall,            !- Construction Name
     heatedbsmt,               !- Zone Name
-    GroundBasementPreprocessorAverageWall,    !- Outside Boundary Condition
+    Ground,                   !- Outside Boundary Condition
     ,                         !- Outside Boundary Condition Object
     NoSun,                    !- Sun Exposure
     NoWind,                   !- Wind Exposure
@@ -6632,7 +6632,7 @@ WindowProperty:ShadingControl,
 
 GroundHeatTransfer:Control,
     gtp_control,              !- Name
-    yes,                      !- Run Basement Preprocessor
+    no,                       !- Run Basement Preprocessor
     no;                       !- Run Slab Preprocessor
 
 GroundHeatTransfer:Slab:Materials,
@@ -10092,7 +10092,7 @@ ZoneVentilation:DesignFlowRate,
     heatedbsmt,               !- Zone or ZoneList Name
     always_off,               !- Schedule Name
     Flow/Zone,                !- Design Flow Rate Calculation Method
-    0.0212524794559365,       !- Design Flow Rate
+    0.235973725,              !- Design Flow Rate
     ,                         !- Flow Rate per Zone Floor Area
     ,                         !- Flow Rate per Person
     ,                         !- Air Changes per Hour
@@ -10120,7 +10120,7 @@ ZoneVentilation:DesignFlowRate,
     G Corridor,               !- Zone or ZoneList Name
     always_avail,             !- Schedule Name
     Flow/Zone,                !- Design Flow Rate Calculation Method
-    0.0212524794559365,       !- Design Flow Rate
+    0.018877898,              !- Design Flow Rate
     ,                         !- Flow Rate per Zone Floor Area
     ,                         !- Flow Rate per Person
     ,                         !- Air Changes per Hour
@@ -10148,7 +10148,7 @@ ZoneVentilation:DesignFlowRate,
     M Corridor,               !- Zone or ZoneList Name
     always_avail,             !- Schedule Name
     Flow/Zone,                !- Design Flow Rate Calculation Method
-    0.0212524794559365,       !- Design Flow Rate
+    0.018877898,              !- Design Flow Rate
     ,                         !- Flow Rate per Zone Floor Area
     ,                         !- Flow Rate per Person
     ,                         !- Air Changes per Hour
@@ -10176,7 +10176,7 @@ ZoneVentilation:DesignFlowRate,
     T Corridor,               !- Zone or ZoneList Name
     always_avail,             !- Schedule Name
     Flow/Zone,                !- Design Flow Rate Calculation Method
-    0.0212524794559365,       !- Design Flow Rate
+    0.018877898,              !- Design Flow Rate
     ,                         !- Flow Rate per Zone Floor Area
     ,                         !- Flow Rate per Person
     ,                         !- Air Changes per Hour
@@ -22035,843 +22035,13 @@ OutputControl:Table:Style,
     HTML,                     !- Column Separator
     InchPound;                !- Unit Conversion
 
-Output:Variable,
-    heatedbsmt,               !- Key Value
-    Zone Mean Air Temperature,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    living_unit1_FrontRow_BottomFloor,    !- Key Value
-    Zone Mean Air Temperature,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    living_unit2_FrontRow_BottomFloor,    !- Key Value
-    Zone Mean Air Temperature,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    living_unit3_FrontRow_BottomFloor,    !- Key Value
-    Zone Mean Air Temperature,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    living_unit1_BackRow_BottomFloor,    !- Key Value
-    Zone Mean Air Temperature,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    living_unit2_BackRow_BottomFloor,    !- Key Value
-    Zone Mean Air Temperature,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    living_unit3_BackRow_BottomFloor,    !- Key Value
-    Zone Mean Air Temperature,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    living_unit1_FrontRow_MiddleFloor,    !- Key Value
-    Zone Mean Air Temperature,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    living_unit2_FrontRow_MiddleFloor,    !- Key Value
-    Zone Mean Air Temperature,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    living_unit3_FrontRow_MiddleFloor,    !- Key Value
-    Zone Mean Air Temperature,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    living_unit1_BackRow_MiddleFloor,    !- Key Value
-    Zone Mean Air Temperature,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    living_unit2_BackRow_MiddleFloor,    !- Key Value
-    Zone Mean Air Temperature,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    living_unit3_BackRow_MiddleFloor,    !- Key Value
-    Zone Mean Air Temperature,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    attic,                    !- Key Value
-    Zone Mean Air Temperature,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    living_unit3_BackRow_TopFloor,    !- Key Value
-    Zone Mean Air Temperature,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    living_unit3_FrontRow_TopFloor,    !- Key Value
-    Zone Mean Air Temperature,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    living_unit1_FrontRow_TopFloor,    !- Key Value
-    Zone Mean Air Temperature,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    living_unit2_BackRow_TopFloor,    !- Key Value
-    Zone Mean Air Temperature,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    living_unit2_FrontRow_TopFloor,    !- Key Value
-    Zone Mean Air Temperature,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    living_unit1_BackRow_TopFloor,    !- Key Value
-    Zone Mean Air Temperature,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    G Corridor,               !- Key Value
-    Zone Mean Air Temperature,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    M Corridor,               !- Key Value
-    Zone Mean Air Temperature,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    T Corridor,               !- Key Value
-    Zone Mean Air Temperature,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Wall_ldb_1.unit2_FrontRow_BottomFloor,    !- Key Value
-    Surface Inside Face Conduction Heat Gain Rate,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Wall_ldb_1.unit2_FrontRow_MiddleFloor,    !- Key Value
-    Surface Inside Face Conduction Heat Gain Rate,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Wall_ldb_1.unit2_FrontRow_TopFloor,    !- Key Value
-    Surface Inside Face Conduction Heat Gain Rate,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    DX Cooling Coil_unit1_FrontRow_BottomFloor,    !- Key Value
-    Cooling Coil Total Cooling Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    DX Cooling Coil_unit1_FrontRow_BottomFloor,    !- Key Value
-    Cooling Coil Electric Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    DX Cooling Coil_unit2_FrontRow_BottomFloor,    !- Key Value
-    Cooling Coil Total Cooling Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    DX Cooling Coil_unit2_FrontRow_BottomFloor,    !- Key Value
-    Cooling Coil Electric Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    DX Cooling Coil_unit3_FrontRow_BottomFloor,    !- Key Value
-    Cooling Coil Total Cooling Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    DX Cooling Coil_unit3_FrontRow_BottomFloor,    !- Key Value
-    Cooling Coil Electric Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    DX Cooling Coil_unit1_BackRow_BottomFloor,    !- Key Value
-    Cooling Coil Total Cooling Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    DX Cooling Coil_unit1_BackRow_BottomFloor,    !- Key Value
-    Cooling Coil Electric Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    DX Cooling Coil_unit2_BackRow_BottomFloor,    !- Key Value
-    Cooling Coil Total Cooling Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    DX Cooling Coil_unit2_BackRow_BottomFloor,    !- Key Value
-    Cooling Coil Electric Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    DX Cooling Coil_unit3_BackRow_BottomFloor,    !- Key Value
-    Cooling Coil Total Cooling Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    DX Cooling Coil_unit3_BackRow_BottomFloor,    !- Key Value
-    Cooling Coil Electric Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    DX Cooling Coil_unit1_FrontRow_MiddleFloor,    !- Key Value
-    Cooling Coil Total Cooling Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    DX Cooling Coil_unit1_FrontRow_MiddleFloor,    !- Key Value
-    Cooling Coil Electric Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    DX Cooling Coil_unit2_FrontRow_MiddleFloor,    !- Key Value
-    Cooling Coil Total Cooling Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    DX Cooling Coil_unit2_FrontRow_MiddleFloor,    !- Key Value
-    Cooling Coil Electric Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    DX Cooling Coil_unit3_FrontRow_MiddleFloor,    !- Key Value
-    Cooling Coil Total Cooling Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    DX Cooling Coil_unit3_FrontRow_MiddleFloor,    !- Key Value
-    Cooling Coil Electric Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    DX Cooling Coil_unit1_BackRow_MiddleFloor,    !- Key Value
-    Cooling Coil Total Cooling Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    DX Cooling Coil_unit1_BackRow_MiddleFloor,    !- Key Value
-    Cooling Coil Electric Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    DX Cooling Coil_unit2_BackRow_MiddleFloor,    !- Key Value
-    Cooling Coil Total Cooling Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    DX Cooling Coil_unit2_BackRow_MiddleFloor,    !- Key Value
-    Cooling Coil Electric Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    DX Cooling Coil_unit3_BackRow_MiddleFloor,    !- Key Value
-    Cooling Coil Total Cooling Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    DX Cooling Coil_unit3_BackRow_MiddleFloor,    !- Key Value
-    Cooling Coil Electric Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    DX Cooling Coil_unit1_FrontRow_TopFloor,    !- Key Value
-    Cooling Coil Total Cooling Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    DX Cooling Coil_unit1_FrontRow_TopFloor,    !- Key Value
-    Cooling Coil Electric Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    DX Cooling Coil_unit2_FrontRow_TopFloor,    !- Key Value
-    Cooling Coil Total Cooling Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    DX Cooling Coil_unit2_FrontRow_TopFloor,    !- Key Value
-    Cooling Coil Electric Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    DX Cooling Coil_unit3_FrontRow_TopFloor,    !- Key Value
-    Cooling Coil Total Cooling Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    DX Cooling Coil_unit3_FrontRow_TopFloor,    !- Key Value
-    Cooling Coil Electric Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    DX Cooling Coil_unit1_BackRow_TopFloor,    !- Key Value
-    Cooling Coil Total Cooling Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    DX Cooling Coil_unit1_BackRow_TopFloor,    !- Key Value
-    Cooling Coil Electric Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    DX Cooling Coil_unit2_BackRow_TopFloor,    !- Key Value
-    Cooling Coil Total Cooling Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    DX Cooling Coil_unit2_BackRow_TopFloor,    !- Key Value
-    Cooling Coil Electric Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    DX Cooling Coil_unit3_BackRow_TopFloor,    !- Key Value
-    Cooling Coil Total Cooling Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    DX Cooling Coil_unit3_BackRow_TopFloor,    !- Key Value
-    Cooling Coil Electric Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    DX Cooling Coil_unitheatedbsmt,    !- Key Value
-    Cooling Coil Total Cooling Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    DX Cooling Coil_unitheatedbsmt,    !- Key Value
-    Cooling Coil Electric Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    DX Cooling Coil_G Corridor,    !- Key Value
-    Cooling Coil Total Cooling Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    DX Cooling Coil_G Corridor,    !- Key Value
-    Cooling Coil Electric Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    DX Cooling Coil_M Corridor,    !- Key Value
-    Cooling Coil Total Cooling Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    DX Cooling Coil_M Corridor,    !- Key Value
-    Cooling Coil Electric Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    DX Cooling Coil_T Corridor,    !- Key Value
-    Cooling Coil Total Cooling Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    DX Cooling Coil_T Corridor,    !- Key Value
-    Cooling Coil Electric Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Main DX Heating Coil_unit1_FrontRow_BottomFloor,    !- Key Value
-    Heating Coil Total Heating Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Main DX Heating Coil_unit1_FrontRow_BottomFloor,    !- Key Value
-    Heating Coil Electric Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Main DX Heating Coil_unit2_FrontRow_BottomFloor,    !- Key Value
-    Heating Coil Total Heating Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Main DX Heating Coil_unit2_FrontRow_BottomFloor,    !- Key Value
-    Heating Coil Electric Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Main DX Heating Coil_unit3_FrontRow_BottomFloor,    !- Key Value
-    Heating Coil Total Heating Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Main DX Heating Coil_unit3_FrontRow_BottomFloor,    !- Key Value
-    Heating Coil Electric Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Main DX Heating Coil_unit1_BackRow_BottomFloor,    !- Key Value
-    Heating Coil Total Heating Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Main DX Heating Coil_unit1_BackRow_BottomFloor,    !- Key Value
-    Heating Coil Electric Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Main DX Heating Coil_unit2_BackRow_BottomFloor,    !- Key Value
-    Heating Coil Total Heating Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Main DX Heating Coil_unit2_BackRow_BottomFloor,    !- Key Value
-    Heating Coil Electric Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Main DX Heating Coil_unit3_BackRow_BottomFloor,    !- Key Value
-    Heating Coil Total Heating Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Main DX Heating Coil_unit3_BackRow_BottomFloor,    !- Key Value
-    Heating Coil Electric Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Main DX Heating Coil_unit1_FrontRow_MiddleFloor,    !- Key Value
-    Heating Coil Total Heating Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Main DX Heating Coil_unit1_FrontRow_MiddleFloor,    !- Key Value
-    Heating Coil Electric Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Main DX Heating Coil_unit2_FrontRow_MiddleFloor,    !- Key Value
-    Heating Coil Total Heating Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Main DX Heating Coil_unit2_FrontRow_MiddleFloor,    !- Key Value
-    Heating Coil Electric Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Main DX Heating Coil_unit3_FrontRow_MiddleFloor,    !- Key Value
-    Heating Coil Total Heating Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Main DX Heating Coil_unit3_FrontRow_MiddleFloor,    !- Key Value
-    Heating Coil Electric Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Main DX Heating Coil_unit1_BackRow_MiddleFloor,    !- Key Value
-    Heating Coil Total Heating Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Main DX Heating Coil_unit1_BackRow_MiddleFloor,    !- Key Value
-    Heating Coil Electric Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Main DX Heating Coil_unit2_BackRow_MiddleFloor,    !- Key Value
-    Heating Coil Total Heating Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Main DX Heating Coil_unit2_BackRow_MiddleFloor,    !- Key Value
-    Heating Coil Electric Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Main DX Heating Coil_unit3_BackRow_MiddleFloor,    !- Key Value
-    Heating Coil Total Heating Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Main DX Heating Coil_unit3_BackRow_MiddleFloor,    !- Key Value
-    Heating Coil Electric Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Main DX Heating Coil_unit1_FrontRow_TopFloor,    !- Key Value
-    Heating Coil Total Heating Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Main DX Heating Coil_unit1_FrontRow_TopFloor,    !- Key Value
-    Heating Coil Electric Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Main DX Heating Coil_unit2_FrontRow_TopFloor,    !- Key Value
-    Heating Coil Total Heating Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Main DX Heating Coil_unit2_FrontRow_TopFloor,    !- Key Value
-    Heating Coil Electric Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Main DX Heating Coil_unit3_FrontRow_TopFloor,    !- Key Value
-    Heating Coil Total Heating Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Main DX Heating Coil_unit3_FrontRow_TopFloor,    !- Key Value
-    Heating Coil Electric Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Main DX Heating Coil_unit1_BackRow_TopFloor,    !- Key Value
-    Heating Coil Total Heating Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Main DX Heating Coil_unit1_BackRow_TopFloor,    !- Key Value
-    Heating Coil Electric Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Main DX Heating Coil_unit2_BackRow_TopFloor,    !- Key Value
-    Heating Coil Total Heating Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Main DX Heating Coil_unit2_BackRow_TopFloor,    !- Key Value
-    Heating Coil Electric Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Main DX Heating Coil_unit3_BackRow_TopFloor,    !- Key Value
-    Heating Coil Total Heating Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Main DX Heating Coil_unit3_BackRow_TopFloor,    !- Key Value
-    Heating Coil Electric Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Main DX Heating Coil_unitheatedbsmt,    !- Key Value
-    Heating Coil Total Heating Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Main DX Heating Coil_unitheatedbsmt,    !- Key Value
-    Heating Coil Electric Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Main DX Heating Coil_G Corridor,    !- Key Value
-    Heating Coil Total Heating Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Main DX Heating Coil_G Corridor,    !- Key Value
-    Heating Coil Electric Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Main DX Heating Coil_M Corridor,    !- Key Value
-    Heating Coil Total Heating Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Main DX Heating Coil_M Corridor,    !- Key Value
-    Heating Coil Electric Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Main DX Heating Coil_T Corridor,    !- Key Value
-    Heating Coil Total Heating Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Main DX Heating Coil_T Corridor,    !- Key Value
-    Heating Coil Electric Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Supp Heating Coil_unit1_FrontRow_BottomFloor,    !- Key Value
-    Heating Coil Total Heating Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Supp Heating Coil_unit1_FrontRow_BottomFloor,    !- Key Value
-    Heating Coil Electric Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Supp Heating Coil_unit2_FrontRow_BottomFloor,    !- Key Value
-    Heating Coil Total Heating Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Supp Heating Coil_unit2_FrontRow_BottomFloor,    !- Key Value
-    Heating Coil Electric Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Supp Heating Coil_unit3_FrontRow_BottomFloor,    !- Key Value
-    Heating Coil Total Heating Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Supp Heating Coil_unit3_FrontRow_BottomFloor,    !- Key Value
-    Heating Coil Electric Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Supp Heating Coil_unit1_BackRow_BottomFloor,    !- Key Value
-    Heating Coil Total Heating Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Supp Heating Coil_unit1_BackRow_BottomFloor,    !- Key Value
-    Heating Coil Electric Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Supp Heating Coil_unit2_BackRow_BottomFloor,    !- Key Value
-    Heating Coil Total Heating Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Supp Heating Coil_unit2_BackRow_BottomFloor,    !- Key Value
-    Heating Coil Electric Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Supp Heating Coil_unit3_BackRow_BottomFloor,    !- Key Value
-    Heating Coil Total Heating Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Supp Heating Coil_unit3_BackRow_BottomFloor,    !- Key Value
-    Heating Coil Electric Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Supp Heating Coil_unit1_FrontRow_MiddleFloor,    !- Key Value
-    Heating Coil Total Heating Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Supp Heating Coil_unit1_FrontRow_MiddleFloor,    !- Key Value
-    Heating Coil Electric Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Supp Heating Coil_unit2_FrontRow_MiddleFloor,    !- Key Value
-    Heating Coil Total Heating Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Supp Heating Coil_unit2_FrontRow_MiddleFloor,    !- Key Value
-    Heating Coil Electric Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Supp Heating Coil_unit3_FrontRow_MiddleFloor,    !- Key Value
-    Heating Coil Total Heating Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Supp Heating Coil_unit3_FrontRow_MiddleFloor,    !- Key Value
-    Heating Coil Electric Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Supp Heating Coil_unit1_BackRow_MiddleFloor,    !- Key Value
-    Heating Coil Total Heating Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Supp Heating Coil_unit1_BackRow_MiddleFloor,    !- Key Value
-    Heating Coil Electric Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Supp Heating Coil_unit2_BackRow_MiddleFloor,    !- Key Value
-    Heating Coil Total Heating Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Supp Heating Coil_unit2_BackRow_MiddleFloor,    !- Key Value
-    Heating Coil Electric Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Supp Heating Coil_unit3_BackRow_MiddleFloor,    !- Key Value
-    Heating Coil Total Heating Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Supp Heating Coil_unit3_BackRow_MiddleFloor,    !- Key Value
-    Heating Coil Electric Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Supp Heating Coil_unit1_FrontRow_TopFloor,    !- Key Value
-    Heating Coil Total Heating Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Supp Heating Coil_unit1_FrontRow_TopFloor,    !- Key Value
-    Heating Coil Electric Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Supp Heating Coil_unit2_FrontRow_TopFloor,    !- Key Value
-    Heating Coil Total Heating Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Supp Heating Coil_unit2_FrontRow_TopFloor,    !- Key Value
-    Heating Coil Electric Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Supp Heating Coil_unit3_FrontRow_TopFloor,    !- Key Value
-    Heating Coil Total Heating Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Supp Heating Coil_unit3_FrontRow_TopFloor,    !- Key Value
-    Heating Coil Electric Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Supp Heating Coil_unit1_BackRow_TopFloor,    !- Key Value
-    Heating Coil Total Heating Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Supp Heating Coil_unit1_BackRow_TopFloor,    !- Key Value
-    Heating Coil Electric Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Supp Heating Coil_unit2_BackRow_TopFloor,    !- Key Value
-    Heating Coil Total Heating Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Supp Heating Coil_unit2_BackRow_TopFloor,    !- Key Value
-    Heating Coil Electric Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Supp Heating Coil_unit3_BackRow_TopFloor,    !- Key Value
-    Heating Coil Total Heating Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Supp Heating Coil_unit3_BackRow_TopFloor,    !- Key Value
-    Heating Coil Electric Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Supp Heating Coil_unitheatedbsmt,    !- Key Value
-    Heating Coil Total Heating Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Supp Heating Coil_unitheatedbsmt,    !- Key Value
-    Heating Coil Electric Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Supp Heating Coil_G Corridor,    !- Key Value
-    Heating Coil Total Heating Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Supp Heating Coil_G Corridor,    !- Key Value
-    Heating Coil Electric Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Supp Heating Coil_M Corridor,    !- Key Value
-    Heating Coil Total Heating Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Supp Heating Coil_M Corridor,    !- Key Value
-    Heating Coil Electric Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Supp Heating Coil_T Corridor,    !- Key Value
-    Heating Coil Total Heating Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Variable,
-    Supp Heating Coil_T Corridor,    !- Key Value
-    Heating Coil Electric Energy,    !- Variable Name
-    hourly;                   !- Reporting Frequency
-
-Output:Meter,
-    Heating:Electricity,      !- Name
-    Monthly;                  !- Reporting Frequency
-
-Output:Meter,
-    Cooling:Electricity,      !- Name
-    Monthly;                  !- Reporting Frequency
-
-Output:Meter,
-    InteriorLights:Electricity,    !- Name
-    Monthly;                  !- Reporting Frequency
-
-Output:Meter,
-    ExteriorLights:Electricity,    !- Name
-    Monthly;                  !- Reporting Frequency
-
-Output:Meter,
-    Misc:InteriorEquipment:Electricity,    !- Name
-    Monthly;                  !- Reporting Frequency
-
-Output:Meter,
-    Appl:InteriorEquipment:Electricity,    !- Name
-    Monthly;                  !- Reporting Frequency
-
-Output:Meter,
-    InteriorEquipment:Electricity,    !- Name
-    Monthly;                  !- Reporting Frequency
-
-Output:Meter,
-    Fans:Electricity,         !- Name
-    Monthly;                  !- Reporting Frequency
-
-Output:Meter,
-    Pumps:Electricity,        !- Name
-    Monthly;                  !- Reporting Frequency
-
-Output:Meter,
-    WaterSystems:Electricity,    !- Name
-    Monthly;                  !- Reporting Frequency
-
-Output:Meter,
-    Electricity:Building,     !- Name
-    Monthly;                  !- Reporting Frequency
-
-Output:Meter,
+OUTPUT:METER,
     Electricity:Facility,     !- Name
-    Monthly;                  !- Reporting Frequency
+    Annual;                   !- Reporting Frequency
+
+OUTPUT:METER,
+    Gas:Facility,             !- Name
+    Annual;                   !- Reporting Frequency
 
 Output:SQLite,
     SimpleAndTabular;         !- Option Type
