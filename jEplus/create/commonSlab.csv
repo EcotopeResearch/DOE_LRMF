@@ -1,0 +1,43 @@
+﻿Name,search_tag
+Ceiling U-value,@@CEILINGU@@
+Slab U-value,@@SLABU@@
+Windows U-value,@@WINU@@
+Windows SHGC,@@SHGC@@
+Lighting Stairwell (W),@@LTGSTR@@
+internal parking LPD (W/sf),@@LTGINTPKG@@
+external parking LPD (W/sf),@@LTGEXTPKG@@
+in-unit heating setpoint temp (F),@@UNITHTST@@
+In-unit cooling setpoint temp (F),@@UNITCLST@@
+In-unit heating efficiency (COP),@@UNITHTCOP@@
+In-unit heating efficiency curves,@@UNITHTCURVE_CAPFT@@
+In-unit heating efficiency curves,@@UNITHTCURVE_CAPFFF@@
+In-unit heating efficiency curves,@@UNITHTCURVE_EIRFT@@
+In-unit heating efficiency curves,@@UNITHTCURVE_EIRFFF@@
+In-unit heating efficiency curves,@@UNITHTCURVE_PLFFPLR@@
+In-unit heating efficiency curves,@@UNITHTCURVE_DEFROST@@
+In-unit cooling efficiency (COP),@@UNITCLCOP@@
+In-unit cooling efficiency curves,@@UNITCLCURVE_CAPFT@@
+In-unit cooling efficiency curves,@@UNITCLCURVE_CAPFFF@@
+In-unit cooling efficiency curves,@@UNITCLCURVE_EIRFT@@
+In-unit cooling efficiency curves,@@UNITCLCURVE_EIRFFF@@
+In-unit cooling efficiency curves,@@UNITCLCURVE_PLFFPLR@@
+Distribution Load (W/unit),@@OFFCOEF@@
+Distribution Load (W/unit),@@ONCOEF@@
+In-unit DHW efficiency,@@DHWCOP@@
+In-unit LPD (W/sf),@@UNITLPD@@
+Corridor heating setpoint temp (F),@@CORHTST@@
+Corridor cooling setpoint temp (F),@@CORCLST@@
+Corridor heating efficiency (COP),@@CORHTCOP@@
+Corridor heating efficiency curves,@@CORHTCURVE_CAPFT@@
+Corridor heating efficiency curves,@@CORHTCURVE_CAPFFF@@
+Corridor heating efficiency curves,@@CORHTCURVE_EIRFT@@
+Corridor heating efficiency curves,@@CORHTCURVE_EIRFFF@@
+Corridor heating efficiency curves,@@CORHTCURVE_PLFFPLR@@
+Corridor heating efficiency curves,@@CORHTCURVE_DEFROST@@
+Corridor cooling efficiency (COP),@@CORCLCOP@@
+Corridor cooling efficiency curves,@@CORCLCURVE_CAPFT@@
+Corridor cooling efficiency curves,@@CORCLCURVE_CAPFFF@@
+Corridor cooling efficiency curves,@@CORCLCURVE_EIRFT@@
+Corridor cooling efficiency curves,@@CORCLCURVE_EIRFFF@@
+Corridor cooling efficiency curves,@@CORCLCURVE_PLFFPLR@@
+LPD - corridor (W/sf),@@LPDCOR@@

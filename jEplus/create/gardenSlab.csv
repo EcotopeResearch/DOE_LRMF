@@ -1,0 +1,30 @@
+﻿Name,search_tag
+Ceiling U-value,@@CEILINGU@@
+Slab U-value,@@SLABU@@
+Windows U-value,@@WINU@@
+Windows SHGC,@@SHGC@@
+Lighting Stairwell (W),@@LTGSTR@@
+internal parking LPD (W/sf),@@LTGINTPKG@@
+external parking LPD (W/sf),@@LTGEXTPKG@@
+in-unit heating setpoint temp (C),@@UNITHTST@@
+In-unit cooling setpoint temp (C),@@UNITCLST@@
+In-unit heating efficiency (COP),@@UNITHTCOP@@
+In-unit heating efficiency curves,@@UNITHTCURVE_CAPFT@@
+In-unit heating efficiency curves,@@UNITHTCURVE_CAPFFF@@
+In-unit heating efficiency curves,@@UNITHTCURVE_EIRFT@@
+In-unit heating efficiency curves,@@UNITHTCURVE_EIRFFF@@
+In-unit heating efficiency curves,@@UNITHTCURVE_PLFFPLR@@
+In-unit heating efficiency curves,@@UNITHTCURVE_DEFROST@@
+In-unit cooling efficiency (COP),@@UNITCLCOP@@
+In-unit cooling efficiency curves,@@UNITCLCURVE_CAPFT@@
+In-unit cooling efficiency curves,@@UNITCLCURVE_CAPFFF@@
+In-unit cooling efficiency curves,@@UNITCLCURVE_EIRFT@@
+In-unit cooling efficiency curves,@@UNITCLCURVE_EIRFFF@@
+In-unit cooling efficiency curves,@@UNITCLCURVE_PLFFPLR@@
+Water Heater Loss Coefficient,@@OFFCOEF@@
+ON Water Heater Loss Coefficient,@@ONCOEF@@
+OFF Water Heater Loss Coefficient,@@DHWCOP@@
+In-unit LPD (W/sf),@@UNITLPD@@
+Ventilation flowrate Unit,@@FLOWUNIT@@
+Ventilation SP Unit,@@SPUNIT@@
+Exterior wall U-value,@@WALLU@@
