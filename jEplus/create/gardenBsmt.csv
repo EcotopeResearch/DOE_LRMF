@@ -1,35 +1,36 @@
 ﻿Name,search_tag
-Ceiling U-value,@@CEILINGU@@
-Slab U-value,@@SLABU@@
-Windows U-value,@@WINU@@
+Building Name,@@NAME@@
+Unit heating efficiency (COP),@@UNITHTCOP@@
+Unit heating efficiency curves,@@UNITHTCURVE_CAPFT@@
+Unit heating efficiency curves,@@UNITHTCURVE_CAPFFF@@
+Unit heating efficiency curves,@@UNITHTCURVE_EIRFT@@
+Unit heating efficiency curves,@@UNITHTCURVE_EIRFFF@@
+Unit heating efficiency curves,@@UNITHTCURVE_PLFFPLR@@
+Unit heating efficiency curves,@@UNITHTCURVE_DEFROST@@
+Unit cooling efficiency (COP),@@UNITCLCOP@@
+Unit cooling efficiency curves,@@UNITCLCURVE_CAPFT@@
+Unit cooling efficiency curves,@@UNITCLCURVE_CAPFFF@@
+Unit cooling efficiency curves,@@UNITCLCURVE_EIRFT@@
+Unit cooling efficiency curves,@@UNITCLCURVE_EIRFFF@@
+Unit cooling efficiency curves,@@UNITCLCURVE_PLFFPLR@@
+Unit DHW Loss Coefficient - ON,@@OFFCOEF@@
+Unit DHW Loss Coefficient - OFF,@@ONCOEF@@
+Unit DHW Thermal Efficiency,@@DHWCOP@@
+Unit LPD [W/sf],@@UNITLPD@@
+Unit Ventilation Flowrate [m3/s],@@FLOWUNIT@@
+Unit Ventilation SP [Pa],@@SPUNIT@@
+Unit HVAC Fan SP [Pa],@@SPHVACUNIT@@
+Exterior Wall Insulation Conductivity [W/m*K],@@WALLU@@
+Ceiling Insulation Conductivity [W/m*K],@@CEILINGU@@
+Slab Insulation Conductivity [W/m*K],@@SLABU@@
+Windows Ufactor [W/m2*K],@@WINU@@
 Windows SHGC,@@SHGC@@
-Lighting Stairwell (W),@@LTGSTR@@
-internal parking LPD (W/sf),@@LTGINTPKG@@
-external parking LPD (W/sf),@@LTGEXTPKG@@
-in-unit heating setpoint temp (F),@@UNITHTST@@
-In-unit cooling setpoint temp (F),@@UNITCLST@@
-In-unit heating efficiency (COP),@@UNITHTCOP@@
-In-unit heating efficiency curves,@@UNITHTCURVE_CAPFT@@
-In-unit heating efficiency curves,@@UNITHTCURVE_CAPFFF@@
-In-unit heating efficiency curves,@@UNITHTCURVE_EIRFT@@
-In-unit heating efficiency curves,@@UNITHTCURVE_EIRFFF@@
-In-unit heating efficiency curves,@@UNITHTCURVE_PLFFPLR@@
-In-unit heating efficiency curves,@@UNITHTCURVE_DEFROST@@
-In-unit cooling efficiency (COP),@@UNITCLCOP@@
-In-unit cooling efficiency curves,@@UNITCLCURVE_CAPFT@@
-In-unit cooling efficiency curves,@@UNITCLCURVE_CAPFFF@@
-In-unit cooling efficiency curves,@@UNITCLCURVE_EIRFT@@
-In-unit cooling efficiency curves,@@UNITCLCURVE_EIRFFF@@
-In-unit cooling efficiency curves,@@UNITCLCURVE_PLFFPLR@@
-Distribution Load (W/unit),@@OFFCOEF@@
-Distribution Load (W/unit),@@ONCOEF@@
-In-unit DHW efficiency,@@DHWCOP@@
-In-unit LPD (W/sf),@@UNITLPD@@
-exterior corridor LPD (W),@@LTGEXTCOR@@
-bsmt wall U-value,@@BSMTWU@@
-Floor U-value,@@BSMTWU@@
-bsmt heating setpoint temp (F),@@BSMTHTST@@
-bsmt cooling setpoint temp (F),@@BSMTCLST@@
+Lighting Stairwell [W],@@LTGSTR@@
+Internal Parking Lights [W],@@LTGINTPKG@@
+External Parking Lights [W],@@LTGEXTPKG@@
+Unit heating setpoint temp [C],@@UNITHTST@@
+Unit cooling setpoint temp [C],@@UNITCLST@@
+Exterior corridor Lights [W],@@LTGEXTCOR@@
 Bsmt heating efficiency (COP),@@BSMTHTCOP@@
 Bsmt Heating efficiency curves,@@BSMTHTCURVE_CAPFT@@
 Bsmt Heating efficiency curves,@@BSMTHTCURVE_CAPFFF@@
@@ -43,3 +44,10 @@ Bsmt cooling efficiency curves,@@BSMTCLCURVE_CAPFFF@@
 Bsmt cooling efficiency curves,@@BSMTCLCURVE_EIRFT@@
 Bsmt cooling efficiency curves,@@BSMTCLCURVE_EIRFFF@@
 Bsmt cooling efficiency curves,@@BSMTCLCURVE_PLFFPLR@@
+Bsmt Ventilation Flowrate [m3/s],@@FLOWBSMT@@
+Bsmt Ventilation SP [Pa],@@SPBSMT@@
+Bsmt HVAC Fan SP [Pa],@@SPHVACBSMT@@
+Bsmt Wall Insulation Conductivity [W/m*K],@@BSMTWU@@
+Floor Insulation Conductivity [W/m*K],@@BSMTWU@@
+Bsmt heating setpoint temp [C],@@BSMTHTST@@
+Bsmt cooling setpoint temp [C],@@BSMTCLST@@

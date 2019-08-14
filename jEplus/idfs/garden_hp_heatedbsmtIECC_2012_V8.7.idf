@@ -1416,7 +1416,7 @@ Material,
     floor_consol_layer,       !- Name
     Rough,                    !- Roughness
     0.23495,                  !- Thickness
-    @@FLOORU@@,               !- Conductivity
+    @@BSMTWU@@,               !- Conductivity
     55.074,                   !- Density
     916.9311;                 !- Specific Heat
 
