@@ -1302,7 +1302,7 @@ Schedule:Compact,
     Until: 24:00,             !- Field 3
     0;                        !- Field 4
 
-SCHEDULE:COMPACT,
+Schedule:Compact,
     heating_sch_corr,         !- Name
     Temperature,              !- Schedule Type Limits Name
     Through: 12/31,           !- Field 1
@@ -1310,7 +1310,7 @@ SCHEDULE:COMPACT,
     Until: 24:00,             !- Field 3
     22.22;                    !- Field 4
 
-SCHEDULE:COMPACT,
+Schedule:Compact,
     cooling_sch_corr,         !- Name
     Temperature,              !- Schedule Type Limits Name
     Through: 12/31,           !- Field 1
@@ -1680,7 +1680,7 @@ Material,
     0.5,                      !- Solar Absorptance
     0.5;                      !- Visible Absorptance
 
-MATERIAL,
+Material,
     slab_consol_layer,        !- Name
     Rough,                    !- Roughness
     0.23495,                  !- Thickness
@@ -1895,7 +1895,7 @@ Construction,
     TDD Diffuser,             !- Name
     Diffusing Acrylic Plastic;    !- Outside Layer
 
-CONSTRUCTION,
+Construction,
     Slab,                     !- Name
     slab_consol_layer,        !- Outside Layer
     Plywood_3/4in,            !- Layer 2
@@ -7261,7 +7261,7 @@ Lights,
     0.2,                      !- Fraction Visible
     0;                        !- Fraction Replaceable
 
-LIGHTS,
+Lights,
     Corridor Lights Lighting_G Corridor,    !- Name
     G Corridor,               !- Zone or ZoneList Name
     LightingProfile_EELighting,    !- Schedule Name
@@ -7278,7 +7278,7 @@ LIGHTS,
     0,                        !- Return Air Fraction Function of Plenum Temperature Coefficient 1
     0;                        !- Return Air Fraction Function of Plenum Temperature Coefficient 2
 
-LIGHTS,
+Lights,
     Corridor Lights Lighting_M Corridor,    !- Name
     M Corridor,               !- Zone or ZoneList Name
     LightingProfile_EELighting,    !- Schedule Name
@@ -7295,7 +7295,7 @@ LIGHTS,
     0,                        !- Return Air Fraction Function of Plenum Temperature Coefficient 1
     0;                        !- Return Air Fraction Function of Plenum Temperature Coefficient 2
 
-LIGHTS,
+Lights,
     Corridor Lights Lighting_T Corridor,    !- Name
     T Corridor,               !- Zone or ZoneList Name
     LightingProfile_EELighting,    !- Schedule Name
@@ -7323,7 +7323,7 @@ ElectricEquipment,
     0,                        !- Fraction Latent
     0,                        !- Fraction Radiant
     0,                        !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Refrigerator;             !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Elec Load1_FrontRow_BottomFloor,    !- Name
@@ -7349,7 +7349,7 @@ ElectricEquipment,
     0,                        !- Fraction Latent
     0.48,                     !- Fraction Radiant
     0.2,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Clothes_Washer;           !- EndUse Subcategory
 
 ElectricEquipment,
     Clothes Dryer1_FrontRow_BottomFloor,    !- Name
@@ -7362,7 +7362,7 @@ ElectricEquipment,
     0.05,                     !- Fraction Latent
     0.09,                     !- Fraction Radiant
     0.8,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Clothes_Dryer;            !- EndUse Subcategory
 
 ElectricEquipment,
     Dishwasher1_FrontRow_BottomFloor,    !- Name
@@ -7375,7 +7375,7 @@ ElectricEquipment,
     0.15,                     !- Fraction Latent
     0.36,                     !- Fraction Radiant
     0.25,                     !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Dishwasher;               !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Elec Load21_FrontRow_BottomFloor,    !- Name
@@ -7401,7 +7401,7 @@ ElectricEquipment,
     0.3,                      !- Fraction Latent
     0.24,                     !- Fraction Radiant
     0.3,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Cooking;                  !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Gas Load1_FrontRow_BottomFloor,    !- Name
@@ -7427,7 +7427,7 @@ ElectricEquipment,
     0,                        !- Fraction Latent
     0,                        !- Fraction Radiant
     0,                        !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Refrigerator;             !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Elec Load2_FrontRow_BottomFloor,    !- Name
@@ -7453,7 +7453,7 @@ ElectricEquipment,
     0,                        !- Fraction Latent
     0.48,                     !- Fraction Radiant
     0.2,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Clothes_Washer;           !- EndUse Subcategory
 
 ElectricEquipment,
     Clothes Dryer2_FrontRow_BottomFloor,    !- Name
@@ -7466,7 +7466,7 @@ ElectricEquipment,
     0.05,                     !- Fraction Latent
     0.09,                     !- Fraction Radiant
     0.8,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Clothes_Dryer;            !- EndUse Subcategory
 
 ElectricEquipment,
     Dishwasher2_FrontRow_BottomFloor,    !- Name
@@ -7479,7 +7479,7 @@ ElectricEquipment,
     0.15,                     !- Fraction Latent
     0.36,                     !- Fraction Radiant
     0.25,                     !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Dishwasher;               !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Elec Load22_FrontRow_BottomFloor,    !- Name
@@ -7505,7 +7505,7 @@ ElectricEquipment,
     0.3,                      !- Fraction Latent
     0.24,                     !- Fraction Radiant
     0.3,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Cooking;                  !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Gas Load2_FrontRow_BottomFloor,    !- Name
@@ -7531,7 +7531,7 @@ ElectricEquipment,
     0,                        !- Fraction Latent
     0,                        !- Fraction Radiant
     0,                        !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Refrigerator;             !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Elec Load3_FrontRow_BottomFloor,    !- Name
@@ -7557,7 +7557,7 @@ ElectricEquipment,
     0,                        !- Fraction Latent
     0.48,                     !- Fraction Radiant
     0.2,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Clothes_Washer;           !- EndUse Subcategory
 
 ElectricEquipment,
     Clothes Dryer3_FrontRow_BottomFloor,    !- Name
@@ -7570,7 +7570,7 @@ ElectricEquipment,
     0.05,                     !- Fraction Latent
     0.09,                     !- Fraction Radiant
     0.8,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Clothes_Dryer;            !- EndUse Subcategory
 
 ElectricEquipment,
     Dishwasher3_FrontRow_BottomFloor,    !- Name
@@ -7583,7 +7583,7 @@ ElectricEquipment,
     0.15,                     !- Fraction Latent
     0.36,                     !- Fraction Radiant
     0.25,                     !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Dishwasher;               !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Elec Load23_FrontRow_BottomFloor,    !- Name
@@ -7609,7 +7609,7 @@ ElectricEquipment,
     0.3,                      !- Fraction Latent
     0.24,                     !- Fraction Radiant
     0.3,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Cooking;                  !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Gas Load3_FrontRow_BottomFloor,    !- Name
@@ -7635,7 +7635,7 @@ ElectricEquipment,
     0,                        !- Fraction Latent
     0,                        !- Fraction Radiant
     0,                        !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Refrigerator;             !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Elec Load1_BackRow_BottomFloor,    !- Name
@@ -7661,7 +7661,7 @@ ElectricEquipment,
     0,                        !- Fraction Latent
     0.48,                     !- Fraction Radiant
     0.2,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Clothes_Washer;           !- EndUse Subcategory
 
 ElectricEquipment,
     Clothes Dryer1_BackRow_BottomFloor,    !- Name
@@ -7674,7 +7674,7 @@ ElectricEquipment,
     0.05,                     !- Fraction Latent
     0.09,                     !- Fraction Radiant
     0.8,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Clothes_Dryer;            !- EndUse Subcategory
 
 ElectricEquipment,
     Dishwasher1_BackRow_BottomFloor,    !- Name
@@ -7687,7 +7687,7 @@ ElectricEquipment,
     0.15,                     !- Fraction Latent
     0.36,                     !- Fraction Radiant
     0.25,                     !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Dishwasher;               !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Elec Load21_BackRow_BottomFloor,    !- Name
@@ -7713,7 +7713,7 @@ ElectricEquipment,
     0.3,                      !- Fraction Latent
     0.24,                     !- Fraction Radiant
     0.3,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Cooking;                  !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Gas Load1_BackRow_BottomFloor,    !- Name
@@ -7739,7 +7739,7 @@ ElectricEquipment,
     0,                        !- Fraction Latent
     0,                        !- Fraction Radiant
     0,                        !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Refrigerator;             !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Elec Load2_BackRow_BottomFloor,    !- Name
@@ -7765,7 +7765,7 @@ ElectricEquipment,
     0,                        !- Fraction Latent
     0.48,                     !- Fraction Radiant
     0.2,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Clothes_Washer;           !- EndUse Subcategory
 
 ElectricEquipment,
     Clothes Dryer2_BackRow_BottomFloor,    !- Name
@@ -7778,7 +7778,7 @@ ElectricEquipment,
     0.05,                     !- Fraction Latent
     0.09,                     !- Fraction Radiant
     0.8,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Clothes_Dryer;            !- EndUse Subcategory
 
 ElectricEquipment,
     Dishwasher2_BackRow_BottomFloor,    !- Name
@@ -7791,7 +7791,7 @@ ElectricEquipment,
     0.15,                     !- Fraction Latent
     0.36,                     !- Fraction Radiant
     0.25,                     !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Dishwasher;               !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Elec Load22_BackRow_BottomFloor,    !- Name
@@ -7817,7 +7817,7 @@ ElectricEquipment,
     0.3,                      !- Fraction Latent
     0.24,                     !- Fraction Radiant
     0.3,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Cooking;                  !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Gas Load2_BackRow_BottomFloor,    !- Name
@@ -7843,7 +7843,7 @@ ElectricEquipment,
     0,                        !- Fraction Latent
     0,                        !- Fraction Radiant
     0,                        !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Refrigerator;             !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Elec Load3_BackRow_BottomFloor,    !- Name
@@ -7869,7 +7869,7 @@ ElectricEquipment,
     0,                        !- Fraction Latent
     0.48,                     !- Fraction Radiant
     0.2,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Clothes_Washer;           !- EndUse Subcategory
 
 ElectricEquipment,
     Clothes Dryer3_BackRow_BottomFloor,    !- Name
@@ -7882,7 +7882,7 @@ ElectricEquipment,
     0.05,                     !- Fraction Latent
     0.09,                     !- Fraction Radiant
     0.8,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Clothes_Dryer;            !- EndUse Subcategory
 
 ElectricEquipment,
     Dishwasher3_BackRow_BottomFloor,    !- Name
@@ -7895,7 +7895,7 @@ ElectricEquipment,
     0.15,                     !- Fraction Latent
     0.36,                     !- Fraction Radiant
     0.25,                     !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Dishwasher;               !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Elec Load23_BackRow_BottomFloor,    !- Name
@@ -7921,7 +7921,7 @@ ElectricEquipment,
     0.3,                      !- Fraction Latent
     0.24,                     !- Fraction Radiant
     0.3,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Cooking;                  !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Gas Load3_BackRow_BottomFloor,    !- Name
@@ -7947,7 +7947,7 @@ ElectricEquipment,
     0,                        !- Fraction Latent
     0,                        !- Fraction Radiant
     0,                        !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Refrigerator;             !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Elec Load1_FrontRow_MiddleFloor,    !- Name
@@ -7973,7 +7973,7 @@ ElectricEquipment,
     0,                        !- Fraction Latent
     0.48,                     !- Fraction Radiant
     0.2,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Clothes_Washer;           !- EndUse Subcategory
 
 ElectricEquipment,
     Clothes Dryer1_FrontRow_MiddleFloor,    !- Name
@@ -7986,7 +7986,7 @@ ElectricEquipment,
     0.05,                     !- Fraction Latent
     0.09,                     !- Fraction Radiant
     0.8,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Clothes_Dryer;            !- EndUse Subcategory
 
 ElectricEquipment,
     Dishwasher1_FrontRow_MiddleFloor,    !- Name
@@ -7999,7 +7999,7 @@ ElectricEquipment,
     0.15,                     !- Fraction Latent
     0.36,                     !- Fraction Radiant
     0.25,                     !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Dishwasher;               !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Elec Load21_FrontRow_MiddleFloor,    !- Name
@@ -8025,7 +8025,7 @@ ElectricEquipment,
     0.3,                      !- Fraction Latent
     0.24,                     !- Fraction Radiant
     0.3,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Cooking;                  !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Gas Load1_FrontRow_MiddleFloor,    !- Name
@@ -8051,7 +8051,7 @@ ElectricEquipment,
     0,                        !- Fraction Latent
     0,                        !- Fraction Radiant
     0,                        !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Refrigerator;             !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Elec Load2_FrontRow_MiddleFloor,    !- Name
@@ -8077,7 +8077,7 @@ ElectricEquipment,
     0,                        !- Fraction Latent
     0.48,                     !- Fraction Radiant
     0.2,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Clothes_Washer;           !- EndUse Subcategory
 
 ElectricEquipment,
     Clothes Dryer2_FrontRow_MiddleFloor,    !- Name
@@ -8090,7 +8090,7 @@ ElectricEquipment,
     0.05,                     !- Fraction Latent
     0.09,                     !- Fraction Radiant
     0.8,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Clothes_Dryer;            !- EndUse Subcategory
 
 ElectricEquipment,
     Dishwasher2_FrontRow_MiddleFloor,    !- Name
@@ -8103,7 +8103,7 @@ ElectricEquipment,
     0.15,                     !- Fraction Latent
     0.36,                     !- Fraction Radiant
     0.25,                     !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Dishwasher;               !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Elec Load22_FrontRow_MiddleFloor,    !- Name
@@ -8129,7 +8129,7 @@ ElectricEquipment,
     0.3,                      !- Fraction Latent
     0.24,                     !- Fraction Radiant
     0.3,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Cooking;                  !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Gas Load2_FrontRow_MiddleFloor,    !- Name
@@ -8155,7 +8155,7 @@ ElectricEquipment,
     0,                        !- Fraction Latent
     0,                        !- Fraction Radiant
     0,                        !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Refrigerator;             !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Elec Load3_FrontRow_MiddleFloor,    !- Name
@@ -8181,7 +8181,7 @@ ElectricEquipment,
     0,                        !- Fraction Latent
     0.48,                     !- Fraction Radiant
     0.2,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Clothes_Washer;           !- EndUse Subcategory
 
 ElectricEquipment,
     Clothes Dryer3_FrontRow_MiddleFloor,    !- Name
@@ -8194,7 +8194,7 @@ ElectricEquipment,
     0.05,                     !- Fraction Latent
     0.09,                     !- Fraction Radiant
     0.8,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Clothes_Dryer;            !- EndUse Subcategory
 
 ElectricEquipment,
     Dishwasher3_FrontRow_MiddleFloor,    !- Name
@@ -8207,7 +8207,7 @@ ElectricEquipment,
     0.15,                     !- Fraction Latent
     0.36,                     !- Fraction Radiant
     0.25,                     !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Dishwasher;               !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Elec Load23_FrontRow_MiddleFloor,    !- Name
@@ -8233,7 +8233,7 @@ ElectricEquipment,
     0.3,                      !- Fraction Latent
     0.24,                     !- Fraction Radiant
     0.3,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Cooking;                  !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Gas Load3_FrontRow_MiddleFloor,    !- Name
@@ -8259,7 +8259,7 @@ ElectricEquipment,
     0,                        !- Fraction Latent
     0,                        !- Fraction Radiant
     0,                        !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Refrigerator;             !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Elec Load1_BackRow_MiddleFloor,    !- Name
@@ -8285,7 +8285,7 @@ ElectricEquipment,
     0,                        !- Fraction Latent
     0.48,                     !- Fraction Radiant
     0.2,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Clothes_Washer;           !- EndUse Subcategory
 
 ElectricEquipment,
     Clothes Dryer1_BackRow_MiddleFloor,    !- Name
@@ -8298,7 +8298,7 @@ ElectricEquipment,
     0.05,                     !- Fraction Latent
     0.09,                     !- Fraction Radiant
     0.8,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Clothes_Dryer;            !- EndUse Subcategory
 
 ElectricEquipment,
     Dishwasher1_BackRow_MiddleFloor,    !- Name
@@ -8311,7 +8311,7 @@ ElectricEquipment,
     0.15,                     !- Fraction Latent
     0.36,                     !- Fraction Radiant
     0.25,                     !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Dishwasher;               !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Elec Load21_BackRow_MiddleFloor,    !- Name
@@ -8337,7 +8337,7 @@ ElectricEquipment,
     0.3,                      !- Fraction Latent
     0.24,                     !- Fraction Radiant
     0.3,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Cooking;                  !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Gas Load1_BackRow_MiddleFloor,    !- Name
@@ -8363,7 +8363,7 @@ ElectricEquipment,
     0,                        !- Fraction Latent
     0,                        !- Fraction Radiant
     0,                        !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Refrigerator;             !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Elec Load2_BackRow_MiddleFloor,    !- Name
@@ -8389,7 +8389,7 @@ ElectricEquipment,
     0,                        !- Fraction Latent
     0.48,                     !- Fraction Radiant
     0.2,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Clothes_Washer;           !- EndUse Subcategory
 
 ElectricEquipment,
     Clothes Dryer2_BackRow_MiddleFloor,    !- Name
@@ -8402,7 +8402,7 @@ ElectricEquipment,
     0.05,                     !- Fraction Latent
     0.09,                     !- Fraction Radiant
     0.8,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Clothes_Dryer;            !- EndUse Subcategory
 
 ElectricEquipment,
     Dishwasher2_BackRow_MiddleFloor,    !- Name
@@ -8415,7 +8415,7 @@ ElectricEquipment,
     0.15,                     !- Fraction Latent
     0.36,                     !- Fraction Radiant
     0.25,                     !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Dishwasher;               !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Elec Load22_BackRow_MiddleFloor,    !- Name
@@ -8441,7 +8441,7 @@ ElectricEquipment,
     0.3,                      !- Fraction Latent
     0.24,                     !- Fraction Radiant
     0.3,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Cooking;                  !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Gas Load2_BackRow_MiddleFloor,    !- Name
@@ -8467,7 +8467,7 @@ ElectricEquipment,
     0,                        !- Fraction Latent
     0,                        !- Fraction Radiant
     0,                        !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Refrigerator;             !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Elec Load3_BackRow_MiddleFloor,    !- Name
@@ -8493,7 +8493,7 @@ ElectricEquipment,
     0,                        !- Fraction Latent
     0.48,                     !- Fraction Radiant
     0.2,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Clothes_Washer;           !- EndUse Subcategory
 
 ElectricEquipment,
     Clothes Dryer3_BackRow_MiddleFloor,    !- Name
@@ -8506,7 +8506,7 @@ ElectricEquipment,
     0.05,                     !- Fraction Latent
     0.09,                     !- Fraction Radiant
     0.8,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Clothes_Dryer;            !- EndUse Subcategory
 
 ElectricEquipment,
     Dishwasher3_BackRow_MiddleFloor,    !- Name
@@ -8519,7 +8519,7 @@ ElectricEquipment,
     0.15,                     !- Fraction Latent
     0.36,                     !- Fraction Radiant
     0.25,                     !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Dishwasher;               !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Elec Load23_BackRow_MiddleFloor,    !- Name
@@ -8545,7 +8545,7 @@ ElectricEquipment,
     0.3,                      !- Fraction Latent
     0.24,                     !- Fraction Radiant
     0.3,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Cooking;                  !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Gas Load3_BackRow_MiddleFloor,    !- Name
@@ -8571,7 +8571,7 @@ ElectricEquipment,
     0,                        !- Fraction Latent
     0,                        !- Fraction Radiant
     0,                        !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Refrigerator;             !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Elec Load1_FrontRow_TopFloor,    !- Name
@@ -8597,7 +8597,7 @@ ElectricEquipment,
     0,                        !- Fraction Latent
     0.48,                     !- Fraction Radiant
     0.2,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Clothes_Washer;           !- EndUse Subcategory
 
 ElectricEquipment,
     Clothes Dryer1_FrontRow_TopFloor,    !- Name
@@ -8610,7 +8610,7 @@ ElectricEquipment,
     0.05,                     !- Fraction Latent
     0.09,                     !- Fraction Radiant
     0.8,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Clothes_Dryer;            !- EndUse Subcategory
 
 ElectricEquipment,
     Dishwasher1_FrontRow_TopFloor,    !- Name
@@ -8623,7 +8623,7 @@ ElectricEquipment,
     0.15,                     !- Fraction Latent
     0.36,                     !- Fraction Radiant
     0.25,                     !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Dishwasher;               !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Elec Load21_FrontRow_TopFloor,    !- Name
@@ -8649,7 +8649,7 @@ ElectricEquipment,
     0.3,                      !- Fraction Latent
     0.24,                     !- Fraction Radiant
     0.3,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Cooking;                  !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Gas Load1_FrontRow_TopFloor,    !- Name
@@ -8675,7 +8675,7 @@ ElectricEquipment,
     0,                        !- Fraction Latent
     0,                        !- Fraction Radiant
     0,                        !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Refrigerator;             !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Elec Load2_FrontRow_TopFloor,    !- Name
@@ -8701,7 +8701,7 @@ ElectricEquipment,
     0,                        !- Fraction Latent
     0.48,                     !- Fraction Radiant
     0.2,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Clothes_Washer;           !- EndUse Subcategory
 
 ElectricEquipment,
     Clothes Dryer2_FrontRow_TopFloor,    !- Name
@@ -8714,7 +8714,7 @@ ElectricEquipment,
     0.05,                     !- Fraction Latent
     0.09,                     !- Fraction Radiant
     0.8,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Clothes_Dryer;            !- EndUse Subcategory
 
 ElectricEquipment,
     Dishwasher2_FrontRow_TopFloor,    !- Name
@@ -8727,7 +8727,7 @@ ElectricEquipment,
     0.15,                     !- Fraction Latent
     0.36,                     !- Fraction Radiant
     0.25,                     !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Dishwasher;               !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Elec Load22_FrontRow_TopFloor,    !- Name
@@ -8753,7 +8753,7 @@ ElectricEquipment,
     0.3,                      !- Fraction Latent
     0.24,                     !- Fraction Radiant
     0.3,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Cooking;                  !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Gas Load2_FrontRow_TopFloor,    !- Name
@@ -8779,7 +8779,7 @@ ElectricEquipment,
     0,                        !- Fraction Latent
     0,                        !- Fraction Radiant
     0,                        !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Refrigerator;             !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Elec Load3_FrontRow_TopFloor,    !- Name
@@ -8805,7 +8805,7 @@ ElectricEquipment,
     0,                        !- Fraction Latent
     0.48,                     !- Fraction Radiant
     0.2,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Clothes_Washer;           !- EndUse Subcategory
 
 ElectricEquipment,
     Clothes Dryer3_FrontRow_TopFloor,    !- Name
@@ -8818,7 +8818,7 @@ ElectricEquipment,
     0.05,                     !- Fraction Latent
     0.09,                     !- Fraction Radiant
     0.8,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Clothes_Dryer;            !- EndUse Subcategory
 
 ElectricEquipment,
     Dishwasher3_FrontRow_TopFloor,    !- Name
@@ -8831,7 +8831,7 @@ ElectricEquipment,
     0.15,                     !- Fraction Latent
     0.36,                     !- Fraction Radiant
     0.25,                     !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Dishwasher;               !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Elec Load23_FrontRow_TopFloor,    !- Name
@@ -8857,7 +8857,7 @@ ElectricEquipment,
     0.3,                      !- Fraction Latent
     0.24,                     !- Fraction Radiant
     0.3,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Cooking;                  !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Gas Load3_FrontRow_TopFloor,    !- Name
@@ -8883,7 +8883,7 @@ ElectricEquipment,
     0,                        !- Fraction Latent
     0,                        !- Fraction Radiant
     0,                        !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Refrigerator;             !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Elec Load1_BackRow_TopFloor,    !- Name
@@ -8909,7 +8909,7 @@ ElectricEquipment,
     0,                        !- Fraction Latent
     0.48,                     !- Fraction Radiant
     0.2,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Clothes_Washer;           !- EndUse Subcategory
 
 ElectricEquipment,
     Clothes Dryer1_BackRow_TopFloor,    !- Name
@@ -8922,7 +8922,7 @@ ElectricEquipment,
     0.05,                     !- Fraction Latent
     0.09,                     !- Fraction Radiant
     0.8,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Clothes_Dryer;            !- EndUse Subcategory
 
 ElectricEquipment,
     Dishwasher1_BackRow_TopFloor,    !- Name
@@ -8935,7 +8935,7 @@ ElectricEquipment,
     0.15,                     !- Fraction Latent
     0.36,                     !- Fraction Radiant
     0.25,                     !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Dishwasher;               !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Elec Load21_BackRow_TopFloor,    !- Name
@@ -8961,7 +8961,7 @@ ElectricEquipment,
     0.3,                      !- Fraction Latent
     0.24,                     !- Fraction Radiant
     0.3,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Cooking;                  !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Gas Load1_BackRow_TopFloor,    !- Name
@@ -8987,7 +8987,7 @@ ElectricEquipment,
     0,                        !- Fraction Latent
     0,                        !- Fraction Radiant
     0,                        !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Refrigerator;             !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Elec Load2_BackRow_TopFloor,    !- Name
@@ -9013,7 +9013,7 @@ ElectricEquipment,
     0,                        !- Fraction Latent
     0.48,                     !- Fraction Radiant
     0.2,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Clothes_Washer;           !- EndUse Subcategory
 
 ElectricEquipment,
     Clothes Dryer2_BackRow_TopFloor,    !- Name
@@ -9026,7 +9026,7 @@ ElectricEquipment,
     0.05,                     !- Fraction Latent
     0.09,                     !- Fraction Radiant
     0.8,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Clothes_Dryer;            !- EndUse Subcategory
 
 ElectricEquipment,
     Dishwasher2_BackRow_TopFloor,    !- Name
@@ -9039,7 +9039,7 @@ ElectricEquipment,
     0.15,                     !- Fraction Latent
     0.36,                     !- Fraction Radiant
     0.25,                     !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Dishwasher;               !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Elec Load22_BackRow_TopFloor,    !- Name
@@ -9065,7 +9065,7 @@ ElectricEquipment,
     0.3,                      !- Fraction Latent
     0.24,                     !- Fraction Radiant
     0.3,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Cooking;                  !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Gas Load2_BackRow_TopFloor,    !- Name
@@ -9091,7 +9091,7 @@ ElectricEquipment,
     0,                        !- Fraction Latent
     0,                        !- Fraction Radiant
     0,                        !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Refrigerator;             !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Elec Load3_BackRow_TopFloor,    !- Name
@@ -9117,7 +9117,7 @@ ElectricEquipment,
     0,                        !- Fraction Latent
     0.48,                     !- Fraction Radiant
     0.2,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Clothes_Washer;           !- EndUse Subcategory
 
 ElectricEquipment,
     Clothes Dryer3_BackRow_TopFloor,    !- Name
@@ -9130,7 +9130,7 @@ ElectricEquipment,
     0.05,                     !- Fraction Latent
     0.09,                     !- Fraction Radiant
     0.8,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Clothes_Dryer;            !- EndUse Subcategory
 
 ElectricEquipment,
     Dishwasher3_BackRow_TopFloor,    !- Name
@@ -9143,7 +9143,7 @@ ElectricEquipment,
     0.15,                     !- Fraction Latent
     0.36,                     !- Fraction Radiant
     0.25,                     !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Dishwasher;               !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Elec Load23_BackRow_TopFloor,    !- Name
@@ -9169,7 +9169,7 @@ ElectricEquipment,
     0.3,                      !- Fraction Latent
     0.24,                     !- Fraction Radiant
     0.3,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Cooking;                  !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Gas Load3_BackRow_TopFloor,    !- Name
@@ -9840,7 +9840,7 @@ ZoneVentilation:DesignFlowRate,
     ,                         !- Maximum Outdoor Temperature Schedule Name
     40;                       !- Maximum Wind Speed
 
-ZONEVENTILATION:DESIGNFLOWRATE,
+ZoneVentilation:DesignFlowRate,
     Ventilation_G Corridor,    !- Name
     G Corridor,               !- Zone or ZoneList Name
     always_avail,             !- Schedule Name
@@ -9868,7 +9868,7 @@ ZONEVENTILATION:DESIGNFLOWRATE,
     ,                         !- Maximum Outdoor Temperature Schedule Name
     40;                       !- Maximum Wind Speed
 
-ZONEVENTILATION:DESIGNFLOWRATE,
+ZoneVentilation:DesignFlowRate,
     Ventilation_M Corridor,    !- Name
     M Corridor,               !- Zone or ZoneList Name
     always_avail,             !- Schedule Name
@@ -9896,7 +9896,7 @@ ZONEVENTILATION:DESIGNFLOWRATE,
     ,                         !- Maximum Outdoor Temperature Schedule Name
     40;                       !- Maximum Wind Speed
 
-ZONEVENTILATION:DESIGNFLOWRATE,
+ZoneVentilation:DesignFlowRate,
     Ventilation_T Corridor,    !- Name
     T Corridor,               !- Zone or ZoneList Name
     always_avail,             !- Schedule Name
@@ -9924,21 +9924,21 @@ ZONEVENTILATION:DESIGNFLOWRATE,
     ,                         !- Maximum Outdoor Temperature Schedule Name
     40;                       !- Maximum Wind Speed
 
-EXTERIOR:LIGHTS,
+Exterior:Lights,
     stairLights,              !- Name
     ExteriorLightingProfile,    !- Schedule Name
     500,                      !- Design Level
     ,                         !- Control Option
     Exterior-Lights;          !- EndUse Subcategory
 
-EXTERIOR:LIGHTS,
+Exterior:Lights,
     intPrkLights,             !- Name
     ExteriorLightingProfile,    !- Schedule Name
     500,                      !- Design Level
     ,                         !- Control Option
     Exterior-Lights;          !- EndUse Subcategory
 
-EXTERIOR:LIGHTS,
+Exterior:Lights,
     extPrkLights,             !- Name
     ExteriorLightingProfile,    !- Schedule Name
     500,                      !- Design Level
@@ -11439,21 +11439,21 @@ ZoneControl:Thermostat,
     ThermostatSetpoint:DualSetpoint,    !- Control 1 Object Type
     thermostat_living Dual SP Control;    !- Control 1 Name
 
-ZONECONTROL:THERMOSTAT,
+ZoneControl:Thermostat,
     Zone Thermostat_G Corridor,    !- Name
     G Corridor,               !- Zone or ZoneList Name
     zone_control_type,        !- Control Type Schedule Name
     ThermostatSetpoint:DualSetpoint,    !- Control 1 Object Type
     thermostat_corr Dual SP Control;    !- Control 1 Name
 
-ZONECONTROL:THERMOSTAT,
+ZoneControl:Thermostat,
     Zone Thermostat_M Corridor,    !- Name
     M Corridor,               !- Zone or ZoneList Name
     zone_control_type,        !- Control Type Schedule Name
     ThermostatSetpoint:DualSetpoint,    !- Control 1 Object Type
     thermostat_corr Dual SP Control;    !- Control 1 Name
 
-ZONECONTROL:THERMOSTAT,
+ZoneControl:Thermostat,
     Zone Thermostat_T Corridor,    !- Name
     T Corridor,               !- Zone or ZoneList Name
     zone_control_type,        !- Control Type Schedule Name
@@ -11465,7 +11465,7 @@ ThermostatSetpoint:DualSetpoint,
     heating_sch_unit,         !- Heating Setpoint Temperature Schedule Name
     cooling_sch_unit;         !- Cooling Setpoint Temperature Schedule Name
 
-THERMOSTATSETPOINT:DUALSETPOINT,
+ThermostatSetpoint:DualSetpoint,
     thermostat_corr Dual SP Control,    !- Name
     heating_sch_corr,         !- Heating Setpoint Temperature Schedule Name
     cooling_sch_corr;         !- Cooling Setpoint Temperature Schedule Name
@@ -11578,19 +11578,19 @@ AirTerminal:SingleDuct:Uncontrolled,
     Zone Inlet Node_unit3_BackRow_TopFloor,    !- Zone Supply Air Node Name
     autosize;                 !- Maximum Air Flow Rate
 
-AIRTERMINAL:SINGLEDUCT:UNCONTROLLED,
+AirTerminal:SingleDuct:Uncontrolled,
     ZoneDirectAir_G Corridor,    !- Name
     always_avail,             !- Availability Schedule Name
     Zone Inlet Node_G Corridor,    !- Zone Supply Air Node Name
     autosize;                 !- Maximum Air Flow Rate
 
-AIRTERMINAL:SINGLEDUCT:UNCONTROLLED,
+AirTerminal:SingleDuct:Uncontrolled,
     ZoneDirectAir_M Corridor,    !- Name
     always_avail,             !- Availability Schedule Name
     Zone Inlet Node_M Corridor,    !- Zone Supply Air Node Name
     autosize;                 !- Maximum Air Flow Rate
 
-AIRTERMINAL:SINGLEDUCT:UNCONTROLLED,
+AirTerminal:SingleDuct:Uncontrolled,
     ZoneDirectAir_T Corridor,    !- Name
     always_avail,             !- Availability Schedule Name
     Zone Inlet Node_T Corridor,    !- Zone Supply Air Node Name
@@ -11722,21 +11722,21 @@ ZoneHVAC:EquipmentList,
     1,                        !- Zone Equipment 1 Cooling Sequence
     1;                        !- Zone Equipment 1 Heating or NoLoad Sequence
 
-ZONEHVAC:EQUIPMENTLIST,
+ZoneHVAC:EquipmentList,
     ZONEEQUIPMENT_G Corridor,    !- Name
     AirTerminal:SingleDuct:Uncontrolled,    !- Zone Equipment 1 Object Type
     ZoneDirectAir_G Corridor,    !- Zone Equipment 1 Name
     1,                        !- Zone Equipment 1 Cooling Sequence
     1;                        !- Zone Equipment 1 Heating or NoLoad Sequence
 
-ZONEHVAC:EQUIPMENTLIST,
+ZoneHVAC:EquipmentList,
     ZONEEQUIPMENT_M Corridor,    !- Name
     AirTerminal:SingleDuct:Uncontrolled,    !- Zone Equipment 1 Object Type
     ZoneDirectAir_M Corridor,    !- Zone Equipment 1 Name
     1,                        !- Zone Equipment 1 Cooling Sequence
     1;                        !- Zone Equipment 1 Heating or NoLoad Sequence
 
-ZONEHVAC:EQUIPMENTLIST,
+ZoneHVAC:EquipmentList,
     ZONEEQUIPMENT_T Corridor,    !- Name
     AirTerminal:SingleDuct:Uncontrolled,    !- Zone Equipment 1 Object Type
     ZoneDirectAir_T Corridor,    !- Zone Equipment 1 Name
@@ -11887,7 +11887,7 @@ ZoneHVAC:EquipmentConnections,
     Zone Node_unit3_BackRow_TopFloor,    !- Zone Air Node Name
     Zone Outlet Node_unit3_BackRow_TopFloor;    !- Zone Return Air Node Name
 
-ZONEHVAC:EQUIPMENTCONNECTIONS,
+ZoneHVAC:EquipmentConnections,
     G Corridor,               !- Zone Name
     ZONEEQUIPMENT_G Corridor,    !- Zone Conditioning Equipment List Name
     zone inlet nodes_G Corridor,    !- Zone Air Inlet Node or NodeList Name
@@ -11895,7 +11895,7 @@ ZONEHVAC:EQUIPMENTCONNECTIONS,
     Zone Node_G Corridor,     !- Zone Air Node Name
     Zone Outlet Node_G Corridor;    !- Zone Return Air Node Name
 
-ZONEHVAC:EQUIPMENTCONNECTIONS,
+ZoneHVAC:EquipmentConnections,
     M Corridor,               !- Zone Name
     ZONEEQUIPMENT_M Corridor,    !- Zone Conditioning Equipment List Name
     zone inlet nodes_M Corridor,    !- Zone Air Inlet Node or NodeList Name
@@ -11903,7 +11903,7 @@ ZONEHVAC:EQUIPMENTCONNECTIONS,
     Zone Node_M Corridor,     !- Zone Air Node Name
     Zone Outlet Node_M Corridor;    !- Zone Return Air Node Name
 
-ZONEHVAC:EQUIPMENTCONNECTIONS,
+ZoneHVAC:EquipmentConnections,
     T Corridor,               !- Zone Name
     ZONEEQUIPMENT_T Corridor,    !- Zone Conditioning Equipment List Name
     zone inlet nodes_T Corridor,    !- Zone Air Inlet Node or NodeList Name
@@ -12163,7 +12163,7 @@ Fan:OnOff,
     ,                         !- Fan Efficiency Ratio Function of Speed Ratio Curve Name
     General;                  !- EndUse Subcategory
 
-FAN:ONOFF,
+Fan:OnOff,
     Supply Fan_G Corridor,    !- Name
     always_avail,             !- Availability Schedule Name
     0.377,                    !- Fan Total Efficiency
@@ -12177,7 +12177,7 @@ FAN:ONOFF,
     ,                         !- Fan Efficiency Ratio Function of Speed Ratio Curve Name
     General;                  !- EndUse Subcategory
 
-FAN:ONOFF,
+Fan:OnOff,
     Supply Fan_M Corridor,    !- Name
     always_avail,             !- Availability Schedule Name
     0.377,                    !- Fan Total Efficiency
@@ -12191,7 +12191,7 @@ FAN:ONOFF,
     ,                         !- Fan Efficiency Ratio Function of Speed Ratio Curve Name
     General;                  !- EndUse Subcategory
 
-FAN:ONOFF,
+Fan:OnOff,
     Supply Fan_T Corridor,    !- Name
     always_avail,             !- Availability Schedule Name
     0.377,                    !- Fan Total Efficiency
@@ -12493,7 +12493,7 @@ Coil:Cooling:DX:SingleSpeed,
     HPACCOOLEIRFFF,           !- Energy Input Ratio Function of Flow Fraction Curve Name
     HPACCOOLPLFFPLR;          !- Part Load Fraction Correlation Curve Name
 
-COIL:COOLING:DX:SINGLESPEED,
+Coil:Cooling:DX:SingleSpeed,
     DX Cooling Coil_G Corridor,    !- Name
     always_avail,             !- Availability Schedule Name
     autosize,                 !- Gross Rated Total Cooling Capacity
@@ -12528,7 +12528,7 @@ COIL:COOLING:DX:SINGLESPEED,
     ,                         !- Sensible Heat Ratio Function of Flow Fraction Curve Name
     No;                       !- Report ASHRAE Standard 127 Performance Ratings
 
-COIL:COOLING:DX:SINGLESPEED,
+Coil:Cooling:DX:SingleSpeed,
     DX Cooling Coil_M Corridor,    !- Name
     always_avail,             !- Availability Schedule Name
     autosize,                 !- Gross Rated Total Cooling Capacity
@@ -12563,7 +12563,7 @@ COIL:COOLING:DX:SINGLESPEED,
     ,                         !- Sensible Heat Ratio Function of Flow Fraction Curve Name
     No;                       !- Report ASHRAE Standard 127 Performance Ratings
 
-COIL:COOLING:DX:SINGLESPEED,
+Coil:Cooling:DX:SingleSpeed,
     DX Cooling Coil_T Corridor,    !- Name
     always_avail,             !- Availability Schedule Name
     autosize,                 !- Gross Rated Total Cooling Capacity
@@ -12742,7 +12742,7 @@ Coil:Heating:Electric,
     Supp Heating Coil Air Inlet Node_unit3_BackRow_TopFloor,    !- Air Inlet Node Name
     Air Loop Outlet Node_unit3_BackRow_TopFloor;    !- Air Outlet Node Name
 
-COIL:HEATING:ELECTRIC,
+Coil:Heating:Electric,
     Supp Heating Coil_G Corridor,    !- Name
     always_avail,             !- Availability Schedule Name
     1,                        !- Efficiency
@@ -12750,7 +12750,7 @@ COIL:HEATING:ELECTRIC,
     Supp Heating Coil Air Inlet Node_G Corridor,    !- Air Inlet Node Name
     Air Loop Outlet Node_G Corridor;    !- Air Outlet Node Name
 
-COIL:HEATING:ELECTRIC,
+Coil:Heating:Electric,
     Supp Heating Coil_M Corridor,    !- Name
     always_avail,             !- Availability Schedule Name
     1,                        !- Efficiency
@@ -12758,7 +12758,7 @@ COIL:HEATING:ELECTRIC,
     Supp Heating Coil Air Inlet Node_M Corridor,    !- Air Inlet Node Name
     Air Loop Outlet Node_M Corridor;    !- Air Outlet Node Name
 
-COIL:HEATING:ELECTRIC,
+Coil:Heating:Electric,
     Supp Heating Coil_T Corridor,    !- Name
     always_avail,             !- Availability Schedule Name
     1,                        !- Efficiency
@@ -13180,7 +13180,7 @@ Coil:Heating:DX:SingleSpeed,
     ReverseCycle,             !- Defrost Strategy
     OnDemand;                 !- Defrost Control
 
-COIL:HEATING:DX:SINGLESPEED,
+Coil:Heating:DX:SingleSpeed,
     Main DX Heating Coil_G Corridor,    !- Name
     always_avail,             !- Availability Schedule Name
     autosize,                 !- Gross Rated Heating Capacity
@@ -13210,7 +13210,7 @@ COIL:HEATING:DX:SINGLESPEED,
     ,                         !- Secondary Coil Air Flow Rate
     1.25;                     !- Secondary Coil Fan Flow Scaling Factor
 
-COIL:HEATING:DX:SINGLESPEED,
+Coil:Heating:DX:SingleSpeed,
     Main DX Heating Coil_M Corridor,    !- Name
     always_avail,             !- Availability Schedule Name
     autosize,                 !- Gross Rated Heating Capacity
@@ -13240,7 +13240,7 @@ COIL:HEATING:DX:SINGLESPEED,
     ,                         !- Secondary Coil Air Flow Rate
     1.25;                     !- Secondary Coil Fan Flow Scaling Factor
 
-COIL:HEATING:DX:SINGLESPEED,
+Coil:Heating:DX:SingleSpeed,
     Main DX Heating Coil_T Corridor,    !- Name
     always_avail,             !- Availability Schedule Name
     autosize,                 !- Gross Rated Heating Capacity
@@ -13666,7 +13666,7 @@ AirLoopHVAC:UnitaryHeatPump:AirToAir,
     BlowThrough,              !- Fan Placement
     fan_cycle;                !- Supply Air Fan Operating Mode Schedule Name
 
-AIRLOOPHVAC:UNITARYHEATPUMP:AIRTOAIR,
+AirLoopHVAC:UnitaryHeatPump:AirToAir,
     Heat Pump_G Corridor,     !- Name
     always_avail,             !- Availability Schedule Name
     Air Loop Inlet node_G Corridor,    !- Air Inlet Node Name
@@ -13689,7 +13689,7 @@ AIRLOOPHVAC:UNITARYHEATPUMP:AIRTOAIR,
     fan_cycle,                !- Supply Air Fan Operating Mode Schedule Name
     None;                     !- Dehumidification Control Type
 
-AIRLOOPHVAC:UNITARYHEATPUMP:AIRTOAIR,
+AirLoopHVAC:UnitaryHeatPump:AirToAir,
     Heat Pump_M Corridor,     !- Name
     always_avail,             !- Availability Schedule Name
     Air Loop Inlet node_M Corridor,    !- Air Inlet Node Name
@@ -13712,7 +13712,7 @@ AIRLOOPHVAC:UNITARYHEATPUMP:AIRTOAIR,
     fan_cycle,                !- Supply Air Fan Operating Mode Schedule Name
     None;                     !- Dehumidification Control Type
 
-AIRLOOPHVAC:UNITARYHEATPUMP:AIRTOAIR,
+AirLoopHVAC:UnitaryHeatPump:AirToAir,
     Heat Pump_T Corridor,     !- Name
     always_avail,             !- Availability Schedule Name
     Air Loop Inlet node_T Corridor,    !- Air Inlet Node Name
@@ -13951,7 +13951,7 @@ AirLoopHVAC,
     Zone Equipment Inlet Node_unit3_BackRow_TopFloor,    !- Demand Side Inlet Node Names
     Air Loop Outlet Node_unit3_BackRow_TopFloor;    !- Supply Side Outlet Node Names
 
-AIRLOOPHVAC,
+AirLoopHVAC,
     Central System_G Corridor,    !- Name
     ,                         !- Controller List Name
     availability list,        !- Availability Manager List Name
@@ -13963,7 +13963,7 @@ AIRLOOPHVAC,
     Zone Equipment Inlet Node_G Corridor,    !- Demand Side Inlet Node Names
     Air Loop Outlet Node_G Corridor;    !- Supply Side Outlet Node Names
 
-AIRLOOPHVAC,
+AirLoopHVAC,
     Central System_M Corridor,    !- Name
     ,                         !- Controller List Name
     availability list,        !- Availability Manager List Name
@@ -13975,7 +13975,7 @@ AIRLOOPHVAC,
     Zone Equipment Inlet Node_M Corridor,    !- Demand Side Inlet Node Names
     Air Loop Outlet Node_M Corridor;    !- Supply Side Outlet Node Names
 
-AIRLOOPHVAC,
+AirLoopHVAC,
     Central System_T Corridor,    !- Name
     ,                         !- Controller List Name
     availability list,        !- Availability Manager List Name
@@ -14077,17 +14077,17 @@ AirLoopHVAC:ZoneSplitter,
     Zone Equipment Inlet Node_unit3_BackRow_TopFloor,    !- Inlet Node Name
     Zone Inlet Node_unit3_BackRow_TopFloor;    !- Outlet 1 Node Name
 
-AIRLOOPHVAC:ZONESPLITTER,
+AirLoopHVAC:ZoneSplitter,
     Zone Supply Air Splitter_G Corridor,    !- Name
     Zone Equipment Inlet Node_G Corridor,    !- Inlet Node Name
     Zone Inlet Node_G Corridor;    !- Outlet 1 Node Name
 
-AIRLOOPHVAC:ZONESPLITTER,
+AirLoopHVAC:ZoneSplitter,
     Zone Supply Air Splitter_M Corridor,    !- Name
     Zone Equipment Inlet Node_M Corridor,    !- Inlet Node Name
     Zone Inlet Node_M Corridor;    !- Outlet 1 Node Name
 
-AIRLOOPHVAC:ZONESPLITTER,
+AirLoopHVAC:ZoneSplitter,
     Zone Supply Air Splitter_T Corridor,    !- Name
     Zone Equipment Inlet Node_T Corridor,    !- Inlet Node Name
     Zone Inlet Node_T Corridor;    !- Outlet 1 Node Name
@@ -14200,19 +14200,19 @@ AirLoopHVAC:SupplyPath,
     AirLoopHVAC:ZoneSplitter,    !- Component 1 Object Type
     Zone Supply Air Splitter_unit3_BackRow_TopFloor;    !- Component 1 Name
 
-AIRLOOPHVAC:SUPPLYPATH,
+AirLoopHVAC:SupplyPath,
     SupplyPath_G Corridor,    !- Name
     Zone Equipment Inlet Node_G Corridor,    !- Supply Air Path Inlet Node Name
     AirLoopHVAC:ZoneSplitter,    !- Component 1 Object Type
     Zone Supply Air Splitter_G Corridor;    !- Component 1 Name
 
-AIRLOOPHVAC:SUPPLYPATH,
+AirLoopHVAC:SupplyPath,
     SupplyPath_M Corridor,    !- Name
     Zone Equipment Inlet Node_M Corridor,    !- Supply Air Path Inlet Node Name
     AirLoopHVAC:ZoneSplitter,    !- Component 1 Object Type
     Zone Supply Air Splitter_M Corridor;    !- Component 1 Name
 
-AIRLOOPHVAC:SUPPLYPATH,
+AirLoopHVAC:SupplyPath,
     SupplyPath_T Corridor,    !- Name
     Zone Equipment Inlet Node_T Corridor,    !- Supply Air Path Inlet Node Name
     AirLoopHVAC:ZoneSplitter,    !- Component 1 Object Type
@@ -14308,17 +14308,17 @@ AirLoopHVAC:ZoneMixer,
     Return Air Mixer Outlet_unit3_BackRow_TopFloor,    !- Outlet Node Name
     Zone Outlet Node_unit3_BackRow_TopFloor;    !- Inlet 1 Node Name
 
-AIRLOOPHVAC:ZONEMIXER,
+AirLoopHVAC:ZoneMixer,
     Zone Return Air Mixer_G Corridor,    !- Name
     Return Air Mixer Outlet_G Corridor,    !- Outlet Node Name
     Zone Outlet Node_G Corridor;    !- Inlet 1 Node Name
 
-AIRLOOPHVAC:ZONEMIXER,
+AirLoopHVAC:ZoneMixer,
     Zone Return Air Mixer_M Corridor,    !- Name
     Return Air Mixer Outlet_M Corridor,    !- Outlet Node Name
     Zone Outlet Node_M Corridor;    !- Inlet 1 Node Name
 
-AIRLOOPHVAC:ZONEMIXER,
+AirLoopHVAC:ZoneMixer,
     Zone Return Air Mixer_T Corridor,    !- Name
     Return Air Mixer Outlet_T Corridor,    !- Outlet Node Name
     Zone Outlet Node_T Corridor;    !- Inlet 1 Node Name
@@ -14431,19 +14431,19 @@ AirLoopHVAC:ReturnPath,
     AirLoopHVAC:ZoneMixer,    !- Component 1 Object Type
     Zone Return Air Mixer_unit3_BackRow_TopFloor;    !- Component 1 Name
 
-AIRLOOPHVAC:RETURNPATH,
+AirLoopHVAC:ReturnPath,
     ReturnPath_G Corridor,    !- Name
     Return Air Mixer Outlet_G Corridor,    !- Return Air Path Outlet Node Name
     AirLoopHVAC:ZoneMixer,    !- Component 1 Object Type
     Zone Return Air Mixer_G Corridor;    !- Component 1 Name
 
-AIRLOOPHVAC:RETURNPATH,
+AirLoopHVAC:ReturnPath,
     ReturnPath_M Corridor,    !- Name
     Return Air Mixer Outlet_M Corridor,    !- Return Air Path Outlet Node Name
     AirLoopHVAC:ZoneMixer,    !- Component 1 Object Type
     Zone Return Air Mixer_M Corridor;    !- Component 1 Name
 
-AIRLOOPHVAC:RETURNPATH,
+AirLoopHVAC:ReturnPath,
     ReturnPath_T Corridor,    !- Name
     Return Air Mixer Outlet_T Corridor,    !- Return Air Path Outlet Node Name
     AirLoopHVAC:ZoneMixer,    !- Component 1 Object Type
@@ -16033,7 +16033,7 @@ Branch,
     Mains Makeup Pipe Inlet Node_unit3_BackRow_TopFloor,    !- Component 1 Inlet Node Name
     Mains Makeup Node_unit3_BackRow_TopFloor;    !- Component 1 Outlet Node Name
 
-BRANCH,
+Branch,
     Air Loop Main Branch_G Corridor,    !- Name
     ,                         !- Pressure Drop Curve Name
     AirLoopHVAC:UnitaryHeatPump:AirtoAir,    !- Component 1 Object Type
@@ -16041,7 +16041,7 @@ BRANCH,
     Air Loop Inlet Node_G Corridor,    !- Component 1 Inlet Node Name
     Air Loop Outlet Node_G Corridor;    !- Component 1 Outlet Node Name
 
-BRANCH,
+Branch,
     Air Loop Main Branch_M Corridor,    !- Name
     ,                         !- Pressure Drop Curve Name
     AirLoopHVAC:UnitaryHeatPump:AirtoAir,    !- Component 1 Object Type
@@ -16049,7 +16049,7 @@ BRANCH,
     Air Loop Inlet Node_M Corridor,    !- Component 1 Inlet Node Name
     Air Loop Outlet Node_M Corridor;    !- Component 1 Outlet Node Name
 
-BRANCH,
+Branch,
     Air Loop Main Branch_T Corridor,    !- Name
     ,                         !- Pressure Drop Curve Name
     AirLoopHVAC:UnitaryHeatPump:AirtoAir,    !- Component 1 Object Type
@@ -16417,15 +16417,15 @@ BranchList,
     Water Bath Branch_unit3_BackRow_TopFloor,    !- Branch 6 Name
     Mains Makeup Branch_unit3_BackRow_TopFloor;    !- Branch 7 Name
 
-BRANCHLIST,
+BranchList,
     Air Loop Branches_G Corridor,    !- Name
     Air Loop Main Branch_G Corridor;    !- Branch 1 Name
 
-BRANCHLIST,
+BranchList,
     Air Loop Branches_M Corridor,    !- Name
     Air Loop Main Branch_M Corridor;    !- Branch 1 Name
 
-BRANCHLIST,
+BranchList,
     Air Loop Branches_T Corridor,    !- Name
     Air Loop Main Branch_T Corridor;    !- Branch 1 Name
 
@@ -17257,15 +17257,15 @@ NodeList,
     Zone Inlet Nodes_unit3_BackRow_TopFloor,    !- Name
     Zone Inlet Node_unit3_BackRow_TopFloor;    !- Node 1 Name
 
-NODELIST,
+NodeList,
     Zone Inlet Nodes_G Corridor,    !- Name
     Zone Inlet Node_G Corridor;    !- Node 1 Name
 
-NODELIST,
+NodeList,
     Zone Inlet Nodes_M Corridor,    !- Name
     Zone Inlet Node_M Corridor;    !- Node 1 Name
 
-NODELIST,
+NodeList,
     Zone Inlet Nodes_T Corridor,    !- Name
     Zone Inlet Node_T Corridor;    !- Node 1 Name
 
@@ -21522,13 +21522,13 @@ Output:Table:Monthly,
 
 OutputControl:Table:Style,
     HTML,                     !- Column Separator
-    InchPound;                !- Unit Conversion
+    None;                     !- Unit Conversion
 
-OUTPUT:METER,
+Output:Meter,
     Electricity:Facility,     !- Name
     Annual;                   !- Reporting Frequency
 
-OUTPUT:METER,
+Output:Meter,
     Gas:Facility,             !- Name
     Annual;                   !- Reporting Frequency
 

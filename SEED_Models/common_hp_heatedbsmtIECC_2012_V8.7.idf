@@ -1696,7 +1696,7 @@ Material,
     0.5,                      !- Solar Absorptance
     0.5;                      !- Visible Absorptance
 
-MATERIAL,
+Material,
     slab_consol_layer,        !- Name
     Rough,                    !- Roughness
     0.23495,                  !- Thickness
@@ -1917,7 +1917,7 @@ Construction,
     bsmtwall_consol_layer,    !- Layer 2
     Plywood_3/4in;            !- Layer 3
 
-CONSTRUCTION,
+Construction,
     Slab,                     !- Name
     slab_consol_layer,        !- Outside Layer
     Plywood_3/4in,            !- Layer 2
@@ -7570,7 +7570,7 @@ ElectricEquipment,
     0,                        !- Fraction Latent
     0,                        !- Fraction Radiant
     0,                        !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Refrigerator;             !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Elec Load1_FrontRow_BottomFloor,    !- Name
@@ -7596,7 +7596,7 @@ ElectricEquipment,
     0,                        !- Fraction Latent
     0.48,                     !- Fraction Radiant
     0.2,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Clothes_Washer;           !- EndUse Subcategory
 
 ElectricEquipment,
     Clothes Dryer1_FrontRow_BottomFloor,    !- Name
@@ -7609,7 +7609,7 @@ ElectricEquipment,
     0.05,                     !- Fraction Latent
     0.09,                     !- Fraction Radiant
     0.8,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Clothes_Dryer;            !- EndUse Subcategory
 
 ElectricEquipment,
     Dishwasher1_FrontRow_BottomFloor,    !- Name
@@ -7622,7 +7622,7 @@ ElectricEquipment,
     0.15,                     !- Fraction Latent
     0.36,                     !- Fraction Radiant
     0.25,                     !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Dishwasher;               !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Elec Load21_FrontRow_BottomFloor,    !- Name
@@ -7648,7 +7648,7 @@ ElectricEquipment,
     0.3,                      !- Fraction Latent
     0.24,                     !- Fraction Radiant
     0.3,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Cooking;                  !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Gas Load1_FrontRow_BottomFloor,    !- Name
@@ -7674,7 +7674,7 @@ ElectricEquipment,
     0,                        !- Fraction Latent
     0,                        !- Fraction Radiant
     0,                        !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Refrigerator;             !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Elec Load2_FrontRow_BottomFloor,    !- Name
@@ -7700,7 +7700,7 @@ ElectricEquipment,
     0,                        !- Fraction Latent
     0.48,                     !- Fraction Radiant
     0.2,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Clothes_Washer;           !- EndUse Subcategory
 
 ElectricEquipment,
     Clothes Dryer2_FrontRow_BottomFloor,    !- Name
@@ -7713,7 +7713,7 @@ ElectricEquipment,
     0.05,                     !- Fraction Latent
     0.09,                     !- Fraction Radiant
     0.8,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Clothes_Dryer;            !- EndUse Subcategory
 
 ElectricEquipment,
     Dishwasher2_FrontRow_BottomFloor,    !- Name
@@ -7726,7 +7726,7 @@ ElectricEquipment,
     0.15,                     !- Fraction Latent
     0.36,                     !- Fraction Radiant
     0.25,                     !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Dishwasher;               !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Elec Load22_FrontRow_BottomFloor,    !- Name
@@ -7752,7 +7752,7 @@ ElectricEquipment,
     0.3,                      !- Fraction Latent
     0.24,                     !- Fraction Radiant
     0.3,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Cooking;                  !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Gas Load2_FrontRow_BottomFloor,    !- Name
@@ -7778,7 +7778,7 @@ ElectricEquipment,
     0,                        !- Fraction Latent
     0,                        !- Fraction Radiant
     0,                        !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Refrigerator;             !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Elec Load3_FrontRow_BottomFloor,    !- Name
@@ -7804,7 +7804,7 @@ ElectricEquipment,
     0,                        !- Fraction Latent
     0.48,                     !- Fraction Radiant
     0.2,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Clothes_Washer;           !- EndUse Subcategory
 
 ElectricEquipment,
     Clothes Dryer3_FrontRow_BottomFloor,    !- Name
@@ -7817,7 +7817,7 @@ ElectricEquipment,
     0.05,                     !- Fraction Latent
     0.09,                     !- Fraction Radiant
     0.8,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Clothes_Dryer;            !- EndUse Subcategory
 
 ElectricEquipment,
     Dishwasher3_FrontRow_BottomFloor,    !- Name
@@ -7830,7 +7830,7 @@ ElectricEquipment,
     0.15,                     !- Fraction Latent
     0.36,                     !- Fraction Radiant
     0.25,                     !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Dishwasher;               !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Elec Load23_FrontRow_BottomFloor,    !- Name
@@ -7856,7 +7856,7 @@ ElectricEquipment,
     0.3,                      !- Fraction Latent
     0.24,                     !- Fraction Radiant
     0.3,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Cooking;                  !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Gas Load3_FrontRow_BottomFloor,    !- Name
@@ -7882,7 +7882,7 @@ ElectricEquipment,
     0,                        !- Fraction Latent
     0,                        !- Fraction Radiant
     0,                        !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Refrigerator;             !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Elec Load1_BackRow_BottomFloor,    !- Name
@@ -7908,7 +7908,7 @@ ElectricEquipment,
     0,                        !- Fraction Latent
     0.48,                     !- Fraction Radiant
     0.2,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Clothes_Washer;           !- EndUse Subcategory
 
 ElectricEquipment,
     Clothes Dryer1_BackRow_BottomFloor,    !- Name
@@ -7921,7 +7921,7 @@ ElectricEquipment,
     0.05,                     !- Fraction Latent
     0.09,                     !- Fraction Radiant
     0.8,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Clothes_Dryer;            !- EndUse Subcategory
 
 ElectricEquipment,
     Dishwasher1_BackRow_BottomFloor,    !- Name
@@ -7934,7 +7934,7 @@ ElectricEquipment,
     0.15,                     !- Fraction Latent
     0.36,                     !- Fraction Radiant
     0.25,                     !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Dishwasher;               !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Elec Load21_BackRow_BottomFloor,    !- Name
@@ -7960,7 +7960,7 @@ ElectricEquipment,
     0.3,                      !- Fraction Latent
     0.24,                     !- Fraction Radiant
     0.3,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Cooking;                  !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Gas Load1_BackRow_BottomFloor,    !- Name
@@ -7986,7 +7986,7 @@ ElectricEquipment,
     0,                        !- Fraction Latent
     0,                        !- Fraction Radiant
     0,                        !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Refrigerator;             !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Elec Load2_BackRow_BottomFloor,    !- Name
@@ -8012,7 +8012,7 @@ ElectricEquipment,
     0,                        !- Fraction Latent
     0.48,                     !- Fraction Radiant
     0.2,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Clothes_Washer;           !- EndUse Subcategory
 
 ElectricEquipment,
     Clothes Dryer2_BackRow_BottomFloor,    !- Name
@@ -8025,7 +8025,7 @@ ElectricEquipment,
     0.05,                     !- Fraction Latent
     0.09,                     !- Fraction Radiant
     0.8,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Clothes_Dryer;            !- EndUse Subcategory
 
 ElectricEquipment,
     Dishwasher2_BackRow_BottomFloor,    !- Name
@@ -8038,7 +8038,7 @@ ElectricEquipment,
     0.15,                     !- Fraction Latent
     0.36,                     !- Fraction Radiant
     0.25,                     !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Dishwasher;               !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Elec Load22_BackRow_BottomFloor,    !- Name
@@ -8064,7 +8064,7 @@ ElectricEquipment,
     0.3,                      !- Fraction Latent
     0.24,                     !- Fraction Radiant
     0.3,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Cooking;                  !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Gas Load2_BackRow_BottomFloor,    !- Name
@@ -8090,7 +8090,7 @@ ElectricEquipment,
     0,                        !- Fraction Latent
     0,                        !- Fraction Radiant
     0,                        !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Refrigerator;             !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Elec Load3_BackRow_BottomFloor,    !- Name
@@ -8116,7 +8116,7 @@ ElectricEquipment,
     0,                        !- Fraction Latent
     0.48,                     !- Fraction Radiant
     0.2,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Clothes_Washer;           !- EndUse Subcategory
 
 ElectricEquipment,
     Clothes Dryer3_BackRow_BottomFloor,    !- Name
@@ -8129,7 +8129,7 @@ ElectricEquipment,
     0.05,                     !- Fraction Latent
     0.09,                     !- Fraction Radiant
     0.8,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Clothes_Dryer;            !- EndUse Subcategory
 
 ElectricEquipment,
     Dishwasher3_BackRow_BottomFloor,    !- Name
@@ -8142,7 +8142,7 @@ ElectricEquipment,
     0.15,                     !- Fraction Latent
     0.36,                     !- Fraction Radiant
     0.25,                     !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Dishwasher;               !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Elec Load23_BackRow_BottomFloor,    !- Name
@@ -8168,7 +8168,7 @@ ElectricEquipment,
     0.3,                      !- Fraction Latent
     0.24,                     !- Fraction Radiant
     0.3,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Cooking;                  !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Gas Load3_BackRow_BottomFloor,    !- Name
@@ -8194,7 +8194,7 @@ ElectricEquipment,
     0,                        !- Fraction Latent
     0,                        !- Fraction Radiant
     0,                        !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Refrigerator;             !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Elec Load1_FrontRow_MiddleFloor,    !- Name
@@ -8220,7 +8220,7 @@ ElectricEquipment,
     0,                        !- Fraction Latent
     0.48,                     !- Fraction Radiant
     0.2,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Clothes_Washer;           !- EndUse Subcategory
 
 ElectricEquipment,
     Clothes Dryer1_FrontRow_MiddleFloor,    !- Name
@@ -8233,7 +8233,7 @@ ElectricEquipment,
     0.05,                     !- Fraction Latent
     0.09,                     !- Fraction Radiant
     0.8,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Clothes_Dryer;            !- EndUse Subcategory
 
 ElectricEquipment,
     Dishwasher1_FrontRow_MiddleFloor,    !- Name
@@ -8246,7 +8246,7 @@ ElectricEquipment,
     0.15,                     !- Fraction Latent
     0.36,                     !- Fraction Radiant
     0.25,                     !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Dishwasher;               !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Elec Load21_FrontRow_MiddleFloor,    !- Name
@@ -8272,7 +8272,7 @@ ElectricEquipment,
     0.3,                      !- Fraction Latent
     0.24,                     !- Fraction Radiant
     0.3,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Cooking;                  !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Gas Load1_FrontRow_MiddleFloor,    !- Name
@@ -8298,7 +8298,7 @@ ElectricEquipment,
     0,                        !- Fraction Latent
     0,                        !- Fraction Radiant
     0,                        !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Refrigerator;             !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Elec Load2_FrontRow_MiddleFloor,    !- Name
@@ -8324,7 +8324,7 @@ ElectricEquipment,
     0,                        !- Fraction Latent
     0.48,                     !- Fraction Radiant
     0.2,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Clothes_Washer;           !- EndUse Subcategory
 
 ElectricEquipment,
     Clothes Dryer2_FrontRow_MiddleFloor,    !- Name
@@ -8337,7 +8337,7 @@ ElectricEquipment,
     0.05,                     !- Fraction Latent
     0.09,                     !- Fraction Radiant
     0.8,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Clothes_Dryer;            !- EndUse Subcategory
 
 ElectricEquipment,
     Dishwasher2_FrontRow_MiddleFloor,    !- Name
@@ -8350,7 +8350,7 @@ ElectricEquipment,
     0.15,                     !- Fraction Latent
     0.36,                     !- Fraction Radiant
     0.25,                     !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Dishwasher;               !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Elec Load22_FrontRow_MiddleFloor,    !- Name
@@ -8376,7 +8376,7 @@ ElectricEquipment,
     0.3,                      !- Fraction Latent
     0.24,                     !- Fraction Radiant
     0.3,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Cooking;                  !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Gas Load2_FrontRow_MiddleFloor,    !- Name
@@ -8402,7 +8402,7 @@ ElectricEquipment,
     0,                        !- Fraction Latent
     0,                        !- Fraction Radiant
     0,                        !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Refrigerator;             !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Elec Load3_FrontRow_MiddleFloor,    !- Name
@@ -8428,7 +8428,7 @@ ElectricEquipment,
     0,                        !- Fraction Latent
     0.48,                     !- Fraction Radiant
     0.2,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Clothes_Washer;           !- EndUse Subcategory
 
 ElectricEquipment,
     Clothes Dryer3_FrontRow_MiddleFloor,    !- Name
@@ -8441,7 +8441,7 @@ ElectricEquipment,
     0.05,                     !- Fraction Latent
     0.09,                     !- Fraction Radiant
     0.8,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Clothes_Dryer;            !- EndUse Subcategory
 
 ElectricEquipment,
     Dishwasher3_FrontRow_MiddleFloor,    !- Name
@@ -8454,7 +8454,7 @@ ElectricEquipment,
     0.15,                     !- Fraction Latent
     0.36,                     !- Fraction Radiant
     0.25,                     !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Dishwasher;               !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Elec Load23_FrontRow_MiddleFloor,    !- Name
@@ -8480,7 +8480,7 @@ ElectricEquipment,
     0.3,                      !- Fraction Latent
     0.24,                     !- Fraction Radiant
     0.3,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Cooking;                  !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Gas Load3_FrontRow_MiddleFloor,    !- Name
@@ -8506,7 +8506,7 @@ ElectricEquipment,
     0,                        !- Fraction Latent
     0,                        !- Fraction Radiant
     0,                        !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Refrigerator;             !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Elec Load1_BackRow_MiddleFloor,    !- Name
@@ -8532,7 +8532,7 @@ ElectricEquipment,
     0,                        !- Fraction Latent
     0.48,                     !- Fraction Radiant
     0.2,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Clothes_Washer;           !- EndUse Subcategory
 
 ElectricEquipment,
     Clothes Dryer1_BackRow_MiddleFloor,    !- Name
@@ -8545,7 +8545,7 @@ ElectricEquipment,
     0.05,                     !- Fraction Latent
     0.09,                     !- Fraction Radiant
     0.8,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Clothes_Dryer;            !- EndUse Subcategory
 
 ElectricEquipment,
     Dishwasher1_BackRow_MiddleFloor,    !- Name
@@ -8558,7 +8558,7 @@ ElectricEquipment,
     0.15,                     !- Fraction Latent
     0.36,                     !- Fraction Radiant
     0.25,                     !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Dishwasher;               !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Elec Load21_BackRow_MiddleFloor,    !- Name
@@ -8584,7 +8584,7 @@ ElectricEquipment,
     0.3,                      !- Fraction Latent
     0.24,                     !- Fraction Radiant
     0.3,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Cooking;                  !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Gas Load1_BackRow_MiddleFloor,    !- Name
@@ -8610,7 +8610,7 @@ ElectricEquipment,
     0,                        !- Fraction Latent
     0,                        !- Fraction Radiant
     0,                        !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Refrigerator;             !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Elec Load2_BackRow_MiddleFloor,    !- Name
@@ -8636,7 +8636,7 @@ ElectricEquipment,
     0,                        !- Fraction Latent
     0.48,                     !- Fraction Radiant
     0.2,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Clothes_Washer;           !- EndUse Subcategory
 
 ElectricEquipment,
     Clothes Dryer2_BackRow_MiddleFloor,    !- Name
@@ -8649,7 +8649,7 @@ ElectricEquipment,
     0.05,                     !- Fraction Latent
     0.09,                     !- Fraction Radiant
     0.8,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Clothes_Dryer;            !- EndUse Subcategory
 
 ElectricEquipment,
     Dishwasher2_BackRow_MiddleFloor,    !- Name
@@ -8662,7 +8662,7 @@ ElectricEquipment,
     0.15,                     !- Fraction Latent
     0.36,                     !- Fraction Radiant
     0.25,                     !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Dishwasher;               !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Elec Load22_BackRow_MiddleFloor,    !- Name
@@ -8688,7 +8688,7 @@ ElectricEquipment,
     0.3,                      !- Fraction Latent
     0.24,                     !- Fraction Radiant
     0.3,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Cooking;                  !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Gas Load2_BackRow_MiddleFloor,    !- Name
@@ -8714,7 +8714,7 @@ ElectricEquipment,
     0,                        !- Fraction Latent
     0,                        !- Fraction Radiant
     0,                        !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Refrigerator;             !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Elec Load3_BackRow_MiddleFloor,    !- Name
@@ -8740,7 +8740,7 @@ ElectricEquipment,
     0,                        !- Fraction Latent
     0.48,                     !- Fraction Radiant
     0.2,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Clothes_Washer;           !- EndUse Subcategory
 
 ElectricEquipment,
     Clothes Dryer3_BackRow_MiddleFloor,    !- Name
@@ -8753,7 +8753,7 @@ ElectricEquipment,
     0.05,                     !- Fraction Latent
     0.09,                     !- Fraction Radiant
     0.8,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Clothes_Dryer;            !- EndUse Subcategory
 
 ElectricEquipment,
     Dishwasher3_BackRow_MiddleFloor,    !- Name
@@ -8766,7 +8766,7 @@ ElectricEquipment,
     0.15,                     !- Fraction Latent
     0.36,                     !- Fraction Radiant
     0.25,                     !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Dishwasher;               !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Elec Load23_BackRow_MiddleFloor,    !- Name
@@ -8792,7 +8792,7 @@ ElectricEquipment,
     0.3,                      !- Fraction Latent
     0.24,                     !- Fraction Radiant
     0.3,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Cooking;                  !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Gas Load3_BackRow_MiddleFloor,    !- Name
@@ -8818,7 +8818,7 @@ ElectricEquipment,
     0,                        !- Fraction Latent
     0,                        !- Fraction Radiant
     0,                        !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Refrigerator;             !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Elec Load1_FrontRow_TopFloor,    !- Name
@@ -8844,7 +8844,7 @@ ElectricEquipment,
     0,                        !- Fraction Latent
     0.48,                     !- Fraction Radiant
     0.2,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Clothes_Washer;           !- EndUse Subcategory
 
 ElectricEquipment,
     Clothes Dryer1_FrontRow_TopFloor,    !- Name
@@ -8857,7 +8857,7 @@ ElectricEquipment,
     0.05,                     !- Fraction Latent
     0.09,                     !- Fraction Radiant
     0.8,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Clothes_Dryer;            !- EndUse Subcategory
 
 ElectricEquipment,
     Dishwasher1_FrontRow_TopFloor,    !- Name
@@ -8870,7 +8870,7 @@ ElectricEquipment,
     0.15,                     !- Fraction Latent
     0.36,                     !- Fraction Radiant
     0.25,                     !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Dishwasher;               !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Elec Load21_FrontRow_TopFloor,    !- Name
@@ -8896,7 +8896,7 @@ ElectricEquipment,
     0.3,                      !- Fraction Latent
     0.24,                     !- Fraction Radiant
     0.3,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Cooking;                  !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Gas Load1_FrontRow_TopFloor,    !- Name
@@ -8922,7 +8922,7 @@ ElectricEquipment,
     0,                        !- Fraction Latent
     0,                        !- Fraction Radiant
     0,                        !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Refrigerator;             !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Elec Load2_FrontRow_TopFloor,    !- Name
@@ -8948,7 +8948,7 @@ ElectricEquipment,
     0,                        !- Fraction Latent
     0.48,                     !- Fraction Radiant
     0.2,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Clothes_Washer;           !- EndUse Subcategory
 
 ElectricEquipment,
     Clothes Dryer2_FrontRow_TopFloor,    !- Name
@@ -8961,7 +8961,7 @@ ElectricEquipment,
     0.05,                     !- Fraction Latent
     0.09,                     !- Fraction Radiant
     0.8,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Clothes_Dryer;            !- EndUse Subcategory
 
 ElectricEquipment,
     Dishwasher2_FrontRow_TopFloor,    !- Name
@@ -8974,7 +8974,7 @@ ElectricEquipment,
     0.15,                     !- Fraction Latent
     0.36,                     !- Fraction Radiant
     0.25,                     !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Dishwasher;               !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Elec Load22_FrontRow_TopFloor,    !- Name
@@ -9000,7 +9000,7 @@ ElectricEquipment,
     0.3,                      !- Fraction Latent
     0.24,                     !- Fraction Radiant
     0.3,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Cooking;                  !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Gas Load2_FrontRow_TopFloor,    !- Name
@@ -9026,7 +9026,7 @@ ElectricEquipment,
     0,                        !- Fraction Latent
     0,                        !- Fraction Radiant
     0,                        !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Refrigerator;             !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Elec Load3_FrontRow_TopFloor,    !- Name
@@ -9052,7 +9052,7 @@ ElectricEquipment,
     0,                        !- Fraction Latent
     0.48,                     !- Fraction Radiant
     0.2,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Clothes_Washer;           !- EndUse Subcategory
 
 ElectricEquipment,
     Clothes Dryer3_FrontRow_TopFloor,    !- Name
@@ -9065,7 +9065,7 @@ ElectricEquipment,
     0.05,                     !- Fraction Latent
     0.09,                     !- Fraction Radiant
     0.8,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Clothes_Dryer;            !- EndUse Subcategory
 
 ElectricEquipment,
     Dishwasher3_FrontRow_TopFloor,    !- Name
@@ -9078,7 +9078,7 @@ ElectricEquipment,
     0.15,                     !- Fraction Latent
     0.36,                     !- Fraction Radiant
     0.25,                     !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Dishwasher;               !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Elec Load23_FrontRow_TopFloor,    !- Name
@@ -9104,7 +9104,7 @@ ElectricEquipment,
     0.3,                      !- Fraction Latent
     0.24,                     !- Fraction Radiant
     0.3,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Cooking;                  !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Gas Load3_FrontRow_TopFloor,    !- Name
@@ -9130,7 +9130,7 @@ ElectricEquipment,
     0,                        !- Fraction Latent
     0,                        !- Fraction Radiant
     0,                        !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Refrigerator;             !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Elec Load1_BackRow_TopFloor,    !- Name
@@ -9156,7 +9156,7 @@ ElectricEquipment,
     0,                        !- Fraction Latent
     0.48,                     !- Fraction Radiant
     0.2,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Clothes_Washer;           !- EndUse Subcategory
 
 ElectricEquipment,
     Clothes Dryer1_BackRow_TopFloor,    !- Name
@@ -9169,7 +9169,7 @@ ElectricEquipment,
     0.05,                     !- Fraction Latent
     0.09,                     !- Fraction Radiant
     0.8,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Clothes_Dryer;            !- EndUse Subcategory
 
 ElectricEquipment,
     Dishwasher1_BackRow_TopFloor,    !- Name
@@ -9182,7 +9182,7 @@ ElectricEquipment,
     0.15,                     !- Fraction Latent
     0.36,                     !- Fraction Radiant
     0.25,                     !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Dishwasher;               !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Elec Load21_BackRow_TopFloor,    !- Name
@@ -9208,7 +9208,7 @@ ElectricEquipment,
     0.3,                      !- Fraction Latent
     0.24,                     !- Fraction Radiant
     0.3,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Cooking;                  !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Gas Load1_BackRow_TopFloor,    !- Name
@@ -9234,7 +9234,7 @@ ElectricEquipment,
     0,                        !- Fraction Latent
     0,                        !- Fraction Radiant
     0,                        !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Refrigerator;             !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Elec Load2_BackRow_TopFloor,    !- Name
@@ -9260,7 +9260,7 @@ ElectricEquipment,
     0,                        !- Fraction Latent
     0.48,                     !- Fraction Radiant
     0.2,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Clothes_Washer;           !- EndUse Subcategory
 
 ElectricEquipment,
     Clothes Dryer2_BackRow_TopFloor,    !- Name
@@ -9273,7 +9273,7 @@ ElectricEquipment,
     0.05,                     !- Fraction Latent
     0.09,                     !- Fraction Radiant
     0.8,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Clothes_Dryer;            !- EndUse Subcategory
 
 ElectricEquipment,
     Dishwasher2_BackRow_TopFloor,    !- Name
@@ -9286,7 +9286,7 @@ ElectricEquipment,
     0.15,                     !- Fraction Latent
     0.36,                     !- Fraction Radiant
     0.25,                     !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Dishwasher;               !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Elec Load22_BackRow_TopFloor,    !- Name
@@ -9312,7 +9312,7 @@ ElectricEquipment,
     0.3,                      !- Fraction Latent
     0.24,                     !- Fraction Radiant
     0.3,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Cooking;                  !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Gas Load2_BackRow_TopFloor,    !- Name
@@ -9338,7 +9338,7 @@ ElectricEquipment,
     0,                        !- Fraction Latent
     0,                        !- Fraction Radiant
     0,                        !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Refrigerator;             !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Elec Load3_BackRow_TopFloor,    !- Name
@@ -9364,7 +9364,7 @@ ElectricEquipment,
     0,                        !- Fraction Latent
     0.48,                     !- Fraction Radiant
     0.2,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Clothes_Washer;           !- EndUse Subcategory
 
 ElectricEquipment,
     Clothes Dryer3_BackRow_TopFloor,    !- Name
@@ -9377,7 +9377,7 @@ ElectricEquipment,
     0.05,                     !- Fraction Latent
     0.09,                     !- Fraction Radiant
     0.8,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Clothes_Dryer;            !- EndUse Subcategory
 
 ElectricEquipment,
     Dishwasher3_BackRow_TopFloor,    !- Name
@@ -9390,7 +9390,7 @@ ElectricEquipment,
     0.15,                     !- Fraction Latent
     0.36,                     !- Fraction Radiant
     0.25,                     !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Dishwasher;               !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Elec Load23_BackRow_TopFloor,    !- Name
@@ -9416,7 +9416,7 @@ ElectricEquipment,
     0.3,                      !- Fraction Latent
     0.24,                     !- Fraction Radiant
     0.3,                      !- Fraction Lost
-    Appl;                     !- EndUse Subcategory
+    Cooking;                  !- EndUse Subcategory
 
 ElectricEquipment,
     Misc Gas Load3_BackRow_TopFloor,    !- Name
@@ -22033,13 +22033,13 @@ Output:Table:Monthly,
 
 OutputControl:Table:Style,
     HTML,                     !- Column Separator
-    InchPound;                !- Unit Conversion
+    None;                     !- Unit Conversion
 
-OUTPUT:METER,
+Output:Meter,
     Electricity:Facility,     !- Name
     Annual;                   !- Reporting Frequency
 
-OUTPUT:METER,
+Output:Meter,
     Gas:Facility,             !- Name
     Annual;                   !- Reporting Frequency
 
