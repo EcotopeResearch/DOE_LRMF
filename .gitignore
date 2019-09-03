@@ -20,3 +20,6 @@
 SEED_Models/**.csv
 results_check/*
 jEplus/results/*
+DCI_to_EnergyPlus/.ipynb_checkpoints/*
+DCI_to_EnergyPlus/__pycache__/*
+DCI_to_EnergyPlus/quick_tests.ipynb

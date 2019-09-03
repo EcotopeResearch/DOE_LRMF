@@ -7208,7 +7208,7 @@ ElectricEquipment,
     living_unit1_FrontRow_BottomFloor,    !- Zone or ZoneList Name
     always_avail,             !- Schedule Name
     EquipmentLevel,           !- Design Level Calculation Method
-    121.881113592024,         !- Design Level
+    0,                        !- Design Level
     ,                         !- Watts per Zone Floor Area
     ,                         !- Watts per Person
     0.0624390461422629,       !- Fraction Latent
@@ -7312,7 +7312,7 @@ ElectricEquipment,
     living_unit2_FrontRow_BottomFloor,    !- Zone or ZoneList Name
     always_avail,             !- Schedule Name
     EquipmentLevel,           !- Design Level Calculation Method
-    121.881113592024,         !- Design Level
+    0,                        !- Design Level
     ,                         !- Watts per Zone Floor Area
     ,                         !- Watts per Person
     0.0624390461422629,       !- Fraction Latent
@@ -7416,7 +7416,7 @@ ElectricEquipment,
     living_unit3_FrontRow_BottomFloor,    !- Zone or ZoneList Name
     always_avail,             !- Schedule Name
     EquipmentLevel,           !- Design Level Calculation Method
-    121.881113592024,         !- Design Level
+    0,                        !- Design Level
     ,                         !- Watts per Zone Floor Area
     ,                         !- Watts per Person
     0.0624390461422629,       !- Fraction Latent
@@ -7520,7 +7520,7 @@ ElectricEquipment,
     living_unit1_BackRow_BottomFloor,    !- Zone or ZoneList Name
     always_avail,             !- Schedule Name
     EquipmentLevel,           !- Design Level Calculation Method
-    121.881113592024,         !- Design Level
+    0,                        !- Design Level
     ,                         !- Watts per Zone Floor Area
     ,                         !- Watts per Person
     0.0624390461422629,       !- Fraction Latent
@@ -7624,7 +7624,7 @@ ElectricEquipment,
     living_unit2_BackRow_BottomFloor,    !- Zone or ZoneList Name
     always_avail,             !- Schedule Name
     EquipmentLevel,           !- Design Level Calculation Method
-    121.881113592024,         !- Design Level
+    0,                        !- Design Level
     ,                         !- Watts per Zone Floor Area
     ,                         !- Watts per Person
     0.0624390461422629,       !- Fraction Latent
@@ -7728,7 +7728,7 @@ ElectricEquipment,
     living_unit3_BackRow_BottomFloor,    !- Zone or ZoneList Name
     always_avail,             !- Schedule Name
     EquipmentLevel,           !- Design Level Calculation Method
-    121.881113592024,         !- Design Level
+    0,                        !- Design Level
     ,                         !- Watts per Zone Floor Area
     ,                         !- Watts per Person
     0.0624390461422629,       !- Fraction Latent
@@ -7832,7 +7832,7 @@ ElectricEquipment,
     living_unit1_FrontRow_MiddleFloor,    !- Zone or ZoneList Name
     always_avail,             !- Schedule Name
     EquipmentLevel,           !- Design Level Calculation Method
-    121.881113592024,         !- Design Level
+    0,                        !- Design Level
     ,                         !- Watts per Zone Floor Area
     ,                         !- Watts per Person
     0.0624390461422629,       !- Fraction Latent
@@ -7936,7 +7936,7 @@ ElectricEquipment,
     living_unit2_FrontRow_MiddleFloor,    !- Zone or ZoneList Name
     always_avail,             !- Schedule Name
     EquipmentLevel,           !- Design Level Calculation Method
-    121.881113592024,         !- Design Level
+    0,                        !- Design Level
     ,                         !- Watts per Zone Floor Area
     ,                         !- Watts per Person
     0.0624390461422629,       !- Fraction Latent
@@ -8040,7 +8040,7 @@ ElectricEquipment,
     living_unit3_FrontRow_MiddleFloor,    !- Zone or ZoneList Name
     always_avail,             !- Schedule Name
     EquipmentLevel,           !- Design Level Calculation Method
-    121.881113592024,         !- Design Level
+    0,                        !- Design Level
     ,                         !- Watts per Zone Floor Area
     ,                         !- Watts per Person
     0.0624390461422629,       !- Fraction Latent
@@ -8144,7 +8144,7 @@ ElectricEquipment,
     living_unit1_BackRow_MiddleFloor,    !- Zone or ZoneList Name
     always_avail,             !- Schedule Name
     EquipmentLevel,           !- Design Level Calculation Method
-    121.881113592024,         !- Design Level
+    0,                        !- Design Level
     ,                         !- Watts per Zone Floor Area
     ,                         !- Watts per Person
     0.0624390461422629,       !- Fraction Latent
@@ -8248,7 +8248,7 @@ ElectricEquipment,
     living_unit2_BackRow_MiddleFloor,    !- Zone or ZoneList Name
     always_avail,             !- Schedule Name
     EquipmentLevel,           !- Design Level Calculation Method
-    121.881113592024,         !- Design Level
+    0,                        !- Design Level
     ,                         !- Watts per Zone Floor Area
     ,                         !- Watts per Person
     0.0624390461422629,       !- Fraction Latent
@@ -8352,7 +8352,7 @@ ElectricEquipment,
     living_unit3_BackRow_MiddleFloor,    !- Zone or ZoneList Name
     always_avail,             !- Schedule Name
     EquipmentLevel,           !- Design Level Calculation Method
-    121.881113592024,         !- Design Level
+    0,                        !- Design Level
     ,                         !- Watts per Zone Floor Area
     ,                         !- Watts per Person
     0.0624390461422629,       !- Fraction Latent
@@ -8456,7 +8456,7 @@ ElectricEquipment,
     living_unit1_FrontRow_TopFloor,    !- Zone or ZoneList Name
     always_avail,             !- Schedule Name
     EquipmentLevel,           !- Design Level Calculation Method
-    121.881113592024,         !- Design Level
+    0,                        !- Design Level
     ,                         !- Watts per Zone Floor Area
     ,                         !- Watts per Person
     0.0624390461422629,       !- Fraction Latent
@@ -8560,7 +8560,7 @@ ElectricEquipment,
     living_unit2_FrontRow_TopFloor,    !- Zone or ZoneList Name
     always_avail,             !- Schedule Name
     EquipmentLevel,           !- Design Level Calculation Method
-    121.881113592024,         !- Design Level
+    0,                        !- Design Level
     ,                         !- Watts per Zone Floor Area
     ,                         !- Watts per Person
     0.0624390461422629,       !- Fraction Latent
@@ -8664,7 +8664,7 @@ ElectricEquipment,
     living_unit3_FrontRow_TopFloor,    !- Zone or ZoneList Name
     always_avail,             !- Schedule Name
     EquipmentLevel,           !- Design Level Calculation Method
-    121.881113592024,         !- Design Level
+    0,                        !- Design Level
     ,                         !- Watts per Zone Floor Area
     ,                         !- Watts per Person
     0.0624390461422629,       !- Fraction Latent
@@ -8768,7 +8768,7 @@ ElectricEquipment,
     living_unit1_BackRow_TopFloor,    !- Zone or ZoneList Name
     always_avail,             !- Schedule Name
     EquipmentLevel,           !- Design Level Calculation Method
-    121.881113592024,         !- Design Level
+    0,                        !- Design Level
     ,                         !- Watts per Zone Floor Area
     ,                         !- Watts per Person
     0.0624390461422629,       !- Fraction Latent
@@ -8872,7 +8872,7 @@ ElectricEquipment,
     living_unit2_BackRow_TopFloor,    !- Zone or ZoneList Name
     always_avail,             !- Schedule Name
     EquipmentLevel,           !- Design Level Calculation Method
-    121.881113592024,         !- Design Level
+    0,                        !- Design Level
     ,                         !- Watts per Zone Floor Area
     ,                         !- Watts per Person
     0.0624390461422629,       !- Fraction Latent
@@ -8976,7 +8976,7 @@ ElectricEquipment,
     living_unit3_BackRow_TopFloor,    !- Zone or ZoneList Name
     always_avail,             !- Schedule Name
     EquipmentLevel,           !- Design Level Calculation Method
-    121.881113592024,         !- Design Level
+    0,                        !- Design Level
     ,                         !- Watts per Zone Floor Area
     ,                         !- Watts per Person
     0.0624390461422629,       !- Fraction Latent
