@@ -20,12 +20,20 @@ calculations for getting from the DCI outputs to the EnergyPlus inputs.
 @author: scott
 """
 
+##### GENERAL BUILDING INFORMATION #######
+
 def buildingName(sitex):
+    
+    # empty list to return  
+    var = []
+    
+    # add more info, discuss with Hyunwoo
     var = sitex
     return var
 
 def slabBoundaryCondition(FndType):
     
+    # empty list to return  
     var = []
     
     for i in range(0,len(FndType)):
@@ -37,4 +45,4 @@ def slabBoundaryCondition(FndType):
             print('ERROR in slab boundary condition category')
             return
     
-    return var
+    return var    

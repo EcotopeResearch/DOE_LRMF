@@ -8,10 +8,10 @@ and store those inputs in a dataframe with columns that match the jEplus
 input csv for export. Each function will be built on smaller functions
 that control the calculation of DCI to EnergyPlus inputs.
 
-Three files total:
+Files Include
     1) inputs_csv_creator
     2) dataframe_creator
-    3) dci_to_energyplus
+    3) function files
 
     
 This is the inputs_csv_creator file, it generates the csv for energyplus.
