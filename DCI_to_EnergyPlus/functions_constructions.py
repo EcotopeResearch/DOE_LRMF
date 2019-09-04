@@ -77,8 +77,23 @@ def slabCond(fndWtmnU, FndWtmnF):
     
     return var
 
+def windowU(wtmnWindowU):
+    
+    # empty list to return    
+    var = []    
+    
+    # placeholder
+    for i in range(0, len(wtmnWindowU)):
+        var.append('windowU')
 
-
+def windowSHGC(wtmnWindowSHGC):
+    
+    # empty list to return    
+    var = []    
+    
+    # placeholder
+    for i in range(0, len(wtmnWindowSHGC)):
+        var.append('windowSHGC')
 
 
 

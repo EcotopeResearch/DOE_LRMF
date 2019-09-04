@@ -33,16 +33,72 @@ def commonHeatingEfficiency(commonHeat, hvacCentralYN, CentralSys):
     
     return var
 
-def commonHeatingEfficiencyCurves(commonHeat):
+def commonHeatingEfficiencyCurves1(commonHeat):
     
     # empty list to return    
     var = []    
 
     # placeholder    
     for i in range(0, len(commonHeat)):
-        var.append('commonHeatingEfficiencyCurves')
+        var.append('commonHeatingEfficiencyCurves1')
         
     return var
+
+def commonHeatingEfficiencyCurves2(commonHeat):
+    
+    # empty list to return    
+    var = []    
+
+    # placeholder    
+    for i in range(0, len(commonHeat)):
+        var.append('commonHeatingEfficiencyCurves2')
+        
+    return var
+
+def commonHeatingEfficiencyCurves3(commonHeat):
+    
+    # empty list to return    
+    var = []    
+
+    # placeholder    
+    for i in range(0, len(commonHeat)):
+        var.append('commonHeatingEfficiencyCurves3')
+        
+    return var
+
+def commonHeatingEfficiencyCurves4(commonHeat):
+    
+    # empty list to return    
+    var = []    
+
+    # placeholder    
+    for i in range(0, len(commonHeat)):
+        var.append('commonHeatingEfficiencyCurves4')
+        
+    return var
+
+def commonHeatingEfficiencyCurves5(commonHeat):
+    
+    # empty list to return    
+    var = []    
+
+    # placeholder    
+    for i in range(0, len(commonHeat)):
+        var.append('commonHeatingEfficiencyCurves5')
+        
+    return var
+
+def commonHeatingEfficiencyCurves6(commonHeat):
+    
+    # empty list to return    
+    var = []    
+
+    # placeholder    
+    for i in range(0, len(commonHeat)):
+        var.append('commonHeatingEfficiencyCurves6')
+        
+    return var
+
 
 def commonCoolEfficiency(commonCool, hvacCentralYN, CentralSys):
     
@@ -55,14 +111,58 @@ def commonCoolEfficiency(commonCool, hvacCentralYN, CentralSys):
     
     return var
 
-def commonCoolingEfficiencyCurves(commonCool):
+def commonCoolingEfficiencyCurves1(commonCool):
     
     # empty list to return    
     var = []    
     
     # placeholder
     for i in range(0, len(commonCool)):
-        var.append('commonCoolingEfficiencyCurves')
+        var.append('commonCoolingEfficiencyCurves1')
+    
+    return var
+
+def commonCoolingEfficiencyCurves2(commonCool):
+    
+    # empty list to return    
+    var = []    
+    
+    # placeholder
+    for i in range(0, len(commonCool)):
+        var.append('commonCoolingEfficiencyCurves2')
+    
+    return var
+
+def commonCoolingEfficiencyCurves3(commonCool):
+    
+    # empty list to return    
+    var = []    
+    
+    # placeholder
+    for i in range(0, len(commonCool)):
+        var.append('commonCoolingEfficiencyCurves3')
+    
+    return var
+
+def commonCoolingEfficiencyCurves4(commonCool):
+    
+    # empty list to return    
+    var = []    
+    
+    # placeholder
+    for i in range(0, len(commonCool)):
+        var.append('commonCoolingEfficiencyCurves4')
+    
+    return var
+
+def commonCoolingEfficiencyCurves5(commonCool):
+    
+    # empty list to return    
+    var = []    
+    
+    # placeholder
+    for i in range(0, len(commonCool)):
+        var.append('commonCoolingEfficiencyCurves5')
     
     return var
 

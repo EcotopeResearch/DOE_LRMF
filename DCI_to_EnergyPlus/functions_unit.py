@@ -33,18 +33,73 @@ def unitHeatingEfficiency(unitHeat, centralSys):
     
     return var
 
-def unitHeatingEfficiencyCurves(unitHeat):
+def unitHeatingEfficiencyCurves1(unitHeat):
     
     # empty list to return    
     var = []    
 
     # placeholder    
     for i in range(0, len(unitHeat)):
-        var.append('unitHeatingEfficiencyCurves')
+        var.append('unitHeatingEfficiencyCurves1')
         
     return var
 
-def unitCoolEfficiency(unitCool):
+def unitHeatingEfficiencyCurves2(unitHeat):
+    
+    # empty list to return    
+    var = []    
+
+    # placeholder    
+    for i in range(0, len(unitHeat)):
+        var.append('unitHeatingEfficiencyCurves2')
+        
+    return var
+
+def unitHeatingEfficiencyCurves3(unitHeat):
+    
+    # empty list to return    
+    var = []    
+
+    # placeholder    
+    for i in range(0, len(unitHeat)):
+        var.append('unitHeatingEfficiencyCurves3')
+        
+    return var
+
+def unitHeatingEfficiencyCurves4(unitHeat):
+    
+    # empty list to return    
+    var = []    
+
+    # placeholder    
+    for i in range(0, len(unitHeat)):
+        var.append('unitHeatingEfficiencyCurves4')
+        
+    return var
+
+def unitHeatingEfficiencyCurves5(unitHeat):
+    
+    # empty list to return    
+    var = []    
+
+    # placeholder    
+    for i in range(0, len(unitHeat)):
+        var.append('unitHeatingEfficiencyCurves5')
+        
+    return var
+
+def unitHeatingEfficiencyCurves6(unitHeat):
+    
+    # empty list to return    
+    var = []    
+
+    # placeholder    
+    for i in range(0, len(unitHeat)):
+        var.append('unitHeatingEfficiencyCurves6')
+        
+    return var
+
+def unitCoolEfficiency(unitCool, centralSys):
     
     # empty list to return    
     var = []    
@@ -55,14 +110,58 @@ def unitCoolEfficiency(unitCool):
     
     return var
 
-def unitCoolingEfficiencyCurves(unitCool):
+def unitCoolingEfficiencyCurves1(unitCool):
     
     # empty list to return    
     var = []    
     
     # placeholder
     for i in range(0, len(unitCool)):
-        var.append('unitCoolingEfficiencyCurves')
+        var.append('unitCoolingEfficiencyCurves1')
+    
+    return var
+
+def unitCoolingEfficiencyCurves2(unitCool):
+    
+    # empty list to return    
+    var = []    
+    
+    # placeholder
+    for i in range(0, len(unitCool)):
+        var.append('unitCoolingEfficiencyCurves2')
+    
+    return var
+
+def unitCoolingEfficiencyCurves3(unitCool):
+    
+    # empty list to return    
+    var = []    
+    
+    # placeholder
+    for i in range(0, len(unitCool)):
+        var.append('unitCoolingEfficiencyCurves3')
+    
+    return var
+
+def unitCoolingEfficiencyCurves4(unitCool):
+    
+    # empty list to return    
+    var = []    
+    
+    # placeholder
+    for i in range(0, len(unitCool)):
+        var.append('unitCoolingEfficiencyCurves4')
+    
+    return var
+
+def unitCoolingEfficiencyCurves5(unitCool):
+    
+    # empty list to return    
+    var = []    
+    
+    # placeholder
+    for i in range(0, len(unitCool)):
+        var.append('unitCoolingEfficiencyCurves5')
     
     return var
 
@@ -88,7 +187,7 @@ def unitVentilationSP(ventUnitErvYN, ventCentralYN):
     
     return var
 
-def unitHvacFanSP(unitheat):
+def unitHvacFanSP(unitheat, ventUnitErvYN):
     
     # empty list to return    
     var = []    

@@ -22,7 +22,7 @@ calculations for getting from the DCI outputs to the EnergyPlus inputs.
 
 ##### BASEMENT SYSTEM EFFICIENCIES #######
 
-def bsmtHeatingEfficiency(heatBsmtType, centralSys):
+def bsmtHeatingEfficiency(heatBsmtType, HVACcentral_YN, centralSys):
 
     # empty list to return    
     var = []    
@@ -33,14 +33,69 @@ def bsmtHeatingEfficiency(heatBsmtType, centralSys):
     
     return var
 
-def bsmtHeatingEfficiencyCurves(heatBsmtType):
+def bsmtHeatingEfficiencyCurves1(heatBsmtType):
     
     # empty list to return    
     var = []    
 
     # placeholder    
     for i in range(0, len(heatBsmtType)):
-        var.append('bsmtHeatingEfficiencyCurves')
+        var.append('bsmtHeatingEfficiencyCurves1')
+        
+    return var
+
+def bsmtHeatingEfficiencyCurves2(heatBsmtType):
+    
+    # empty list to return    
+    var = []    
+
+    # placeholder    
+    for i in range(0, len(heatBsmtType)):
+        var.append('bsmtHeatingEfficiencyCurves2')
+        
+    return var
+
+def bsmtHeatingEfficiencyCurves3(heatBsmtType):
+    
+    # empty list to return    
+    var = []    
+
+    # placeholder    
+    for i in range(0, len(heatBsmtType)):
+        var.append('bsmtHeatingEfficiencyCurves3')
+        
+    return var
+
+def bsmtHeatingEfficiencyCurves4(heatBsmtType):
+    
+    # empty list to return    
+    var = []    
+
+    # placeholder    
+    for i in range(0, len(heatBsmtType)):
+        var.append('bsmtHeatingEfficiencyCurves4')
+        
+    return var
+
+def bsmtHeatingEfficiencyCurves5(heatBsmtType):
+    
+    # empty list to return    
+    var = []    
+
+    # placeholder    
+    for i in range(0, len(heatBsmtType)):
+        var.append('bsmtHeatingEfficiencyCurves5')
+        
+    return var
+
+def bsmtHeatingEfficiencyCurves6(heatBsmtType):
+    
+    # empty list to return    
+    var = []    
+
+    # placeholder    
+    for i in range(0, len(heatBsmtType)):
+        var.append('bsmtHeatingEfficiencyCurves6')
         
     return var
 
@@ -55,14 +110,58 @@ def bsmtCoolEfficiency(df):
     
     return var
 
-def bsmtCoolingEfficiencyCurves(df):
+def bsmtCoolingEfficiencyCurves1(df):
     
     # empty list to return    
     var = []    
     
     # placeholder
     for i in range(0, len(df)):
-        var.append('bsmtCoolingEfficiencyCurves')
+        var.append('bsmtCoolingEfficiencyCurves1')
+    
+    return var
+
+def bsmtCoolingEfficiencyCurves2(df):
+    
+    # empty list to return    
+    var = []    
+    
+    # placeholder
+    for i in range(0, len(df)):
+        var.append('bsmtCoolingEfficiencyCurves2')
+    
+    return var
+
+def bsmtCoolingEfficiencyCurves3(df):
+    
+    # empty list to return    
+    var = []    
+    
+    # placeholder
+    for i in range(0, len(df)):
+        var.append('bsmtCoolingEfficiencyCurves3')
+    
+    return var
+
+def bsmtCoolingEfficiencyCurves4(df):
+    
+    # empty list to return    
+    var = []    
+    
+    # placeholder
+    for i in range(0, len(df)):
+        var.append('bsmtCoolingEfficiencyCurves4')
+    
+    return var
+
+def bsmtCoolingEfficiencyCurves5(df):
+    
+    # empty list to return    
+    var = []    
+    
+    # placeholder
+    for i in range(0, len(df)):
+        var.append('bsmtCoolingEfficiencyCurves5')
     
     return var
 
