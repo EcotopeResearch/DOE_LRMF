@@ -19,149 +19,166 @@ calculations for getting from the DCI outputs to the EnergyPlus inputs.
 
 @author: scott
 """
+    
+from functions_switchers import (heat_cop_switcher, curve_heatCapFT_switcher, curve_HeatCapFFF_switcher,
+                                 curve_HPACHeatEIRFT_switcher, curve_HPACHeatEIRFFF_switcher, cool_cop_switcher,
+                                 curve_coolCapFT_switcher, curve_coolCapFFF_switcher, curve_HPACcoolEIRFT_switcher,
+                                 curve_HPACcoolEIRFFF_switcher, curve_HPACCOOLPLFFPLR_switcher, curve_Defrost_EIR_FT_switcher)
 
 ##### UNIT SYSTEM EFFICIENCIES #######
 
-def unitHeatingEfficiency(unitHeat, centralSys):
-
+def HeatingEfficiency(unitHeat, centralSys):
+    '''
+    EnergyPlus Object
+    Coil:Heating:DX:SingleSpeed
+    Input
+    Gross Rated Heating COP
+    '''
+    
     # empty list to return    
     var = []    
     
     # place holder
     for i in range(0, len(unitHeat)):
-        var.append('unitHeatingEfficiency')
+        var.append(heat_cop_switcher(unitHeat[i]))
     
     return var
 
-def unitHeatingEfficiencyCurves1(unitHeat):
+def HeatingEfficiencyCurves1(unitHeat):
+    '''
+    EnergyPlus Object
+    Coil:Heating:DX:SingleSpeed
+    Input
+    Heating Capacity Function of Temperature Curve Name
+    '''
+
+    # empty list to return    
+    var = []    
+
+    # placeholder    
+    for i in range(0, len(unitHeat)):
+        var.append(curve_heatCapFT_switcher(unitHeat[i]))
+        
+    return var
+
+def HeatingEfficiencyCurves2(unitHeat):
     
     # empty list to return    
     var = []    
 
     # placeholder    
     for i in range(0, len(unitHeat)):
-        var.append('unitHeatingEfficiencyCurves1')
+        var.append(curve_HeatCapFFF_switcher(unitHeat[i]))
         
     return var
 
-def unitHeatingEfficiencyCurves2(unitHeat):
+def HeatingEfficiencyCurves3(unitHeat):
     
     # empty list to return    
     var = []    
 
     # placeholder    
     for i in range(0, len(unitHeat)):
-        var.append('unitHeatingEfficiencyCurves2')
+        var.append(curve_HPACHeatEIRFT_switcher(unitHeat[i]))
         
     return var
 
-def unitHeatingEfficiencyCurves3(unitHeat):
+def HeatingEfficiencyCurves4(unitHeat):
     
     # empty list to return    
     var = []    
 
     # placeholder    
     for i in range(0, len(unitHeat)):
-        var.append('unitHeatingEfficiencyCurves3')
+        var.append(curve_HPACHeatEIRFFF_switcher(unitHeat[i]))
         
     return var
 
-def unitHeatingEfficiencyCurves4(unitHeat):
+def HeatingEfficiencyCurves5(unitHeat):
     
     # empty list to return    
     var = []    
 
     # placeholder    
     for i in range(0, len(unitHeat)):
-        var.append('unitHeatingEfficiencyCurves4')
+        var.append(curve_HPACCOOLPLFFPLR_switcher(unitHeat[i]))
         
     return var
 
-def unitHeatingEfficiencyCurves5(unitHeat):
+def HeatingEfficiencyCurves6(unitHeat):
     
     # empty list to return    
     var = []    
 
     # placeholder    
     for i in range(0, len(unitHeat)):
-        var.append('unitHeatingEfficiencyCurves5')
+        var.append(curve_Defrost_EIR_FT_switcher(unitHeat[i]))
         
     return var
 
-def unitHeatingEfficiencyCurves6(unitHeat):
-    
-    # empty list to return    
-    var = []    
-
-    # placeholder    
-    for i in range(0, len(unitHeat)):
-        var.append('unitHeatingEfficiencyCurves6')
-        
-    return var
-
-def unitCoolEfficiency(unitCool, centralSys):
+def CoolEfficiency(unitCool, centralSys):
     
     # empty list to return    
     var = []    
     
     # placeholder
     for i in range(0, len(unitCool)):
-        var.append('unitCoolEfficiency')
+        var.append(cool_cop_switcher(unitCool[i]))
     
     return var
 
-def unitCoolingEfficiencyCurves1(unitCool):
+def CoolingEfficiencyCurves1(unitCool):
     
     # empty list to return    
     var = []    
     
     # placeholder
     for i in range(0, len(unitCool)):
-        var.append('unitCoolingEfficiencyCurves1')
+        var.append(curve_coolCapFT_switcher(unitCool[i]))
     
     return var
 
-def unitCoolingEfficiencyCurves2(unitCool):
+def CoolingEfficiencyCurves2(unitCool):
     
     # empty list to return    
     var = []    
     
     # placeholder
     for i in range(0, len(unitCool)):
-        var.append('unitCoolingEfficiencyCurves2')
+        var.append(curve_coolCapFFF_switcher(unitCool[i]))
     
     return var
 
-def unitCoolingEfficiencyCurves3(unitCool):
+def CoolingEfficiencyCurves3(unitCool):
     
     # empty list to return    
     var = []    
     
     # placeholder
     for i in range(0, len(unitCool)):
-        var.append('unitCoolingEfficiencyCurves3')
+        var.append(curve_HPACcoolEIRFT_switcher(unitCool[i]))
     
     return var
 
-def unitCoolingEfficiencyCurves4(unitCool):
+def CoolingEfficiencyCurves4(unitCool):
     
     # empty list to return    
     var = []    
     
     # placeholder
     for i in range(0, len(unitCool)):
-        var.append('unitCoolingEfficiencyCurves4')
+        var.append(curve_HPACcoolEIRFFF_switcher(unitCool[i]))
     
     return var
 
-def unitCoolingEfficiencyCurves5(unitCool):
+def CoolingEfficiencyCurves5(unitCool):
     
     # empty list to return    
     var = []    
     
     # placeholder
     for i in range(0, len(unitCool)):
-        var.append('unitCoolingEfficiencyCurves5')
+        var.append(curve_HPACCOOLPLFFPLR_switcher(unitCool[i]))
     
     return var
 

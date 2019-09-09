@@ -86,6 +86,8 @@ def windowU(wtmnWindowU):
     for i in range(0, len(wtmnWindowU)):
         var.append('windowU')
 
+    return var
+
 def windowSHGC(wtmnWindowSHGC):
     
     # empty list to return    
@@ -95,7 +97,7 @@ def windowSHGC(wtmnWindowSHGC):
     for i in range(0, len(wtmnWindowSHGC)):
         var.append('windowSHGC')
 
-
+    return var
 
 
 

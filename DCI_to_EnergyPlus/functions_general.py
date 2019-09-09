@@ -22,13 +22,16 @@ calculations for getting from the DCI outputs to the EnergyPlus inputs.
 
 ##### GENERAL BUILDING INFORMATION #######
 
-def buildingName(sitex):
+import numpy as np
+
+def buildingName(sitex, runinput):
     
     # empty list to return  
     var = []
-    
-    # add more info, discuss with Hyunwoo
-    var = sitex
+
+    # site ID + user input string    
+    name = [str(x) + runinput for x in sitex]
+    var = name
     return var
 
 def slabBoundaryCondition(FndType):
@@ -36,6 +39,7 @@ def slabBoundaryCondition(FndType):
     # empty list to return  
     var = []
     
+    #for loop to walk through list of Foundation Types
     for i in range(0,len(FndType)):
         if FndType[i] == 'slab':
             var.append('Ground')
@@ -52,42 +56,76 @@ def exteriorCorrLights(df):
     # empty list to return    
     var = []    
     
-    # place holder
+    # lighting power of 180 W for all buildings
     for i in range(0, len(df)):
-        var.append('exteriorCorrLights')
+        var.append(180)
     
     return var
 
 def unitDhwCoeffOn(centralDhwEffAvg, inunitDhwEffAvg):
+    '''
+    EnergyPlus Object
+    WaterHeater:Mixed
+    Input
+    On Cycle Loss Coefficient to Ambient Temperature
+    '''
     
     # empty list to return    
     var = []    
     
-    # place holder
+    # central of unit 0.5, 0.8
     for i in range(0, len(centralDhwEffAvg)):
-        var.append('unitDhwCoeffOn')
+        if centralDhwEffAvg[i] != 0 and inunitDhwEffAvg[i] == 0:
+            var.append(0.5)
+        elif inunitDhwEffAvg[i] != 0 and centralDhwEffAvg[i] == 0:
+            var.append(0.8)
+        else:
+            print("ERROR IN DHW unitDhwCoeffOn")
     
     return var
 
 def unitDhwCoeffOff(centralDhwEffAvg, inunitDhwEffAvg):
     
+    '''
+    EnergyPlus Object
+    WaterHeater:Mixed
+    Input
+    Off Cycle Loss Coefficient to Ambient Temperature
+    '''
+    
     # empty list to return    
     var = []    
     
-    # place holder
+    # central of unit 0.5, 0.8
     for i in range(0, len(centralDhwEffAvg)):
-        var.append('unitDhwCoeffOff')
+        if centralDhwEffAvg[i] != 0 and inunitDhwEffAvg[i] == 0:
+            var.append(0.5)
+        elif inunitDhwEffAvg[i] != 0 and centralDhwEffAvg[i] == 0:
+            var.append(0.8)
+        else:
+            print("ERROR IN DHW unitDhwCoeffOff")
     
     return var
 
 def unitDhwThermEff(centralDhwEffAvg, inunitDhwEffAvg):
+    '''
+    EnergyPlus Object
+    WaterHeater:Mixed
+    Input
+    Heater Thermal Efficiency
+    '''
     
     # empty list to return    
     var = []    
     
-    # place holder
+    # central or unit eff
     for i in range(0, len(centralDhwEffAvg)):
-        var.append('unitDhwThermEff')
+        if centralDhwEffAvg[i] != 0 and inunitDhwEffAvg[i] == 0:
+            var.append(centralDhwEffAvg[i])
+        elif inunitDhwEffAvg[i] != 0 and centralDhwEffAvg[i] == 0:
+            var.append(inunitDhwEffAvg[i])
+        else:
+            print("ERROR IN DHW unitDhwThermEff")
     
     return var
 
@@ -96,9 +134,9 @@ def lightingStairs(lpdIntStairwell):
     # empty list to return    
     var = []    
     
-    # place holder
+    # LPD stairs * 120 sf, 40 per floor
     for i in range(0, len(lpdIntStairwell)):
-        var.append('lightingStairs')
+        var.append(lpdIntStairwell[i]*120)
     
     return var
 
@@ -107,9 +145,9 @@ def extPrkLights(lpdExtPrk):
     # empty list to return    
     var = []    
     
-    # place holder
+    # Ext Parking LPD * sf - same as basement
     for i in range(0, len(lpdExtPrk)):
-        var.append('extPrkLights')
+        var.append(lpdExtPrk[i]*7800)
     
     return var
 

@@ -1,18 +1,18 @@
 ﻿Name,search_tag
 Building Name,@@NAME@@
 Unit heating efficiency (COP),@@UNITHTCOP@@
-Unit heating efficiency curves,@@UNITHTCURVE_CAPFT@@
-Unit heating efficiency curves,@@UNITHTCURVE_CAPFFF@@
-Unit heating efficiency curves,@@UNITHTCURVE_EIRFT@@
-Unit heating efficiency curves,@@UNITHTCURVE_EIRFFF@@
-Unit heating efficiency curves,@@UNITHTCURVE_PLFFPLR@@
-Unit heating efficiency curves,@@UNITHTCURVE_DEFROST@@
+Unit heating efficiency curves1,@@UNITHTCURVE_CAPFT@@
+Unit heating efficiency curves2,@@UNITHTCURVE_CAPFFF@@
+Unit heating efficiency curves3,@@UNITHTCURVE_EIRFT@@
+Unit heating efficiency curves4,@@UNITHTCURVE_EIRFFF@@
+Unit heating efficiency curves5,@@UNITHTCURVE_PLFFPLR@@
+Unit heating efficiency curves6,@@UNITHTCURVE_DEFROST@@
 Unit cooling efficiency (COP),@@UNITCLCOP@@
-Unit cooling efficiency curves,@@UNITCLCURVE_CAPFT@@
-Unit cooling efficiency curves,@@UNITCLCURVE_CAPFFF@@
-Unit cooling efficiency curves,@@UNITCLCURVE_EIRFT@@
-Unit cooling efficiency curves,@@UNITCLCURVE_EIRFFF@@
-Unit cooling efficiency curves,@@UNITCLCURVE_PLFFPLR@@
+Unit cooling efficiency curves1,@@UNITCLCURVE_CAPFT@@
+Unit cooling efficiency curves2,@@UNITCLCURVE_CAPFFF@@
+Unit cooling efficiency curves3,@@UNITCLCURVE_EIRFT@@
+Unit cooling efficiency curves4,@@UNITCLCURVE_EIRFFF@@
+Unit cooling efficiency curves5,@@UNITCLCURVE_PLFFPLR@@
 Unit DHW Loss Coefficient - ON,@@OFFCOEF@@
 Unit DHW Loss Coefficient - OFF,@@ONCOEF@@
 Unit DHW Thermal Efficiency,@@DHWCOP@@
@@ -31,18 +31,18 @@ External Parking Lights [W],@@LTGEXTPKG@@
 Unit heating setpoint temp [C],@@UNITHTST@@
 Unit cooling setpoint temp [C],@@UNITCLST@@
 Corridor heating efficiency (COP),@@CORHTCOP@@
-Corridor heating efficiency curves,@@CORHTCURVE_CAPFT@@
-Corridor heating efficiency curves,@@CORHTCURVE_CAPFFF@@
-Corridor heating efficiency curves,@@CORHTCURVE_EIRFT@@
-Corridor heating efficiency curves,@@CORHTCURVE_EIRFFF@@
-Corridor heating efficiency curves,@@CORHTCURVE_PLFFPLR@@
-Corridor heating efficiency curves,@@CORHTCURVE_DEFROST@@
+Corridor heating efficiency curves1,@@CORHTCURVE_CAPFT@@
+Corridor heating efficiency curves2,@@CORHTCURVE_CAPFFF@@
+Corridor heating efficiency curves3,@@CORHTCURVE_EIRFT@@
+Corridor heating efficiency curves4,@@CORHTCURVE_EIRFFF@@
+Corridor heating efficiency curves5,@@CORHTCURVE_PLFFPLR@@
+Corridor heating efficiency curves6,@@CORHTCURVE_DEFROST@@
 Corridor cooling efficiency (COP),@@CORCLCOP@@
-Corridor cooling efficiency curves,@@CORCLCURVE_CAPFT@@
-Corridor cooling efficiency curves,@@CORCLCURVE_CAPFFF@@
-Corridor cooling efficiency curves,@@CORCLCURVE_EIRFT@@
-Corridor cooling efficiency curves,@@CORCLCURVE_EIRFFF@@
-Corridor cooling efficiency curves,@@CORCLCURVE_PLFFPLR@@
+Corridor cooling efficiency curves1,@@CORCLCURVE_CAPFT@@
+Corridor cooling efficiency curves2,@@CORCLCURVE_CAPFFF@@
+Corridor cooling efficiency curves3,@@CORCLCURVE_EIRFT@@
+Corridor cooling efficiency curves4,@@CORCLCURVE_EIRFFF@@
+Corridor cooling efficiency curves5,@@CORCLCURVE_PLFFPLR@@
 Corridor LPD (W/sf),@@LPDCOR@@
 Corridor Ventilation Flowrate [m3/s],@@FLOWCORR@@
 Corridor Ventilation SP [Pa],@@SPCORR@@
@@ -50,18 +50,18 @@ Corridor HVAC Fan SP [Pa],@@SPHVACCOR@@
 Corridor heating setpoint temp [C],@@CORHTST@@
 Corridor cooling setpoint temp [C],@@CORCLST@@
 Bsmt heating efficiency (COP),@@BSMTHTCOP@@
-Bsmt Heating efficiency curves,@@BSMTHTCURVE_CAPFT@@
-Bsmt Heating efficiency curves,@@BSMTHTCURVE_CAPFFF@@
-Bsmt Heating efficiency curves,@@BSMTHTCURVE_EIRFT@@
-Bsmt Heating efficiency curves,@@BSMTHTCURVE_EIRFFF@@
-Bsmt Heating efficiency curves,@@BSMTHTCURVE_PLFFPLR@@
-Bsmt Heating efficiency curves,@@BSMTHTCURVE_DEFROST@@
+Bsmt Heating efficiency curves1,@@BSMTHTCURVE_CAPFT@@
+Bsmt Heating efficiency curves2,@@BSMTHTCURVE_CAPFFF@@
+Bsmt Heating efficiency curves3,@@BSMTHTCURVE_EIRFT@@
+Bsmt Heating efficiency curves4,@@BSMTHTCURVE_EIRFFF@@
+Bsmt Heating efficiency curves5,@@BSMTHTCURVE_PLFFPLR@@
+Bsmt Heating efficiency curves6,@@BSMTHTCURVE_DEFROST@@
 Bsmt cooling efficiency (COP),@@BSMTCLCOP@@
-Bsmt cooling efficiency curves,@@BSMTCLCURVE_CAPFT@@
-Bsmt cooling efficiency curves,@@BSMTCLCURVE_CAPFFF@@
-Bsmt cooling efficiency curves,@@BSMTCLCURVE_EIRFT@@
-Bsmt cooling efficiency curves,@@BSMTCLCURVE_EIRFFF@@
-Bsmt cooling efficiency curves,@@BSMTCLCURVE_PLFFPLR@@
+Bsmt cooling efficiency curves1,@@BSMTCLCURVE_CAPFT@@
+Bsmt cooling efficiency curves2,@@BSMTCLCURVE_CAPFFF@@
+Bsmt cooling efficiency curves3,@@BSMTCLCURVE_EIRFT@@
+Bsmt cooling efficiency curves4,@@BSMTCLCURVE_EIRFFF@@
+Bsmt cooling efficiency curves5,@@BSMTCLCURVE_PLFFPLR@@
 Bsmt Ventilation Flowrate [m3/s],@@FLOWBSMT@@
 Bsmt Ventilation SP [Pa],@@SPBSMT@@
 Bsmt HVAC Fan SP [Pa],@@SPHVACBSMT@@

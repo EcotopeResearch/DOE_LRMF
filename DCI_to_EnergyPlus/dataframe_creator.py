@@ -45,31 +45,31 @@ from functions_corridor import (commonHeatingEfficiency, commonHeatingEfficiency
                                 commonVentilationSP, commonHvacFanSP, commonHeatingSetpoint,
                                 commonCoolingSetpoint)
 
-from functions_unit import (unitHeatingEfficiency, unitHeatingEfficiencyCurves1, unitHeatingEfficiencyCurves2,
-                            unitHeatingEfficiencyCurves3, unitHeatingEfficiencyCurves4, unitHeatingEfficiencyCurves5,
-                            unitHeatingEfficiencyCurves6, unitCoolEfficiency,
-                            unitCoolingEfficiencyCurves1, unitCoolingEfficiencyCurves2, unitCoolingEfficiencyCurves3,
-                            unitCoolingEfficiencyCurves4, unitCoolingEfficiencyCurves5, 
+from functions_unit import (HeatingEfficiency, HeatingEfficiencyCurves1, HeatingEfficiencyCurves2,
+                            HeatingEfficiencyCurves3, HeatingEfficiencyCurves4, HeatingEfficiencyCurves5,
+                            HeatingEfficiencyCurves6, CoolEfficiency,
+                            CoolingEfficiencyCurves1, CoolingEfficiencyCurves2, CoolingEfficiencyCurves3,
+                            CoolingEfficiencyCurves4, CoolingEfficiencyCurves5, 
                             unitLpd, unitVentilationFlowrate, unitVentilationSP,
                             unitHvacFanSP, unitHeatingSetpoint, unitCoolingSetpoint)
 
-def commonBsmt_inputs(df):
+def commonBsmt_inputs(df, runinput):
     
     # pass column from dci df column to function, return E+ df column
-    buildingNameVar = buildingName(df['sitex'])
-    unitHeatingEfficiencyVar = unitHeatingEfficiency(df['inunit_heat'], df['HVACcentral_YN'])
-    unitHeatingEfficiencyCurves1Var = unitHeatingEfficiencyCurves1(df['inunit_heat'])
-    unitHeatingEfficiencyCurves2Var = unitHeatingEfficiencyCurves2(df['inunit_heat'])
-    unitHeatingEfficiencyCurves3Var = unitHeatingEfficiencyCurves3(df['inunit_heat'])
-    unitHeatingEfficiencyCurves4Var = unitHeatingEfficiencyCurves4(df['inunit_heat'])
-    unitHeatingEfficiencyCurves5Var = unitHeatingEfficiencyCurves5(df['inunit_heat'])
-    unitHeatingEfficiencyCurves6Var = unitHeatingEfficiencyCurves6(df['inunit_heat'])
-    unitCoolEfficiencyVar = unitCoolEfficiency(df['inunit_cool'], df['HVACcentral_YN'])
-    unitCoolingEfficiencyCurves1Var = unitCoolingEfficiencyCurves1(df['inunit_cool'])
-    unitCoolingEfficiencyCurves2Var = unitCoolingEfficiencyCurves2(df['inunit_cool'])
-    unitCoolingEfficiencyCurves3Var = unitCoolingEfficiencyCurves3(df['inunit_cool'])
-    unitCoolingEfficiencyCurves4Var = unitCoolingEfficiencyCurves4(df['inunit_cool'])
-    unitCoolingEfficiencyCurves5Var = unitCoolingEfficiencyCurves5(df['inunit_cool'])
+    buildingNameVar = buildingName(df['sitex'], runinput)
+    unitHeatingEfficiencyVar = HeatingEfficiency(df['inunit_heat'], df['Central_Sys'])
+    unitHeatingEfficiencyCurves1Var = HeatingEfficiencyCurves1(df['inunit_heat'])
+    unitHeatingEfficiencyCurves2Var = HeatingEfficiencyCurves2(df['inunit_heat'])
+    unitHeatingEfficiencyCurves3Var = HeatingEfficiencyCurves3(df['inunit_heat'])
+    unitHeatingEfficiencyCurves4Var = HeatingEfficiencyCurves4(df['inunit_heat'])
+    unitHeatingEfficiencyCurves5Var = HeatingEfficiencyCurves5(df['inunit_heat'])
+    unitHeatingEfficiencyCurves6Var = HeatingEfficiencyCurves6(df['inunit_heat'])
+    unitCoolEfficiencyVar = CoolEfficiency(df['inunit_cool'], df['BLANK'])
+    unitCoolingEfficiencyCurves1Var = CoolingEfficiencyCurves1(df['inunit_cool'])
+    unitCoolingEfficiencyCurves2Var = CoolingEfficiencyCurves2(df['inunit_cool'])
+    unitCoolingEfficiencyCurves3Var = CoolingEfficiencyCurves3(df['inunit_cool'])
+    unitCoolingEfficiencyCurves4Var = CoolingEfficiencyCurves4(df['inunit_cool'])
+    unitCoolingEfficiencyCurves5Var = CoolingEfficiencyCurves5(df['inunit_cool'])
     unitDhwCoeffOnVar = unitDhwCoeffOn(df['centraldhweff_avg'], df['inunitdhweff_avg'])
     unitDhwCoeffOffVar = unitDhwCoeffOff(df['centraldhweff_avg'], df['inunitdhweff_avg'])
     unitDhwThermEffVar = unitDhwThermEff(df['centraldhweff_avg'], df['inunitdhweff_avg'])
@@ -87,38 +87,38 @@ def commonBsmt_inputs(df):
     extPrkLightsVar = extPrkLights(df['LPD_ExtPk'])
     unitHeatingSetpointVar = unitHeatingSetpoint(df)
     unitCoolingSetpointVar = unitCoolingSetpoint(df)
-    commonHeatingEfficiencyVar = commonHeatingEfficiency(df['common_heat'] ,df['HVACcentral_YN'] ,df['Central_Sys'])
-    commonHeatingEfficiencyCurves1Var = commonHeatingEfficiencyCurves1(df['common_heat'])
-    commonHeatingEfficiencyCurves2Var = commonHeatingEfficiencyCurves2(df['common_heat'])
-    commonHeatingEfficiencyCurves3Var = commonHeatingEfficiencyCurves3(df['common_heat'])
-    commonHeatingEfficiencyCurves4Var = commonHeatingEfficiencyCurves4(df['common_heat'])
-    commonHeatingEfficiencyCurves5Var = commonHeatingEfficiencyCurves5(df['common_heat'])
-    commonHeatingEfficiencyCurves6Var = commonHeatingEfficiencyCurves6(df['common_heat'])
-    commonCoolEfficiencyVar = commonCoolEfficiency(df['common_cool'] ,df['HVACcentral_YN'] ,df['Central_Sys'])
-    commonCoolingEfficiencyCurves1Var = commonCoolingEfficiencyCurves1(df['common_cool'])
-    commonCoolingEfficiencyCurves2Var = commonCoolingEfficiencyCurves2(df['common_cool'])
-    commonCoolingEfficiencyCurves3Var = commonCoolingEfficiencyCurves3(df['common_cool'])
-    commonCoolingEfficiencyCurves4Var = commonCoolingEfficiencyCurves4(df['common_cool'])
-    commonCoolingEfficiencyCurves5Var = commonCoolingEfficiencyCurves5(df['common_cool'])
+    corrHeatingEfficiencyVar = HeatingEfficiency(df['common_heat'], df['Central_Sys'])
+    corrHeatingEfficiencyCurves1Var = HeatingEfficiencyCurves1(df['common_heat'])
+    corrHeatingEfficiencyCurves2Var = HeatingEfficiencyCurves2(df['common_heat'])
+    corrHeatingEfficiencyCurves3Var = HeatingEfficiencyCurves3(df['common_heat'])
+    corrHeatingEfficiencyCurves4Var = HeatingEfficiencyCurves4(df['common_heat'])
+    corrHeatingEfficiencyCurves5Var = HeatingEfficiencyCurves5(df['common_heat'])
+    corrHeatingEfficiencyCurves6Var = HeatingEfficiencyCurves6(df['common_heat'])
+    corrCoolEfficiencyVar = CoolEfficiency(df['common_cool'], df['BLANK'])
+    corrCoolingEfficiencyCurves1Var = CoolingEfficiencyCurves1(df['common_cool'])
+    corrCoolingEfficiencyCurves2Var = CoolingEfficiencyCurves2(df['common_cool'])
+    corrCoolingEfficiencyCurves3Var = CoolingEfficiencyCurves3(df['common_cool'])
+    corrCoolingEfficiencyCurves4Var = CoolingEfficiencyCurves4(df['common_cool'])
+    corrCoolingEfficiencyCurves5Var = CoolingEfficiencyCurves5(df['common_cool'])
     commonLpdVar = commonLpd(df['LPD_IntCorridor'])
     commonVentilationFlowrateVar = commonVentilationFlowrate(df['Vent_corridorerv_YN'], df['Vent_corridor_erveff'])
     commonVentilationSPVar = commonVentilationSP(df['Vent_corridorerv_YN'])
     commonHvacFanSPVar = commonHvacFanSP(df['common_heat'], df['common_cool'])
     commonHeatingSetpointVar = commonHeatingSetpoint(df)
     commonCoolingSetpointVar = commonCoolingSetpoint(df)
-    bsmtHeatingEfficiencyVar = bsmtHeatingEfficiency(df['Heat_bsmt_type'] ,df['HVACcentral_YN'] ,df['Central_Sys'])
-    bsmtHeatingEfficiencyCurves1Var = bsmtHeatingEfficiencyCurves1(df['Heat_bsmt_type'])
-    bsmtHeatingEfficiencyCurves2Var = bsmtHeatingEfficiencyCurves2(df['Heat_bsmt_type'])
-    bsmtHeatingEfficiencyCurves3Var = bsmtHeatingEfficiencyCurves3(df['Heat_bsmt_type'])
-    bsmtHeatingEfficiencyCurves4Var = bsmtHeatingEfficiencyCurves4(df['Heat_bsmt_type'])
-    bsmtHeatingEfficiencyCurves5Var = bsmtHeatingEfficiencyCurves5(df['Heat_bsmt_type'])
-    bsmtHeatingEfficiencyCurves6Var = bsmtHeatingEfficiencyCurves6(df['Heat_bsmt_type'])
-    bsmtCoolEfficiencyVar = bsmtCoolEfficiency(df)
-    bsmtCoolingEfficiencyCurves1Var = bsmtCoolingEfficiencyCurves1(df)
-    bsmtCoolingEfficiencyCurves2Var = bsmtCoolingEfficiencyCurves2(df)
-    bsmtCoolingEfficiencyCurves3Var = bsmtCoolingEfficiencyCurves3(df)
-    bsmtCoolingEfficiencyCurves4Var = bsmtCoolingEfficiencyCurves4(df)
-    bsmtCoolingEfficiencyCurves5Var = bsmtCoolingEfficiencyCurves5(df)
+    HeatingEfficiencyVar = HeatingEfficiency(df['Heat_bsmt_type'], df['Central_Sys'])
+    bsmtHeatingEfficiencyCurves1Var = HeatingEfficiencyCurves1(df['Heat_bsmt_type'])
+    bsmtHeatingEfficiencyCurves2Var = HeatingEfficiencyCurves2(df['Heat_bsmt_type'])
+    bsmtHeatingEfficiencyCurves3Var = HeatingEfficiencyCurves3(df['Heat_bsmt_type'])
+    bsmtHeatingEfficiencyCurves4Var = HeatingEfficiencyCurves4(df['Heat_bsmt_type'])
+    bsmtHeatingEfficiencyCurves5Var = HeatingEfficiencyCurves5(df['Heat_bsmt_type'])
+    bsmtHeatingEfficiencyCurves6Var = HeatingEfficiencyCurves6(df['Heat_bsmt_type'])
+    bsmtCoolEfficiencyVar = CoolEfficiency(df['BLANK'], df['BLANK'])
+    bsmtCoolingEfficiencyCurves1Var = CoolingEfficiencyCurves1(df['BLANK'])
+    bsmtCoolingEfficiencyCurves2Var = CoolingEfficiencyCurves2(df['BLANK'])
+    bsmtCoolingEfficiencyCurves3Var = CoolingEfficiencyCurves3(df['BLANK'])
+    bsmtCoolingEfficiencyCurves4Var = CoolingEfficiencyCurves4(df['BLANK'])
+    bsmtCoolingEfficiencyCurves5Var = CoolingEfficiencyCurves5(df['BLANK'])
     bsmtVentilationFlowrateVar = bsmtVentilationFlowrate(df['Vent_bsmterv_YN'] ,df['Vent_bsmt_erveff'] ,df['LPD_IntPk_common']  ,df['Vent_bsmt_YN'])
     bsmtVentilationSPVar = bsmtVentilationSP(df['Vent_bsmterv_YN'] ,df['LPD_IntPk_common'] ,df['Vent_bsmt_YN'])
     bsmtHvacFanSPVar = bsmtHvacFanSP(df['Heat_bsmt_type'])
@@ -163,26 +163,26 @@ def commonBsmt_inputs(df):
     new_df['External Parking Lights [W]'] = extPrkLightsVar
     new_df['Unit heating setpoint temp [C]'] = unitHeatingSetpointVar
     new_df['Unit cooling setpoint temp [C]'] = unitCoolingSetpointVar
-    new_df['Corridor heating efficiency (COP)'] = commonHeatingEfficiencyVar
-    new_df['Corridor heating efficiency curves1'] = commonHeatingEfficiencyCurves1Var
-    new_df['Corridor heating efficiency curves2'] = commonHeatingEfficiencyCurves2Var
-    new_df['Corridor heating efficiency curves3'] = commonHeatingEfficiencyCurves3Var
-    new_df['Corridor heating efficiency curves4'] = commonHeatingEfficiencyCurves4Var
-    new_df['Corridor heating efficiency curves5'] = commonHeatingEfficiencyCurves5Var
-    new_df['Corridor heating efficiency curves6'] = commonHeatingEfficiencyCurves6Var
-    new_df['Corridor cooling efficiency (COP)'] = commonCoolEfficiencyVar
-    new_df['Corridor cooling efficiency curves1'] = commonCoolingEfficiencyCurves1Var
-    new_df['Corridor cooling efficiency curves2'] = commonCoolingEfficiencyCurves2Var
-    new_df['Corridor cooling efficiency curves3'] = commonCoolingEfficiencyCurves3Var
-    new_df['Corridor cooling efficiency curves4'] = commonCoolingEfficiencyCurves4Var
-    new_df['Corridor cooling efficiency curves5'] = commonCoolingEfficiencyCurves5Var
+    new_df['Corridor heating efficiency (COP)'] = corrHeatingEfficiencyVar
+    new_df['Corridor heating efficiency curves1'] = corrHeatingEfficiencyCurves1Var
+    new_df['Corridor heating efficiency curves2'] = corrHeatingEfficiencyCurves2Var
+    new_df['Corridor heating efficiency curves3'] = corrHeatingEfficiencyCurves3Var
+    new_df['Corridor heating efficiency curves4'] = corrHeatingEfficiencyCurves4Var
+    new_df['Corridor heating efficiency curves5'] = corrHeatingEfficiencyCurves5Var
+    new_df['Corridor heating efficiency curves6'] = corrHeatingEfficiencyCurves6Var
+    new_df['Corridor cooling efficiency (COP)'] = corrCoolEfficiencyVar
+    new_df['Corridor cooling efficiency curves1'] = corrCoolingEfficiencyCurves1Var
+    new_df['Corridor cooling efficiency curves2'] = corrCoolingEfficiencyCurves2Var
+    new_df['Corridor cooling efficiency curves3'] = corrCoolingEfficiencyCurves3Var
+    new_df['Corridor cooling efficiency curves4'] = corrCoolingEfficiencyCurves4Var
+    new_df['Corridor cooling efficiency curves5'] = corrCoolingEfficiencyCurves5Var
     new_df['Corridor LPD (W/sf)'] = commonLpdVar
     new_df['Corridor Ventilation Flowrate [m3/s]'] = commonVentilationFlowrateVar
     new_df['Corridor Ventilation SP [Pa]'] = commonVentilationSPVar
     new_df['Corridor HVAC Fan SP [Pa]'] = commonHvacFanSPVar
     new_df['Corridor heating setpoint temp [C]'] = commonHeatingSetpointVar
     new_df['Corridor cooling setpoint temp [C]'] = commonCoolingSetpointVar
-    new_df['Bsmt heating efficiency (COP)'] = bsmtHeatingEfficiencyVar
+    new_df['Bsmt heating efficiency (COP)'] = HeatingEfficiencyVar
     new_df['Bsmt Heating efficiency curves1'] = bsmtHeatingEfficiencyCurves1Var
     new_df['Bsmt Heating efficiency curves2'] = bsmtHeatingEfficiencyCurves2Var
     new_df['Bsmt Heating efficiency curves3'] = bsmtHeatingEfficiencyCurves3Var
@@ -203,27 +203,25 @@ def commonBsmt_inputs(df):
     new_df['Bsmt heating setpoint temp [C]'] = bsmtHeatingSetpointVar
     new_df['Bsmt cooling setpoint temp [C]'] = bsmtCoolingSetpointVar
 
-
-
     return new_df
     
-def commonSlab_inputs(df):
+def commonSlab_inputs(df, runinput):
     
     # pass column from dci df column to function, return E+ df column
-    buildingNameVar = buildingName(df['sitex'])
-    unitHeatingEfficiencyVar = unitHeatingEfficiency(df['inunit_heat'], df['HVACcentral_YN'])
-    unitHeatingEfficiencyCurves1Var = unitHeatingEfficiencyCurves1(df['inunit_heat'])
-    unitHeatingEfficiencyCurves2Var = unitHeatingEfficiencyCurves2(df['inunit_heat'])
-    unitHeatingEfficiencyCurves3Var = unitHeatingEfficiencyCurves3(df['inunit_heat'])
-    unitHeatingEfficiencyCurves4Var = unitHeatingEfficiencyCurves4(df['inunit_heat'])
-    unitHeatingEfficiencyCurves5Var = unitHeatingEfficiencyCurves5(df['inunit_heat'])
-    unitHeatingEfficiencyCurves6Var = unitHeatingEfficiencyCurves6(df['inunit_heat'])
-    unitCoolEfficiencyVar = unitCoolEfficiency(df['inunit_cool'], df['HVACcentral_YN'])
-    unitCoolingEfficiencyCurves1Var = unitCoolingEfficiencyCurves1(df['inunit_cool'])
-    unitCoolingEfficiencyCurves2Var = unitCoolingEfficiencyCurves2(df['inunit_cool'])
-    unitCoolingEfficiencyCurves3Var = unitCoolingEfficiencyCurves3(df['inunit_cool'])
-    unitCoolingEfficiencyCurves4Var = unitCoolingEfficiencyCurves4(df['inunit_cool'])
-    unitCoolingEfficiencyCurves5Var = unitCoolingEfficiencyCurves5(df['inunit_cool'])
+    buildingNameVar = buildingName(df['sitex'], runinput)
+    unitHeatingEfficiencyVar = HeatingEfficiency(df['inunit_heat'], df['Central_Sys'])
+    unitHeatingEfficiencyCurves1Var = HeatingEfficiencyCurves1(df['inunit_heat'])
+    unitHeatingEfficiencyCurves2Var = HeatingEfficiencyCurves2(df['inunit_heat'])
+    unitHeatingEfficiencyCurves3Var = HeatingEfficiencyCurves3(df['inunit_heat'])
+    unitHeatingEfficiencyCurves4Var = HeatingEfficiencyCurves4(df['inunit_heat'])
+    unitHeatingEfficiencyCurves5Var = HeatingEfficiencyCurves5(df['inunit_heat'])
+    unitHeatingEfficiencyCurves6Var = HeatingEfficiencyCurves6(df['inunit_heat'])
+    unitCoolEfficiencyVar = CoolEfficiency(df['inunit_cool'], df['BLANK'])
+    unitCoolingEfficiencyCurves1Var = CoolingEfficiencyCurves1(df['inunit_cool'])
+    unitCoolingEfficiencyCurves2Var = CoolingEfficiencyCurves2(df['inunit_cool'])
+    unitCoolingEfficiencyCurves3Var = CoolingEfficiencyCurves3(df['inunit_cool'])
+    unitCoolingEfficiencyCurves4Var = CoolingEfficiencyCurves4(df['inunit_cool'])
+    unitCoolingEfficiencyCurves5Var = CoolingEfficiencyCurves5(df['inunit_cool'])
     unitDhwCoeffOnVar = unitDhwCoeffOn(df['centraldhweff_avg'], df['inunitdhweff_avg'])
     unitDhwCoeffOffVar = unitDhwCoeffOff(df['centraldhweff_avg'], df['inunitdhweff_avg'])
     unitDhwThermEffVar = unitDhwThermEff(df['centraldhweff_avg'], df['inunitdhweff_avg'])
@@ -241,25 +239,26 @@ def commonSlab_inputs(df):
     extPrkLightsVar = extPrkLights(df['LPD_ExtPk'])
     unitHeatingSetpointVar = unitHeatingSetpoint(df)
     unitCoolingSetpointVar = unitCoolingSetpoint(df)
-    commonHeatingEfficiencyVar = commonHeatingEfficiency(df['common_heat'] ,df['HVACcentral_YN'] ,df['Central_Sys'])
-    commonHeatingEfficiencyCurves1Var = commonHeatingEfficiencyCurves1(df['common_heat'])
-    commonHeatingEfficiencyCurves2Var = commonHeatingEfficiencyCurves2(df['common_heat'])
-    commonHeatingEfficiencyCurves3Var = commonHeatingEfficiencyCurves3(df['common_heat'])
-    commonHeatingEfficiencyCurves4Var = commonHeatingEfficiencyCurves4(df['common_heat'])
-    commonHeatingEfficiencyCurves5Var = commonHeatingEfficiencyCurves5(df['common_heat'])
-    commonHeatingEfficiencyCurves6Var = commonHeatingEfficiencyCurves6(df['common_heat'])
-    commonCoolEfficiencyVar = commonCoolEfficiency(df['common_cool'] ,df['HVACcentral_YN'] ,df['Central_Sys'])
-    commonCoolingEfficiencyCurves1Var = commonCoolingEfficiencyCurves1(df['common_cool'])
-    commonCoolingEfficiencyCurves2Var = commonCoolingEfficiencyCurves2(df['common_cool'])
-    commonCoolingEfficiencyCurves3Var = commonCoolingEfficiencyCurves3(df['common_cool'])
-    commonCoolingEfficiencyCurves4Var = commonCoolingEfficiencyCurves4(df['common_cool'])
-    commonCoolingEfficiencyCurves5Var = commonCoolingEfficiencyCurves5(df['common_cool'])
+    corrHeatingEfficiencyVar = HeatingEfficiency(df['common_heat'], df['Central_Sys'])
+    corrHeatingEfficiencyCurves1Var = HeatingEfficiencyCurves1(df['common_heat'])
+    corrHeatingEfficiencyCurves2Var = HeatingEfficiencyCurves2(df['common_heat'])
+    corrHeatingEfficiencyCurves3Var = HeatingEfficiencyCurves3(df['common_heat'])
+    corrHeatingEfficiencyCurves4Var = HeatingEfficiencyCurves4(df['common_heat'])
+    corrHeatingEfficiencyCurves5Var = HeatingEfficiencyCurves5(df['common_heat'])
+    corrHeatingEfficiencyCurves6Var = HeatingEfficiencyCurves6(df['common_heat'])
+    corrCoolEfficiencyVar = CoolEfficiency(df['common_cool'], df['BLANK'])
+    corrCoolingEfficiencyCurves1Var = CoolingEfficiencyCurves1(df['common_cool'])
+    corrCoolingEfficiencyCurves2Var = CoolingEfficiencyCurves2(df['common_cool'])
+    corrCoolingEfficiencyCurves3Var = CoolingEfficiencyCurves3(df['common_cool'])
+    corrCoolingEfficiencyCurves4Var = CoolingEfficiencyCurves4(df['common_cool'])
+    corrCoolingEfficiencyCurves5Var = CoolingEfficiencyCurves5(df['common_cool'])
     commonLpdVar = commonLpd(df['LPD_IntCorridor'])
     commonVentilationFlowrateVar = commonVentilationFlowrate(df['Vent_corridorerv_YN'], df['Vent_corridor_erveff'])
     commonVentilationSPVar = commonVentilationSP(df['Vent_corridorerv_YN'])
     commonHvacFanSPVar = commonHvacFanSP(df['common_heat'], df['common_cool'])
     commonHeatingSetpointVar = commonHeatingSetpoint(df)
     commonCoolingSetpointVar = commonCoolingSetpoint(df)
+
 
     # create dataframe
     new_df = pd.DataFrame()
@@ -296,19 +295,19 @@ def commonSlab_inputs(df):
     new_df['External Parking Lights [W]'] = extPrkLightsVar
     new_df['Unit heating setpoint temp [C]'] = unitHeatingSetpointVar
     new_df['Unit cooling setpoint temp [C]'] = unitCoolingSetpointVar
-    new_df['Corridor heating efficiency (COP)'] = commonHeatingEfficiencyVar
-    new_df['Corridor heating efficiency curves1'] = commonHeatingEfficiencyCurves1Var
-    new_df['Corridor heating efficiency curves2'] = commonHeatingEfficiencyCurves2Var
-    new_df['Corridor heating efficiency curves3'] = commonHeatingEfficiencyCurves3Var
-    new_df['Corridor heating efficiency curves4'] = commonHeatingEfficiencyCurves4Var
-    new_df['Corridor heating efficiency curves5'] = commonHeatingEfficiencyCurves5Var
-    new_df['Corridor heating efficiency curves6'] = commonHeatingEfficiencyCurves6Var
-    new_df['Corridor cooling efficiency (COP)'] = commonCoolEfficiencyVar
-    new_df['Corridor cooling efficiency curves1'] = commonCoolingEfficiencyCurves1Var
-    new_df['Corridor cooling efficiency curves2'] = commonCoolingEfficiencyCurves2Var
-    new_df['Corridor cooling efficiency curves3'] = commonCoolingEfficiencyCurves3Var
-    new_df['Corridor cooling efficiency curves4'] = commonCoolingEfficiencyCurves4Var
-    new_df['Corridor cooling efficiency curves5'] = commonCoolingEfficiencyCurves5Var
+    new_df['Corridor heating efficiency (COP)'] = corrHeatingEfficiencyVar
+    new_df['Corridor heating efficiency curves1'] = corrHeatingEfficiencyCurves1Var
+    new_df['Corridor heating efficiency curves2'] = corrHeatingEfficiencyCurves2Var
+    new_df['Corridor heating efficiency curves3'] = corrHeatingEfficiencyCurves3Var
+    new_df['Corridor heating efficiency curves4'] = corrHeatingEfficiencyCurves4Var
+    new_df['Corridor heating efficiency curves5'] = corrHeatingEfficiencyCurves5Var
+    new_df['Corridor heating efficiency curves6'] = corrHeatingEfficiencyCurves6Var
+    new_df['Corridor cooling efficiency (COP)'] = corrCoolEfficiencyVar
+    new_df['Corridor cooling efficiency curves1'] = corrCoolingEfficiencyCurves1Var
+    new_df['Corridor cooling efficiency curves2'] = corrCoolingEfficiencyCurves2Var
+    new_df['Corridor cooling efficiency curves3'] = corrCoolingEfficiencyCurves3Var
+    new_df['Corridor cooling efficiency curves4'] = corrCoolingEfficiencyCurves4Var
+    new_df['Corridor cooling efficiency curves5'] = corrCoolingEfficiencyCurves5Var
     new_df['Corridor LPD (W/sf)'] = commonLpdVar
     new_df['Corridor Ventilation Flowrate [m3/s]'] = commonVentilationFlowrateVar
     new_df['Corridor Ventilation SP [Pa]'] = commonVentilationSPVar
@@ -316,25 +315,26 @@ def commonSlab_inputs(df):
     new_df['Corridor heating setpoint temp [C]'] = commonHeatingSetpointVar
     new_df['Corridor cooling setpoint temp [C]'] = commonCoolingSetpointVar
 
+
     return new_df
     
-def gardenBsmt_inputs(df):
+def gardenBsmt_inputs(df, runinput):
     
     # pass column from dci df column to function, return E+ df column
-    buildingNameVar = buildingName(df['sitex'])
-    unitHeatingEfficiencyVar = unitHeatingEfficiency(df['inunit_heat'], df['HVACcentral_YN'])
-    unitHeatingEfficiencyCurves1Var = unitHeatingEfficiencyCurves1(df['inunit_heat'])
-    unitHeatingEfficiencyCurves2Var = unitHeatingEfficiencyCurves2(df['inunit_heat'])
-    unitHeatingEfficiencyCurves3Var = unitHeatingEfficiencyCurves3(df['inunit_heat'])
-    unitHeatingEfficiencyCurves4Var = unitHeatingEfficiencyCurves4(df['inunit_heat'])
-    unitHeatingEfficiencyCurves5Var = unitHeatingEfficiencyCurves5(df['inunit_heat'])
-    unitHeatingEfficiencyCurves6Var = unitHeatingEfficiencyCurves6(df['inunit_heat'])
-    unitCoolEfficiencyVar = unitCoolEfficiency(df['inunit_cool'], df['HVACcentral_YN'])
-    unitCoolingEfficiencyCurves1Var = unitCoolingEfficiencyCurves1(df['inunit_cool'])
-    unitCoolingEfficiencyCurves2Var = unitCoolingEfficiencyCurves2(df['inunit_cool'])
-    unitCoolingEfficiencyCurves3Var = unitCoolingEfficiencyCurves3(df['inunit_cool'])
-    unitCoolingEfficiencyCurves4Var = unitCoolingEfficiencyCurves4(df['inunit_cool'])
-    unitCoolingEfficiencyCurves5Var = unitCoolingEfficiencyCurves5(df['inunit_cool'])
+    buildingNameVar = buildingName(df['sitex'], runinput)
+    unitHeatingEfficiencyVar = HeatingEfficiency(df['inunit_heat'], df['Central_Sys'])
+    unitHeatingEfficiencyCurves1Var = HeatingEfficiencyCurves1(df['inunit_heat'])
+    unitHeatingEfficiencyCurves2Var = HeatingEfficiencyCurves2(df['inunit_heat'])
+    unitHeatingEfficiencyCurves3Var = HeatingEfficiencyCurves3(df['inunit_heat'])
+    unitHeatingEfficiencyCurves4Var = HeatingEfficiencyCurves4(df['inunit_heat'])
+    unitHeatingEfficiencyCurves5Var = HeatingEfficiencyCurves5(df['inunit_heat'])
+    unitHeatingEfficiencyCurves6Var = HeatingEfficiencyCurves6(df['inunit_heat'])
+    unitCoolEfficiencyVar = CoolEfficiency(df['inunit_cool'], df['BLANK'])
+    unitCoolingEfficiencyCurves1Var = CoolingEfficiencyCurves1(df['inunit_cool'])
+    unitCoolingEfficiencyCurves2Var = CoolingEfficiencyCurves2(df['inunit_cool'])
+    unitCoolingEfficiencyCurves3Var = CoolingEfficiencyCurves3(df['inunit_cool'])
+    unitCoolingEfficiencyCurves4Var = CoolingEfficiencyCurves4(df['inunit_cool'])
+    unitCoolingEfficiencyCurves5Var = CoolingEfficiencyCurves5(df['inunit_cool'])
     unitDhwCoeffOnVar = unitDhwCoeffOn(df['centraldhweff_avg'], df['inunitdhweff_avg'])
     unitDhwCoeffOffVar = unitDhwCoeffOff(df['centraldhweff_avg'], df['inunitdhweff_avg'])
     unitDhwThermEffVar = unitDhwThermEff(df['centraldhweff_avg'], df['inunitdhweff_avg'])
@@ -353,19 +353,19 @@ def gardenBsmt_inputs(df):
     unitHeatingSetpointVar = unitHeatingSetpoint(df)
     unitCoolingSetpointVar = unitCoolingSetpoint(df)
     exteriorCorrLightsVar = exteriorCorrLights(df)
-    bsmtHeatingEfficiencyVar = bsmtHeatingEfficiency(df['Heat_bsmt_type'] ,df['HVACcentral_YN'] ,df['Central_Sys'])
-    bsmtHeatingEfficiencyCurves1Var = bsmtHeatingEfficiencyCurves1(df['Heat_bsmt_type'])
-    bsmtHeatingEfficiencyCurves2Var = bsmtHeatingEfficiencyCurves2(df['Heat_bsmt_type'])
-    bsmtHeatingEfficiencyCurves3Var = bsmtHeatingEfficiencyCurves3(df['Heat_bsmt_type'])
-    bsmtHeatingEfficiencyCurves4Var = bsmtHeatingEfficiencyCurves4(df['Heat_bsmt_type'])
-    bsmtHeatingEfficiencyCurves5Var = bsmtHeatingEfficiencyCurves5(df['Heat_bsmt_type'])
-    bsmtHeatingEfficiencyCurves6Var = bsmtHeatingEfficiencyCurves6(df['Heat_bsmt_type'])
-    bsmtCoolEfficiencyVar = bsmtCoolEfficiency(df)
-    bsmtCoolingEfficiencyCurves1Var = bsmtCoolingEfficiencyCurves1(df)
-    bsmtCoolingEfficiencyCurves2Var = bsmtCoolingEfficiencyCurves2(df)
-    bsmtCoolingEfficiencyCurves3Var = bsmtCoolingEfficiencyCurves3(df)
-    bsmtCoolingEfficiencyCurves4Var = bsmtCoolingEfficiencyCurves4(df)
-    bsmtCoolingEfficiencyCurves5Var = bsmtCoolingEfficiencyCurves5(df)
+    HeatingEfficiencyVar = HeatingEfficiency(df['Heat_bsmt_type'], df['Central_Sys'])
+    bsmtHeatingEfficiencyCurves1Var = HeatingEfficiencyCurves1(df['Heat_bsmt_type'])
+    bsmtHeatingEfficiencyCurves2Var = HeatingEfficiencyCurves2(df['Heat_bsmt_type'])
+    bsmtHeatingEfficiencyCurves3Var = HeatingEfficiencyCurves3(df['Heat_bsmt_type'])
+    bsmtHeatingEfficiencyCurves4Var = HeatingEfficiencyCurves4(df['Heat_bsmt_type'])
+    bsmtHeatingEfficiencyCurves5Var = HeatingEfficiencyCurves5(df['Heat_bsmt_type'])
+    bsmtHeatingEfficiencyCurves6Var = HeatingEfficiencyCurves6(df['Heat_bsmt_type'])
+    bsmtCoolEfficiencyVar = CoolEfficiency(df['BLANK'], df['BLANK'])
+    bsmtCoolingEfficiencyCurves1Var = CoolingEfficiencyCurves1(df['BLANK'])
+    bsmtCoolingEfficiencyCurves2Var = CoolingEfficiencyCurves2(df['BLANK'])
+    bsmtCoolingEfficiencyCurves3Var = CoolingEfficiencyCurves3(df['BLANK'])
+    bsmtCoolingEfficiencyCurves4Var = CoolingEfficiencyCurves4(df['BLANK'])
+    bsmtCoolingEfficiencyCurves5Var = CoolingEfficiencyCurves5(df['BLANK'])
     bsmtVentilationFlowrateVar = bsmtVentilationFlowrate(df['Vent_bsmterv_YN'] ,df['Vent_bsmt_erveff'] ,df['LPD_IntPk_common']  ,df['Vent_bsmt_YN'])
     bsmtVentilationSPVar = bsmtVentilationSP(df['Vent_bsmterv_YN'] ,df['LPD_IntPk_common'] ,df['Vent_bsmt_YN'])
     bsmtHvacFanSPVar = bsmtHvacFanSP(df['Heat_bsmt_type'])
@@ -374,6 +374,7 @@ def gardenBsmt_inputs(df):
     bsmtHeatingSetpointVar = bsmtHeatingSetpoint(df['FndType'], df['Heat_bsmt_YN'])
     bsmtCoolingSetpointVar = bsmtCoolingSetpoint(df['FndType'], df['Heat_bsmt_YN'])
 
+
     # create dataframe
     new_df = pd.DataFrame()
     
@@ -410,7 +411,7 @@ def gardenBsmt_inputs(df):
     new_df['Unit heating setpoint temp [C]'] = unitHeatingSetpointVar
     new_df['Unit cooling setpoint temp [C]'] = unitCoolingSetpointVar
     new_df['Exterior corridor Lights [W]'] = exteriorCorrLightsVar
-    new_df['Bsmt heating efficiency (COP)'] = bsmtHeatingEfficiencyVar
+    new_df['Bsmt heating efficiency (COP)'] = HeatingEfficiencyVar
     new_df['Bsmt Heating efficiency curves1'] = bsmtHeatingEfficiencyCurves1Var
     new_df['Bsmt Heating efficiency curves2'] = bsmtHeatingEfficiencyCurves2Var
     new_df['Bsmt Heating efficiency curves3'] = bsmtHeatingEfficiencyCurves3Var
@@ -431,25 +432,26 @@ def gardenBsmt_inputs(df):
     new_df['Bsmt heating setpoint temp [C]'] = bsmtHeatingSetpointVar
     new_df['Bsmt cooling setpoint temp [C]'] = bsmtCoolingSetpointVar
 
+
     return new_df
     
-def gardenSlab_inputs(df):
+def gardenSlab_inputs(df, runinput):
     
     # pass column from dci df column to function, return E+ df column
-    buildingNameVar = buildingName(df['sitex'])
-    unitHeatingEfficiencyVar = unitHeatingEfficiency(df['inunit_heat'], df['HVACcentral_YN'])
-    unitHeatingEfficiencyCurves1Var = unitHeatingEfficiencyCurves1(df['inunit_heat'])
-    unitHeatingEfficiencyCurves2Var = unitHeatingEfficiencyCurves2(df['inunit_heat'])
-    unitHeatingEfficiencyCurves3Var = unitHeatingEfficiencyCurves3(df['inunit_heat'])
-    unitHeatingEfficiencyCurves4Var = unitHeatingEfficiencyCurves4(df['inunit_heat'])
-    unitHeatingEfficiencyCurves5Var = unitHeatingEfficiencyCurves5(df['inunit_heat'])
-    unitHeatingEfficiencyCurves6Var = unitHeatingEfficiencyCurves6(df['inunit_heat'])
-    unitCoolEfficiencyVar = unitCoolEfficiency(df['inunit_cool'], df['HVACcentral_YN'])
-    unitCoolingEfficiencyCurves1Var = unitCoolingEfficiencyCurves1(df['inunit_cool'])
-    unitCoolingEfficiencyCurves2Var = unitCoolingEfficiencyCurves2(df['inunit_cool'])
-    unitCoolingEfficiencyCurves3Var = unitCoolingEfficiencyCurves3(df['inunit_cool'])
-    unitCoolingEfficiencyCurves4Var = unitCoolingEfficiencyCurves4(df['inunit_cool'])
-    unitCoolingEfficiencyCurves5Var = unitCoolingEfficiencyCurves5(df['inunit_cool'])
+    buildingNameVar = buildingName(df['sitex'], runinput)
+    unitHeatingEfficiencyVar = HeatingEfficiency(df['inunit_heat'], df['Central_Sys'])
+    unitHeatingEfficiencyCurves1Var = HeatingEfficiencyCurves1(df['inunit_heat'])
+    unitHeatingEfficiencyCurves2Var = HeatingEfficiencyCurves2(df['inunit_heat'])
+    unitHeatingEfficiencyCurves3Var = HeatingEfficiencyCurves3(df['inunit_heat'])
+    unitHeatingEfficiencyCurves4Var = HeatingEfficiencyCurves4(df['inunit_heat'])
+    unitHeatingEfficiencyCurves5Var = HeatingEfficiencyCurves5(df['inunit_heat'])
+    unitHeatingEfficiencyCurves6Var = HeatingEfficiencyCurves6(df['inunit_heat'])
+    unitCoolEfficiencyVar = CoolEfficiency(df['inunit_cool'], df['BLANK'])
+    unitCoolingEfficiencyCurves1Var = CoolingEfficiencyCurves1(df['inunit_cool'])
+    unitCoolingEfficiencyCurves2Var = CoolingEfficiencyCurves2(df['inunit_cool'])
+    unitCoolingEfficiencyCurves3Var = CoolingEfficiencyCurves3(df['inunit_cool'])
+    unitCoolingEfficiencyCurves4Var = CoolingEfficiencyCurves4(df['inunit_cool'])
+    unitCoolingEfficiencyCurves5Var = CoolingEfficiencyCurves5(df['inunit_cool'])
     unitDhwCoeffOnVar = unitDhwCoeffOn(df['centraldhweff_avg'], df['inunitdhweff_avg'])
     unitDhwCoeffOffVar = unitDhwCoeffOff(df['centraldhweff_avg'], df['inunitdhweff_avg'])
     unitDhwThermEffVar = unitDhwThermEff(df['centraldhweff_avg'], df['inunitdhweff_avg'])
@@ -468,6 +470,7 @@ def gardenSlab_inputs(df):
     unitHeatingSetpointVar = unitHeatingSetpoint(df)
     unitCoolingSetpointVar = unitCoolingSetpoint(df)
     exteriorCorrLightsVar = exteriorCorrLights(df)
+
 
     # create dataframe
     new_df = pd.DataFrame()
@@ -505,5 +508,6 @@ def gardenSlab_inputs(df):
     new_df['Unit heating setpoint temp [C]'] = unitHeatingSetpointVar
     new_df['Unit cooling setpoint temp [C]'] = unitCoolingSetpointVar
     new_df['Exterior corridor Lights [W]'] = exteriorCorrLightsVar
+
 
     return new_df
