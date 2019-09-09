@@ -22,35 +22,25 @@ match with EnergyPlus Inputs.
 
 import pandas as pd
 
-from functions_general import (buildingName, slabBoundaryCondition, exteriorCorrLights, 
+from functions_general import (HeatingEfficiency, HeatingEfficiencyCurves1, HeatingEfficiencyCurves2,
+                               HeatingEfficiencyCurves3, HeatingEfficiencyCurves4, HeatingEfficiencyCurves5,
+                               HeatingEfficiencyCurves6, CoolEfficiency,
+                               CoolingEfficiencyCurves1, CoolingEfficiencyCurves2, CoolingEfficiencyCurves3,
+                               CoolingEfficiencyCurves4, CoolingEfficiencyCurves5,buildingName, slabBoundaryCondition, exteriorCorrLights, 
                                unitDhwCoeffOn, unitDhwCoeffOff, unitDhwThermEff, lightingStairs,
                                extPrkLights)
 
-from functions_bsmt import (bsmtHeatingEfficiency, bsmtHeatingEfficiencyCurves1, bsmtHeatingEfficiencyCurves2,
-                            bsmtHeatingEfficiencyCurves3, bsmtHeatingEfficiencyCurves4, bsmtHeatingEfficiencyCurves5,
-                            bsmtHeatingEfficiencyCurves6, bsmtCoolEfficiency,
-                            bsmtCoolingEfficiencyCurves1, bsmtCoolingEfficiencyCurves2, bsmtCoolingEfficiencyCurves3,
-                            bsmtCoolingEfficiencyCurves4, bsmtCoolingEfficiencyCurves5,
-                            bsmtVentilationFlowrate, bsmtVentilationSP,
+from functions_bsmt import (bsmtVentilationFlowrate, bsmtVentilationSP,
                             bsmtHvacFanSP, bsmtHeatingSetpoint, bsmtCoolingSetpoint, bsmtLpd)
 
 from functions_constructions import (bsmtWallCond, extWallCond, ceilingCond,
                                      slabCond, windowU, windowSHGC, floorCond)
 
-from functions_corridor import (commonHeatingEfficiency, commonHeatingEfficiencyCurves1, commonHeatingEfficiencyCurves2, 
-                                commonHeatingEfficiencyCurves3, commonHeatingEfficiencyCurves4, commonHeatingEfficiencyCurves5,
-                                commonHeatingEfficiencyCurves6, commonCoolEfficiency,
-                                commonCoolingEfficiencyCurves1, commonCoolingEfficiencyCurves2, commonCoolingEfficiencyCurves3,
-                                commonCoolingEfficiencyCurves4, commonCoolingEfficiencyCurves5, commonLpd, commonVentilationFlowrate,
+from functions_corridor import (commonLpd, commonVentilationFlowrate,
                                 commonVentilationSP, commonHvacFanSP, commonHeatingSetpoint,
                                 commonCoolingSetpoint)
 
-from functions_unit import (HeatingEfficiency, HeatingEfficiencyCurves1, HeatingEfficiencyCurves2,
-                            HeatingEfficiencyCurves3, HeatingEfficiencyCurves4, HeatingEfficiencyCurves5,
-                            HeatingEfficiencyCurves6, CoolEfficiency,
-                            CoolingEfficiencyCurves1, CoolingEfficiencyCurves2, CoolingEfficiencyCurves3,
-                            CoolingEfficiencyCurves4, CoolingEfficiencyCurves5, 
-                            unitLpd, unitVentilationFlowrate, unitVentilationSP,
+from functions_unit import (unitLpd, unitVentilationFlowrate, unitVentilationSP,
                             unitHvacFanSP, unitHeatingSetpoint, unitCoolingSetpoint)
 
 def commonBsmt_inputs(df, runinput):
@@ -83,10 +73,10 @@ def commonBsmt_inputs(df, runinput):
     windowUVar = windowU(df['wtmn_WindowU'])
     windowSHGCVar = windowSHGC(df['wtmn_WindowSHGC'])
     lightingStairsVar = lightingStairs(df['LPD_IntStairwell'])
-    bsmtLpdVar = bsmtLpd(df['LPD_IntPk_common'])
+    bsmtLpdVar = bsmtLpd(df['LPD_IntPk_common'], df['FndType'])
     extPrkLightsVar = extPrkLights(df['LPD_ExtPk'])
-    unitHeatingSetpointVar = unitHeatingSetpoint(df)
-    unitCoolingSetpointVar = unitCoolingSetpoint(df)
+    unitHeatingSetpointVar = unitHeatingSetpoint(df['BLANK'])
+    unitCoolingSetpointVar = unitCoolingSetpoint(df['BLANK'])
     corrHeatingEfficiencyVar = HeatingEfficiency(df['common_heat'], df['Central_Sys'])
     corrHeatingEfficiencyCurves1Var = HeatingEfficiencyCurves1(df['common_heat'])
     corrHeatingEfficiencyCurves2Var = HeatingEfficiencyCurves2(df['common_heat'])
@@ -101,11 +91,11 @@ def commonBsmt_inputs(df, runinput):
     corrCoolingEfficiencyCurves4Var = CoolingEfficiencyCurves4(df['common_cool'])
     corrCoolingEfficiencyCurves5Var = CoolingEfficiencyCurves5(df['common_cool'])
     commonLpdVar = commonLpd(df['LPD_IntCorridor'])
-    commonVentilationFlowrateVar = commonVentilationFlowrate(df['Vent_corridorerv_YN'], df['Vent_corridor_erveff'])
-    commonVentilationSPVar = commonVentilationSP(df['Vent_corridorerv_YN'])
-    commonHvacFanSPVar = commonHvacFanSP(df['common_heat'], df['common_cool'])
-    commonHeatingSetpointVar = commonHeatingSetpoint(df)
-    commonCoolingSetpointVar = commonCoolingSetpoint(df)
+    commonVentilationFlowrateVar = commonVentilationFlowrate(df['Ventcentral_YN'] ,df['Vent_corridorerv_YN'] ,df['Vent_corridor_erveff'])
+    commonVentilationSPVar = commonVentilationSP(df['Ventcentral_YN'], df['Vent_corridorerv_YN'])
+    commonHvacFanSPVar = commonHvacFanSP(df['Ventcentral_YN'], df['Vent_corridorerv_YN'])
+    commonHeatingSetpointVar = commonHeatingSetpoint(df['BLANK'])
+    commonCoolingSetpointVar = commonCoolingSetpoint(df['BLANK'])
     HeatingEfficiencyVar = HeatingEfficiency(df['Heat_bsmt_type'], df['Central_Sys'])
     bsmtHeatingEfficiencyCurves1Var = HeatingEfficiencyCurves1(df['Heat_bsmt_type'])
     bsmtHeatingEfficiencyCurves2Var = HeatingEfficiencyCurves2(df['Heat_bsmt_type'])
@@ -119,13 +109,13 @@ def commonBsmt_inputs(df, runinput):
     bsmtCoolingEfficiencyCurves3Var = CoolingEfficiencyCurves3(df['BLANK'])
     bsmtCoolingEfficiencyCurves4Var = CoolingEfficiencyCurves4(df['BLANK'])
     bsmtCoolingEfficiencyCurves5Var = CoolingEfficiencyCurves5(df['BLANK'])
-    bsmtVentilationFlowrateVar = bsmtVentilationFlowrate(df['Vent_bsmterv_YN'] ,df['Vent_bsmt_erveff'] ,df['LPD_IntPk_common']  ,df['Vent_bsmt_YN'])
-    bsmtVentilationSPVar = bsmtVentilationSP(df['Vent_bsmterv_YN'] ,df['LPD_IntPk_common'] ,df['Vent_bsmt_YN'])
-    bsmtHvacFanSPVar = bsmtHvacFanSP(df['Heat_bsmt_type'])
+    bsmtVentilationFlowrateVar = bsmtVentilationFlowrate(df['Vent_bsmt_YN'] ,df['Vent_bsmterv_YN'] ,df['Vent_bsmt_erveff']  ,df['LPD_IntPk_common'])
+    bsmtVentilationSPVar = bsmtVentilationSP(df['Vent_bsmterv_YN'])
+    bsmtHvacFanSPVar = bsmtHvacFanSP(df['Vent_bsmterv_YN'])
     bsmtWallCondVar = bsmtWallCond(df['BsmtWallU'])
     floorCondVar = floorCond(df['BsmtFloorU'])
-    bsmtHeatingSetpointVar = bsmtHeatingSetpoint(df['FndType'], df['Heat_bsmt_YN'])
-    bsmtCoolingSetpointVar = bsmtCoolingSetpoint(df['FndType'], df['Heat_bsmt_YN'])
+    bsmtHeatingSetpointVar = bsmtHeatingSetpoint(df['Heat_bsmt_YN'])
+    bsmtCoolingSetpointVar = bsmtCoolingSetpoint(df['Heat_bsmt_YN'])
 
 
     # create dataframe
@@ -235,10 +225,10 @@ def commonSlab_inputs(df, runinput):
     windowUVar = windowU(df['wtmn_WindowU'])
     windowSHGCVar = windowSHGC(df['wtmn_WindowSHGC'])
     lightingStairsVar = lightingStairs(df['LPD_IntStairwell'])
-    bsmtLpdVar = bsmtLpd(df['LPD_IntPk_common'])
+    bsmtLpdVar = bsmtLpd(df['LPD_IntPk_common'], df['FndType'])
     extPrkLightsVar = extPrkLights(df['LPD_ExtPk'])
-    unitHeatingSetpointVar = unitHeatingSetpoint(df)
-    unitCoolingSetpointVar = unitCoolingSetpoint(df)
+    unitHeatingSetpointVar = unitHeatingSetpoint(df['BLANK'])
+    unitCoolingSetpointVar = unitCoolingSetpoint(df['BLANK'])
     corrHeatingEfficiencyVar = HeatingEfficiency(df['common_heat'], df['Central_Sys'])
     corrHeatingEfficiencyCurves1Var = HeatingEfficiencyCurves1(df['common_heat'])
     corrHeatingEfficiencyCurves2Var = HeatingEfficiencyCurves2(df['common_heat'])
@@ -253,12 +243,11 @@ def commonSlab_inputs(df, runinput):
     corrCoolingEfficiencyCurves4Var = CoolingEfficiencyCurves4(df['common_cool'])
     corrCoolingEfficiencyCurves5Var = CoolingEfficiencyCurves5(df['common_cool'])
     commonLpdVar = commonLpd(df['LPD_IntCorridor'])
-    commonVentilationFlowrateVar = commonVentilationFlowrate(df['Vent_corridorerv_YN'], df['Vent_corridor_erveff'])
-    commonVentilationSPVar = commonVentilationSP(df['Vent_corridorerv_YN'])
-    commonHvacFanSPVar = commonHvacFanSP(df['common_heat'], df['common_cool'])
-    commonHeatingSetpointVar = commonHeatingSetpoint(df)
-    commonCoolingSetpointVar = commonCoolingSetpoint(df)
-
+    commonVentilationFlowrateVar = commonVentilationFlowrate(df['Ventcentral_YN'] ,df['Vent_corridorerv_YN'] ,df['Vent_corridor_erveff'])
+    commonVentilationSPVar = commonVentilationSP(df['Ventcentral_YN'], df['Vent_corridorerv_YN'])
+    commonHvacFanSPVar = commonHvacFanSP(df['Ventcentral_YN'], df['Vent_corridorerv_YN'])
+    commonHeatingSetpointVar = commonHeatingSetpoint(df['BLANK'])
+    commonCoolingSetpointVar = commonCoolingSetpoint(df['BLANK'])
 
     # create dataframe
     new_df = pd.DataFrame()
@@ -348,10 +337,10 @@ def gardenBsmt_inputs(df, runinput):
     windowUVar = windowU(df['wtmn_WindowU'])
     windowSHGCVar = windowSHGC(df['wtmn_WindowSHGC'])
     lightingStairsVar = lightingStairs(df['LPD_IntStairwell'])
-    bsmtLpdVar = bsmtLpd(df['LPD_IntPk_common'])
+    bsmtLpdVar = bsmtLpd(df['LPD_IntPk_common'], df['FndType'])
     extPrkLightsVar = extPrkLights(df['LPD_ExtPk'])
-    unitHeatingSetpointVar = unitHeatingSetpoint(df)
-    unitCoolingSetpointVar = unitCoolingSetpoint(df)
+    unitHeatingSetpointVar = unitHeatingSetpoint(df['BLANK'])
+    unitCoolingSetpointVar = unitCoolingSetpoint(df['BLANK'])
     exteriorCorrLightsVar = exteriorCorrLights(df)
     HeatingEfficiencyVar = HeatingEfficiency(df['Heat_bsmt_type'], df['Central_Sys'])
     bsmtHeatingEfficiencyCurves1Var = HeatingEfficiencyCurves1(df['Heat_bsmt_type'])
@@ -366,14 +355,13 @@ def gardenBsmt_inputs(df, runinput):
     bsmtCoolingEfficiencyCurves3Var = CoolingEfficiencyCurves3(df['BLANK'])
     bsmtCoolingEfficiencyCurves4Var = CoolingEfficiencyCurves4(df['BLANK'])
     bsmtCoolingEfficiencyCurves5Var = CoolingEfficiencyCurves5(df['BLANK'])
-    bsmtVentilationFlowrateVar = bsmtVentilationFlowrate(df['Vent_bsmterv_YN'] ,df['Vent_bsmt_erveff'] ,df['LPD_IntPk_common']  ,df['Vent_bsmt_YN'])
-    bsmtVentilationSPVar = bsmtVentilationSP(df['Vent_bsmterv_YN'] ,df['LPD_IntPk_common'] ,df['Vent_bsmt_YN'])
-    bsmtHvacFanSPVar = bsmtHvacFanSP(df['Heat_bsmt_type'])
+    bsmtVentilationFlowrateVar = bsmtVentilationFlowrate(df['Vent_bsmt_YN'] ,df['Vent_bsmterv_YN'] ,df['Vent_bsmt_erveff']  ,df['LPD_IntPk_common'])
+    bsmtVentilationSPVar = bsmtVentilationSP(df['Vent_bsmterv_YN'])
+    bsmtHvacFanSPVar = bsmtHvacFanSP(df['Vent_bsmterv_YN'])
     bsmtWallCondVar = bsmtWallCond(df['BsmtWallU'])
     floorCondVar = floorCond(df['BsmtFloorU'])
-    bsmtHeatingSetpointVar = bsmtHeatingSetpoint(df['FndType'], df['Heat_bsmt_YN'])
-    bsmtCoolingSetpointVar = bsmtCoolingSetpoint(df['FndType'], df['Heat_bsmt_YN'])
-
+    bsmtHeatingSetpointVar = bsmtHeatingSetpoint(df['Heat_bsmt_YN'])
+    bsmtCoolingSetpointVar = bsmtCoolingSetpoint(df['Heat_bsmt_YN'])
 
     # create dataframe
     new_df = pd.DataFrame()
@@ -465,12 +453,11 @@ def gardenSlab_inputs(df, runinput):
     windowUVar = windowU(df['wtmn_WindowU'])
     windowSHGCVar = windowSHGC(df['wtmn_WindowSHGC'])
     lightingStairsVar = lightingStairs(df['LPD_IntStairwell'])
-    bsmtLpdVar = bsmtLpd(df['LPD_IntPk_common'])
+    bsmtLpdVar = bsmtLpd(df['LPD_IntPk_common'], df['FndType'])
     extPrkLightsVar = extPrkLights(df['LPD_ExtPk'])
-    unitHeatingSetpointVar = unitHeatingSetpoint(df)
-    unitCoolingSetpointVar = unitCoolingSetpoint(df)
+    unitHeatingSetpointVar = unitHeatingSetpoint(df['BLANK'])
+    unitCoolingSetpointVar = unitCoolingSetpoint(df['BLANK'])
     exteriorCorrLightsVar = exteriorCorrLights(df)
-
 
     # create dataframe
     new_df = pd.DataFrame()

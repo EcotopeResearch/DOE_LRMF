@@ -22,215 +22,114 @@ calculations for getting from the DCI outputs to the EnergyPlus inputs.
 
 ##### BASEMENT SYSTEM EFFICIENCIES #######
 
-def bsmtHeatingEfficiency(heatBsmtType, HVACcentral_YN, centralSys):
-
-    # empty list to return    
-    var = []    
+def bsmtVentilationFlowrate(ventBsmtYN, ventBsemtErvYN, ventBsemtErvEff, lpdIntPkCommon):
     
-    # place holder
-    for i in range(0, len(heatBsmtType)):
-        var.append('bsmtHeatingEfficiency')
-    
-    return var
-
-def bsmtHeatingEfficiencyCurves1(heatBsmtType):
-    
-    # empty list to return    
-    var = []    
-
-    # placeholder    
-    for i in range(0, len(heatBsmtType)):
-        var.append('bsmtHeatingEfficiencyCurves1')
-        
-    return var
-
-def bsmtHeatingEfficiencyCurves2(heatBsmtType):
-    
-    # empty list to return    
-    var = []    
-
-    # placeholder    
-    for i in range(0, len(heatBsmtType)):
-        var.append('bsmtHeatingEfficiencyCurves2')
-        
-    return var
-
-def bsmtHeatingEfficiencyCurves3(heatBsmtType):
-    
-    # empty list to return    
-    var = []    
-
-    # placeholder    
-    for i in range(0, len(heatBsmtType)):
-        var.append('bsmtHeatingEfficiencyCurves3')
-        
-    return var
-
-def bsmtHeatingEfficiencyCurves4(heatBsmtType):
-    
-    # empty list to return    
-    var = []    
-
-    # placeholder    
-    for i in range(0, len(heatBsmtType)):
-        var.append('bsmtHeatingEfficiencyCurves4')
-        
-    return var
-
-def bsmtHeatingEfficiencyCurves5(heatBsmtType):
-    
-    # empty list to return    
-    var = []    
-
-    # placeholder    
-    for i in range(0, len(heatBsmtType)):
-        var.append('bsmtHeatingEfficiencyCurves5')
-        
-    return var
-
-def bsmtHeatingEfficiencyCurves6(heatBsmtType):
-    
-    # empty list to return    
-    var = []    
-
-    # placeholder    
-    for i in range(0, len(heatBsmtType)):
-        var.append('bsmtHeatingEfficiencyCurves6')
-        
-    return var
-
-def bsmtCoolEfficiency(df):
+    # unit airflow [m3/s]
+    flowrate = 0.22 # about 468 cfm, from 0.06 cfm/sf
+    avgERV = 0.6
     
     # empty list to return    
     var = []    
     
-    # placeholder
-    for i in range(0, len(df)):
-        var.append('bsmtCoolEfficiency')
-    
-    return var
-
-def bsmtCoolingEfficiencyCurves1(df):
-    
-    # empty list to return    
-    var = []    
-    
-    # placeholder
-    for i in range(0, len(df)):
-        var.append('bsmtCoolingEfficiencyCurves1')
-    
-    return var
-
-def bsmtCoolingEfficiencyCurves2(df):
-    
-    # empty list to return    
-    var = []    
-    
-    # placeholder
-    for i in range(0, len(df)):
-        var.append('bsmtCoolingEfficiencyCurves2')
-    
-    return var
-
-def bsmtCoolingEfficiencyCurves3(df):
-    
-    # empty list to return    
-    var = []    
-    
-    # placeholder
-    for i in range(0, len(df)):
-        var.append('bsmtCoolingEfficiencyCurves3')
-    
-    return var
-
-def bsmtCoolingEfficiencyCurves4(df):
-    
-    # empty list to return    
-    var = []    
-    
-    # placeholder
-    for i in range(0, len(df)):
-        var.append('bsmtCoolingEfficiencyCurves4')
-    
-    return var
-
-def bsmtCoolingEfficiencyCurves5(df):
-    
-    # empty list to return    
-    var = []    
-    
-    # placeholder
-    for i in range(0, len(df)):
-        var.append('bsmtCoolingEfficiencyCurves5')
-    
-    return var
-
-def bsmtVentilationFlowrate(ventBsemtErvYN, ventBsemtErvEff, lpdIntPkCommon, ventBsmtYN):
-    
-    # empty list to return    
-    var = []    
-    
-    # placeholder
+    # loop through rows
     for i in range(0, len(ventBsemtErvYN)):
-        var.append('bsmtVentilationFlowrate')
-    
+        
+        # if ventilation
+        if ventBsmtYN[i] == 'Yes':
+            # if ERV reduce flowrate
+            if ventBsemtErvEff[i] == 'Yes':
+                if ventBsemtErvEff[i] != 0:
+                    var.append(flowrate*(1-(float(ventBsemtErvEff[i])/100)))
+                else:
+                    var.append(flowrate*(1-avgERV))
+            # otherwist apply normal flowrate
+            else:
+                var.append(flowrate)
+        else:
+            var.append(0) # no flow
+        
     return var
 
-def bsmtVentilationSP(ventBsemtErvYN, lpdIntPkCommon, ventBsmtYN):
+def bsmtVentilationSP(ventBsemtErvYN):
     
     # empty list to return    
     var = []    
+    central = 62.21 # units are pa, equal to 0.25"
+    erv = 62.21 # units are pa, equal to 0.25"
     
-    # placeholder
+    
+    # static pressure
     for i in range(0, len(ventBsemtErvYN)):
-        var.append('bsmtVentilationFlowrate')
+        if ventBsemtErvYN[i] == 'Yes':
+            var.append(central + erv)
+        elif ventBsemtErvYN[i] == 'No':
+            var.append(central)
+        else:
+            var.append(central)
+            print('ERROR IN bsmtVentilationSP')
     
     return var
 
-def bsmtHvacFanSP(heatBsmtType):
+def bsmtHvacFanSP(ventBsemtErvYN):
     
     # empty list to return    
-    var = []    
+    var = []        
     
-    # placeholder
-    for i in range(0, len(heatBsmtType)):
-        var.append('bsmtHvacFanSP')
+    # static pressure
+    for i in range(0, len(ventBsemtErvYN)):
+        var.append(24.884) # 0.1", it's just one system 
     
     return var
 
 # BASEMENT SETPOINTS
 
-def bsmtHeatingSetpoint(FndType, heatBsmtYN):
+def bsmtHeatingSetpoint(heatBsmtYN):
     
     # empty list to return    
     var = []    
     
     # placeholder
-    for i in range(0, len(FndType)):
-        var.append('bsmtHeatingSetpoint')
+    for i in range(0, len(heatBsmtYN)):
+        if heatBsmtYN[i] == 'Yes':
+            var.append(15.5) # in °C
+        else:
+            var.append(-10) # in °C
     
     return var
 
-def bsmtCoolingSetpoint(FndType, heatBsmtYN):
+def bsmtCoolingSetpoint(heatBsmtYN):
     
     # empty list to return    
     var = []    
     
     # placeholder
-    for i in range(0, len(FndType)):
-        var.append('bsmtCoolingSetpoint')
+    for i in range(0, len(heatBsmtYN)):
+        var.append(70) # in °C
     
     return var
 
-def bsmtLpd(intPrkLpd):
+def bsmtLpd(intPrkLpd, FndType):
     
     # empty list to return    
     var = []    
     
     # placeholder
     for i in range(0, len(intPrkLpd)):
-        var.append('bsmtLpd')
-    
+        if intPrkLpd[i] != 0:
+            var.append(intPrkLpd[i] * 7800) # LPD * area
+        else:
+            if FndType[i] == 'ventedcrawlspace':    
+                var.append(0)
+            elif FndType[i] == 'unheatedbsmt':
+                var.append(0)
+            elif FndType[i] == 'unventedcrawlspace':
+                var.append(0)
+            elif FndType[i] == 'heatedbsmt':
+                var.append(0.4 * 7800) # 0.4 for bsmt * area 
+            else:
+                var.append(0)
+                print('ERROR UNKNOWN FOUND TYPE bsmtLpd')
+            
     return var
 
 

@@ -10,19 +10,19 @@ Created on Mon Sep  9 09:24:46 2019
 # heating curves
 
 heating_cop = {'elecres':1, 'gasfurnace':0.8, 'hydronic baseboard (gas boiler)':0.75,'PTHP':2.5,
-               'Split system HP':2.5,'water source HP':2.5,'water source HP (gas boiler)':0.7, 0:'No Heating'}
+               'Split system HP':2.5,'water source HP':0.8,'water source HP (gas boiler)':0.7, 0:'No Heating'}
 
-curve_heatCapFT = {'elecres':'flatHeatCapFT', 'gasfurnace':'flatHeatCapFT', 'hydronic baseboard (gas boiler)':'flatHeatCapFT','PTHP':'HPACHeatCapFT',
-                   'Split system HP':'HPACHeatCapFT','water source HP':'HPACHeatCapFT','water source HP (gas boiler)':'HPACHeatCapFT', 0:'No Heating'}
+curve_heatCapFT = {'elecres':'ConstantCubic', 'gasfurnace':'ConstantCubic', 'hydronic baseboard (gas boiler)':'ConstantCubic','PTHP':'HPACHeatCapFT',
+                   'Split system HP':'HPACHeatCapFT','water source HP':'ConstantCubic','water source HP (gas boiler)':'ConstantCubic', 0:'No Heating'}
 
-curve_HeatCapFFF = {'elecres':'flatHeatCapFFF', 'gasfurnace':'flatHeatCapFFF', 'hydronic baseboard (gas boiler)':'flatHeatCapFFF','PTHP':'HPACHeatCapFFF',
-                   'Split system HP':'HPACHeatCapFFF','water source HP':'HPACHeatCapFFF','water source HP (gas boiler)':'HPACHeatCapFFF', 0:'No Heating'}
+curve_HeatCapFFF = {'elecres':'ConstantCubic', 'gasfurnace':'ConstantCubic', 'hydronic baseboard (gas boiler)':'ConstantCubic','PTHP':'HPACHeatCapFFF',
+                   'Split system HP':'HPACHeatCapFFF','water source HP':'ConstantCubic','water source HP (gas boiler)':'ConstantCubic', 0:'No Heating'}
 
-curve_HPACHeatEIRFT = {'elecres':'flatHPACHeatEIRFT', 'gasfurnace':'flatHPACHeatEIRFT', 'hydronic baseboard (gas boiler)':'flatHPACHeatEIRFT','PTHP':'HPACHPACHeatEIRFT',
-                   'Split system HP':'HPACHPACHeatEIRFT','water source HP':'HPACHPACHeatEIRFT','water source HP (gas boiler)':'HPACHPACHeatEIRFT', 0:'No Heating'}
+curve_HPACHeatEIRFT = {'elecres':'ConstantCubic', 'gasfurnace':'ConstantCubic', 'hydronic baseboard (gas boiler)':'ConstantCubic','PTHP':'HPACHPACHeatEIRFT',
+                   'Split system HP':'HPACHPACHeatEIRFT','water source HP':'ConstantCubic','water source HP (gas boiler)':'ConstantCubic', 0:'No Heating'}
 
-curve_HPACHeatEIRFFF = {'elecres':'flatHPACHeatEIRFFF', 'gasfurnace':'flatHPACHeatEIRFFF', 'hydronic baseboard (gas boiler)':'flatHPACHeatEIRFFF','PTHP':'HPACHPACHeatEIRFFF',
-                   'Split system HP':'HPACHPACHeatEIRFFF','water source HP':'HPACHPACHeatEIRFFF','water source HP (gas boiler)':'HPACHPACHeatEIRFFF', 0:'No Heating'}
+curve_HPACHeatEIRFFF = {'elecres':'ConstantCubic', 'gasfurnace':'ConstantCubic', 'hydronic baseboard (gas boiler)':'ConstantCubic','PTHP':'HPACHPACHeatEIRFFF',
+                   'Split system HP':'HPACHPACHeatEIRFFF','water source HP':'ConstantCubic','water source HP (gas boiler)':'ConstantCubic', 0:'No Heating'}
 
 def heat_cop_switcher(argument):
     switcher = heating_cop
@@ -46,7 +46,7 @@ def curve_HPACHeatEIRFFF_switcher(argument):
     
 # cooling curves
 
-cooling_cop = {'PTHP':2.5, 'Split system HP':2.5, 'Split system AC':2, 'PTAC':2, 'water source HP':1.2, 'Win AC':2, 0:'No Cooling'}
+cooling_cop = {'PTHP':2.5, 'Split system HP':2.5, 'Split system AC':2, 'PTAC':2, 'water source HP':1.8, 'Win AC':2, 0:'No Cooling'}
 
 curve_coolCapFT = {'PTHP':'HPACcoolCapFT', 'Split system HP':'HPACcoolCapFT', 'Split system AC':'HPACcoolCapFT',
                    'water source HP':'HPACcoolCapFT','Win AC':'HPACcoolCapFT', 'PTAC':'HPACcoolCapFT', 0:'No Cooling'}
@@ -82,9 +82,9 @@ def curve_HPACcoolEIRFFF_switcher(argument):
 
 # Part Load Corrilation and defrost
 
-curve_HPACCOOLPLFFPLR = {'elecres':'flatHPACCOOLPLFFPLR', 'gasfurnace':'flatHPACCOOLPLFFPLR', 'hydronic baseboard (gas boiler)':'flatHPACCOOLPLFFPLR',
+curve_HPACCOOLPLFFPLR = {'elecres':'ConstantCubic', 'gasfurnace':'ConstantCubic', 'hydronic baseboard (gas boiler)':'ConstantCubic',
                          'PTHP':'HPACHPACCOOLPLFFPLR','Split system HP':'HPACHPACCOOLPLFFPLR','water source HP':'HPACHPACCOOLPLFFPLR',
-                         'water source HP (gas boiler)':'HPACHPACCOOLPLFFPLR','Split system AC':'HPACHPACCOOLPLFFPLR',
+                         'water source HP (gas boiler)':'ConstantCubic','Split system AC':'HPACHPACCOOLPLFFPLR',
                          'Win AC':'HPACHPACCOOLPLFFPLR', 'PTAC':'HPACHPACCOOLPLFFPLR',  0:'No Cooling/Heating'}
 
 curve_Defrost_EIR_FT = {'elecres':'flatDefrost_EIR_FT', 'gasfurnace':'flatDefrost_EIR_FT', 'hydronic baseboard (gas boiler)':'flatDefrost_EIR_FT','PTHP':'HPACDefrost_EIR_FT',

@@ -20,198 +20,88 @@ calculations for getting from the DCI outputs to the EnergyPlus inputs.
 @author: scott
 """
     
-from functions_switchers import (heat_cop_switcher, curve_heatCapFT_switcher, curve_HeatCapFFF_switcher,
-                                 curve_HPACHeatEIRFT_switcher, curve_HPACHeatEIRFFF_switcher, cool_cop_switcher,
-                                 curve_coolCapFT_switcher, curve_coolCapFFF_switcher, curve_HPACcoolEIRFT_switcher,
-                                 curve_HPACcoolEIRFFF_switcher, curve_HPACCOOLPLFFPLR_switcher, curve_Defrost_EIR_FT_switcher)
 
-##### UNIT SYSTEM EFFICIENCIES #######
 
-def HeatingEfficiency(unitHeat, centralSys):
+
+##### VENTILATION FUNCTIONS #######
+    
+### SHOULD BE MADE FLEXIBLE TO WORK FOR COMMON, BASEMENT, AND CORRIDOR. 
+
+#### NOT USING VENT CENTRALYN
+def unitVentilationFlowrate(ventCentralYN, ventUnitErvYN, ventUnitErvEff):
     '''
     EnergyPlus Object
-    Coil:Heating:DX:SingleSpeed
-    Input
-    Gross Rated Heating COP
+    ZoneVentilation:DesignFlowRate
     '''
+    # unit airflow [m3/s]
+    flowrate = 0.0212524794559365 # about 45 cfm, from PNNL model
+    avgERV = 0.6
     
     # empty list to return    
     var = []    
     
-    # place holder
-    for i in range(0, len(unitHeat)):
-        var.append(heat_cop_switcher(unitHeat[i]))
-    
-    return var
-
-def HeatingEfficiencyCurves1(unitHeat):
-    '''
-    EnergyPlus Object
-    Coil:Heating:DX:SingleSpeed
-    Input
-    Heating Capacity Function of Temperature Curve Name
-    '''
-
-    # empty list to return    
-    var = []    
-
-    # placeholder    
-    for i in range(0, len(unitHeat)):
-        var.append(curve_heatCapFT_switcher(unitHeat[i]))
-        
-    return var
-
-def HeatingEfficiencyCurves2(unitHeat):
-    
-    # empty list to return    
-    var = []    
-
-    # placeholder    
-    for i in range(0, len(unitHeat)):
-        var.append(curve_HeatCapFFF_switcher(unitHeat[i]))
-        
-    return var
-
-def HeatingEfficiencyCurves3(unitHeat):
-    
-    # empty list to return    
-    var = []    
-
-    # placeholder    
-    for i in range(0, len(unitHeat)):
-        var.append(curve_HPACHeatEIRFT_switcher(unitHeat[i]))
-        
-    return var
-
-def HeatingEfficiencyCurves4(unitHeat):
-    
-    # empty list to return    
-    var = []    
-
-    # placeholder    
-    for i in range(0, len(unitHeat)):
-        var.append(curve_HPACHeatEIRFFF_switcher(unitHeat[i]))
-        
-    return var
-
-def HeatingEfficiencyCurves5(unitHeat):
-    
-    # empty list to return    
-    var = []    
-
-    # placeholder    
-    for i in range(0, len(unitHeat)):
-        var.append(curve_HPACCOOLPLFFPLR_switcher(unitHeat[i]))
-        
-    return var
-
-def HeatingEfficiencyCurves6(unitHeat):
-    
-    # empty list to return    
-    var = []    
-
-    # placeholder    
-    for i in range(0, len(unitHeat)):
-        var.append(curve_Defrost_EIR_FT_switcher(unitHeat[i]))
-        
-    return var
-
-def CoolEfficiency(unitCool, centralSys):
-    
-    # empty list to return    
-    var = []    
-    
-    # placeholder
-    for i in range(0, len(unitCool)):
-        var.append(cool_cop_switcher(unitCool[i]))
-    
-    return var
-
-def CoolingEfficiencyCurves1(unitCool):
-    
-    # empty list to return    
-    var = []    
-    
-    # placeholder
-    for i in range(0, len(unitCool)):
-        var.append(curve_coolCapFT_switcher(unitCool[i]))
-    
-    return var
-
-def CoolingEfficiencyCurves2(unitCool):
-    
-    # empty list to return    
-    var = []    
-    
-    # placeholder
-    for i in range(0, len(unitCool)):
-        var.append(curve_coolCapFFF_switcher(unitCool[i]))
-    
-    return var
-
-def CoolingEfficiencyCurves3(unitCool):
-    
-    # empty list to return    
-    var = []    
-    
-    # placeholder
-    for i in range(0, len(unitCool)):
-        var.append(curve_HPACcoolEIRFT_switcher(unitCool[i]))
-    
-    return var
-
-def CoolingEfficiencyCurves4(unitCool):
-    
-    # empty list to return    
-    var = []    
-    
-    # placeholder
-    for i in range(0, len(unitCool)):
-        var.append(curve_HPACcoolEIRFFF_switcher(unitCool[i]))
-    
-    return var
-
-def CoolingEfficiencyCurves5(unitCool):
-    
-    # empty list to return    
-    var = []    
-    
-    # placeholder
-    for i in range(0, len(unitCool)):
-        var.append(curve_HPACCOOLPLFFPLR_switcher(unitCool[i]))
-    
-    return var
-
-def unitVentilationFlowrate(ventUnitErvYN, ventUnitErvEff, ventCentralYN):
-    
-    # empty list to return    
-    var = []    
-    
-    # placeholder
+    # loop through rows
     for i in range(0, len(ventUnitErvYN)):
-        var.append('unitVentilationFlowrate')
+        
+        # if ERV reduce flowrate
+        if ventUnitErvYN[i] == 'Yes':
+            if ventUnitErvEff[i] != 0:
+                var.append(flowrate*(1-(float(ventUnitErvEff[i])/100)))
+            else:
+                var.append(flowrate*(1-avgERV))
+        # otherwist apply normal flowrate
+        else:
+            var.append(flowrate)
     
     return var
 
-def unitVentilationSP(ventUnitErvYN, ventCentralYN):
+def unitVentilationSP(ventCentralYN, ventUnitErvYN):
     
     # empty list to return    
     var = []    
+    unit = 62.21 # units are pa, equal to 0.25" 
+    central = 248.84 # units are pa, equal to 0.25"
+    erv = 62.21 # units are pa, equal to 0.25"
     
-    # placeholder
+    
+    # static pressure
     for i in range(0, len(ventUnitErvYN)):
-        var.append('unitVentilationFlowrate')
+        if ventUnitErvYN[i] == 'Yes' and ventCentralYN[i] == 'Yes':
+            var.append(unit + central + erv)
+        elif ventUnitErvYN[i] == 'Yes' and ventCentralYN[i] == 'No':
+            var.append(unit + erv)
+        elif ventUnitErvYN[i] == 'No' and ventCentralYN[i] == 'Yes':
+            var.append(unit + central)
+        elif ventUnitErvYN[i] == 'No' and ventCentralYN[i] == 'No':
+            var.append(unit)
+        else:
+            print('ERROR IN unitVentilationSP')
     
     return var
 
-def unitHvacFanSP(unitheat, ventUnitErvYN):
+# add central ventilation
+def unitHvacFanSP(ventCentralYN, ventUnitErvYN):
     
     # empty list to return    
     var = []    
     
-    # placeholder
-    for i in range(0, len(unitheat)):
-        var.append('unitHvacFanSP')
+    
+    unit = 62.21 # units are pa, equal to 0.25" 
+    erv = 62.21 # units are pa, equal to 0.25"
+    
+    
+    # static pressure, central systems are covered above
+    for i in range(0, len(ventUnitErvYN)):
+        if ventUnitErvYN[i] == 'Yes' and ventCentralYN[i] == 'Yes':
+            var.append(unit)
+        elif ventUnitErvYN[i] == 'Yes' and ventCentralYN[i] == 'No':
+            var.append(unit + erv)
+        elif ventUnitErvYN[i] == 'No' and ventCentralYN[i] == 'Yes':
+            var.append(unit)
+        elif ventUnitErvYN[i] == 'No' and ventCentralYN[i] == 'No':
+            var.append(unit)
+        else:
+            print('ERROR IN unitVentilationSP')
     
     return var
 
@@ -224,7 +114,7 @@ def unitHeatingSetpoint(df):
     
     # placeholder
     for i in range(0, len(df)):
-        var.append('unitHeatingSetpoint')
+        var.append(20) # in °C
     
     return var
 
@@ -235,7 +125,7 @@ def unitCoolingSetpoint(df):
     
     # placeholder
     for i in range(0, len(df)):
-        var.append('unitCoolingSetpoint')
+        var.append(22.2222) # in °C
     
     return var
 
@@ -248,7 +138,7 @@ def unitLpd(lpdUnit):
     
     # placeholder
     for i in range(0, len(lpdUnit)):
-        var.append('unitLpd')
+        var.append(lpdUnit[i])
     
     return var
     

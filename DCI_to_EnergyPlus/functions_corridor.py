@@ -20,182 +20,83 @@ calculations for getting from the DCI outputs to the EnergyPlus inputs.
 @author: scott
 """
 
-##### CORRIDOR SYSTEM EFFICIENCIES #######
+################################
+##### CORRIDOR FUNCTIONS #######
+################################
 
-def commonHeatingEfficiency(commonHeat, hvacCentralYN, CentralSys):
-
-    # empty list to return    
-    var = []    
-    
-    # place holder
-    for i in range(0, len(commonHeat)):
-        var.append('commonHeatingEfficiency')
-    
-    return var
-
-def commonHeatingEfficiencyCurves1(commonHeat):
-    
-    # empty list to return    
-    var = []    
-
-    # placeholder    
-    for i in range(0, len(commonHeat)):
-        var.append('commonHeatingEfficiencyCurves1')
-        
-    return var
-
-def commonHeatingEfficiencyCurves2(commonHeat):
-    
-    # empty list to return    
-    var = []    
-
-    # placeholder    
-    for i in range(0, len(commonHeat)):
-        var.append('commonHeatingEfficiencyCurves2')
-        
-    return var
-
-def commonHeatingEfficiencyCurves3(commonHeat):
-    
-    # empty list to return    
-    var = []    
-
-    # placeholder    
-    for i in range(0, len(commonHeat)):
-        var.append('commonHeatingEfficiencyCurves3')
-        
-    return var
-
-def commonHeatingEfficiencyCurves4(commonHeat):
-    
-    # empty list to return    
-    var = []    
-
-    # placeholder    
-    for i in range(0, len(commonHeat)):
-        var.append('commonHeatingEfficiencyCurves4')
-        
-    return var
-
-def commonHeatingEfficiencyCurves5(commonHeat):
-    
-    # empty list to return    
-    var = []    
-
-    # placeholder    
-    for i in range(0, len(commonHeat)):
-        var.append('commonHeatingEfficiencyCurves5')
-        
-    return var
-
-def commonHeatingEfficiencyCurves6(commonHeat):
-    
-    # empty list to return    
-    var = []    
-
-    # placeholder    
-    for i in range(0, len(commonHeat)):
-        var.append('commonHeatingEfficiencyCurves6')
-        
-    return var
-
-
-def commonCoolEfficiency(commonCool, hvacCentralYN, CentralSys):
+def commonVentilationFlowrate(ventCentralYN, ventCorridorErvYN, ventCorridorErvEff):
+    '''
+    EnergyPlus Object
+    ZoneVentilation:DesignFlowRate
+    '''
+    # unit airflow [m3/s]
+    flowrate = 0.051 # about 108 cfm, from 0.06 cfm/sf
+    avgERV = 0.6
     
     # empty list to return    
     var = []    
     
-    # placeholder
-    for i in range(0, len(commonCool)):
-        var.append('commonCoolEfficiency')
-    
-    return var
-
-def commonCoolingEfficiencyCurves1(commonCool):
-    
-    # empty list to return    
-    var = []    
-    
-    # placeholder
-    for i in range(0, len(commonCool)):
-        var.append('commonCoolingEfficiencyCurves1')
-    
-    return var
-
-def commonCoolingEfficiencyCurves2(commonCool):
-    
-    # empty list to return    
-    var = []    
-    
-    # placeholder
-    for i in range(0, len(commonCool)):
-        var.append('commonCoolingEfficiencyCurves2')
-    
-    return var
-
-def commonCoolingEfficiencyCurves3(commonCool):
-    
-    # empty list to return    
-    var = []    
-    
-    # placeholder
-    for i in range(0, len(commonCool)):
-        var.append('commonCoolingEfficiencyCurves3')
-    
-    return var
-
-def commonCoolingEfficiencyCurves4(commonCool):
-    
-    # empty list to return    
-    var = []    
-    
-    # placeholder
-    for i in range(0, len(commonCool)):
-        var.append('commonCoolingEfficiencyCurves4')
-    
-    return var
-
-def commonCoolingEfficiencyCurves5(commonCool):
-    
-    # empty list to return    
-    var = []    
-    
-    # placeholder
-    for i in range(0, len(commonCool)):
-        var.append('commonCoolingEfficiencyCurves5')
-    
-    return var
-
-def commonVentilationFlowrate(ventCorridorErvYN, ventCorridorErvEff):
-   
-    # empty list to return    
-    var = []    
-    
-    # placeholder
+    # loop through rows
     for i in range(0, len(ventCorridorErvYN)):
-        var.append('commonVentilationFlowrate')
-    
+        
+        # if ERV reduce flowrate
+        if ventCorridorErvYN[i] == 'Yes':
+            if ventCorridorErvEff[i] != 0:
+                var.append(flowrate*(1-(float(ventCorridorErvEff[i])/100)))
+            else:
+                var.append(flowrate*(1-avgERV))
+        # otherwist apply normal flowrate
+        else:
+            var.append(flowrate)
+        
     return var
-    
-def commonVentilationSP(ventCorridorErvYN):
+
+def commonVentilationSP(ventCentralYN, ventCorridorErvYN):
     
     # empty list to return    
     var = []    
+    unit = 62.21 # units are pa, equal to 0.25" 
+    central = 248.84 # units are pa, equal to 0.25"
+    erv = 62.21 # units are pa, equal to 0.25"
     
-    # placeholder
+    
+    # static pressure
     for i in range(0, len(ventCorridorErvYN)):
-        var.append('commonVentilationSP')
+        if ventCorridorErvYN[i] == 'Yes' and ventCentralYN[i] == 'Yes':
+            var.append(unit + central + erv)
+        elif ventCorridorErvYN[i] == 'Yes' and ventCentralYN[i] == 'No':
+            var.append(unit + erv)
+        elif ventCorridorErvYN[i] == 'No' and ventCentralYN[i] == 'Yes':
+            var.append(unit + central)
+        elif ventCorridorErvYN[i] == 'No' and ventCentralYN[i] == 'No':
+            var.append(unit)
+        else:
+            print('ERROR IN unitVentilationSP')
     
     return var
 
-def commonHvacFanSP(commonHeat, commonCool):
+def commonHvacFanSP(ventCentralYN, ventCorridorErvYN):
     
     # empty list to return    
     var = []    
     
-    # placeholder
-    for i in range(0, len(commonHeat)):
-        var.append('commonHvacFanSP')
+    
+    unit = 62.21 # units are pa, equal to 0.25" 
+    erv = 62.21 # units are pa, equal to 0.25"
+    
+    
+    # static pressure, central systems are covered above
+    for i in range(0, len(ventCorridorErvYN)):
+        if ventCorridorErvYN[i] == 'Yes' and ventCentralYN[i] == 'Yes':
+            var.append(unit)
+        elif ventCorridorErvYN[i] == 'Yes' and ventCentralYN[i] == 'No':
+            var.append(unit + erv)
+        elif ventCorridorErvYN[i] == 'No' and ventCentralYN[i] == 'Yes':
+            var.append(unit)
+        elif ventCorridorErvYN[i] == 'No' and ventCentralYN[i] == 'No':
+            var.append(unit)
+        else:
+            print('ERROR IN unitVentilationSP')
     
     return var
 
@@ -206,7 +107,7 @@ def commonHeatingSetpoint(df):
     
     # placeholder
     for i in range(0, len(df)):
-        var.append('commonHeatingSetpoint')
+        var.append(20) # in °C
     
     return var
 
@@ -217,7 +118,7 @@ def commonCoolingSetpoint(df):
     
     # placeholder
     for i in range(0, len(df)):
-        var.append('commonCoolingSetpoint')
+        var.append(22.2222) # in °C
     
     return var
 
@@ -230,6 +131,6 @@ def commonLpd(lpdCommon):
     
     # placeholder
     for i in range(0, len(lpdCommon)):
-        var.append('commonLpd')
+        var.append(lpdCommon)
     
     return var

@@ -20,9 +20,14 @@ calculations for getting from the DCI outputs to the EnergyPlus inputs.
 @author: scott
 """
 
-##### GENERAL BUILDING INFORMATION #######
+from functions_switchers import (heat_cop_switcher, curve_heatCapFT_switcher, curve_HeatCapFFF_switcher,
+                                 curve_HPACHeatEIRFT_switcher, curve_HPACHeatEIRFFF_switcher, cool_cop_switcher,
+                                 curve_coolCapFT_switcher, curve_coolCapFFF_switcher, curve_HPACcoolEIRFT_switcher,
+                                 curve_HPACcoolEIRFFF_switcher, curve_HPACCOOLPLFFPLR_switcher, curve_Defrost_EIR_FT_switcher)
 
-import numpy as np
+##########################################
+##### GENERAL BUILDING INFORMATION #######
+##########################################
 
 def buildingName(sitex, runinput):
     
@@ -136,7 +141,11 @@ def lightingStairs(lpdIntStairwell):
     
     # LPD stairs * 120 sf, 40 per floor
     for i in range(0, len(lpdIntStairwell)):
-        var.append(lpdIntStairwell[i]*120)
+        
+        if lpdIntStairwell[i] != 0:    
+            var.append(lpdIntStairwell[i]*120)
+        else:
+            var.append(30) # assumed value around .25 LPD
     
     return var
 
@@ -151,3 +160,194 @@ def extPrkLights(lpdExtPrk):
     
     return var
 
+###################################
+##### EQUIPMENT PERFORMANCE #######
+###################################
+
+def HeatingEfficiency(unitHeat, centralSys):
+    '''
+    EnergyPlus Object
+    Coil:Heating:DX:SingleSpeed
+    Input
+    Gross Rated Heating COP
+    '''
+    
+    # empty list to return    
+    var = []    
+    
+    # place holder
+    for i in range(0, len(unitHeat)):
+        var.append(heat_cop_switcher(unitHeat[i]))
+    
+    return var
+
+def HeatingEfficiencyCurves1(unitHeat):
+    '''
+    EnergyPlus Object
+    Coil:Heating:DX:SingleSpeed
+    Input
+    Heating Capacity Function of Temperature Curve Name
+    '''
+
+    # empty list to return    
+    var = []    
+
+    # placeholder    
+    for i in range(0, len(unitHeat)):
+        var.append(curve_heatCapFT_switcher(unitHeat[i]))
+        
+    return var
+
+def HeatingEfficiencyCurves2(unitHeat):
+    '''
+    EnergyPlus Object
+    Coil:Heating:DX:SingleSpeed
+    '''
+    # empty list to return    
+    var = []    
+
+    # placeholder    
+    for i in range(0, len(unitHeat)):
+        var.append(curve_HeatCapFFF_switcher(unitHeat[i]))
+        
+    return var
+
+def HeatingEfficiencyCurves3(unitHeat):
+    '''
+    EnergyPlus Object
+    Coil:Heating:DX:SingleSpeed
+    '''
+    # empty list to return    
+    var = []    
+
+    # placeholder    
+    for i in range(0, len(unitHeat)):
+        var.append(curve_HPACHeatEIRFT_switcher(unitHeat[i]))
+        
+    return var
+
+def HeatingEfficiencyCurves4(unitHeat):
+    '''
+    EnergyPlus Object
+    Coil:Heating:DX:SingleSpeed
+    '''
+    # empty list to return    
+    var = []    
+
+    # placeholder    
+    for i in range(0, len(unitHeat)):
+        var.append(curve_HPACHeatEIRFFF_switcher(unitHeat[i]))
+        
+    return var
+
+def HeatingEfficiencyCurves5(unitHeat):
+    '''
+    EnergyPlus Object
+    Coil:Heating:DX:SingleSpeed
+    '''
+    # empty list to return    
+    var = []    
+
+    # placeholder    
+    for i in range(0, len(unitHeat)):
+        var.append(curve_HPACCOOLPLFFPLR_switcher(unitHeat[i]))
+        
+    return var
+
+def HeatingEfficiencyCurves6(unitHeat):
+    '''
+    EnergyPlus Object
+    Coil:Heating:DX:SingleSpeed
+    '''
+    # empty list to return    
+    var = []    
+
+    # placeholder    
+    for i in range(0, len(unitHeat)):
+        var.append(curve_Defrost_EIR_FT_switcher(unitHeat[i]))
+        
+    return var
+
+def CoolEfficiency(unitCool, centralSys):
+    '''
+    EnergyPlus Object
+    Coil:Cooling:DX:SingleSpeed
+    '''
+    # empty list to return    
+    var = []    
+    
+    # placeholder
+    for i in range(0, len(unitCool)):
+        var.append(cool_cop_switcher(unitCool[i]))
+    
+    return var
+
+def CoolingEfficiencyCurves1(unitCool):
+    '''
+    EnergyPlus Object
+    Coil:Cooling:DX:SingleSpeed
+    '''
+    # empty list to return    
+    var = []    
+    
+    # placeholder
+    for i in range(0, len(unitCool)):
+        var.append(curve_coolCapFT_switcher(unitCool[i]))
+    
+    return var
+
+def CoolingEfficiencyCurves2(unitCool):
+    '''
+    EnergyPlus Object
+    Coil:Cooling:DX:SingleSpeed
+    '''
+    # empty list to return    
+    var = []    
+    
+    # placeholder
+    for i in range(0, len(unitCool)):
+        var.append(curve_coolCapFFF_switcher(unitCool[i]))
+    
+    return var
+
+def CoolingEfficiencyCurves3(unitCool):
+    '''
+    EnergyPlus Object
+    Coil:Cooling:DX:SingleSpeed
+    '''
+    # empty list to return    
+    var = []    
+    
+    # placeholder
+    for i in range(0, len(unitCool)):
+        var.append(curve_HPACcoolEIRFT_switcher(unitCool[i]))
+    
+    return var
+
+def CoolingEfficiencyCurves4(unitCool):
+    '''
+    EnergyPlus Object
+    Coil:Cooling:DX:SingleSpeed
+    '''
+    # empty list to return    
+    var = []    
+    
+    # placeholder
+    for i in range(0, len(unitCool)):
+        var.append(curve_HPACcoolEIRFFF_switcher(unitCool[i]))
+    
+    return var
+
+def CoolingEfficiencyCurves5(unitCool):
+    '''
+    EnergyPlus Object
+    Coil:Cooling:DX:SingleSpeed
+    '''
+    # empty list to return    
+    var = []    
+    
+    # placeholder
+    for i in range(0, len(unitCool)):
+        var.append(curve_HPACCOOLPLFFPLR_switcher(unitCool[i]))
+    
+    return var

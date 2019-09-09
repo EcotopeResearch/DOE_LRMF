@@ -1,25 +1,601 @@
 ,Building Name,Unit heating efficiency (COP),Unit heating efficiency curves1,Unit heating efficiency curves2,Unit heating efficiency curves3,Unit heating efficiency curves4,Unit heating efficiency curves5,Unit heating efficiency curves6,Unit cooling efficiency (COP),Unit cooling efficiency curves1,Unit cooling efficiency curves2,Unit cooling efficiency curves3,Unit cooling efficiency curves4,Unit cooling efficiency curves5,Unit DHW Loss Coefficient - ON,Unit DHW Loss Coefficient - OFF,Unit DHW Thermal Efficiency,Unit LPD [W/sf],Unit Ventilation Flowrate [m3/s],Unit Ventilation SP [Pa],Unit HVAC Fan SP [Pa],Exterior Wall Insulation Conductivity [W/m*K],Ceiling Insulation Conductivity [W/m*K],Slab Insulation Conductivity [W/m*K],Windows Ufactor [W/m2*K],Windows SHGC,Lighting Stairwell [W],Internal Parking Lights [W],External Parking Lights [W],Unit heating setpoint temp [C],Unit cooling setpoint temp [C],Corridor heating efficiency (COP),Corridor heating efficiency curves1,Corridor heating efficiency curves2,Corridor heating efficiency curves3,Corridor heating efficiency curves4,Corridor heating efficiency curves5,Corridor heating efficiency curves6,Corridor cooling efficiency (COP),Corridor cooling efficiency curves1,Corridor cooling efficiency curves2,Corridor cooling efficiency curves3,Corridor cooling efficiency curves4,Corridor cooling efficiency curves5,Corridor LPD (W/sf),Corridor Ventilation Flowrate [m3/s],Corridor Ventilation SP [Pa],Corridor HVAC Fan SP [Pa],Corridor heating setpoint temp [C],Corridor cooling setpoint temp [C],Bsmt heating efficiency (COP),Bsmt Heating efficiency curves1,Bsmt Heating efficiency curves2,Bsmt Heating efficiency curves3,Bsmt Heating efficiency curves4,Bsmt Heating efficiency curves5,Bsmt Heating efficiency curves6,Bsmt cooling efficiency (COP),Bsmt cooling efficiency curves1,Bsmt cooling efficiency curves2,Bsmt cooling efficiency curves3,Bsmt cooling efficiency curves4,Bsmt cooling efficiency curves5,Bsmt Ventilation Flowrate [m3/s],Bsmt Ventilation SP [Pa],Bsmt HVAC Fan SP [Pa],Bsmt Wall Insulation Conductivity [W/m*K],Floor Insulation Conductivity [W/m*K],Bsmt heating setpoint temp [C],Bsmt cooling setpoint temp [C]
-0,200060_001,2.5,HPACHeatCapFT,HPACHeatCapFFF,HPACHPACHeatEIRFT,HPACHPACHeatEIRFFF,HPACHPACCOOLPLFFPLR,HPACDefrost_EIR_FT,2.5,HPACcoolCapFT,HPACcoolCapFFF,HPACHPACcoolEIRFT,HPACHPACcoolEIRFFF,HPACHPACCOOLPLFFPLR,0.8,0.8,0.92,unitLpd,unitVentilationFlowrate,unitVentilationFlowrate,unitHvacFanSP,extWallCond,ceilingCond,slabCond,windowU,windowSHGC,3.9724137600000002,bsmtLpd,0.0,unitHeatingSetpoint,unitCoolingSetpoint,1,flatHeatCapFT,flatHeatCapFFF,flatHPACHeatEIRFT,flatHPACHeatEIRFFF,flatHPACCOOLPLFFPLR,flatDefrost_EIR_FT,Invalid Equipment Type,Invalid Curve Type,Invalid Curve Type,Invalid Curve Type,Invalid Curve Type,flatHPACCOOLPLFFPLR,commonLpd,commonVentilationFlowrate,commonVentilationSP,commonHvacFanSP,commonHeatingSetpoint,commonCoolingSetpoint,No Heating,No Heating,No Heating,No Heating,No Heating,No Cooling/Heating,No Heating,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,bsmtVentilationFlowrate,bsmtVentilationFlowrate,bsmtHvacFanSP,bsmtWallCond,floorCond,bsmtHeatingSetpoint,bsmtCoolingSetpoint
-1,200089_001,1.0,flatHeatCapFT,flatHeatCapFFF,flatHPACHeatEIRFT,flatHPACHeatEIRFFF,flatHPACCOOLPLFFPLR,flatDefrost_EIR_FT,2,HPACcoolCapFT,HPACcoolCapFFF,HPACHPACcoolEIRFT,HPACHPACcoolEIRFFF,HPACHPACCOOLPLFFPLR,0.8,0.8,0.92,unitLpd,unitVentilationFlowrate,unitVentilationFlowrate,unitHvacFanSP,extWallCond,ceilingCond,slabCond,windowU,windowSHGC,10.6875,bsmtLpd,0.0,unitHeatingSetpoint,unitCoolingSetpoint,1,flatHeatCapFT,flatHeatCapFFF,flatHPACHeatEIRFT,flatHPACHeatEIRFFF,flatHPACCOOLPLFFPLR,flatDefrost_EIR_FT,Invalid Equipment Type,Invalid Curve Type,Invalid Curve Type,Invalid Curve Type,Invalid Curve Type,flatHPACCOOLPLFFPLR,commonLpd,commonVentilationFlowrate,commonVentilationSP,commonHvacFanSP,commonHeatingSetpoint,commonCoolingSetpoint,No Heating,No Heating,No Heating,No Heating,No Heating,No Cooling/Heating,No Heating,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,bsmtVentilationFlowrate,bsmtVentilationFlowrate,bsmtHvacFanSP,bsmtWallCond,floorCond,bsmtHeatingSetpoint,bsmtCoolingSetpoint
-2,200095_001,2.5,HPACHeatCapFT,HPACHeatCapFFF,HPACHPACHeatEIRFT,HPACHPACHeatEIRFFF,HPACHPACCOOLPLFFPLR,HPACDefrost_EIR_FT,2.5,HPACcoolCapFT,HPACcoolCapFFF,HPACHPACcoolEIRFT,HPACHPACcoolEIRFFF,HPACHPACCOOLPLFFPLR,0.5,0.5,0.97,unitLpd,unitVentilationFlowrate,unitVentilationFlowrate,unitHvacFanSP,extWallCond,ceilingCond,slabCond,windowU,windowSHGC,150.0,bsmtLpd,0.0,unitHeatingSetpoint,unitCoolingSetpoint,2.5,HPACHeatCapFT,HPACHeatCapFFF,HPACHPACHeatEIRFT,HPACHPACHeatEIRFFF,HPACHPACCOOLPLFFPLR,HPACDefrost_EIR_FT,2.5,HPACcoolCapFT,HPACcoolCapFFF,HPACHPACcoolEIRFT,HPACHPACcoolEIRFFF,HPACHPACCOOLPLFFPLR,commonLpd,commonVentilationFlowrate,commonVentilationSP,commonHvacFanSP,commonHeatingSetpoint,commonCoolingSetpoint,No Heating,No Heating,No Heating,No Heating,No Heating,No Cooling/Heating,No Heating,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,bsmtVentilationFlowrate,bsmtVentilationFlowrate,bsmtHvacFanSP,bsmtWallCond,floorCond,bsmtHeatingSetpoint,bsmtCoolingSetpoint
-3,226002_001,1.0,flatHeatCapFT,flatHeatCapFFF,flatHPACHeatEIRFT,flatHPACHeatEIRFFF,flatHPACCOOLPLFFPLR,flatDefrost_EIR_FT,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,0.8,0.8,0.92,unitLpd,unitVentilationFlowrate,unitVentilationFlowrate,unitHvacFanSP,extWallCond,ceilingCond,slabCond,windowU,windowSHGC,17.66037732,bsmtLpd,0.0,unitHeatingSetpoint,unitCoolingSetpoint,2.5,HPACHeatCapFT,HPACHeatCapFFF,HPACHPACHeatEIRFT,HPACHPACHeatEIRFFF,HPACHPACCOOLPLFFPLR,HPACDefrost_EIR_FT,2.5,HPACcoolCapFT,HPACcoolCapFFF,HPACHPACcoolEIRFT,HPACHPACcoolEIRFFF,HPACHPACCOOLPLFFPLR,commonLpd,commonVentilationFlowrate,commonVentilationSP,commonHvacFanSP,commonHeatingSetpoint,commonCoolingSetpoint,No Heating,No Heating,No Heating,No Heating,No Heating,No Cooling/Heating,No Heating,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,bsmtVentilationFlowrate,bsmtVentilationFlowrate,bsmtHvacFanSP,bsmtWallCond,floorCond,bsmtHeatingSetpoint,bsmtCoolingSetpoint
-4,230012_001,0.8,flatHeatCapFT,flatHeatCapFFF,flatHPACHeatEIRFT,flatHPACHeatEIRFFF,flatHPACCOOLPLFFPLR,flatDefrost_EIR_FT,2,HPACcoolCapFT,HPACcoolCapFFF,HPACHPACcoolEIRFT,HPACHPACcoolEIRFFF,HPACHPACCOOLPLFFPLR,0.5,0.5,0.9,unitLpd,unitVentilationFlowrate,unitVentilationFlowrate,unitHvacFanSP,extWallCond,ceilingCond,slabCond,windowU,windowSHGC,39.999999960000004,bsmtLpd,0.0,unitHeatingSetpoint,unitCoolingSetpoint,0.8,flatHeatCapFT,flatHeatCapFFF,flatHPACHeatEIRFT,flatHPACHeatEIRFFF,flatHPACCOOLPLFFPLR,flatDefrost_EIR_FT,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,commonLpd,commonVentilationFlowrate,commonVentilationSP,commonHvacFanSP,commonHeatingSetpoint,commonCoolingSetpoint,No Heating,No Heating,No Heating,No Heating,No Heating,No Cooling/Heating,No Heating,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,bsmtVentilationFlowrate,bsmtVentilationFlowrate,bsmtHvacFanSP,bsmtWallCond,floorCond,bsmtHeatingSetpoint,bsmtCoolingSetpoint
-5,300046_001,1.0,flatHeatCapFT,flatHeatCapFFF,flatHPACHeatEIRFT,flatHPACHeatEIRFFF,flatHPACCOOLPLFFPLR,flatDefrost_EIR_FT,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,0.5,0.5,0.96,unitLpd,unitVentilationFlowrate,unitVentilationFlowrate,unitHvacFanSP,extWallCond,ceilingCond,slabCond,windowU,windowSHGC,58.39762608,bsmtLpd,0.0,unitHeatingSetpoint,unitCoolingSetpoint,0.8,flatHeatCapFT,flatHeatCapFFF,flatHPACHeatEIRFT,flatHPACHeatEIRFFF,flatHPACCOOLPLFFPLR,flatDefrost_EIR_FT,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,commonLpd,commonVentilationFlowrate,commonVentilationSP,commonHvacFanSP,commonHeatingSetpoint,commonCoolingSetpoint,No Heating,No Heating,No Heating,No Heating,No Heating,No Cooling/Heating,No Heating,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,bsmtVentilationFlowrate,bsmtVentilationFlowrate,bsmtHvacFanSP,bsmtWallCond,floorCond,bsmtHeatingSetpoint,bsmtCoolingSetpoint
-6,300077_001,1.0,flatHeatCapFT,flatHeatCapFFF,flatHPACHeatEIRFT,flatHPACHeatEIRFFF,flatHPACCOOLPLFFPLR,flatDefrost_EIR_FT,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,0.8,0.8,0.9675,unitLpd,unitVentilationFlowrate,unitVentilationFlowrate,unitHvacFanSP,extWallCond,ceilingCond,slabCond,windowU,windowSHGC,16.951373160000003,bsmtLpd,598.0625586,unitHeatingSetpoint,unitCoolingSetpoint,1,flatHeatCapFT,flatHeatCapFFF,flatHPACHeatEIRFT,flatHPACHeatEIRFFF,flatHPACCOOLPLFFPLR,flatDefrost_EIR_FT,Invalid Equipment Type,Invalid Curve Type,Invalid Curve Type,Invalid Curve Type,Invalid Curve Type,flatHPACCOOLPLFFPLR,commonLpd,commonVentilationFlowrate,commonVentilationSP,commonHvacFanSP,commonHeatingSetpoint,commonCoolingSetpoint,No Heating,No Heating,No Heating,No Heating,No Heating,No Cooling/Heating,No Heating,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,bsmtVentilationFlowrate,bsmtVentilationFlowrate,bsmtHvacFanSP,bsmtWallCond,floorCond,bsmtHeatingSetpoint,bsmtCoolingSetpoint
-7,316049_001,1.0,flatHeatCapFT,flatHeatCapFFF,flatHPACHeatEIRFT,flatHPACHeatEIRFFF,flatHPACCOOLPLFFPLR,flatDefrost_EIR_FT,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,0.8,0.8,0.92,unitLpd,unitVentilationFlowrate,unitVentilationFlowrate,unitHvacFanSP,extWallCond,ceilingCond,slabCond,windowU,windowSHGC,58.87850472,bsmtLpd,0.0,unitHeatingSetpoint,unitCoolingSetpoint,No Heating,No Heating,No Heating,No Heating,No Heating,No Cooling/Heating,No Heating,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,commonLpd,commonVentilationFlowrate,commonVentilationSP,commonHvacFanSP,commonHeatingSetpoint,commonCoolingSetpoint,1,flatHeatCapFT,flatHeatCapFFF,flatHPACHeatEIRFT,flatHPACHeatEIRFFF,flatHPACCOOLPLFFPLR,flatDefrost_EIR_FT,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,bsmtVentilationFlowrate,bsmtVentilationFlowrate,bsmtHvacFanSP,bsmtWallCond,floorCond,bsmtHeatingSetpoint,bsmtCoolingSetpoint
-8,328001_001,2.5,HPACHeatCapFT,HPACHeatCapFFF,HPACHPACHeatEIRFT,HPACHPACHeatEIRFFF,HPACHPACCOOLPLFFPLR,HPACDefrost_EIR_FT,2.5,HPACcoolCapFT,HPACcoolCapFFF,HPACHPACcoolEIRFT,HPACHPACcoolEIRFFF,HPACHPACCOOLPLFFPLR,0.5,0.5,0.98,unitLpd,unitVentilationFlowrate,unitVentilationFlowrate,unitHvacFanSP,extWallCond,ceilingCond,slabCond,windowU,windowSHGC,0.0,bsmtLpd,0.0,unitHeatingSetpoint,unitCoolingSetpoint,No Heating,No Heating,No Heating,No Heating,No Heating,No Cooling/Heating,No Heating,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,commonLpd,commonVentilationFlowrate,commonVentilationSP,commonHvacFanSP,commonHeatingSetpoint,commonCoolingSetpoint,No Heating,No Heating,No Heating,No Heating,No Heating,No Cooling/Heating,No Heating,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,bsmtVentilationFlowrate,bsmtVentilationFlowrate,bsmtHvacFanSP,bsmtWallCond,floorCond,bsmtHeatingSetpoint,bsmtCoolingSetpoint
-9,400047_001,0.8,flatHeatCapFT,flatHeatCapFFF,flatHPACHeatEIRFT,flatHPACHeatEIRFFF,flatHPACCOOLPLFFPLR,flatDefrost_EIR_FT,2,HPACcoolCapFT,HPACcoolCapFFF,HPACHPACcoolEIRFT,HPACHPACcoolEIRFFF,HPACHPACCOOLPLFFPLR,0.5,0.5,0.97,unitLpd,unitVentilationFlowrate,unitVentilationFlowrate,unitHvacFanSP,extWallCond,ceilingCond,slabCond,windowU,windowSHGC,1016.4705882,bsmtLpd,0.0,unitHeatingSetpoint,unitCoolingSetpoint,0.8,flatHeatCapFT,flatHeatCapFFF,flatHPACHeatEIRFT,flatHPACHeatEIRFFF,flatHPACCOOLPLFFPLR,flatDefrost_EIR_FT,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,commonLpd,commonVentilationFlowrate,commonVentilationSP,commonHvacFanSP,commonHeatingSetpoint,commonCoolingSetpoint,1,flatHeatCapFT,flatHeatCapFFF,flatHPACHeatEIRFT,flatHPACHeatEIRFFF,flatHPACCOOLPLFFPLR,flatDefrost_EIR_FT,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,bsmtVentilationFlowrate,bsmtVentilationFlowrate,bsmtHvacFanSP,bsmtWallCond,floorCond,bsmtHeatingSetpoint,bsmtCoolingSetpoint
-10,400051_001,2.5,HPACHeatCapFT,HPACHeatCapFFF,HPACHPACHeatEIRFT,HPACHPACHeatEIRFFF,HPACHPACCOOLPLFFPLR,HPACDefrost_EIR_FT,2.5,HPACcoolCapFT,HPACcoolCapFFF,HPACHPACcoolEIRFT,HPACHPACcoolEIRFFF,HPACHPACCOOLPLFFPLR,0.5,0.5,0.94,unitLpd,unitVentilationFlowrate,unitVentilationFlowrate,unitHvacFanSP,extWallCond,ceilingCond,slabCond,windowU,windowSHGC,393.6705882,bsmtLpd,0.0,unitHeatingSetpoint,unitCoolingSetpoint,0.8,flatHeatCapFT,flatHeatCapFFF,flatHPACHeatEIRFT,flatHPACHeatEIRFFF,flatHPACCOOLPLFFPLR,flatDefrost_EIR_FT,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,commonLpd,commonVentilationFlowrate,commonVentilationSP,commonHvacFanSP,commonHeatingSetpoint,commonCoolingSetpoint,No Heating,No Heating,No Heating,No Heating,No Heating,No Cooling/Heating,No Heating,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,bsmtVentilationFlowrate,bsmtVentilationFlowrate,bsmtHvacFanSP,bsmtWallCond,floorCond,bsmtHeatingSetpoint,bsmtCoolingSetpoint
-11,400053_001,1.0,flatHeatCapFT,flatHeatCapFFF,flatHPACHeatEIRFT,flatHPACHeatEIRFFF,flatHPACCOOLPLFFPLR,flatDefrost_EIR_FT,2,HPACcoolCapFT,HPACcoolCapFFF,HPACHPACcoolEIRFT,HPACHPACcoolEIRFFF,HPACHPACCOOLPLFFPLR,0.8,0.8,0.92,unitLpd,unitVentilationFlowrate,unitVentilationFlowrate,unitHvacFanSP,extWallCond,ceilingCond,slabCond,windowU,windowSHGC,43.199999999999996,bsmtLpd,0.0,unitHeatingSetpoint,unitCoolingSetpoint,0.8,flatHeatCapFT,flatHeatCapFFF,flatHPACHeatEIRFT,flatHPACHeatEIRFFF,flatHPACCOOLPLFFPLR,flatDefrost_EIR_FT,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,commonLpd,commonVentilationFlowrate,commonVentilationSP,commonHvacFanSP,commonHeatingSetpoint,commonCoolingSetpoint,0.8,flatHeatCapFT,flatHeatCapFFF,flatHPACHeatEIRFT,flatHPACHeatEIRFFF,flatHPACCOOLPLFFPLR,flatDefrost_EIR_FT,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,bsmtVentilationFlowrate,bsmtVentilationFlowrate,bsmtHvacFanSP,bsmtWallCond,floorCond,bsmtHeatingSetpoint,bsmtCoolingSetpoint
-12,432001_001,1.0,flatHeatCapFT,flatHeatCapFFF,flatHPACHeatEIRFT,flatHPACHeatEIRFFF,flatHPACCOOLPLFFPLR,flatDefrost_EIR_FT,2,HPACcoolCapFT,HPACcoolCapFFF,HPACHPACcoolEIRFT,HPACHPACcoolEIRFFF,HPACHPACCOOLPLFFPLR,0.8,0.8,0.92,unitLpd,unitVentilationFlowrate,unitVentilationFlowrate,unitHvacFanSP,extWallCond,ceilingCond,slabCond,windowU,windowSHGC,0.0,bsmtLpd,0.0,unitHeatingSetpoint,unitCoolingSetpoint,No Heating,No Heating,No Heating,No Heating,No Heating,No Cooling/Heating,No Heating,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,commonLpd,commonVentilationFlowrate,commonVentilationSP,commonHvacFanSP,commonHeatingSetpoint,commonCoolingSetpoint,No Heating,No Heating,No Heating,No Heating,No Heating,No Cooling/Heating,No Heating,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,bsmtVentilationFlowrate,bsmtVentilationFlowrate,bsmtHvacFanSP,bsmtWallCond,floorCond,bsmtHeatingSetpoint,bsmtCoolingSetpoint
-13,500001_001,0.8,flatHeatCapFT,flatHeatCapFFF,flatHPACHeatEIRFT,flatHPACHeatEIRFFF,flatHPACCOOLPLFFPLR,flatDefrost_EIR_FT,2,HPACcoolCapFT,HPACcoolCapFFF,HPACHPACcoolEIRFT,HPACHPACcoolEIRFFF,HPACHPACCOOLPLFFPLR,0.5,0.5,0.96,unitLpd,unitVentilationFlowrate,unitVentilationFlowrate,unitHvacFanSP,extWallCond,ceilingCond,slabCond,windowU,windowSHGC,32.323943639999996,bsmtLpd,2411.0422518,unitHeatingSetpoint,unitCoolingSetpoint,0.8,flatHeatCapFT,flatHeatCapFFF,flatHPACHeatEIRFT,flatHPACHeatEIRFFF,flatHPACCOOLPLFFPLR,flatDefrost_EIR_FT,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,commonLpd,commonVentilationFlowrate,commonVentilationSP,commonHvacFanSP,commonHeatingSetpoint,commonCoolingSetpoint,0.8,flatHeatCapFT,flatHeatCapFFF,flatHPACHeatEIRFT,flatHPACHeatEIRFFF,flatHPACCOOLPLFFPLR,flatDefrost_EIR_FT,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,bsmtVentilationFlowrate,bsmtVentilationFlowrate,bsmtHvacFanSP,bsmtWallCond,floorCond,bsmtHeatingSetpoint,bsmtCoolingSetpoint
-14,500002_001,1.0,flatHeatCapFT,flatHeatCapFFF,flatHPACHeatEIRFT,flatHPACHeatEIRFFF,flatHPACCOOLPLFFPLR,flatDefrost_EIR_FT,2,HPACcoolCapFT,HPACcoolCapFFF,HPACHPACcoolEIRFT,HPACHPACcoolEIRFFF,HPACHPACCOOLPLFFPLR,0.5,0.5,0.99,unitLpd,unitVentilationFlowrate,unitVentilationFlowrate,unitHvacFanSP,extWallCond,ceilingCond,slabCond,windowU,windowSHGC,15.5844156,bsmtLpd,0.0,unitHeatingSetpoint,unitCoolingSetpoint,1,flatHeatCapFT,flatHeatCapFFF,flatHPACHeatEIRFT,flatHPACHeatEIRFFF,flatHPACCOOLPLFFPLR,flatDefrost_EIR_FT,Invalid Equipment Type,Invalid Curve Type,Invalid Curve Type,Invalid Curve Type,Invalid Curve Type,flatHPACCOOLPLFFPLR,commonLpd,commonVentilationFlowrate,commonVentilationSP,commonHvacFanSP,commonHeatingSetpoint,commonCoolingSetpoint,1,flatHeatCapFT,flatHeatCapFFF,flatHPACHeatEIRFT,flatHPACHeatEIRFFF,flatHPACCOOLPLFFPLR,flatDefrost_EIR_FT,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,bsmtVentilationFlowrate,bsmtVentilationFlowrate,bsmtHvacFanSP,bsmtWallCond,floorCond,bsmtHeatingSetpoint,bsmtCoolingSetpoint
-15,500003_001,0.8,flatHeatCapFT,flatHeatCapFFF,flatHPACHeatEIRFT,flatHPACHeatEIRFFF,flatHPACCOOLPLFFPLR,flatDefrost_EIR_FT,2,HPACcoolCapFT,HPACcoolCapFFF,HPACHPACcoolEIRFT,HPACHPACcoolEIRFFF,HPACHPACCOOLPLFFPLR,0.5,0.5,0.95,unitLpd,unitVentilationFlowrate,unitVentilationFlowrate,unitHvacFanSP,extWallCond,ceilingCond,slabCond,windowU,windowSHGC,36.209249400000004,bsmtLpd,1944.5874318,unitHeatingSetpoint,unitCoolingSetpoint,1,flatHeatCapFT,flatHeatCapFFF,flatHPACHeatEIRFT,flatHPACHeatEIRFFF,flatHPACCOOLPLFFPLR,flatDefrost_EIR_FT,Invalid Equipment Type,Invalid Curve Type,Invalid Curve Type,Invalid Curve Type,Invalid Curve Type,flatHPACCOOLPLFFPLR,commonLpd,commonVentilationFlowrate,commonVentilationSP,commonHvacFanSP,commonHeatingSetpoint,commonCoolingSetpoint,0.8,flatHeatCapFT,flatHeatCapFFF,flatHPACHeatEIRFT,flatHPACHeatEIRFFF,flatHPACCOOLPLFFPLR,flatDefrost_EIR_FT,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,bsmtVentilationFlowrate,bsmtVentilationFlowrate,bsmtHvacFanSP,bsmtWallCond,floorCond,bsmtHeatingSetpoint,bsmtCoolingSetpoint
-16,510001_001,0.8,flatHeatCapFT,flatHeatCapFFF,flatHPACHeatEIRFT,flatHPACHeatEIRFFF,flatHPACCOOLPLFFPLR,flatDefrost_EIR_FT,2,HPACcoolCapFT,HPACcoolCapFFF,HPACHPACcoolEIRFT,HPACHPACcoolEIRFFF,HPACHPACCOOLPLFFPLR,0.5,0.5,0.95,unitLpd,unitVentilationFlowrate,unitVentilationFlowrate,unitHvacFanSP,extWallCond,ceilingCond,slabCond,windowU,windowSHGC,0.0,bsmtLpd,0.0,unitHeatingSetpoint,unitCoolingSetpoint,0.8,flatHeatCapFT,flatHeatCapFFF,flatHPACHeatEIRFT,flatHPACHeatEIRFFF,flatHPACCOOLPLFFPLR,flatDefrost_EIR_FT,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,commonLpd,commonVentilationFlowrate,commonVentilationSP,commonHvacFanSP,commonHeatingSetpoint,commonCoolingSetpoint,0.8,flatHeatCapFT,flatHeatCapFFF,flatHPACHeatEIRFT,flatHPACHeatEIRFFF,flatHPACCOOLPLFFPLR,flatDefrost_EIR_FT,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,bsmtVentilationFlowrate,bsmtVentilationFlowrate,bsmtHvacFanSP,bsmtWallCond,floorCond,bsmtHeatingSetpoint,bsmtCoolingSetpoint
-17,511001_001,0.8,flatHeatCapFT,flatHeatCapFFF,flatHPACHeatEIRFT,flatHPACHeatEIRFFF,flatHPACCOOLPLFFPLR,flatDefrost_EIR_FT,2,HPACcoolCapFT,HPACcoolCapFFF,HPACHPACcoolEIRFT,HPACHPACcoolEIRFFF,HPACHPACCOOLPLFFPLR,0.5,0.5,0.95,unitLpd,unitVentilationFlowrate,unitVentilationFlowrate,unitHvacFanSP,extWallCond,ceilingCond,slabCond,windowU,windowSHGC,33.81215472,bsmtLpd,227.658093,unitHeatingSetpoint,unitCoolingSetpoint,0.8,flatHeatCapFT,flatHeatCapFFF,flatHPACHeatEIRFT,flatHPACHeatEIRFFF,flatHPACCOOLPLFFPLR,flatDefrost_EIR_FT,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,commonLpd,commonVentilationFlowrate,commonVentilationSP,commonHvacFanSP,commonHeatingSetpoint,commonCoolingSetpoint,0.8,flatHeatCapFT,flatHeatCapFFF,flatHPACHeatEIRFT,flatHPACHeatEIRFFF,flatHPACCOOLPLFFPLR,flatDefrost_EIR_FT,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,bsmtVentilationFlowrate,bsmtVentilationFlowrate,bsmtHvacFanSP,bsmtWallCond,floorCond,bsmtHeatingSetpoint,bsmtCoolingSetpoint
-18,516001_001,0.8,flatHeatCapFT,flatHeatCapFFF,flatHPACHeatEIRFT,flatHPACHeatEIRFFF,flatHPACCOOLPLFFPLR,flatDefrost_EIR_FT,2,HPACcoolCapFT,HPACcoolCapFFF,HPACHPACcoolEIRFT,HPACHPACcoolEIRFFF,HPACHPACCOOLPLFFPLR,0.5,0.5,0.969992498,unitLpd,unitVentilationFlowrate,unitVentilationFlowrate,unitHvacFanSP,extWallCond,ceilingCond,slabCond,windowU,windowSHGC,105.44025131999999,bsmtLpd,358.4208732000001,unitHeatingSetpoint,unitCoolingSetpoint,0.8,flatHeatCapFT,flatHeatCapFFF,flatHPACHeatEIRFT,flatHPACHeatEIRFFF,flatHPACCOOLPLFFPLR,flatDefrost_EIR_FT,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,commonLpd,commonVentilationFlowrate,commonVentilationSP,commonHvacFanSP,commonHeatingSetpoint,commonCoolingSetpoint,0.8,flatHeatCapFT,flatHeatCapFFF,flatHPACHeatEIRFT,flatHPACHeatEIRFFF,flatHPACCOOLPLFFPLR,flatDefrost_EIR_FT,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,bsmtVentilationFlowrate,bsmtVentilationFlowrate,bsmtHvacFanSP,bsmtWallCond,floorCond,bsmtHeatingSetpoint,bsmtCoolingSetpoint
-19,516002_001,0.8,flatHeatCapFT,flatHeatCapFFF,flatHPACHeatEIRFT,flatHPACHeatEIRFFF,flatHPACCOOLPLFFPLR,flatDefrost_EIR_FT,2,HPACcoolCapFT,HPACcoolCapFFF,HPACHPACcoolEIRFT,HPACHPACcoolEIRFFF,HPACHPACCOOLPLFFPLR,0.5,0.5,0.97,unitLpd,unitVentilationFlowrate,unitVentilationFlowrate,unitHvacFanSP,extWallCond,ceilingCond,slabCond,windowU,windowSHGC,49.44686136,bsmtLpd,52.611764400000006,unitHeatingSetpoint,unitCoolingSetpoint,0.8,flatHeatCapFT,flatHeatCapFFF,flatHPACHeatEIRFT,flatHPACHeatEIRFFF,flatHPACCOOLPLFFPLR,flatDefrost_EIR_FT,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,commonLpd,commonVentilationFlowrate,commonVentilationSP,commonHvacFanSP,commonHeatingSetpoint,commonCoolingSetpoint,0.8,flatHeatCapFT,flatHeatCapFFF,flatHPACHeatEIRFT,flatHPACHeatEIRFFF,flatHPACCOOLPLFFPLR,flatDefrost_EIR_FT,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,bsmtVentilationFlowrate,bsmtVentilationFlowrate,bsmtHvacFanSP,bsmtWallCond,floorCond,bsmtHeatingSetpoint,bsmtCoolingSetpoint
-20,522001_001,0.8,flatHeatCapFT,flatHeatCapFFF,flatHPACHeatEIRFT,flatHPACHeatEIRFFF,flatHPACCOOLPLFFPLR,flatDefrost_EIR_FT,2,HPACcoolCapFT,HPACcoolCapFFF,HPACHPACcoolEIRFT,HPACHPACcoolEIRFFF,HPACHPACCOOLPLFFPLR,0.5,0.5,0.98,unitLpd,unitVentilationFlowrate,unitVentilationFlowrate,unitHvacFanSP,extWallCond,ceilingCond,slabCond,windowU,windowSHGC,60.32193624000001,bsmtLpd,539.7258204,unitHeatingSetpoint,unitCoolingSetpoint,0.8,flatHeatCapFT,flatHeatCapFFF,flatHPACHeatEIRFT,flatHPACHeatEIRFFF,flatHPACCOOLPLFFPLR,flatDefrost_EIR_FT,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,commonLpd,commonVentilationFlowrate,commonVentilationSP,commonHvacFanSP,commonHeatingSetpoint,commonCoolingSetpoint,0.8,flatHeatCapFT,flatHeatCapFFF,flatHPACHeatEIRFT,flatHPACHeatEIRFFF,flatHPACCOOLPLFFPLR,flatDefrost_EIR_FT,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,bsmtVentilationFlowrate,bsmtVentilationFlowrate,bsmtHvacFanSP,bsmtWallCond,floorCond,bsmtHeatingSetpoint,bsmtCoolingSetpoint
-21,529001_001,0.8,flatHeatCapFT,flatHeatCapFFF,flatHPACHeatEIRFT,flatHPACHeatEIRFFF,flatHPACCOOLPLFFPLR,flatDefrost_EIR_FT,2,HPACcoolCapFT,HPACcoolCapFFF,HPACHPACcoolEIRFT,HPACHPACcoolEIRFFF,HPACHPACCOOLPLFFPLR,0.5,0.5,0.92,unitLpd,unitVentilationFlowrate,unitVentilationFlowrate,unitHvacFanSP,extWallCond,ceilingCond,slabCond,windowU,windowSHGC,0.0,bsmtLpd,10.1084178,unitHeatingSetpoint,unitCoolingSetpoint,0.8,flatHeatCapFT,flatHeatCapFFF,flatHPACHeatEIRFT,flatHPACHeatEIRFFF,flatHPACCOOLPLFFPLR,flatDefrost_EIR_FT,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,commonLpd,commonVentilationFlowrate,commonVentilationSP,commonHvacFanSP,commonHeatingSetpoint,commonCoolingSetpoint,0.8,flatHeatCapFT,flatHeatCapFFF,flatHPACHeatEIRFT,flatHPACHeatEIRFFF,flatHPACCOOLPLFFPLR,flatDefrost_EIR_FT,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,bsmtVentilationFlowrate,bsmtVentilationFlowrate,bsmtHvacFanSP,bsmtWallCond,floorCond,bsmtHeatingSetpoint,bsmtCoolingSetpoint
-22,535001_001,0.7,HPACHeatCapFT,HPACHeatCapFFF,HPACHPACHeatEIRFT,HPACHPACHeatEIRFFF,HPACHPACCOOLPLFFPLR,HPACDefrost_EIR_FT,1.2,HPACcoolCapFT,HPACcoolCapFFF,HPACHPACcoolEIRFT,HPACHPACcoolEIRFFF,HPACHPACCOOLPLFFPLR,0.5,0.5,0.99,unitLpd,unitVentilationFlowrate,unitVentilationFlowrate,unitHvacFanSP,extWallCond,ceilingCond,slabCond,windowU,windowSHGC,68.60317464,bsmtLpd,1835.0448246,unitHeatingSetpoint,unitCoolingSetpoint,0.75,flatHeatCapFT,flatHeatCapFFF,flatHPACHeatEIRFT,flatHPACHeatEIRFFF,flatHPACCOOLPLFFPLR,flatDefrost_EIR_FT,Invalid Equipment Type,Invalid Curve Type,Invalid Curve Type,Invalid Curve Type,Invalid Curve Type,flatHPACCOOLPLFFPLR,commonLpd,commonVentilationFlowrate,commonVentilationSP,commonHvacFanSP,commonHeatingSetpoint,commonCoolingSetpoint,2.5,HPACHeatCapFT,HPACHeatCapFFF,HPACHPACHeatEIRFT,HPACHPACHeatEIRFFF,HPACHPACCOOLPLFFPLR,HPACDefrost_EIR_FT,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,bsmtVentilationFlowrate,bsmtVentilationFlowrate,bsmtHvacFanSP,bsmtWallCond,floorCond,bsmtHeatingSetpoint,bsmtCoolingSetpoint
-23,536001_001,0.8,flatHeatCapFT,flatHeatCapFFF,flatHPACHeatEIRFT,flatHPACHeatEIRFFF,flatHPACCOOLPLFFPLR,flatDefrost_EIR_FT,2,HPACcoolCapFT,HPACcoolCapFFF,HPACHPACcoolEIRFT,HPACHPACcoolEIRFFF,HPACHPACCOOLPLFFPLR,0.5,0.5,0.92,unitLpd,unitVentilationFlowrate,unitVentilationFlowrate,unitHvacFanSP,extWallCond,ceilingCond,slabCond,windowU,windowSHGC,4.91867268,bsmtLpd,162.9615234,unitHeatingSetpoint,unitCoolingSetpoint,0.8,flatHeatCapFT,flatHeatCapFFF,flatHPACHeatEIRFT,flatHPACHeatEIRFFF,flatHPACCOOLPLFFPLR,flatDefrost_EIR_FT,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,commonLpd,commonVentilationFlowrate,commonVentilationSP,commonHvacFanSP,commonHeatingSetpoint,commonCoolingSetpoint,0.8,flatHeatCapFT,flatHeatCapFFF,flatHPACHeatEIRFT,flatHPACHeatEIRFFF,flatHPACCOOLPLFFPLR,flatDefrost_EIR_FT,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,bsmtVentilationFlowrate,bsmtVentilationFlowrate,bsmtHvacFanSP,bsmtWallCond,floorCond,bsmtHeatingSetpoint,bsmtCoolingSetpoint
+0,200060_001,2.5,HPACHeatCapFT,HPACHeatCapFFF,HPACHPACHeatEIRFT,HPACHPACHeatEIRFFF,HPACHPACCOOLPLFFPLR,HPACDefrost_EIR_FT,2.5,HPACcoolCapFT,HPACcoolCapFFF,HPACHPACcoolEIRFT,HPACHPACcoolEIRFFF,HPACHPACCOOLPLFFPLR,0.8,0.8,0.92,0.6013605439999999,0.0212524794559365,62.21,62.21,extWallCond,ceilingCond,slabCond,windowU,windowSHGC,3.9724137600000002,0.0,0.0,20,22.2222,1,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,flatDefrost_EIR_FT,Invalid Equipment Type,Invalid Curve Type,Invalid Curve Type,Invalid Curve Type,Invalid Curve Type,ConstantCubic,"0     0.168000
+1     0.065000
+2     0.610909
+3     0.273224
+4     0.466458
+5     0.359412
+6     0.196790
+7     0.491468
+8     0.135135
+9     0.485001
+10    0.558968
+11    0.825421
+12    0.074578
+13    0.393873
+14    0.539101
+15    0.000000
+16    0.477613
+17    0.212900
+18    0.634166
+19    0.356923
+20    0.288832
+21    0.252338
+22    0.363702
+23    0.289267
+Name: LPD_IntCorridor, dtype: float64",0.051,62.21,62.21,20,22.2222,No Heating,No Heating,No Heating,No Heating,No Heating,No Cooling/Heating,No Heating,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,0.0,62.21,24.884,bsmtWallCond,floorCond,-10.0,70
+1,200089_001,1.0,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,flatDefrost_EIR_FT,2,HPACcoolCapFT,HPACcoolCapFFF,HPACHPACcoolEIRFT,HPACHPACcoolEIRFFF,HPACHPACCOOLPLFFPLR,0.8,0.8,0.92,0.936260623,0.005950694247662221,373.26,62.21,extWallCond,ceilingCond,slabCond,windowU,windowSHGC,10.6875,242.81905439999997,0.0,20,22.2222,1,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,flatDefrost_EIR_FT,Invalid Equipment Type,Invalid Curve Type,Invalid Curve Type,Invalid Curve Type,Invalid Curve Type,ConstantCubic,"0     0.168000
+1     0.065000
+2     0.610909
+3     0.273224
+4     0.466458
+5     0.359412
+6     0.196790
+7     0.491468
+8     0.135135
+9     0.485001
+10    0.558968
+11    0.825421
+12    0.074578
+13    0.393873
+14    0.539101
+15    0.000000
+16    0.477613
+17    0.212900
+18    0.634166
+19    0.356923
+20    0.288832
+21    0.252338
+22    0.363702
+23    0.289267
+Name: LPD_IntCorridor, dtype: float64",0.011219999999999997,373.26,62.21,20,22.2222,No Heating,No Heating,No Heating,No Heating,No Heating,No Cooling/Heating,No Heating,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,0.22,62.21,24.884,bsmtWallCond,floorCond,-10.0,70
+2,200095_001,2.5,HPACHeatCapFT,HPACHeatCapFFF,HPACHPACHeatEIRFT,HPACHPACHeatEIRFFF,HPACHPACCOOLPLFFPLR,HPACDefrost_EIR_FT,2.5,HPACcoolCapFT,HPACcoolCapFFF,HPACHPACcoolEIRFT,HPACHPACcoolEIRFFF,HPACHPACCOOLPLFFPLR,0.5,0.5,0.97,0.596797671,0.0212524794559365,62.21,62.21,extWallCond,ceilingCond,slabCond,windowU,windowSHGC,150.0,0.0,0.0,20,22.2222,2.5,HPACHeatCapFT,HPACHeatCapFFF,HPACHPACHeatEIRFT,HPACHPACHeatEIRFFF,HPACHPACCOOLPLFFPLR,HPACDefrost_EIR_FT,2.5,HPACcoolCapFT,HPACcoolCapFFF,HPACHPACcoolEIRFT,HPACHPACcoolEIRFFF,HPACHPACCOOLPLFFPLR,"0     0.168000
+1     0.065000
+2     0.610909
+3     0.273224
+4     0.466458
+5     0.359412
+6     0.196790
+7     0.491468
+8     0.135135
+9     0.485001
+10    0.558968
+11    0.825421
+12    0.074578
+13    0.393873
+14    0.539101
+15    0.000000
+16    0.477613
+17    0.212900
+18    0.634166
+19    0.356923
+20    0.288832
+21    0.252338
+22    0.363702
+23    0.289267
+Name: LPD_IntCorridor, dtype: float64",0.051,62.21,62.21,20,22.2222,No Heating,No Heating,No Heating,No Heating,No Heating,No Cooling/Heating,No Heating,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,0.0,62.21,24.884,bsmtWallCond,floorCond,-10.0,70
+3,226002_001,1.0,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,flatDefrost_EIR_FT,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,0.8,0.8,0.92,0.238210399,0.0212524794559365,62.21,62.21,extWallCond,ceilingCond,slabCond,windowU,windowSHGC,17.66037732,348.3870936,0.0,20,22.2222,2.5,HPACHeatCapFT,HPACHeatCapFFF,HPACHPACHeatEIRFT,HPACHPACHeatEIRFFF,HPACHPACCOOLPLFFPLR,HPACDefrost_EIR_FT,2.5,HPACcoolCapFT,HPACcoolCapFFF,HPACHPACcoolEIRFT,HPACHPACcoolEIRFFF,HPACHPACCOOLPLFFPLR,"0     0.168000
+1     0.065000
+2     0.610909
+3     0.273224
+4     0.466458
+5     0.359412
+6     0.196790
+7     0.491468
+8     0.135135
+9     0.485001
+10    0.558968
+11    0.825421
+12    0.074578
+13    0.393873
+14    0.539101
+15    0.000000
+16    0.477613
+17    0.212900
+18    0.634166
+19    0.356923
+20    0.288832
+21    0.252338
+22    0.363702
+23    0.289267
+Name: LPD_IntCorridor, dtype: float64",0.051,62.21,62.21,20,22.2222,No Heating,No Heating,No Heating,No Heating,No Heating,No Cooling/Heating,No Heating,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,0.0,62.21,24.884,bsmtWallCond,floorCond,-10.0,70
+4,230012_001,0.8,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,flatDefrost_EIR_FT,2,HPACcoolCapFT,HPACcoolCapFFF,HPACHPACcoolEIRFT,HPACHPACcoolEIRFFF,HPACHPACCOOLPLFFPLR,0.5,0.5,0.9,0.8487518359999999,0.0212524794559365,311.05,62.21,extWallCond,ceilingCond,slabCond,windowU,windowSHGC,39.999999960000004,496.00000320000004,0.0,20,22.2222,0.8,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,flatDefrost_EIR_FT,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,"0     0.168000
+1     0.065000
+2     0.610909
+3     0.273224
+4     0.466458
+5     0.359412
+6     0.196790
+7     0.491468
+8     0.135135
+9     0.485001
+10    0.558968
+11    0.825421
+12    0.074578
+13    0.393873
+14    0.539101
+15    0.000000
+16    0.477613
+17    0.212900
+18    0.634166
+19    0.356923
+20    0.288832
+21    0.252338
+22    0.363702
+23    0.289267
+Name: LPD_IntCorridor, dtype: float64",0.051,311.05,62.21,20,22.2222,No Heating,No Heating,No Heating,No Heating,No Heating,No Cooling/Heating,No Heating,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,0.0,62.21,24.884,bsmtWallCond,floorCond,-10.0,70
+5,300046_001,1.0,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,flatDefrost_EIR_FT,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,0.5,0.5,0.96,0.279224094,0.0212524794559365,311.05,62.21,extWallCond,ceilingCond,slabCond,windowU,windowSHGC,58.39762608,2068.9024356,0.0,20,22.2222,0.8,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,flatDefrost_EIR_FT,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,"0     0.168000
+1     0.065000
+2     0.610909
+3     0.273224
+4     0.466458
+5     0.359412
+6     0.196790
+7     0.491468
+8     0.135135
+9     0.485001
+10    0.558968
+11    0.825421
+12    0.074578
+13    0.393873
+14    0.539101
+15    0.000000
+16    0.477613
+17    0.212900
+18    0.634166
+19    0.356923
+20    0.288832
+21    0.252338
+22    0.363702
+23    0.289267
+Name: LPD_IntCorridor, dtype: float64",0.051,311.05,62.21,20,22.2222,No Heating,No Heating,No Heating,No Heating,No Heating,No Cooling/Heating,No Heating,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,0.22,62.21,24.884,bsmtWallCond,floorCond,-10.0,70
+6,300077_001,1.0,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,flatDefrost_EIR_FT,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,0.8,0.8,0.9675,0.131611316,0.0212524794559365,311.05,62.21,extWallCond,ceilingCond,slabCond,windowU,windowSHGC,16.951373160000003,0.0,598.0625586,20,22.2222,1,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,flatDefrost_EIR_FT,Invalid Equipment Type,Invalid Curve Type,Invalid Curve Type,Invalid Curve Type,Invalid Curve Type,ConstantCubic,"0     0.168000
+1     0.065000
+2     0.610909
+3     0.273224
+4     0.466458
+5     0.359412
+6     0.196790
+7     0.491468
+8     0.135135
+9     0.485001
+10    0.558968
+11    0.825421
+12    0.074578
+13    0.393873
+14    0.539101
+15    0.000000
+16    0.477613
+17    0.212900
+18    0.634166
+19    0.356923
+20    0.288832
+21    0.252338
+22    0.363702
+23    0.289267
+Name: LPD_IntCorridor, dtype: float64",0.051,311.05,62.21,20,22.2222,No Heating,No Heating,No Heating,No Heating,No Heating,No Cooling/Heating,No Heating,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,0.22,62.21,24.884,bsmtWallCond,floorCond,-10.0,70
+7,316049_001,1.0,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,flatDefrost_EIR_FT,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,0.8,0.8,0.92,0.23116335100000002,0.0212524794559365,62.21,62.21,extWallCond,ceilingCond,slabCond,windowU,windowSHGC,58.87850472,3120.0,0.0,20,22.2222,No Heating,No Heating,No Heating,No Heating,No Heating,No Cooling/Heating,No Heating,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,"0     0.168000
+1     0.065000
+2     0.610909
+3     0.273224
+4     0.466458
+5     0.359412
+6     0.196790
+7     0.491468
+8     0.135135
+9     0.485001
+10    0.558968
+11    0.825421
+12    0.074578
+13    0.393873
+14    0.539101
+15    0.000000
+16    0.477613
+17    0.212900
+18    0.634166
+19    0.356923
+20    0.288832
+21    0.252338
+22    0.363702
+23    0.289267
+Name: LPD_IntCorridor, dtype: float64",0.051,62.21,62.21,20,22.2222,1,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,flatDefrost_EIR_FT,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,0.22,62.21,24.884,bsmtWallCond,floorCond,15.5,70
+8,328001_001,2.5,HPACHeatCapFT,HPACHeatCapFFF,HPACHPACHeatEIRFT,HPACHPACHeatEIRFFF,HPACHPACCOOLPLFFPLR,HPACDefrost_EIR_FT,2.5,HPACcoolCapFT,HPACcoolCapFFF,HPACHPACcoolEIRFT,HPACHPACcoolEIRFFF,HPACHPACCOOLPLFFPLR,0.5,0.5,0.98,0.300928641,0.006163219042221587,124.42,124.42,extWallCond,ceilingCond,slabCond,windowU,windowSHGC,30.0,306.18253380000004,0.0,20,22.2222,No Heating,No Heating,No Heating,No Heating,No Heating,No Cooling/Heating,No Heating,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,"0     0.168000
+1     0.065000
+2     0.610909
+3     0.273224
+4     0.466458
+5     0.359412
+6     0.196790
+7     0.491468
+8     0.135135
+9     0.485001
+10    0.558968
+11    0.825421
+12    0.074578
+13    0.393873
+14    0.539101
+15    0.000000
+16    0.477613
+17    0.212900
+18    0.634166
+19    0.356923
+20    0.288832
+21    0.252338
+22    0.363702
+23    0.289267
+Name: LPD_IntCorridor, dtype: float64",0.051,62.21,62.21,20,22.2222,No Heating,No Heating,No Heating,No Heating,No Heating,No Cooling/Heating,No Heating,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,0.22,62.21,24.884,bsmtWallCond,floorCond,-10.0,70
+9,400047_001,0.8,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,flatDefrost_EIR_FT,2,HPACcoolCapFT,HPACcoolCapFFF,HPACHPACcoolEIRFT,HPACHPACcoolEIRFFF,HPACHPACCOOLPLFFPLR,0.5,0.5,0.97,0.239648683,0.0212524794559365,311.05,62.21,extWallCond,ceilingCond,slabCond,windowU,windowSHGC,1016.4705882,2079.2895318,0.0,20,22.2222,0.8,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,flatDefrost_EIR_FT,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,"0     0.168000
+1     0.065000
+2     0.610909
+3     0.273224
+4     0.466458
+5     0.359412
+6     0.196790
+7     0.491468
+8     0.135135
+9     0.485001
+10    0.558968
+11    0.825421
+12    0.074578
+13    0.393873
+14    0.539101
+15    0.000000
+16    0.477613
+17    0.212900
+18    0.634166
+19    0.356923
+20    0.288832
+21    0.252338
+22    0.363702
+23    0.289267
+Name: LPD_IntCorridor, dtype: float64",0.051,311.05,62.21,20,22.2222,1,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,flatDefrost_EIR_FT,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,0.22,62.21,24.884,bsmtWallCond,floorCond,15.5,70
+10,400051_001,2.5,HPACHeatCapFT,HPACHeatCapFFF,HPACHPACHeatEIRFT,HPACHPACHeatEIRFFF,HPACHPACCOOLPLFFPLR,HPACDefrost_EIR_FT,2.5,HPACcoolCapFT,HPACcoolCapFFF,HPACHPACcoolEIRFT,HPACHPACcoolEIRFFF,HPACHPACCOOLPLFFPLR,0.5,0.5,0.94,0.482713633,0.0212524794559365,311.05,62.21,extWallCond,ceilingCond,slabCond,windowU,windowSHGC,393.6705882,734.0971404000001,0.0,20,22.2222,0.8,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,flatDefrost_EIR_FT,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,"0     0.168000
+1     0.065000
+2     0.610909
+3     0.273224
+4     0.466458
+5     0.359412
+6     0.196790
+7     0.491468
+8     0.135135
+9     0.485001
+10    0.558968
+11    0.825421
+12    0.074578
+13    0.393873
+14    0.539101
+15    0.000000
+16    0.477613
+17    0.212900
+18    0.634166
+19    0.356923
+20    0.288832
+21    0.252338
+22    0.363702
+23    0.289267
+Name: LPD_IntCorridor, dtype: float64",0.051,311.05,62.21,20,22.2222,No Heating,No Heating,No Heating,No Heating,No Heating,No Cooling/Heating,No Heating,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,0.0,62.21,24.884,bsmtWallCond,floorCond,-10.0,70
+11,400053_001,1.0,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,flatDefrost_EIR_FT,2,HPACcoolCapFT,HPACcoolCapFFF,HPACHPACcoolEIRFT,HPACHPACcoolEIRFFF,HPACHPACCOOLPLFFPLR,0.8,0.8,0.92,0.5799086760000001,0.0212524794559365,311.05,62.21,extWallCond,ceilingCond,slabCond,windowU,windowSHGC,43.199999999999996,710.6073545999999,0.0,20,22.2222,0.8,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,flatDefrost_EIR_FT,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,"0     0.168000
+1     0.065000
+2     0.610909
+3     0.273224
+4     0.466458
+5     0.359412
+6     0.196790
+7     0.491468
+8     0.135135
+9     0.485001
+10    0.558968
+11    0.825421
+12    0.074578
+13    0.393873
+14    0.539101
+15    0.000000
+16    0.477613
+17    0.212900
+18    0.634166
+19    0.356923
+20    0.288832
+21    0.252338
+22    0.363702
+23    0.289267
+Name: LPD_IntCorridor, dtype: float64",0.051,311.05,62.21,20,22.2222,0.8,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,flatDefrost_EIR_FT,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,0.22,62.21,24.884,bsmtWallCond,floorCond,15.5,70
+12,432001_001,1.0,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,flatDefrost_EIR_FT,2,HPACcoolCapFT,HPACcoolCapFFF,HPACHPACcoolEIRFT,HPACHPACcoolEIRFFF,HPACHPACCOOLPLFFPLR,0.8,0.8,0.92,0.247002398,0.0212524794559365,62.21,62.21,extWallCond,ceilingCond,slabCond,windowU,windowSHGC,30.0,0.0,0.0,20,22.2222,No Heating,No Heating,No Heating,No Heating,No Heating,No Cooling/Heating,No Heating,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,"0     0.168000
+1     0.065000
+2     0.610909
+3     0.273224
+4     0.466458
+5     0.359412
+6     0.196790
+7     0.491468
+8     0.135135
+9     0.485001
+10    0.558968
+11    0.825421
+12    0.074578
+13    0.393873
+14    0.539101
+15    0.000000
+16    0.477613
+17    0.212900
+18    0.634166
+19    0.356923
+20    0.288832
+21    0.252338
+22    0.363702
+23    0.289267
+Name: LPD_IntCorridor, dtype: float64",0.051,62.21,62.21,20,22.2222,No Heating,No Heating,No Heating,No Heating,No Heating,No Cooling/Heating,No Heating,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,0.0,62.21,24.884,bsmtWallCond,floorCond,-10.0,70
+13,500001_001,0.8,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,flatDefrost_EIR_FT,2,HPACcoolCapFT,HPACcoolCapFFF,HPACHPACcoolEIRFT,HPACHPACcoolEIRFFF,HPACHPACCOOLPLFFPLR,0.5,0.5,0.96,0.287341772,0.0212524794559365,311.05,62.21,extWallCond,ceilingCond,slabCond,windowU,windowSHGC,32.323943639999996,700.7689182,2411.0422518,20,22.2222,0.8,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,flatDefrost_EIR_FT,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,"0     0.168000
+1     0.065000
+2     0.610909
+3     0.273224
+4     0.466458
+5     0.359412
+6     0.196790
+7     0.491468
+8     0.135135
+9     0.485001
+10    0.558968
+11    0.825421
+12    0.074578
+13    0.393873
+14    0.539101
+15    0.000000
+16    0.477613
+17    0.212900
+18    0.634166
+19    0.356923
+20    0.288832
+21    0.252338
+22    0.363702
+23    0.289267
+Name: LPD_IntCorridor, dtype: float64",0.051,311.05,62.21,20,22.2222,0.8,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,flatDefrost_EIR_FT,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,0.22,62.21,24.884,bsmtWallCond,floorCond,15.5,70
+14,500002_001,1.0,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,flatDefrost_EIR_FT,2,HPACcoolCapFT,HPACcoolCapFFF,HPACHPACcoolEIRFT,HPACHPACcoolEIRFFF,HPACHPACCOOLPLFFPLR,0.5,0.5,0.99,0.263309353,0.0212524794559365,62.21,62.21,extWallCond,ceilingCond,slabCond,windowU,windowSHGC,15.5844156,3120.0,0.0,20,22.2222,1,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,flatDefrost_EIR_FT,Invalid Equipment Type,Invalid Curve Type,Invalid Curve Type,Invalid Curve Type,Invalid Curve Type,ConstantCubic,"0     0.168000
+1     0.065000
+2     0.610909
+3     0.273224
+4     0.466458
+5     0.359412
+6     0.196790
+7     0.491468
+8     0.135135
+9     0.485001
+10    0.558968
+11    0.825421
+12    0.074578
+13    0.393873
+14    0.539101
+15    0.000000
+16    0.477613
+17    0.212900
+18    0.634166
+19    0.356923
+20    0.288832
+21    0.252338
+22    0.363702
+23    0.289267
+Name: LPD_IntCorridor, dtype: float64",0.051,62.21,62.21,20,22.2222,1,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,flatDefrost_EIR_FT,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,0.22,62.21,24.884,bsmtWallCond,floorCond,15.5,70
+15,500003_001,0.8,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,flatDefrost_EIR_FT,2,HPACcoolCapFT,HPACcoolCapFFF,HPACHPACcoolEIRFT,HPACHPACcoolEIRFFF,HPACHPACCOOLPLFFPLR,0.5,0.5,0.95,0.20011534,0.0212524794559365,311.05,62.21,extWallCond,ceilingCond,slabCond,windowU,windowSHGC,36.209249400000004,506.7608988,1944.5874318,20,22.2222,1,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,flatDefrost_EIR_FT,Invalid Equipment Type,Invalid Curve Type,Invalid Curve Type,Invalid Curve Type,Invalid Curve Type,ConstantCubic,"0     0.168000
+1     0.065000
+2     0.610909
+3     0.273224
+4     0.466458
+5     0.359412
+6     0.196790
+7     0.491468
+8     0.135135
+9     0.485001
+10    0.558968
+11    0.825421
+12    0.074578
+13    0.393873
+14    0.539101
+15    0.000000
+16    0.477613
+17    0.212900
+18    0.634166
+19    0.356923
+20    0.288832
+21    0.252338
+22    0.363702
+23    0.289267
+Name: LPD_IntCorridor, dtype: float64",0.051,311.05,62.21,20,22.2222,0.8,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,flatDefrost_EIR_FT,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,0.22,62.21,24.884,bsmtWallCond,floorCond,15.5,70
+16,510001_001,0.8,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,flatDefrost_EIR_FT,2,HPACcoolCapFT,HPACcoolCapFFF,HPACHPACcoolEIRFT,HPACHPACcoolEIRFFF,HPACHPACCOOLPLFFPLR,0.5,0.5,0.95,0.29833333300000003,0.0212524794559365,311.05,62.21,extWallCond,ceilingCond,slabCond,windowU,windowSHGC,30.0,801.3012618,0.0,20,22.2222,0.8,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,flatDefrost_EIR_FT,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,"0     0.168000
+1     0.065000
+2     0.610909
+3     0.273224
+4     0.466458
+5     0.359412
+6     0.196790
+7     0.491468
+8     0.135135
+9     0.485001
+10    0.558968
+11    0.825421
+12    0.074578
+13    0.393873
+14    0.539101
+15    0.000000
+16    0.477613
+17    0.212900
+18    0.634166
+19    0.356923
+20    0.288832
+21    0.252338
+22    0.363702
+23    0.289267
+Name: LPD_IntCorridor, dtype: float64",0.051,311.05,62.21,20,22.2222,0.8,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,flatDefrost_EIR_FT,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,0.22,62.21,24.884,bsmtWallCond,floorCond,15.5,70
+17,511001_001,0.8,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,flatDefrost_EIR_FT,2,HPACcoolCapFT,HPACcoolCapFFF,HPACHPACcoolEIRFT,HPACHPACcoolEIRFFF,HPACHPACCOOLPLFFPLR,0.5,0.5,0.95,0.309596995,0.0212524794559365,311.05,62.21,extWallCond,ceilingCond,slabCond,windowU,windowSHGC,33.81215472,1493.6170236,227.658093,20,22.2222,0.8,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,flatDefrost_EIR_FT,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,"0     0.168000
+1     0.065000
+2     0.610909
+3     0.273224
+4     0.466458
+5     0.359412
+6     0.196790
+7     0.491468
+8     0.135135
+9     0.485001
+10    0.558968
+11    0.825421
+12    0.074578
+13    0.393873
+14    0.539101
+15    0.000000
+16    0.477613
+17    0.212900
+18    0.634166
+19    0.356923
+20    0.288832
+21    0.252338
+22    0.363702
+23    0.289267
+Name: LPD_IntCorridor, dtype: float64",0.051,311.05,62.21,20,22.2222,0.8,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,flatDefrost_EIR_FT,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,0.22,62.21,24.884,bsmtWallCond,floorCond,15.5,70
+18,516001_001,0.8,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,flatDefrost_EIR_FT,2,HPACcoolCapFT,HPACcoolCapFFF,HPACHPACcoolEIRFT,HPACHPACcoolEIRFFF,HPACHPACCOOLPLFFPLR,0.5,0.5,0.969992498,0.44614079700000003,0.0212524794559365,311.05,62.21,extWallCond,ceilingCond,slabCond,windowU,windowSHGC,105.44025131999999,1535.6936478000002,358.4208732000001,20,22.2222,0.8,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,flatDefrost_EIR_FT,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,"0     0.168000
+1     0.065000
+2     0.610909
+3     0.273224
+4     0.466458
+5     0.359412
+6     0.196790
+7     0.491468
+8     0.135135
+9     0.485001
+10    0.558968
+11    0.825421
+12    0.074578
+13    0.393873
+14    0.539101
+15    0.000000
+16    0.477613
+17    0.212900
+18    0.634166
+19    0.356923
+20    0.288832
+21    0.252338
+22    0.363702
+23    0.289267
+Name: LPD_IntCorridor, dtype: float64",0.051,311.05,62.21,20,22.2222,0.8,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,flatDefrost_EIR_FT,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,0.22,62.21,24.884,bsmtWallCond,floorCond,15.5,70
+19,516002_001,0.8,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,flatDefrost_EIR_FT,2,HPACcoolCapFT,HPACcoolCapFFF,HPACHPACcoolEIRFT,HPACHPACcoolEIRFFF,HPACHPACCOOLPLFFPLR,0.5,0.5,0.97,0.274271845,0.0212524794559365,311.05,62.21,extWallCond,ceilingCond,slabCond,windowU,windowSHGC,49.44686136,429.880503,52.611764400000006,20,22.2222,0.8,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,flatDefrost_EIR_FT,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,"0     0.168000
+1     0.065000
+2     0.610909
+3     0.273224
+4     0.466458
+5     0.359412
+6     0.196790
+7     0.491468
+8     0.135135
+9     0.485001
+10    0.558968
+11    0.825421
+12    0.074578
+13    0.393873
+14    0.539101
+15    0.000000
+16    0.477613
+17    0.212900
+18    0.634166
+19    0.356923
+20    0.288832
+21    0.252338
+22    0.363702
+23    0.289267
+Name: LPD_IntCorridor, dtype: float64",0.051,311.05,62.21,20,22.2222,0.8,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,flatDefrost_EIR_FT,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,0.22,62.21,24.884,bsmtWallCond,floorCond,15.5,70
+20,522001_001,0.8,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,flatDefrost_EIR_FT,2,HPACcoolCapFT,HPACcoolCapFFF,HPACHPACcoolEIRFT,HPACHPACcoolEIRFFF,HPACHPACCOOLPLFFPLR,0.5,0.5,0.98,0.171219512,0.0212524794559365,311.05,62.21,extWallCond,ceilingCond,slabCond,windowU,windowSHGC,60.32193624000001,3120.0,539.7258204,20,22.2222,0.8,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,flatDefrost_EIR_FT,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,"0     0.168000
+1     0.065000
+2     0.610909
+3     0.273224
+4     0.466458
+5     0.359412
+6     0.196790
+7     0.491468
+8     0.135135
+9     0.485001
+10    0.558968
+11    0.825421
+12    0.074578
+13    0.393873
+14    0.539101
+15    0.000000
+16    0.477613
+17    0.212900
+18    0.634166
+19    0.356923
+20    0.288832
+21    0.252338
+22    0.363702
+23    0.289267
+Name: LPD_IntCorridor, dtype: float64",0.051,311.05,62.21,20,22.2222,0.8,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,flatDefrost_EIR_FT,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,0.22,62.21,24.884,bsmtWallCond,floorCond,15.5,70
+21,529001_001,0.8,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,flatDefrost_EIR_FT,2,HPACcoolCapFT,HPACcoolCapFFF,HPACHPACcoolEIRFT,HPACHPACcoolEIRFFF,HPACHPACCOOLPLFFPLR,0.5,0.5,0.92,0.397966219,0.0212524794559365,311.05,62.21,extWallCond,ceilingCond,slabCond,windowU,windowSHGC,30.0,1198.9255355999999,10.1084178,20,22.2222,0.8,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,flatDefrost_EIR_FT,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,"0     0.168000
+1     0.065000
+2     0.610909
+3     0.273224
+4     0.466458
+5     0.359412
+6     0.196790
+7     0.491468
+8     0.135135
+9     0.485001
+10    0.558968
+11    0.825421
+12    0.074578
+13    0.393873
+14    0.539101
+15    0.000000
+16    0.477613
+17    0.212900
+18    0.634166
+19    0.356923
+20    0.288832
+21    0.252338
+22    0.363702
+23    0.289267
+Name: LPD_IntCorridor, dtype: float64",0.051,311.05,62.21,20,22.2222,0.8,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,flatDefrost_EIR_FT,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,0.22,62.21,24.884,bsmtWallCond,floorCond,15.5,70
+22,535001_001,0.7,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,HPACDefrost_EIR_FT,1.8,HPACcoolCapFT,HPACcoolCapFFF,HPACHPACcoolEIRFT,HPACHPACcoolEIRFFF,HPACHPACCOOLPLFFPLR,0.5,0.5,0.99,0.555844156,0.0212524794559365,311.05,62.21,extWallCond,ceilingCond,slabCond,windowU,windowSHGC,68.60317464,3120.0,1835.0448246,20,22.2222,0.75,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,flatDefrost_EIR_FT,Invalid Equipment Type,Invalid Curve Type,Invalid Curve Type,Invalid Curve Type,Invalid Curve Type,ConstantCubic,"0     0.168000
+1     0.065000
+2     0.610909
+3     0.273224
+4     0.466458
+5     0.359412
+6     0.196790
+7     0.491468
+8     0.135135
+9     0.485001
+10    0.558968
+11    0.825421
+12    0.074578
+13    0.393873
+14    0.539101
+15    0.000000
+16    0.477613
+17    0.212900
+18    0.634166
+19    0.356923
+20    0.288832
+21    0.252338
+22    0.363702
+23    0.289267
+Name: LPD_IntCorridor, dtype: float64",0.051,311.05,62.21,20,22.2222,0.8,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,HPACHPACCOOLPLFFPLR,HPACDefrost_EIR_FT,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,0.22,62.21,24.884,bsmtWallCond,floorCond,15.5,70
+23,536001_001,0.8,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,flatDefrost_EIR_FT,2,HPACcoolCapFT,HPACcoolCapFFF,HPACHPACcoolEIRFT,HPACHPACcoolEIRFFF,HPACHPACCOOLPLFFPLR,0.5,0.5,0.92,0.25552528,0.0212524794559365,311.05,62.21,extWallCond,ceilingCond,slabCond,windowU,windowSHGC,4.91867268,1212.7391328,162.9615234,20,22.2222,0.8,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,flatDefrost_EIR_FT,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,"0     0.168000
+1     0.065000
+2     0.610909
+3     0.273224
+4     0.466458
+5     0.359412
+6     0.196790
+7     0.491468
+8     0.135135
+9     0.485001
+10    0.558968
+11    0.825421
+12    0.074578
+13    0.393873
+14    0.539101
+15    0.000000
+16    0.477613
+17    0.212900
+18    0.634166
+19    0.356923
+20    0.288832
+21    0.252338
+22    0.363702
+23    0.289267
+Name: LPD_IntCorridor, dtype: float64",0.051,311.05,62.21,20,22.2222,0.8,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,ConstantCubic,flatDefrost_EIR_FT,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling,No Cooling/Heating,0.22,62.21,24.884,bsmtWallCond,floorCond,15.5,70
