@@ -29,6 +29,39 @@ from functions_switchers import (heat_cop_switcher, curve_heatCapFT_switcher, cu
 ##### GENERAL BUILDING INFORMATION #######
 ##########################################
 
+def runnumber(df):
+    
+    # empty list to return  
+    var = []
+    
+    #for loop to walk through list of Foundation Types
+    for i in range(0,len(df)):
+        var.append(i+1)
+        
+    return var
+
+def z1(df):
+    
+    # empty list to return  
+    var = []
+    
+    #for loop to walk through list of Foundation Types
+    for i in range(0,len(df)):
+        var.append(0)
+        
+    return var
+
+def z2(df):
+    
+    # empty list to return  
+    var = []
+    
+    #for loop to walk through list of Foundation Types
+    for i in range(0,len(df)):
+        var.append(0)
+        
+    return var
+    
 def buildingName(sitex, runinput):
     
     # empty list to return  

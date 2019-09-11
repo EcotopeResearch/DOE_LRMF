@@ -21,7 +21,7 @@
   </void>
   <void property="execSettings">
    <void property="jobListFile">
-    <string>C:\Users\scott\github\DOE_LRMF\jEplus\input_csv\commonSlab_inputs.csv</string>
+    <string>C:\Users\scott\github\DOE_LRMF\DCI_to_EnergyPlus\inputs_commonSlab.csv</string>
    </void>
    <void property="numThreads">
     <int>11</int>
@@ -30,7 +30,7 @@
     <int>5005</int>
    </void>
    <void property="parentDir">
-    <string>C:\Users\scott\github\DOE_LRMF\jEplus\results\commonSlab\</string>
+    <string>../results/commonSlab/</string>
    </void>
    <void property="subSet">
     <int>0</int>

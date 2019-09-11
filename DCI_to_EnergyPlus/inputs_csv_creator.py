@@ -73,20 +73,8 @@ gardenBsmt = gardenBsmt_inputs(df_gardenBsmt, runinput)
 gardenSlab = gardenSlab_inputs(df_gardenSlab, runinput)
 
 # final step! print to the inputs csv for parametric run
-commonBsmt.to_csv('inputs_commonBsmt.csv')#, header=False, index=False)
-commonSlab.to_csv('inputs_commonSlab.csv')#, header=False, index=False)
-gardenBsmt.to_csv('inputs_gardenBsmt.csv')#, header=False, index=False)
-gardenSlab.to_csv('inputs_gardenSlab.csv')#, header=False, index=False)
-
-
-
-
-
-
-
-
-
-
-
-
+commonBsmt.to_csv('inputs_commonBsmt.csv', header=False, index=False)
+commonSlab.to_csv('inputs_commonSlab.csv', header=False, index=False)
+gardenBsmt.to_csv('inputs_gardenBsmt.csv', header=False, index=False)
+gardenSlab.to_csv('inputs_gardenSlab.csv', header=False, index=False)
 

@@ -4,8 +4,11 @@
   <void property="DCKDir">
    <string>.././</string>
   </void>
+  <void property="IDFDir">
+   <string>../idfs/</string>
+  </void>
   <void property="IDFTemplate">
-   <string>common_hp_heatedbsmtIECC_2012_V8.7_jEPlus.idf</string>
+   <string>common_hp_heatedbsmtIECC_2012_V8.7.idf</string>
   </void>
   <void property="RVIFile">
    <string>Output.rvi</string>
@@ -15,7 +18,7 @@
   </void>
   <void property="execSettings">
    <void property="jobListFile">
-    <string>C:\jEPlus_v1.7.2\jEPlus_v1.7.2\test\test_input.csv</string>
+    <string>C:\Users\scott\github\DOE_LRMF\DCI_to_EnergyPlus\inputs_commonBsmt.csv</string>
    </void>
    <void property="numThreads">
     <int>11</int>
@@ -24,7 +27,7 @@
     <int>5005</int>
    </void>
    <void property="parentDir">
-    <string>C:\jEPlus_v1.7.2\jEPlus_v1.7.2\test\</string>
+    <string>../results/commonBsmt/</string>
    </void>
    <void property="subSet">
     <int>0</int>
@@ -3202,7 +3205,7 @@
                                                                                                                                             <string>SearchString</string>
                                                                                                                                             <void method="set">
                                                                                                                                              <object idref="ParameterItem67"/>
-                                                                                                                                             <string>@@BSMTWU@@</string>
+                                                                                                                                             <string>@@FLOORU@@</string>
                                                                                                                                             </void>
                                                                                                                                            </void>
                                                                                                                                            <void property="project">

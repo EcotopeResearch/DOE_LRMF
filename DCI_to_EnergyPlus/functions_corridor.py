@@ -131,6 +131,6 @@ def commonLpd(lpdCommon):
     
     # placeholder
     for i in range(0, len(lpdCommon)):
-        var.append(lpdCommon)
+        var.append(lpdCommon[i])
     
     return var

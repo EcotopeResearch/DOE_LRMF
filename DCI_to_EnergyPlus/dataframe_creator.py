@@ -28,7 +28,7 @@ from functions_general import (HeatingEfficiency, HeatingEfficiencyCurves1, Heat
                                CoolingEfficiencyCurves1, CoolingEfficiencyCurves2, CoolingEfficiencyCurves3,
                                CoolingEfficiencyCurves4, CoolingEfficiencyCurves5,buildingName, slabBoundaryCondition, exteriorCorrLights, 
                                unitDhwCoeffOn, unitDhwCoeffOff, unitDhwThermEff, lightingStairs,
-                               extPrkLights)
+                               extPrkLights, runnumber, z1, z2)
 
 from functions_bsmt import (bsmtVentilationFlowrate, bsmtVentilationSP,
                             bsmtHvacFanSP, bsmtHeatingSetpoint, bsmtCoolingSetpoint, bsmtLpd)
@@ -46,6 +46,9 @@ from functions_unit import (unitLpd, unitVentilationFlowrate, unitVentilationSP,
 def commonBsmt_inputs(df, runinput):
     
     # pass column from dci df column to function, return E+ df column
+    v1 = runnumber(df)
+    v2 = z1(df)
+    v3 = z2(df)
     buildingNameVar = buildingName(df['sitex'], runinput)
     unitHeatingEfficiencyVar = HeatingEfficiency(df['inunit_heat'], df['Central_Sys'])
     unitHeatingEfficiencyCurves1Var = HeatingEfficiencyCurves1(df['inunit_heat'])
@@ -122,6 +125,9 @@ def commonBsmt_inputs(df, runinput):
     new_df = pd.DataFrame()
     
     # assign new dataframe with values created in above functions
+    new_df['v1'] = v1
+    new_df['v2'] = v2
+    new_df['v3'] = v3
     new_df['Building Name'] = buildingNameVar
     new_df['Unit heating efficiency (COP)'] = unitHeatingEfficiencyVar
     new_df['Unit heating efficiency curves1'] = unitHeatingEfficiencyCurves1Var
@@ -198,6 +204,9 @@ def commonBsmt_inputs(df, runinput):
 def commonSlab_inputs(df, runinput):
     
     # pass column from dci df column to function, return E+ df column
+    v1 = runnumber(df)
+    v2 = z1(df)
+    v3 = z2(df)
     buildingNameVar = buildingName(df['sitex'], runinput)
     unitHeatingEfficiencyVar = HeatingEfficiency(df['inunit_heat'], df['Central_Sys'])
     unitHeatingEfficiencyCurves1Var = HeatingEfficiencyCurves1(df['inunit_heat'])
@@ -249,10 +258,14 @@ def commonSlab_inputs(df, runinput):
     commonHeatingSetpointVar = commonHeatingSetpoint(df['BLANK'])
     commonCoolingSetpointVar = commonCoolingSetpoint(df['BLANK'])
 
+
     # create dataframe
     new_df = pd.DataFrame()
     
     # assign new dataframe with values created in above functions
+    new_df['v1'] = v1
+    new_df['v2'] = v2
+    new_df['v3'] = v3
     new_df['Building Name'] = buildingNameVar
     new_df['Unit heating efficiency (COP)'] = unitHeatingEfficiencyVar
     new_df['Unit heating efficiency curves1'] = unitHeatingEfficiencyCurves1Var
@@ -303,6 +316,7 @@ def commonSlab_inputs(df, runinput):
     new_df['Corridor HVAC Fan SP [Pa]'] = commonHvacFanSPVar
     new_df['Corridor heating setpoint temp [C]'] = commonHeatingSetpointVar
     new_df['Corridor cooling setpoint temp [C]'] = commonCoolingSetpointVar
+
 
 
     return new_df
