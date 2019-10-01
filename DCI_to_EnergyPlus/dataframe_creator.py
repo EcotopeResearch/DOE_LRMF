@@ -324,6 +324,9 @@ def commonSlab_inputs(df, runinput):
 def gardenBsmt_inputs(df, runinput):
     
     # pass column from dci df column to function, return E+ df column
+    v1 = runnumber(df)
+    v2 = z1(df)
+    v3 = z2(df)
     buildingNameVar = buildingName(df['sitex'], runinput)
     unitHeatingEfficiencyVar = HeatingEfficiency(df['inunit_heat'], df['Central_Sys'])
     unitHeatingEfficiencyCurves1Var = HeatingEfficiencyCurves1(df['inunit_heat'])
@@ -381,6 +384,9 @@ def gardenBsmt_inputs(df, runinput):
     new_df = pd.DataFrame()
     
     # assign new dataframe with values created in above functions
+    new_df['v1'] = v1
+    new_df['v2'] = v2
+    new_df['v3'] = v3
     new_df['Building Name'] = buildingNameVar
     new_df['Unit heating efficiency (COP)'] = unitHeatingEfficiencyVar
     new_df['Unit heating efficiency curves1'] = unitHeatingEfficiencyCurves1Var
@@ -440,6 +446,9 @@ def gardenBsmt_inputs(df, runinput):
 def gardenSlab_inputs(df, runinput):
     
     # pass column from dci df column to function, return E+ df column
+    v1 = runnumber(df)
+    v2 = z1(df)
+    v3 = z2(df)
     buildingNameVar = buildingName(df['sitex'], runinput)
     unitHeatingEfficiencyVar = HeatingEfficiency(df['inunit_heat'], df['Central_Sys'])
     unitHeatingEfficiencyCurves1Var = HeatingEfficiencyCurves1(df['inunit_heat'])
@@ -477,6 +486,9 @@ def gardenSlab_inputs(df, runinput):
     new_df = pd.DataFrame()
     
     # assign new dataframe with values created in above functions
+    new_df['v1'] = v1
+    new_df['v2'] = v2
+    new_df['v3'] = v3
     new_df['Building Name'] = buildingNameVar
     new_df['Unit heating efficiency (COP)'] = unitHeatingEfficiencyVar
     new_df['Unit heating efficiency curves1'] = unitHeatingEfficiencyCurves1Var

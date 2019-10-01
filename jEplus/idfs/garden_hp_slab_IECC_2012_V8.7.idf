@@ -1664,7 +1664,7 @@ Material,
     0.5,                      !- Solar Absorptance
     0.5;                      !- Visible Absorptance
 
-MATERIAL,
+Material,
     slab_consol_layer,        !- Name
     Rough,                    !- Roughness
     0.23495,                  !- Thickness
@@ -1879,7 +1879,7 @@ Construction,
     TDD Diffuser,             !- Name
     Diffusing Acrylic Plastic;    !- Outside Layer
 
-CONSTRUCTION,
+Construction,
     Slab,                     !- Name
     slab_consol_layer,        !- Outside Layer
     Plywood_3/4in,            !- Layer 2
@@ -9419,28 +9419,28 @@ ZoneVentilation:DesignFlowRate,
     ,                         !- Maximum Outdoor Temperature Schedule Name
     40;                       !- Maximum Wind Speed
 
-EXTERIOR:LIGHTS,
+Exterior:Lights,
     stairLights,              !- Name
     ExteriorLightingProfile,    !- Schedule Name
     @@LTGSTR@@,               !- Design Level
     ,                         !- Control Option
     Exterior-Lights;          !- EndUse Subcategory
 
-EXTERIOR:LIGHTS,
+Exterior:Lights,
     intPrkLights,             !- Name
     ExteriorLightingProfile,    !- Schedule Name
     @@LTGINTPKG@@,            !- Design Level
     ,                         !- Control Option
     Exterior-Lights;          !- EndUse Subcategory
 
-EXTERIOR:LIGHTS,
+Exterior:Lights,
     extPrkLights,             !- Name
     ExteriorLightingProfile,    !- Schedule Name
     @@LTGEXTPKG@@,            !- Design Level
     ,                         !- Control Option
     Exterior-Lights;          !- EndUse Subcategory
 
-EXTERIOR:LIGHTS,
+Exterior:Lights,
     corrExtLights,            !- Name
     ExteriorLightingProfile,    !- Schedule Name
     @@LTGEXTCOR@@,            !- Design Level
@@ -20455,7 +20455,7 @@ Output:Table:Monthly,
 
 OutputControl:Table:Style,
     CommaAndHTML,             !- Column Separator
-    InchPound;                !- Unit Conversion
+    None;                     !- Unit Conversion
 
 OUTPUT:METER,
     Electricity:Facility,     !- Name
@@ -20463,6 +20463,50 @@ OUTPUT:METER,
 
 OUTPUT:METER,
     Gas:Facility,             !- Name
+    Annual;                   !- Reporting Frequency
+
+OUTPUT:METER,
+    InteriorLights:Electricity,    !- Name
+    Annual;                   !- Reporting Frequency
+
+OUTPUT:METER,
+    ExteriorLights:Electricity,    !- Name
+    Annual;                   !- Reporting Frequency
+
+OUTPUT:METER,
+    Appl:InteriorEquipment:Electricity,    !- Name
+    Annual;                   !- Reporting Frequency
+
+OUTPUT:METER,
+    Misc:InteriorEquipment:Electricity,    !- Name
+    Annual;                   !- Reporting Frequency
+
+OUTPUT:METER,
+    Water Heater:WaterSystems:Electricity,    !- Name
+    Annual;                   !- Reporting Frequency
+
+OUTPUT:METER,
+    Ventilation (simple):Fans:Electricity,    !- Name
+    Annual;                   !- Reporting Frequency
+
+OUTPUT:METER,
+    General:Fans:Electricity,    !- Name
+    Annual;                   !- Reporting Frequency
+
+OUTPUT:METER,
+    Electricity:HVAC,         !- Name
+    Annual;                   !- Reporting Frequency
+
+OUTPUT:METER,
+    Cooling:Electricity,      !- Name
+    Annual;                   !- Reporting Frequency
+
+OUTPUT:METER,
+    Heating:Electricity,      !- Name
+    Annual;                   !- Reporting Frequency
+
+OUTPUT:METER,
+    Pumps:Electricity,        !- Name
     Annual;                   !- Reporting Frequency
 
 Output:SQLite,

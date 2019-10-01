@@ -1,4 +1,16 @@
 eplusout.eso
 eplusout.csv
 Electricity:Facility
+Gas:Facility
+InteriorLights:Electricity
+ExteriorLights:Electricity
+Appl:InteriorEquipment:Electricity
+Misc:InteriorEquipment:Electricity
+Water Heater:WaterSystems:Electricity
+Ventilation (simple):Fans:Electricity
+General:Fans:Electricity
+Electricity:HVAC
+Cooling:Electricity
+Heating:Electricity
+Pumps:Electricity
 0

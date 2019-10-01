@@ -1282,17 +1282,23 @@ Schedule:Compact,
     heating_sch_unit,         !- Name
     Temperature,              !- Schedule Type Limits Name
     Through: 12/31,           !- Field 1
-    For: AllDays,             !- Field 2
+    For: WinterDesignDay,     !- Field 2
     Until: 24:00,             !- Field 3
-    @@UNITHTST@@;             !- Field 4
+    74,                       !- Field 4
+    For: AllOtherDays,        !- Field 5
+    Until: 24:00,             !- Field 6
+    @@UNITHTST@@;             !- Field 7
 
 Schedule:Compact,
     cooling_sch_unit,         !- Name
     Temperature,              !- Schedule Type Limits Name
     Through: 12/31,           !- Field 1
-    For: AllDays,             !- Field 2
+    For: SummerDesignDay,     !- Field 2
     Until: 24:00,             !- Field 3
-    @@UNITCLST@@;             !- Field 4
+    68,                       !- Field 4
+    For: AllOtherDays,        !- Field 5
+    Until: 24:00,             !- Field 6
+    @@UNITCLST@@;             !- Field 7
 
 Schedule:Compact,
     fan_cycle,                !- Name
@@ -1302,21 +1308,27 @@ Schedule:Compact,
     Until: 24:00,             !- Field 3
     0;                        !- Field 4
 
-SCHEDULE:COMPACT,
+Schedule:Compact,
     heating_sch_bsmt,         !- Name
     Temperature,              !- Schedule Type Limits Name
     Through: 12/31,           !- Field 1
-    For: AllDays,             !- Field 2
+    For: WinterDesignDay,     !- Field 2
     Until: 24:00,             !- Field 3
-    @@BSMTHTST@@;             !- Field 4
+    74,                       !- Field 4
+    For: AllOtherDays,        !- Field 5
+    Until: 24:00,             !- Field 6
+    @@BSMTHTST@@;             !- Field 7
 
-SCHEDULE:COMPACT,
+Schedule:Compact,
     cooling_sch_bsmt,         !- Name
     Temperature,              !- Schedule Type Limits Name
     Through: 12/31,           !- Field 1
-    For: AllDays,             !- Field 2
+    For: SummerDesignDay,     !- Field 2
     Until: 24:00,             !- Field 3
-    @@BSMTCLST@@;             !- Field 4
+    68,                       !- Field 4
+    For: AllOtherDays,        !- Field 5
+    Until: 24:00,             !- Field 6
+    @@BSMTCLST@@;             !- Field 7
 
 Schedule:Constant,
     DWWaterTempSchedule,      !- Name
@@ -1680,7 +1692,7 @@ Material,
     0.5,                      !- Solar Absorptance
     0.5;                      !- Visible Absorptance
 
-MATERIAL,
+Material,
     slab_consol_layer,        !- Name
     Rough,                    !- Roughness
     0.23495,                  !- Thickness
@@ -1901,7 +1913,7 @@ Construction,
     bsmtwall_consol_layer,    !- Layer 2
     Plywood_3/4in;            !- Layer 3
 
-CONSTRUCTION,
+Construction,
     Slab,                     !- Name
     slab_consol_layer,        !- Outside Layer
     Plywood_3/4in,            !- Layer 2
@@ -9694,28 +9706,28 @@ ZoneVentilation:DesignFlowRate,
     ,                         !- Maximum Outdoor Temperature Schedule Name
     40;                       !- Maximum Wind Speed
 
-EXTERIOR:LIGHTS,
+Exterior:Lights,
     stairLights,              !- Name
     ExteriorLightingProfile,    !- Schedule Name
     @@LTGSTR@@,               !- Design Level
     ,                         !- Control Option
     Exterior-Lights;          !- EndUse Subcategory
 
-EXTERIOR:LIGHTS,
+Exterior:Lights,
     intPrkLights,             !- Name
     ExteriorLightingProfile,    !- Schedule Name
     @@LTGINTPKG@@,            !- Design Level
     ,                         !- Control Option
     Exterior-Lights;          !- EndUse Subcategory
 
-EXTERIOR:LIGHTS,
+Exterior:Lights,
     extPrkLights,             !- Name
     ExteriorLightingProfile,    !- Schedule Name
     @@LTGEXTPKG@@,            !- Design Level
     ,                         !- Control Option
     Exterior-Lights;          !- EndUse Subcategory
 
-EXTERIOR:LIGHTS,
+Exterior:Lights,
     corrExtLights,            !- Name
     ExteriorLightingProfile,    !- Schedule Name
     @@LTGEXTCOR@@,            !- Design Level
@@ -11298,7 +11310,7 @@ ThermostatSetpoint:DualSetpoint,
     heating_sch_unit,         !- Heating Setpoint Temperature Schedule Name
     cooling_sch_unit;         !- Cooling Setpoint Temperature Schedule Name
 
-THERMOSTATSETPOINT:DUALSETPOINT,
+ThermostatSetpoint:DualSetpoint,
     thermostat_bsmt Dual SP Control,    !- Name
     heating_sch_bsmt,         !- Heating Setpoint Temperature Schedule Name
     cooling_sch_bsmt;         !- Cooling Setpoint Temperature Schedule Name
@@ -20974,6 +20986,50 @@ OUTPUT:METER,
 
 OUTPUT:METER,
     Gas:Facility,             !- Name
+    Annual;                   !- Reporting Frequency
+
+OUTPUT:METER,
+    InteriorLights:Electricity,    !- Name
+    Annual;                   !- Reporting Frequency
+
+OUTPUT:METER,
+    ExteriorLights:Electricity,    !- Name
+    Annual;                   !- Reporting Frequency
+
+OUTPUT:METER,
+    Appl:InteriorEquipment:Electricity,    !- Name
+    Annual;                   !- Reporting Frequency
+
+OUTPUT:METER,
+    Misc:InteriorEquipment:Electricity,    !- Name
+    Annual;                   !- Reporting Frequency
+
+OUTPUT:METER,
+    Water Heater:WaterSystems:Electricity,    !- Name
+    Annual;                   !- Reporting Frequency
+
+OUTPUT:METER,
+    Ventilation (simple):Fans:Electricity,    !- Name
+    Annual;                   !- Reporting Frequency
+
+OUTPUT:METER,
+    General:Fans:Electricity,    !- Name
+    Annual;                   !- Reporting Frequency
+
+OUTPUT:METER,
+    Electricity:HVAC,         !- Name
+    Annual;                   !- Reporting Frequency
+
+OUTPUT:METER,
+    Cooling:Electricity,      !- Name
+    Annual;                   !- Reporting Frequency
+
+OUTPUT:METER,
+    Heating:Electricity,      !- Name
+    Annual;                   !- Reporting Frequency
+
+OUTPUT:METER,
+    Pumps:Electricity,        !- Name
     Annual;                   !- Reporting Frequency
 
 Output:SQLite,
