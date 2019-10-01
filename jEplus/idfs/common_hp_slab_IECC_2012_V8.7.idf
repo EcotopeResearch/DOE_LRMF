@@ -21532,5 +21532,49 @@ OUTPUT:METER,
     Gas:Facility,             !- Name
     Annual;                   !- Reporting Frequency
 
+OUTPUT:METER,
+    InteriorLights:Electricity,    !- Name
+    Annual;                   !- Reporting Frequency
+
+OUTPUT:METER,
+    ExteriorLights:Electricity,    !- Name
+    Annual;                   !- Reporting Frequency
+
+OUTPUT:METER,
+    Appl:InteriorEquipment:Electricity,    !- Name
+    Annual;                   !- Reporting Frequency
+
+OUTPUT:METER,
+    Misc:InteriorEquipment:Electricity,    !- Name
+    Annual;                   !- Reporting Frequency
+
+OUTPUT:METER,
+    Water Heater:WaterSystems:Electricity,    !- Name
+    Annual;                   !- Reporting Frequency
+
+OUTPUT:METER,
+    Ventilation (simple):Fans:Electricity,    !- Name
+    Annual;                   !- Reporting Frequency
+
+OUTPUT:METER,
+    General:Fans:Electricity,    !- Name
+    Annual;                   !- Reporting Frequency
+
+OUTPUT:METER,
+    Electricity:HVAC,         !- Name
+    Annual;                   !- Reporting Frequency
+
+OUTPUT:METER,
+    Cooling:Electricity,      !- Name
+    Annual;                   !- Reporting Frequency
+
+OUTPUT:METER,
+    Heating:Electricity,      !- Name
+    Annual;                   !- Reporting Frequency
+
+OUTPUT:METER,
+    Pumps:Electricity,        !- Name
+    Annual;                   !- Reporting Frequency
+
 Output:SQLite,
     SimpleAndTabular;         !- Option Type

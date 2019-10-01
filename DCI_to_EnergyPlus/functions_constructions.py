@@ -21,12 +21,19 @@ calculations for getting from the DCI outputs to the EnergyPlus inputs.
 """
 
 
+def siu_to_ipu(arg):
+    """
+    AEI FUNCTION: IP to SI u-value conversion
+    Location: aei_conversions.py module of aei package
+    """
+    return arg * 0.1761183515
+
 def ipu_to_siu(arg):
     """
     AEI FUNCTION: IP to SI u-value conversion
     Location: aei_conversions.py module of aei package
     """
-    return arg * 5.678263337
+    return arg * 5.678
 
 ##### CONSTRUCTION CONDUCTIVITY ######
 
@@ -38,25 +45,36 @@ def bsmtWallCond(bsmtWallU):
     Conductivity
     '''
     
-    # SEED model conductivity
-    bsmtwall_consol_layer = 0.05966275 # [W/m*K]
-    u_start = 0.549441 # [W/m*K]
+    # initial SEED model values
+    k_i = 0.05966275 # initial insulation thermal conductivity [W/m*K]
+    t_i = 0.0889 # insulation thickness [m]
+    # starting u-value
+    u_i = 0.549441 # construction u-value [W/m2*K]
+    
+    # equation #1
+    # calculate resistance of everything except the insulation  
+    res_o = (1/u_i) - (t_i/k_i) # resistance other materials [m2*k/W]
     
     # empty list to return    
     var = []    
     
-    # placeholder
+    # loop through all bsmt wall u-values in DCI outputs
+    # convert u-values to metric units
     for i in range(0, len(bsmtWallU)):
-        
+        # convert bsmt wall u-values from imperial units to metric units. 
         if ipu_to_siu(bsmtWallU[i]) == 0:
-            u_start = 0.50 # replace with code minimum if = 0
+            ### IF THE VALUE IS ZERO WE NEED TO REPLACE WITH THE CODE MINIMUM ###
+            ### THIS WILL ALSO DEPEND ON LOCATION, FUNCTIONALITY TO ADD ###
+            ### USING 0.5 AS PLACEHOLDER ###
+            u = ipu_to_siu(0.5) # replace with code minimum if = 0
         else:
-            u_start = ipu_to_siu(bsmtWallU[i]) 
+            u = ipu_to_siu(bsmtWallU[i]) # target u-value
         
-        u_const = ipu_to_siu(u_start) # convert to si
-        u_material = u_const - (u_start - bsmtwall_consol_layer) # calculate new material u-value
+        # equation #2, list operation
+        # calculate new thermal conductivity of insulation
+        k = t_i / ((1/u)-res_o)
         
-        var.append(u_material)
+        var.append(k)
     
     return var
 
@@ -68,98 +86,157 @@ def floorCond(BsmtFloorU):
     Conductivity
     '''
     
-    # SEED model conductivity
-    floor_consol_layer = 0.0485233 # [W/m*K]
-    u_start = 0.184182 # [W/m*K]
+    # initial SEED model values
+    k_i = 0.0485233 # initial insulation thermal conductivity [W/m*K]
+    t_i = 0.23495 # insulation thickness [m]
+    # starting u-value
+    u_i = 0.184182 # construction u-value [W/m2*K]
+    
+    # equation #1
+    # calculate resistance of everything except the insulation  
+    res_o = (1/u_i) - (t_i/k_i) # resistance other materials [m2*k/W]
     
     # empty list to return    
     var = []    
     
-    # placeholder
+    # loop through all bsmt wall u-values in DCI outputs
+    # convert u-values to metric units
     for i in range(0, len(BsmtFloorU)):
-        
+        # convert bsmt wall u-values from imperial units to metric units. 
         if ipu_to_siu(BsmtFloorU[i]) == 0:
-            u_start = 0.50 # replace with code minimum if = 0
+            ### IF THE VALUE IS ZERO WE NEED TO REPLACE WITH THE CODE MINIMUM ###
+            ### THIS WILL ALSO DEPEND ON LOCATION, FUNCTIONALITY TO ADD ###
+            ### USING 0.5 AS PLACEHOLDER ###
+            u = ipu_to_siu(0.5) # replace with code minimum if = 0
         else:
-            u_start = ipu_to_siu(BsmtFloorU[i]) 
+            u = ipu_to_siu(BsmtFloorU[i]) # target u-value
         
-        u_const = ipu_to_siu(u_start) # convert to si
-        u_material = u_const - (u_start - floor_consol_layer) # calculate new material u-value
+        # equation #2, list operation
+        # calculate new thermal conductivity of insulation
+        k = t_i / ((1/u)-res_o)
         
-        var.append(u_material)
+        var.append(k)
     
     return var
 
 def extWallCond(wtmnGenWallU):
-    # SEED model conductivity
-    wall_consol_layer = 0.05966275 # [W/m*K]
-    u_start = 0.367494 # [W/m*K]
+    '''
+    EnergyPlus Object
+    Material
+    Input
+    Conductivity
+    '''
+    
+    # initial SEED model values
+    k_i = 0.05966275 # initial insulation thermal conductivity [W/m*K]
+    t_i = 0.1397 # insulation thickness [m]
+    # starting u-value
+    u_i = 0.367494 # construction u-value [W/m2*K]
+    
+    # equation #1
+    # calculate resistance of everything except the insulation  
+    res_o = (1/u_i) - (t_i/k_i) # resistance other materials [m2*k/W]
     
     # empty list to return    
     var = []    
     
-    # placeholder
+    # loop through all bsmt wall u-values in DCI outputs
+    # convert u-values to metric units
     for i in range(0, len(wtmnGenWallU)):
-        
+        # convert bsmt wall u-values from imperial units to metric units. 
         if ipu_to_siu(wtmnGenWallU[i]) == 0:
-            u_start = 0.50 # replace with code minimum if = 0
+            ### IF THE VALUE IS ZERO WE NEED TO REPLACE WITH THE CODE MINIMUM ###
+            ### THIS WILL ALSO DEPEND ON LOCATION, FUNCTIONALITY TO ADD ###
+            ### USING 0.5 AS PLACEHOLDER ###
+            u = ipu_to_siu(0.5) # replace with code minimum if = 0
         else:
-            u_start = ipu_to_siu(wtmnGenWallU[i]) 
+            u = ipu_to_siu(wtmnGenWallU[i]) # target u-value
         
-        u_const = ipu_to_siu(u_start) # convert to si
-        u_material = u_const - (u_start - wall_consol_layer) # calculate new material u-value
+        # equation #2, list operation
+        # calculate new thermal conductivity of insulation
+        k = t_i / ((1/u)-res_o)
         
-        var.append(u_material)
+        var.append(k)
     
     return var
+
 
 def ceilingCond(wtmnCeilingU):
-    # SEED model conductivity
-    ceil_consol_layer = 0.136352 # [W/m*K]
-    u_start = 0.549441 # [W/m*K]
+    # initial SEED model values
+    k_i = 0.0617176 # initial insulation thermal conductivity [W/m*K]
+    t_i = 0.447738918260194 # insulation thickness [m]
+    # starting u-value
+    u_i = 0.136352 # construction u-value [W/m2*K]
+    
+    # equation #1
+    # calculate resistance of everything except the insulation  
+    res_o = (1/u_i) - (t_i/k_i) # resistance other materials [m2*k/W]
     
     # empty list to return    
     var = []    
     
-    # placeholder
+    # loop through all bsmt wall u-values in DCI outputs
+    # convert u-values to metric units
     for i in range(0, len(wtmnCeilingU)):
-        
+        # convert bsmt wall u-values from imperial units to metric units. 
         if ipu_to_siu(wtmnCeilingU[i]) == 0:
-            u_start = 0.50 # replace with code minimum if = 0
+            ### IF THE VALUE IS ZERO WE NEED TO REPLACE WITH THE CODE MINIMUM ###
+            ### THIS WILL ALSO DEPEND ON LOCATION, FUNCTIONALITY TO ADD ###
+            ### USING 0.5 AS PLACEHOLDER ###
+            u = ipu_to_siu(0.5) # replace with code minimum if = 0
         else:
-            u_start = ipu_to_siu(wtmnCeilingU[i]) 
+            u = ipu_to_siu(wtmnCeilingU[i]) # target u-value
         
-        u_const = ipu_to_siu(u_start) # convert to si
-        u_material = u_const - (u_start - ceil_consol_layer) # calculate new material u-value
+        # equation #2, list operation
+        # calculate new thermal conductivity of insulation
+        k = t_i / ((1/u)-res_o)
         
-        var.append(u_material)
+        var.append(k)
     
     return var
 
+
 def slabCond(fndWtmnU, FndWtmnF):
-    # SEED model conductivity
-    slab_consol_layer = 0.0485233 # [W/m*K]
-    u_start = 0.184182 # [W/m*K]
+    # initial SEED model values
+    k_i = 0.0485233 # initial insulation thermal conductivity [W/m*K]
+    t_i = 0.23495 # insulation thickness [m]
+    # starting u-value
+    u_i = 0.184182 # construction u-value [W/m2*K]
+    
+    # equation #1
+    # calculate resistance of everything except the insulation  
+    res_o = (1/u_i) - (t_i/k_i) # resistance other materials [m2*k/W]
+    
+    ## loop through and calculate whether u val or f val or none
+    slbU = []
+    for i in range(0,len(fndWtmnU)):
+        if fndWtmnU[i] !=0:
+            slbU.append(fndWtmnU[i])
+        elif FndWtmnF[i] !=0:
+            slbU.append(float(FndWtmnF[i])*0.0474)
+        else:
+            slbU.append(0) ##THIS WILL NEED TO BE REPLACED WITH THE CODE MIN
     
     # empty list to return    
     var = []    
     
-    for i in range(0, len(fndWtmnU)):  
-        
-        # from reported u-value
-        if fndWtmnU[i] != 0:                   
-            u_start = ipu_to_siu(fndWtmnU[i])         
-        # from reported f-factor
-        elif FndWtmnF[i] !=0:
-            u_start = ipu_to_siu(0.1556*fndWtmnU[i]) 
-        # if nothing reported
+    # loop through all bsmt wall u-values in DCI outputs
+    # convert u-values to metric units
+    for i in range(0, len(slbU)):
+        # convert bsmt wall u-values from imperial units to metric units. 
+        if ipu_to_siu(slbU[i]) == 0:
+            ### IF THE VALUE IS ZERO WE NEED TO REPLACE WITH THE CODE MINIMUM ###
+            ### THIS WILL ALSO DEPEND ON LOCATION, FUNCTIONALITY TO ADD ###
+            ### USING 0.5 AS PLACEHOLDER ###
+            u = ipu_to_siu(0.5) # replace with code minimum if = 0
         else:
-            u_start = 0.50
+            u = ipu_to_siu(slbU[i]) # target u-value
         
-        u_const = ipu_to_siu(u_start) # convert to si
-        u_material = u_const - (u_start - slab_consol_layer) # calculate new material u-value
-    
-        var.append(u_material)
+        # equation #2, list operation
+        # calculate new thermal conductivity of insulation
+        k = t_i / ((1/u)-res_o)
+        
+        var.append(k)
     
     return var
 

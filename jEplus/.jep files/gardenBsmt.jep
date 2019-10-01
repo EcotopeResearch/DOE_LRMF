@@ -21,7 +21,7 @@
   </void>
   <void property="execSettings">
    <void property="jobListFile">
-    <string>C:\Users\scott\github\DOE_LRMF\jEplus\input_csv\gardenBsmt_inputs.csv</string>
+    <string>C:\Users\scott\github\DOE_LRMF\DCI_to_EnergyPlus\inputs_gardenBsmt.csv</string>
    </void>
    <void property="numThreads">
     <int>11</int>
