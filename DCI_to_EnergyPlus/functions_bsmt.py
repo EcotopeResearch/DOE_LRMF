@@ -24,7 +24,7 @@ calculations for getting from the DCI outputs to the EnergyPlus inputs.
 
 def bsmtVentilationFlowrate(ventBsmtYN, ventBsemtErvYN, ventBsemtErvEff, lpdIntPkCommon):
     
-    # unit airflow [m3/s]
+    # basement airflow [m3/s]
     flowrate = 0.22 # about 468 cfm, from 0.06 cfm/sf
     avgERV = 0.6
     
@@ -46,7 +46,7 @@ def bsmtVentilationFlowrate(ventBsmtYN, ventBsemtErvYN, ventBsemtErvEff, lpdIntP
             else:
                 var.append(flowrate)
         else:
-            var.append(0) # no flow
+            var.append(0.01) # no flow, about 20 cfm
         
     return var
 
@@ -93,7 +93,7 @@ def bsmtHeatingSetpoint(heatBsmtYN):
         if heatBsmtYN[i] == 'Yes':
             var.append(15.5) # in °C
         else:
-            var.append(-10) # in °C
+            var.append(15) # in °C
     
     return var
 
@@ -104,7 +104,7 @@ def bsmtCoolingSetpoint(heatBsmtYN):
     
     # placeholder
     for i in range(0, len(heatBsmtYN)):
-        var.append(70) # in °C
+        var.append(27) # in °C
     
     return var
 

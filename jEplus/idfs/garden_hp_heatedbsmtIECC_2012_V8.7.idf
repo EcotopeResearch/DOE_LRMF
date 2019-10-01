@@ -1,4 +1,4 @@
-!- Windows Line endings 
+!- Windows Line endings
 
 Version,
     8.7;                      !- Version Identifier
@@ -102,6 +102,10 @@ RunPeriod,
     Yes,                      !- Use Weather File Rain Indicators
     Yes,                      !- Use Weather File Snow Indicators
     1;                        !- Number of Times Runperiod to be Repeated
+
+!-   ===========  ALL OBJECTS IN CLASS: SITE:GROUNDTEMPERATURE:BUILDINGSURFACE ===========
+
+Site:GroundTemperature:BuildingSurface,19.527,19.502,19.536,19.598,20.002,21.64,22.225,22.375,21.449,20.121,19.802,19.633;
 
 Site:WaterMainsTemperature,
     Correlation,              !- Calculation Method
@@ -1282,23 +1286,17 @@ Schedule:Compact,
     heating_sch_unit,         !- Name
     Temperature,              !- Schedule Type Limits Name
     Through: 12/31,           !- Field 1
-    For: WinterDesignDay,     !- Field 2
+    For: AllDays,             !- Field 2
     Until: 24:00,             !- Field 3
-    74,                       !- Field 4
-    For: AllOtherDays,        !- Field 5
-    Until: 24:00,             !- Field 6
-    @@UNITHTST@@;             !- Field 7
+    @@UNITHTST@@;             !- Field 4
 
 Schedule:Compact,
     cooling_sch_unit,         !- Name
     Temperature,              !- Schedule Type Limits Name
     Through: 12/31,           !- Field 1
-    For: SummerDesignDay,     !- Field 2
+    For: AllDays,             !- Field 2
     Until: 24:00,             !- Field 3
-    68,                       !- Field 4
-    For: AllOtherDays,        !- Field 5
-    Until: 24:00,             !- Field 6
-    @@UNITCLST@@;             !- Field 7
+    @@UNITCLST@@;             !- Field 4
 
 Schedule:Compact,
     fan_cycle,                !- Name
@@ -1312,23 +1310,17 @@ Schedule:Compact,
     heating_sch_bsmt,         !- Name
     Temperature,              !- Schedule Type Limits Name
     Through: 12/31,           !- Field 1
-    For: WinterDesignDay,     !- Field 2
+    For: AllDays,             !- Field 2
     Until: 24:00,             !- Field 3
-    74,                       !- Field 4
-    For: AllOtherDays,        !- Field 5
-    Until: 24:00,             !- Field 6
-    @@BSMTHTST@@;             !- Field 7
+    @@BSMTHTST@@;             !- Field 4
 
 Schedule:Compact,
     cooling_sch_bsmt,         !- Name
     Temperature,              !- Schedule Type Limits Name
     Through: 12/31,           !- Field 1
-    For: SummerDesignDay,     !- Field 2
+    For: AllDays,             !- Field 2
     Until: 24:00,             !- Field 3
-    68,                       !- Field 4
-    For: AllOtherDays,        !- Field 5
-    Until: 24:00,             !- Field 6
-    @@BSMTCLST@@;             !- Field 7
+    @@BSMTCLST@@;             !- Field 4
 
 Schedule:Constant,
     DWWaterTempSchedule,      !- Name
@@ -11028,7 +11020,7 @@ Sizing:System,
 Sizing:System,
     Central System_unitheatedbsmt,    !- AirLoop Name
     Sensible,                 !- Type of Load to Size On
-    autosize,                 !- Design Outdoor Air Flow Rate
+    0.01,                     !- Design Outdoor Air Flow Rate
     1,                        !- Central Heating Maximum System Air Flow Ratio
     7,                        !- Preheat Design Temperature
     0.008,                    !- Preheat Design Humidity Ratio
@@ -11041,13 +11033,13 @@ Sizing:System,
     No,                       !- 100 Outdoor Air in Heating
     0.008,                    !- Central Cooling Design Supply Air Humidity Ratio
     0.008,                    !- Central Heating Design Supply Air Humidity Ratio
-    DesignDay,                !- Cooling Supply Air Flow Rate Method
-    ,                         !- Cooling Supply Air Flow Rate
+    Flow/System,              !- Cooling Supply Air Flow Rate Method
+    0.01,                     !- Cooling Supply Air Flow Rate
     ,                         !- Cooling Supply Air Flow Rate Per Floor Area
     ,                         !- Cooling Fraction of Autosized Cooling Supply Air Flow Rate
     ,                         !- Cooling Supply Air Flow Rate Per Unit Cooling Capacity
-    DesignDay,                !- Heating Supply Air Flow Rate Method
-    ,                         !- Heating Supply Air Flow Rate
+    Flow/System,              !- Heating Supply Air Flow Rate Method
+    0.01,                     !- Heating Supply Air Flow Rate
     ,                         !- Heating Supply Air Flow Rate Per Floor Area
     ,                         !- Heating Fraction of Autosized Heating Supply Air Flow Rate
     ,                         !- Heating Fraction of Autosized Cooling Supply Air Flow Rate
@@ -11055,11 +11047,11 @@ Sizing:System,
     ZoneSum,                  !- System Outdoor Air Method
     1,                        !- Zone Maximum Outdoor Air Fraction
     CoolingDesignCapacity,    !- Cooling Design Capacity Method
-    autosize,                 !- Cooling Design Capacity
+    1000,                     !- Cooling Design Capacity
     ,                         !- Cooling Design Capacity Per Floor Area
     ,                         !- Fraction of Autosized Cooling Design Capacity
     HeatingDesignCapacity,    !- Heating Design Capacity Method
-    autosize,                 !- Heating Design Capacity
+    15000,                    !- Heating Design Capacity
     ,                         !- Heating Design Capacity Per Floor Area
     ,                         !- Fraction of Autosized Heating Design Capacity
     OnOff;                    !- Central Cooling Capacity Control Method
@@ -11970,8 +11962,8 @@ Fan:OnOff,
     Supply Fan_unitheatedbsmt,    !- Name
     always_avail,             !- Availability Schedule Name
     0.377,                    !- Fan Total Efficiency
-    400,                      !- Pressure Rise
-    autosize,                 !- Maximum Flow Rate
+    10,                       !- Pressure Rise
+    0.01,                     !- Maximum Flow Rate
     0.65,                     !- Motor Efficiency
     1,                        !- Motor In Airstream Fraction
     air loop inlet node_unitheatedbsmt,    !- Air Inlet Node Name
@@ -12271,10 +12263,10 @@ Coil:Cooling:DX:SingleSpeed,
 Coil:Cooling:DX:SingleSpeed,
     DX Cooling Coil_unitheatedbsmt,    !- Name
     always_avail,             !- Availability Schedule Name
-    autosize,                 !- Gross Rated Total Cooling Capacity
+    1000,                     !- Gross Rated Total Cooling Capacity
     autosize,                 !- Gross Rated Sensible Heat Ratio
     @@BSMTCLCOP@@,            !- Gross Rated Cooling COP
-    autosize,                 !- Rated Air Flow Rate
+    0.01,                     !- Rated Air Flow Rate
     ,                         !- Rated Evaporator Fan Power Per Volume Flow Rate
     Cooling Coil Air Inlet Node_unitheatedbsmt,    !- Air Inlet Node Name
     Heating Coil Air Inlet Node_unitheatedbsmt,    !- Air Outlet Node Name
@@ -12853,9 +12845,9 @@ Coil:Heating:DX:SingleSpeed,
 Coil:Heating:DX:SingleSpeed,
     Main DX Heating Coil_unitheatedbsmt,    !- Name
     always_avail,             !- Availability Schedule Name
-    autosize,                 !- Gross Rated Heating Capacity
+    15000,                    !- Gross Rated Heating Capacity
     @@BSMTHTCOP@@,            !- Gross Rated Heating COP
-    autosize,                 !- Rated Air Flow Rate
+    0.01,                     !- Rated Air Flow Rate
     ,                         !- Rated Supply Fan Power Per Volume Flow Rate
     Heating Coil Air Inlet Node_unitheatedbsmt,    !- Air Inlet Node Name
     Supp Heating Coil Air Inlet Node_unitheatedbsmt,    !- Air Outlet Node Name
@@ -13511,7 +13503,7 @@ AirLoopHVAC,
     Central System_unitheatedbsmt,    !- Name
     ,                         !- Controller List Name
     availability list,        !- Availability Manager List Name
-    autosize,                 !- Design Supply Air Flow Rate
+    0.01,                     !- Design Supply Air Flow Rate
     Air Loop Branches_unitheatedbsmt,    !- Branch List Name
     ,                         !- Connector List Name
     Air Loop Inlet Node_unitheatedbsmt,    !- Supply Side Inlet Node Name

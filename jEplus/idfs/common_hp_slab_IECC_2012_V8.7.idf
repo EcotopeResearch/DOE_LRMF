@@ -1,4 +1,4 @@
-!- Windows Line endings 
+!- Windows Line endings
 
 Version,
     8.7;                      !- Version Identifier
@@ -102,6 +102,10 @@ RunPeriod,
     Yes,                      !- Use Weather File Rain Indicators
     Yes,                      !- Use Weather File Snow Indicators
     1;                        !- Number of Times Runperiod to be Repeated
+
+!-   ===========  ALL OBJECTS IN CLASS: SITE:GROUNDTEMPERATURE:BUILDINGSURFACE ===========
+
+Site:GroundTemperature:BuildingSurface,19.527,19.502,19.536,19.598,20.002,21.64,22.225,22.375,21.449,20.121,19.802,19.633;
 
 Site:WaterMainsTemperature,
     Correlation,              !- Calculation Method
