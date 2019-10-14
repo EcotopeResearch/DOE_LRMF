@@ -71,7 +71,8 @@ def commonVentilationSP(ventCentralYN, ventCorridorErvYN):
         elif ventCorridorErvYN[i] == 'No' and ventCentralYN[i] == 'No':
             var.append(unit)
         else:
-            print('ERROR IN unitVentilationSP')
+            var.append(unit + central + erv)
+            print('No unitVentilationSP in DCI')
     
     return var
 
@@ -96,7 +97,8 @@ def commonHvacFanSP(ventCentralYN, ventCorridorErvYN):
         elif ventCorridorErvYN[i] == 'No' and ventCentralYN[i] == 'No':
             var.append(unit)
         else:
-            print('ERROR IN unitVentilationSP')
+            var.append(unit)
+            print('No unitVentilationSP in DCI')
     
     return var
 
@@ -131,6 +133,9 @@ def commonLpd(lpdCommon):
     
     # placeholder
     for i in range(0, len(lpdCommon)):
-        var.append(lpdCommon[i])
+        if lpdCommon[i] != 0:
+            var.append(lpdCommon[i])
+        else:
+            var.append(0.7) # code min
     
     return var

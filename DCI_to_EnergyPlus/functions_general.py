@@ -25,6 +25,8 @@ from functions_switchers import (heat_cop_switcher, curve_heatCapFT_switcher, cu
                                  curve_coolCapFT_switcher, curve_coolCapFFF_switcher, curve_HPACcoolEIRFT_switcher,
                                  curve_HPACcoolEIRFFF_switcher, curve_HPACCOOLPLFFPLR_switcher, curve_Defrost_EIR_FT_switcher)
 
+from designDays import (SeattleDD)
+
 ##########################################
 ##### GENERAL BUILDING INFORMATION #######
 ##########################################
@@ -62,14 +64,16 @@ def z2(df):
         
     return var
     
-def buildingName(sitex, runinput):
+def buildingName(sitex, cz):
     
     # empty list to return  
     var = []
+    
 
     # site ID + user input string    
-    name = [str(x) + runinput for x in sitex]
-    var = name
+    for i in range(0,len(sitex)):
+        var.append(str(cz[i])+'_'+str(sitex[i]))
+
     return var
 
 def slabBoundaryCondition(FndType):
@@ -114,9 +118,9 @@ def unitDhwCoeffOn(centralDhwEffAvg, inunitDhwEffAvg):
     # central of unit 0.5, 0.8
     for i in range(0, len(centralDhwEffAvg)):
         if centralDhwEffAvg[i] != 0 and inunitDhwEffAvg[i] == 0:
-            var.append(0.5)
+            var.append(125) # Estimated thermal loss for recirc
         elif inunitDhwEffAvg[i] != 0 and centralDhwEffAvg[i] == 0:
-            var.append(0.8)
+            var.append(1)
         else:
             print("ERROR IN DHW unitDhwCoeffOn")
     
@@ -137,9 +141,9 @@ def unitDhwCoeffOff(centralDhwEffAvg, inunitDhwEffAvg):
     # central of unit 0.5, 0.8
     for i in range(0, len(centralDhwEffAvg)):
         if centralDhwEffAvg[i] != 0 and inunitDhwEffAvg[i] == 0:
-            var.append(0.5)
+            var.append(125) # estimated thermal loss for recirc
         elif inunitDhwEffAvg[i] != 0 and centralDhwEffAvg[i] == 0:
-            var.append(0.8)
+            var.append(1)
         else:
             print("ERROR IN DHW unitDhwCoeffOff")
     
@@ -178,7 +182,7 @@ def lightingStairs(lpdIntStairwell):
         if lpdIntStairwell[i] != 0:    
             var.append(lpdIntStairwell[i]*120)
         else:
-            var.append(30) # assumed value around .25 LPD
+            var.append(84) # use code baseline of 0.7 
     
     return var
 
@@ -188,6 +192,7 @@ def extPrkLights(lpdExtPrk):
     var = []    
     
     # Ext Parking LPD * sf - same as basement
+    # no if for code baseline, assume no parking if zero
     for i in range(0, len(lpdExtPrk)):
         var.append(lpdExtPrk[i]*7800)
     
@@ -207,8 +212,7 @@ def HeatingEfficiency(unitHeat, centralSys):
     
     # empty list to return    
     var = []    
-    
-    # place holder
+
     for i in range(0, len(unitHeat)):
         var.append(heat_cop_switcher(unitHeat[i]))
     
@@ -224,8 +228,7 @@ def HeatingEfficiencyCurves1(unitHeat):
 
     # empty list to return    
     var = []    
-
-    # placeholder    
+   
     for i in range(0, len(unitHeat)):
         var.append(curve_heatCapFT_switcher(unitHeat[i]))
         
@@ -238,8 +241,7 @@ def HeatingEfficiencyCurves2(unitHeat):
     '''
     # empty list to return    
     var = []    
-
-    # placeholder    
+  
     for i in range(0, len(unitHeat)):
         var.append(curve_HeatCapFFF_switcher(unitHeat[i]))
         
@@ -252,8 +254,7 @@ def HeatingEfficiencyCurves3(unitHeat):
     '''
     # empty list to return    
     var = []    
-
-    # placeholder    
+  
     for i in range(0, len(unitHeat)):
         var.append(curve_HPACHeatEIRFT_switcher(unitHeat[i]))
         
@@ -266,8 +267,7 @@ def HeatingEfficiencyCurves4(unitHeat):
     '''
     # empty list to return    
     var = []    
-
-    # placeholder    
+   
     for i in range(0, len(unitHeat)):
         var.append(curve_HPACHeatEIRFFF_switcher(unitHeat[i]))
         
@@ -280,8 +280,7 @@ def HeatingEfficiencyCurves5(unitHeat):
     '''
     # empty list to return    
     var = []    
-
-    # placeholder    
+ 
     for i in range(0, len(unitHeat)):
         var.append(curve_HPACCOOLPLFFPLR_switcher(unitHeat[i]))
         
@@ -294,8 +293,7 @@ def HeatingEfficiencyCurves6(unitHeat):
     '''
     # empty list to return    
     var = []    
-
-    # placeholder    
+   
     for i in range(0, len(unitHeat)):
         var.append(curve_Defrost_EIR_FT_switcher(unitHeat[i]))
         
@@ -309,7 +307,6 @@ def CoolEfficiency(unitCool, centralSys):
     # empty list to return    
     var = []    
     
-    # placeholder
     for i in range(0, len(unitCool)):
         var.append(cool_cop_switcher(unitCool[i]))
     
@@ -323,7 +320,6 @@ def CoolingEfficiencyCurves1(unitCool):
     # empty list to return    
     var = []    
     
-    # placeholder
     for i in range(0, len(unitCool)):
         var.append(curve_coolCapFT_switcher(unitCool[i]))
     
@@ -337,7 +333,6 @@ def CoolingEfficiencyCurves2(unitCool):
     # empty list to return    
     var = []    
     
-    # placeholder
     for i in range(0, len(unitCool)):
         var.append(curve_coolCapFFF_switcher(unitCool[i]))
     
@@ -351,7 +346,6 @@ def CoolingEfficiencyCurves3(unitCool):
     # empty list to return    
     var = []    
     
-    # placeholder
     for i in range(0, len(unitCool)):
         var.append(curve_HPACcoolEIRFT_switcher(unitCool[i]))
     
@@ -365,7 +359,6 @@ def CoolingEfficiencyCurves4(unitCool):
     # empty list to return    
     var = []    
     
-    # placeholder
     for i in range(0, len(unitCool)):
         var.append(curve_HPACcoolEIRFFF_switcher(unitCool[i]))
     
@@ -379,8 +372,147 @@ def CoolingEfficiencyCurves5(unitCool):
     # empty list to return    
     var = []    
     
-    # placeholder
     for i in range(0, len(unitCool)):
         var.append(curve_HPACCOOLPLFFPLR_switcher(unitCool[i]))
     
     return var
+
+###################################
+#####     DESIGN DAYS       #######
+###################################
+
+def WinterDB(cz):
+    '''
+    EnergyPlus Object
+    SizingPeriod:DesignDay
+    '''
+    # empty list
+    var=[]
+    
+    for i in range(0, len(cz)):
+        if cz[i] == "4A":
+            var.append(-15)
+        elif cz[i] == "4C":
+            var.append(-4.2)
+        elif cz[i] == "5A":
+            var.append(-20)                        
+        elif cz[i] == "5B":
+            var.append(-16)
+        elif cz[i] == "6A":
+            var.append(-25.2)
+        elif cz[i] == "7A":
+            var.append(-30.4)
+        else:
+            print("unknown climate zone")
+            var.append(-5)
+                                                    
+    return var
+
+def SummerDB(cz):
+    '''
+    EnergyPlus Object
+    SizingPeriod:DesignDay
+    '''
+    # empty list
+    var=[]
+    
+    for i in range(0, len(cz)):
+        if cz[i] == "4A":
+            var.append(35.1)
+        elif cz[i] == "4C":
+            var.append(29.4)
+        elif cz[i] == "5A":
+            var.append(33.3)                        
+        elif cz[i] == "5B":
+            var.append(33.8)
+        elif cz[i] == "6A":
+            var.append(32.8)
+        elif cz[i] == "7A":
+            var.append(31)
+        else:
+            print("unknown climate zone")
+            var.append(SeattleDD)
+                                                    
+    return var
+
+def SummerWB(cz):
+    '''
+    EnergyPlus Object
+    SizingPeriod:DesignDay
+    '''
+    # empty list
+    var=[]
+    
+    for i in range(0, len(cz)):
+        if cz[i] == "4A":
+            var.append(25.1)
+        elif cz[i] == "4C":
+            var.append(18.3)
+        elif cz[i] == "5A":
+            var.append(23.7)                        
+        elif cz[i] == "5B":
+            var.append(17.2)
+        elif cz[i] == "6A":
+            var.append(23)
+        elif cz[i] == "7A":
+            var.append(21.6)
+        else:
+            print("unknown climate zone")
+            var.append(20)
+                                                    
+    return var
+
+def Latitude(cz):
+    '''
+    EnergyPlus Object
+    SizingPeriod:DesignDay
+    '''
+    # empty list
+    var=[]
+    
+    for i in range(0, len(cz)):
+        if cz[i] == "4A":
+            var.append(38.65)
+        elif cz[i] == "4C":
+            var.append(47.47)
+        elif cz[i] == "5A":
+            var.append(41.98)                        
+        elif cz[i] == "5B":
+            var.append(47.49)
+        elif cz[i] == "6A":
+            var.append(44.88)
+        elif cz[i] == "7A":
+            var.append(47.50)
+        else:
+            print("unknown climate zone")
+            var.append(SeattleDD)
+                                                    
+    return var
+
+def Longitude(cz):
+    '''
+    EnergyPlus Object
+    SizingPeriod:DesignDay
+    '''
+    # empty list
+    var=[]
+    
+    for i in range(0, len(cz)):
+        if cz[i] == "4A":
+            var.append(-90.65)
+        elif cz[i] == "4C":
+            var.append(-122.32)
+        elif cz[i] == "5A":
+            var.append( -87.92)                        
+        elif cz[i] == "5B":
+            var.append(-117.59)
+        elif cz[i] == "6A":
+            var.append(-93.23)
+        elif cz[i] == "7A":
+            var.append(-94.93)
+        else:
+            print("unknown climate zone")
+            var.append(SeattleDD)
+                                                    
+    return var
+

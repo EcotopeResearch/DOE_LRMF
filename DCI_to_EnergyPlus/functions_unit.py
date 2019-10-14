@@ -75,7 +75,8 @@ def unitVentilationSP(ventCentralYN, ventUnitErvYN):
         elif ventUnitErvYN[i] == 'No' and ventCentralYN[i] == 'No':
             var.append(unit)
         else:
-            print('ERROR IN unitVentilationSP')
+            var.append(unit + central + erv)
+            print('No unitVentilationSP in DCI')
     
     return var
 
@@ -101,7 +102,8 @@ def unitHvacFanSP(ventCentralYN, ventUnitErvYN):
         elif ventUnitErvYN[i] == 'No' and ventCentralYN[i] == 'No':
             var.append(unit)
         else:
-            print('ERROR IN unitVentilationSP')
+            var.append(unit)
+            print('No unitVentilationSP from DCI')
     
     return var
 
@@ -138,8 +140,11 @@ def unitLpd(lpdUnit):
     
     # placeholder
     for i in range(0, len(lpdUnit)):
-        var.append(lpdUnit[i])
-    
+        if lpdUnit[i] != 0:
+            var.append(lpdUnit[i])
+        else: 
+            var.append(0.5)
+            print('No Unit LPD from DCI')
     return var
     
     

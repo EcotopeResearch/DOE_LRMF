@@ -3310,6 +3310,216 @@
                                                                                                                                                </void>
                                                                                                                                               </object>
                                                                                                                                              </void>
+                                                                                                                                             <void method="add">
+                                                                                                                                              <object class="javax.swing.tree.DefaultMutableTreeNode">
+                                                                                                                                               <void property="userObject">
+                                                                                                                                                <object class="jeplus.data.ParameterItem" id="ParameterItem70">
+                                                                                                                                                 <void class="jeplus.data.ParameterItem" method="getField">
+                                                                                                                                                  <string>ID</string>
+                                                                                                                                                  <void method="set">
+                                                                                                                                                   <object idref="ParameterItem70"/>
+                                                                                                                                                   <string>P71</string>
+                                                                                                                                                  </void>
+                                                                                                                                                 </void>
+                                                                                                                                                 <void class="jeplus.data.ParameterItem" method="getField">
+                                                                                                                                                  <string>Name</string>
+                                                                                                                                                  <void method="set">
+                                                                                                                                                   <object idref="ParameterItem70"/>
+                                                                                                                                                   <string>WDB</string>
+                                                                                                                                                  </void>
+                                                                                                                                                 </void>
+                                                                                                                                                 <void class="jeplus.data.ParameterItem" method="getField">
+                                                                                                                                                  <string>Type</string>
+                                                                                                                                                  <void method="set">
+                                                                                                                                                   <object idref="ParameterItem70"/>
+                                                                                                                                                   <int>1</int>
+                                                                                                                                                  </void>
+                                                                                                                                                 </void>
+                                                                                                                                                 <void class="jeplus.data.ParameterItem" method="getField">
+                                                                                                                                                  <string>SearchString</string>
+                                                                                                                                                  <void method="set">
+                                                                                                                                                   <object idref="ParameterItem70"/>
+                                                                                                                                                   <string>@@WDB@@</string>
+                                                                                                                                                  </void>
+                                                                                                                                                 </void>
+                                                                                                                                                 <void property="project">
+                                                                                                                                                  <object idref="JEPlusProject0"/>
+                                                                                                                                                 </void>
+                                                                                                                                                 <void property="valuesString">
+                                                                                                                                                  <string>@sample(n,0,2,2)</string>
+                                                                                                                                                 </void>
+                                                                                                                                                </object>
+                                                                                                                                               </void>
+                                                                                                                                               <void method="add">
+                                                                                                                                                <object class="javax.swing.tree.DefaultMutableTreeNode">
+                                                                                                                                                 <void property="userObject">
+                                                                                                                                                  <object class="jeplus.data.ParameterItem" id="ParameterItem71">
+                                                                                                                                                   <void class="jeplus.data.ParameterItem" method="getField">
+                                                                                                                                                    <string>ID</string>
+                                                                                                                                                    <void method="set">
+                                                                                                                                                     <object idref="ParameterItem71"/>
+                                                                                                                                                     <string>P72</string>
+                                                                                                                                                    </void>
+                                                                                                                                                   </void>
+                                                                                                                                                   <void class="jeplus.data.ParameterItem" method="getField">
+                                                                                                                                                    <string>Name</string>
+                                                                                                                                                    <void method="set">
+                                                                                                                                                     <object idref="ParameterItem71"/>
+                                                                                                                                                     <string>SDB</string>
+                                                                                                                                                    </void>
+                                                                                                                                                   </void>
+                                                                                                                                                   <void class="jeplus.data.ParameterItem" method="getField">
+                                                                                                                                                    <string>Type</string>
+                                                                                                                                                    <void method="set">
+                                                                                                                                                     <object idref="ParameterItem71"/>
+                                                                                                                                                     <int>1</int>
+                                                                                                                                                    </void>
+                                                                                                                                                   </void>
+                                                                                                                                                   <void class="jeplus.data.ParameterItem" method="getField">
+                                                                                                                                                    <string>SearchString</string>
+                                                                                                                                                    <void method="set">
+                                                                                                                                                     <object idref="ParameterItem71"/>
+                                                                                                                                                     <string>@@SDB@@</string>
+                                                                                                                                                    </void>
+                                                                                                                                                   </void>
+                                                                                                                                                   <void property="project">
+                                                                                                                                                    <object idref="JEPlusProject0"/>
+                                                                                                                                                   </void>
+                                                                                                                                                   <void property="valuesString">
+                                                                                                                                                    <string>@sample(n,0,2,2)</string>
+                                                                                                                                                   </void>
+                                                                                                                                                  </object>
+                                                                                                                                                 </void>
+                                                                                                                                                 <void method="add">
+                                                                                                                                                  <object class="javax.swing.tree.DefaultMutableTreeNode">
+                                                                                                                                                   <void property="userObject">
+                                                                                                                                                    <object class="jeplus.data.ParameterItem" id="ParameterItem72">
+                                                                                                                                                     <void class="jeplus.data.ParameterItem" method="getField">
+                                                                                                                                                      <string>ID</string>
+                                                                                                                                                      <void method="set">
+                                                                                                                                                       <object idref="ParameterItem72"/>
+                                                                                                                                                       <string>P73</string>
+                                                                                                                                                      </void>
+                                                                                                                                                     </void>
+                                                                                                                                                     <void class="jeplus.data.ParameterItem" method="getField">
+                                                                                                                                                      <string>Name</string>
+                                                                                                                                                      <void method="set">
+                                                                                                                                                       <object idref="ParameterItem72"/>
+                                                                                                                                                       <string>SWB</string>
+                                                                                                                                                      </void>
+                                                                                                                                                     </void>
+                                                                                                                                                     <void class="jeplus.data.ParameterItem" method="getField">
+                                                                                                                                                      <string>Type</string>
+                                                                                                                                                      <void method="set">
+                                                                                                                                                       <object idref="ParameterItem72"/>
+                                                                                                                                                       <int>1</int>
+                                                                                                                                                      </void>
+                                                                                                                                                     </void>
+                                                                                                                                                     <void class="jeplus.data.ParameterItem" method="getField">
+                                                                                                                                                      <string>SearchString</string>
+                                                                                                                                                      <void method="set">
+                                                                                                                                                       <object idref="ParameterItem72"/>
+                                                                                                                                                       <string>@@SWB@@</string>
+                                                                                                                                                      </void>
+                                                                                                                                                     </void>
+                                                                                                                                                     <void property="project">
+                                                                                                                                                      <object idref="JEPlusProject0"/>
+                                                                                                                                                     </void>
+                                                                                                                                                     <void property="valuesString">
+                                                                                                                                                      <string>@sample(n,0,2,2)</string>
+                                                                                                                                                     </void>
+                                                                                                                                                    </object>
+                                                                                                                                                   </void>
+                                                                                                                                                   <void method="add">
+                                                                                                                                                    <object class="javax.swing.tree.DefaultMutableTreeNode">
+                                                                                                                                                     <void property="userObject">
+                                                                                                                                                      <object class="jeplus.data.ParameterItem" id="ParameterItem73">
+                                                                                                                                                       <void class="jeplus.data.ParameterItem" method="getField">
+                                                                                                                                                        <string>ID</string>
+                                                                                                                                                        <void method="set">
+                                                                                                                                                         <object idref="ParameterItem73"/>
+                                                                                                                                                         <string>P74</string>
+                                                                                                                                                        </void>
+                                                                                                                                                       </void>
+                                                                                                                                                       <void class="jeplus.data.ParameterItem" method="getField">
+                                                                                                                                                        <string>Name</string>
+                                                                                                                                                        <void method="set">
+                                                                                                                                                         <object idref="ParameterItem73"/>
+                                                                                                                                                         <string>LAT</string>
+                                                                                                                                                        </void>
+                                                                                                                                                       </void>
+                                                                                                                                                       <void class="jeplus.data.ParameterItem" method="getField">
+                                                                                                                                                        <string>Type</string>
+                                                                                                                                                        <void method="set">
+                                                                                                                                                         <object idref="ParameterItem73"/>
+                                                                                                                                                         <int>1</int>
+                                                                                                                                                        </void>
+                                                                                                                                                       </void>
+                                                                                                                                                       <void class="jeplus.data.ParameterItem" method="getField">
+                                                                                                                                                        <string>SearchString</string>
+                                                                                                                                                        <void method="set">
+                                                                                                                                                         <object idref="ParameterItem73"/>
+                                                                                                                                                         <string>@@LAT@@</string>
+                                                                                                                                                        </void>
+                                                                                                                                                       </void>
+                                                                                                                                                       <void property="project">
+                                                                                                                                                        <object idref="JEPlusProject0"/>
+                                                                                                                                                       </void>
+                                                                                                                                                       <void property="valuesString">
+                                                                                                                                                        <string>@sample(n,0,2,2)</string>
+                                                                                                                                                       </void>
+                                                                                                                                                      </object>
+                                                                                                                                                     </void>
+                                                                                                                                                     <void method="add">
+                                                                                                                                                      <object class="javax.swing.tree.DefaultMutableTreeNode">
+                                                                                                                                                       <void property="userObject">
+                                                                                                                                                        <object class="jeplus.data.ParameterItem" id="ParameterItem74">
+                                                                                                                                                         <void class="jeplus.data.ParameterItem" method="getField">
+                                                                                                                                                          <string>ID</string>
+                                                                                                                                                          <void method="set">
+                                                                                                                                                           <object idref="ParameterItem74"/>
+                                                                                                                                                           <string>P75</string>
+                                                                                                                                                          </void>
+                                                                                                                                                         </void>
+                                                                                                                                                         <void class="jeplus.data.ParameterItem" method="getField">
+                                                                                                                                                          <string>Name</string>
+                                                                                                                                                          <void method="set">
+                                                                                                                                                           <object idref="ParameterItem74"/>
+                                                                                                                                                           <string>LONG</string>
+                                                                                                                                                          </void>
+                                                                                                                                                         </void>
+                                                                                                                                                         <void class="jeplus.data.ParameterItem" method="getField">
+                                                                                                                                                          <string>Type</string>
+                                                                                                                                                          <void method="set">
+                                                                                                                                                           <object idref="ParameterItem74"/>
+                                                                                                                                                           <int>1</int>
+                                                                                                                                                          </void>
+                                                                                                                                                         </void>
+                                                                                                                                                         <void class="jeplus.data.ParameterItem" method="getField">
+                                                                                                                                                          <string>SearchString</string>
+                                                                                                                                                          <void method="set">
+                                                                                                                                                           <object idref="ParameterItem74"/>
+                                                                                                                                                           <string>@@LONG@@</string>
+                                                                                                                                                          </void>
+                                                                                                                                                         </void>
+                                                                                                                                                         <void property="project">
+                                                                                                                                                          <object idref="JEPlusProject0"/>
+                                                                                                                                                         </void>
+                                                                                                                                                         <void property="valuesString">
+                                                                                                                                                          <string>@sample(n,0,2,2)</string>
+                                                                                                                                                         </void>
+                                                                                                                                                        </object>
+                                                                                                                                                       </void>
+                                                                                                                                                      </object>
+                                                                                                                                                     </void>
+                                                                                                                                                    </object>
+                                                                                                                                                   </void>
+                                                                                                                                                  </object>
+                                                                                                                                                 </void>
+                                                                                                                                                </object>
+                                                                                                                                               </void>
+                                                                                                                                              </object>
+                                                                                                                                             </void>
                                                                                                                                             </object>
                                                                                                                                            </void>
                                                                                                                                           </object>

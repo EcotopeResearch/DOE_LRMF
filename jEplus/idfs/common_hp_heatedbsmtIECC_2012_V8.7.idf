@@ -28,8 +28,8 @@ Timestep,
 
 Site:Location,
     Seattle Seattle Tacoma Intl A_WA_USA Design_Conditions,    !- Name
-    47.47,                    !- Latitude
-    -122.32,                  !- Longitude
+    @@LAT@@,                    !- Latitude
+    @@LONG@@,                  !- Longitude
     -8,                       !- Time Zone
     122;                      !- Elevation
 
@@ -38,7 +38,7 @@ SizingPeriod:DesignDay,
     12,                       !- Month
     21,                       !- Day of Month
     WinterDesignDay,          !- Day Type
-    -4.2,                     !- Maximum DryBulb Temperature
+    @@WDB@@,                     !- Maximum DryBulb Temperature
     0,                        !- Daily DryBulb Temperature Range
     ,                         !- DryBulb Temperature Range Modifier Type
     ,                         !- DryBulb Temperature Range Modifier Day Schedule Name
@@ -66,12 +66,12 @@ SizingPeriod:DesignDay,
     8,                        !- Month
     21,                       !- Day of Month
     SummerDesignDay,          !- Day Type
-    29.4,                     !- Maximum DryBulb Temperature
+    @@SDB@@,                     !- Maximum DryBulb Temperature
     10.4,                     !- Daily DryBulb Temperature Range
     ,                         !- DryBulb Temperature Range Modifier Type
     ,                         !- DryBulb Temperature Range Modifier Day Schedule Name
     Wetbulb,                  !- Humidity Condition Type
-    18.3,                     !- Wetbulb or DewPoint at Maximum DryBulb
+    @@SWB@@,                     !- Wetbulb or DewPoint at Maximum DryBulb
     ,                         !- Humidity Condition Day Schedule Name
     ,                         !- Humidity Ratio at Maximum DryBulb
     ,                         !- Enthalpy at Maximum DryBulb

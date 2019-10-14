@@ -28,7 +28,7 @@ from functions_general import (HeatingEfficiency, HeatingEfficiencyCurves1, Heat
                                CoolingEfficiencyCurves1, CoolingEfficiencyCurves2, CoolingEfficiencyCurves3,
                                CoolingEfficiencyCurves4, CoolingEfficiencyCurves5,buildingName, slabBoundaryCondition, exteriorCorrLights, 
                                unitDhwCoeffOn, unitDhwCoeffOff, unitDhwThermEff, lightingStairs,
-                               extPrkLights, runnumber, z1, z2)
+                               extPrkLights, runnumber, z1, z2, WinterDB, SummerDB, SummerWB, Latitude, Longitude)
 
 from functions_bsmt import (bsmtVentilationFlowrate, bsmtVentilationSP,
                             bsmtHvacFanSP, bsmtHeatingSetpoint, bsmtCoolingSetpoint, bsmtLpd)
@@ -43,13 +43,13 @@ from functions_corridor import (commonLpd, commonVentilationFlowrate,
 from functions_unit import (unitLpd, unitVentilationFlowrate, unitVentilationSP,
                             unitHvacFanSP, unitHeatingSetpoint, unitCoolingSetpoint)
 
-def commonBsmt_inputs(df, runinput):
+def commonBsmt_inputs(df):
     
     # pass column from dci df column to function, return E+ df column
     v1 = runnumber(df)
     v2 = z1(df)
     v3 = z2(df)
-    buildingNameVar = buildingName(df['sitex'], runinput)
+    buildingNameVar = buildingName(df['sitex'], df['CZ'])
     unitHeatingEfficiencyVar = HeatingEfficiency(df['inunit_heat'], df['Central_Sys'])
     unitHeatingEfficiencyCurves1Var = HeatingEfficiencyCurves1(df['inunit_heat'])
     unitHeatingEfficiencyCurves2Var = HeatingEfficiencyCurves2(df['inunit_heat'])
@@ -70,10 +70,10 @@ def commonBsmt_inputs(df, runinput):
     unitVentilationFlowrateVar = unitVentilationFlowrate(df['Ventcentral_YN'] ,df['Vent_inuniterv_YN'] ,df['Vent_inunit_erveff'])
     unitVentilationSPVar = unitVentilationSP(df['Ventcentral_YN'], df['Vent_inuniterv_YN'])
     unitHvacFanSPVar = unitHvacFanSP(df['Ventcentral_YN'], df['Vent_inuniterv_YN'])
-    extWallCondVar = extWallCond(df['wtmn_GenlWallU'])
-    ceilingCondVar = ceilingCond(df['wtmn_CeilingU'])
-    slabCondVar = slabCond(df['Fnd_wtmn_u'], df['Fnd_wtmn_f'])
-    windowUVar = windowU(df['wtmn_WindowU'])
+    extWallCondVar = extWallCond(df['wtmn_GenlWallU'], df['State'])
+    ceilingCondVar = ceilingCond(df['wtmn_CeilingU'], df['State'])
+    slabCondVar = slabCond(df['Fnd_wtmn_u'], df['Fnd_wtmn_f'], df['State'] )
+    windowUVar = windowU(df['wtmn_WindowU'], df['State'], df['CZ'])
     windowSHGCVar = windowSHGC(df['wtmn_WindowSHGC'])
     lightingStairsVar = lightingStairs(df['LPD_IntStairwell'])
     bsmtLpdVar = bsmtLpd(df['LPD_IntPk_common'], df['FndType'])
@@ -115,12 +115,16 @@ def commonBsmt_inputs(df, runinput):
     bsmtVentilationFlowrateVar = bsmtVentilationFlowrate(df['Vent_bsmt_YN'] ,df['Vent_bsmterv_YN'] ,df['Vent_bsmt_erveff']  ,df['LPD_IntPk_common'])
     bsmtVentilationSPVar = bsmtVentilationSP(df['Vent_bsmterv_YN'])
     bsmtHvacFanSPVar = bsmtHvacFanSP(df['Vent_bsmterv_YN'])
-    bsmtWallCondVar = bsmtWallCond(df['BsmtWallU'])
-    floorCondVar = floorCond(df['BsmtFloorU'])
+    bsmtWallCondVar = bsmtWallCond(df['BsmtWallU'], df['CZ'])
+    floorCondVar = floorCond(df['BsmtFloorU'], df['CZ'])
     bsmtHeatingSetpointVar = bsmtHeatingSetpoint(df['Heat_bsmt_YN'])
     bsmtCoolingSetpointVar = bsmtCoolingSetpoint(df['Heat_bsmt_YN'])
-
-
+    winterDbVar = WinterDB(df['CZ'])
+    summerDbVar = SummerDB(df['CZ'])
+    summerWbVar = SummerWB(df['CZ'])
+    longitudeVar = Longitude(df['CZ'])
+    latitudeVar = Latitude(df['CZ'])
+    
     # create dataframe
     new_df = pd.DataFrame()
     
@@ -198,16 +202,21 @@ def commonBsmt_inputs(df, runinput):
     new_df['Floor Insulation Conductivity [W/m*K]'] = floorCondVar
     new_df['Bsmt heating setpoint temp [C]'] = bsmtHeatingSetpointVar
     new_df['Bsmt cooling setpoint temp [C]'] = bsmtCoolingSetpointVar
+    new_df['WinterDB'] = winterDbVar
+    new_df['SummerDB'] = summerDbVar
+    new_df['SummerWB'] = summerWbVar
+    new_df['Latitude'] = latitudeVar
+    new_df['Longitude'] = longitudeVar
 
     return new_df
     
-def commonSlab_inputs(df, runinput):
+def commonSlab_inputs(df):
     
     # pass column from dci df column to function, return E+ df column
     v1 = runnumber(df)
     v2 = z1(df)
     v3 = z2(df)
-    buildingNameVar = buildingName(df['sitex'], runinput)
+    buildingNameVar = buildingName(df['sitex'], df['CZ'])
     unitHeatingEfficiencyVar = HeatingEfficiency(df['inunit_heat'], df['Central_Sys'])
     unitHeatingEfficiencyCurves1Var = HeatingEfficiencyCurves1(df['inunit_heat'])
     unitHeatingEfficiencyCurves2Var = HeatingEfficiencyCurves2(df['inunit_heat'])
@@ -228,10 +237,10 @@ def commonSlab_inputs(df, runinput):
     unitVentilationFlowrateVar = unitVentilationFlowrate(df['Ventcentral_YN'] ,df['Vent_inuniterv_YN'] ,df['Vent_inunit_erveff'])
     unitVentilationSPVar = unitVentilationSP(df['Ventcentral_YN'], df['Vent_inuniterv_YN'])
     unitHvacFanSPVar = unitHvacFanSP(df['Ventcentral_YN'], df['Vent_inuniterv_YN'])
-    extWallCondVar = extWallCond(df['wtmn_GenlWallU'])
-    ceilingCondVar = ceilingCond(df['wtmn_CeilingU'])
-    slabCondVar = slabCond(df['Fnd_wtmn_u'], df['Fnd_wtmn_f'])
-    windowUVar = windowU(df['wtmn_WindowU'])
+    extWallCondVar = extWallCond(df['wtmn_GenlWallU'], df['State'])
+    ceilingCondVar = ceilingCond(df['wtmn_CeilingU'], df['State'])
+    slabCondVar = slabCond(df['Fnd_wtmn_u'], df['Fnd_wtmn_f'], df['State'])
+    windowUVar = windowU(df['wtmn_WindowU'], df['State'], df['CZ'])
     windowSHGCVar = windowSHGC(df['wtmn_WindowSHGC'])
     lightingStairsVar = lightingStairs(df['LPD_IntStairwell'])
     bsmtLpdVar = bsmtLpd(df['LPD_IntPk_common'], df['FndType'])
@@ -257,7 +266,11 @@ def commonSlab_inputs(df, runinput):
     commonHvacFanSPVar = commonHvacFanSP(df['Ventcentral_YN'], df['Vent_corridorerv_YN'])
     commonHeatingSetpointVar = commonHeatingSetpoint(df['BLANK'])
     commonCoolingSetpointVar = commonCoolingSetpoint(df['BLANK'])
-
+    winterDbVar = WinterDB(df['CZ'])
+    summerDbVar = SummerDB(df['CZ'])
+    summerWbVar = SummerWB(df['CZ'])
+    longitudeVar = Longitude(df['CZ'])
+    latitudeVar = Latitude(df['CZ'])
 
     # create dataframe
     new_df = pd.DataFrame()
@@ -316,18 +329,22 @@ def commonSlab_inputs(df, runinput):
     new_df['Corridor HVAC Fan SP [Pa]'] = commonHvacFanSPVar
     new_df['Corridor heating setpoint temp [C]'] = commonHeatingSetpointVar
     new_df['Corridor cooling setpoint temp [C]'] = commonCoolingSetpointVar
-
+    new_df['WinterDB'] = winterDbVar
+    new_df['SummerDB'] = summerDbVar
+    new_df['SummerWB'] = summerWbVar
+    new_df['Latitude'] = latitudeVar
+    new_df['Longitude'] = longitudeVar
 
 
     return new_df
     
-def gardenBsmt_inputs(df, runinput):
+def gardenBsmt_inputs(df):
     
     # pass column from dci df column to function, return E+ df column
     v1 = runnumber(df)
     v2 = z1(df)
     v3 = z2(df)
-    buildingNameVar = buildingName(df['sitex'], runinput)
+    buildingNameVar = buildingName(df['sitex'], df['CZ'])
     unitHeatingEfficiencyVar = HeatingEfficiency(df['inunit_heat'], df['Central_Sys'])
     unitHeatingEfficiencyCurves1Var = HeatingEfficiencyCurves1(df['inunit_heat'])
     unitHeatingEfficiencyCurves2Var = HeatingEfficiencyCurves2(df['inunit_heat'])
@@ -348,10 +365,10 @@ def gardenBsmt_inputs(df, runinput):
     unitVentilationFlowrateVar = unitVentilationFlowrate(df['Ventcentral_YN'] ,df['Vent_inuniterv_YN'] ,df['Vent_inunit_erveff'])
     unitVentilationSPVar = unitVentilationSP(df['Ventcentral_YN'], df['Vent_inuniterv_YN'])
     unitHvacFanSPVar = unitHvacFanSP(df['Ventcentral_YN'], df['Vent_inuniterv_YN'])
-    extWallCondVar = extWallCond(df['wtmn_GenlWallU'])
-    ceilingCondVar = ceilingCond(df['wtmn_CeilingU'])
-    slabCondVar = slabCond(df['Fnd_wtmn_u'], df['Fnd_wtmn_f'])
-    windowUVar = windowU(df['wtmn_WindowU'])
+    extWallCondVar = extWallCond(df['wtmn_GenlWallU'], df['State'])
+    ceilingCondVar = ceilingCond(df['wtmn_CeilingU'], df['State'])
+    slabCondVar = slabCond(df['Fnd_wtmn_u'], df['Fnd_wtmn_f'], df['State'])
+    windowUVar = windowU(df['wtmn_WindowU'], df['State'], df['CZ'])
     windowSHGCVar = windowSHGC(df['wtmn_WindowSHGC'])
     lightingStairsVar = lightingStairs(df['LPD_IntStairwell'])
     bsmtLpdVar = bsmtLpd(df['LPD_IntPk_common'], df['FndType'])
@@ -375,11 +392,16 @@ def gardenBsmt_inputs(df, runinput):
     bsmtVentilationFlowrateVar = bsmtVentilationFlowrate(df['Vent_bsmt_YN'] ,df['Vent_bsmterv_YN'] ,df['Vent_bsmt_erveff']  ,df['LPD_IntPk_common'])
     bsmtVentilationSPVar = bsmtVentilationSP(df['Vent_bsmterv_YN'])
     bsmtHvacFanSPVar = bsmtHvacFanSP(df['Vent_bsmterv_YN'])
-    bsmtWallCondVar = bsmtWallCond(df['BsmtWallU'])
-    floorCondVar = floorCond(df['BsmtFloorU'])
+    bsmtWallCondVar = bsmtWallCond(df['BsmtWallU'], df['CZ'])
+    floorCondVar = floorCond(df['BsmtFloorU'], df['CZ'])
     bsmtHeatingSetpointVar = bsmtHeatingSetpoint(df['Heat_bsmt_YN'])
     bsmtCoolingSetpointVar = bsmtCoolingSetpoint(df['Heat_bsmt_YN'])
-
+    winterDbVar = WinterDB(df['CZ'])
+    summerDbVar = SummerDB(df['CZ'])
+    summerWbVar = SummerWB(df['CZ'])
+    longitudeVar = Longitude(df['CZ'])
+    latitudeVar = Latitude(df['CZ'])
+    
     # create dataframe
     new_df = pd.DataFrame()
     
@@ -439,17 +461,21 @@ def gardenBsmt_inputs(df, runinput):
     new_df['Floor Insulation Conductivity [W/m*K]'] = floorCondVar
     new_df['Bsmt heating setpoint temp [C]'] = bsmtHeatingSetpointVar
     new_df['Bsmt cooling setpoint temp [C]'] = bsmtCoolingSetpointVar
-
+    new_df['WinterDB'] = winterDbVar
+    new_df['SummerDB'] = summerDbVar
+    new_df['SummerWB'] = summerWbVar
+    new_df['Latitude'] = latitudeVar
+    new_df['Longitude'] = longitudeVar
 
     return new_df
     
-def gardenSlab_inputs(df, runinput):
+def gardenSlab_inputs(df):
     
     # pass column from dci df column to function, return E+ df column
     v1 = runnumber(df)
     v2 = z1(df)
     v3 = z2(df)
-    buildingNameVar = buildingName(df['sitex'], runinput)
+    buildingNameVar = buildingName(df['sitex'], df['CZ'])
     unitHeatingEfficiencyVar = HeatingEfficiency(df['inunit_heat'], df['Central_Sys'])
     unitHeatingEfficiencyCurves1Var = HeatingEfficiencyCurves1(df['inunit_heat'])
     unitHeatingEfficiencyCurves2Var = HeatingEfficiencyCurves2(df['inunit_heat'])
@@ -470,10 +496,10 @@ def gardenSlab_inputs(df, runinput):
     unitVentilationFlowrateVar = unitVentilationFlowrate(df['Ventcentral_YN'] ,df['Vent_inuniterv_YN'] ,df['Vent_inunit_erveff'])
     unitVentilationSPVar = unitVentilationSP(df['Ventcentral_YN'], df['Vent_inuniterv_YN'])
     unitHvacFanSPVar = unitHvacFanSP(df['Ventcentral_YN'], df['Vent_inuniterv_YN'])
-    extWallCondVar = extWallCond(df['wtmn_GenlWallU'])
-    ceilingCondVar = ceilingCond(df['wtmn_CeilingU'])
-    slabCondVar = slabCond(df['Fnd_wtmn_u'], df['Fnd_wtmn_f'])
-    windowUVar = windowU(df['wtmn_WindowU'])
+    extWallCondVar = extWallCond(df['wtmn_GenlWallU'], df['State'])
+    ceilingCondVar = ceilingCond(df['wtmn_CeilingU'], df['State'])
+    slabCondVar = slabCond(df['Fnd_wtmn_u'], df['Fnd_wtmn_f'], df['State'])
+    windowUVar = windowU(df['wtmn_WindowU'], df['State'], df['CZ'])
     windowSHGCVar = windowSHGC(df['wtmn_WindowSHGC'])
     lightingStairsVar = lightingStairs(df['LPD_IntStairwell'])
     bsmtLpdVar = bsmtLpd(df['LPD_IntPk_common'], df['FndType'])
@@ -481,7 +507,12 @@ def gardenSlab_inputs(df, runinput):
     unitHeatingSetpointVar = unitHeatingSetpoint(df['BLANK'])
     unitCoolingSetpointVar = unitCoolingSetpoint(df['BLANK'])
     exteriorCorrLightsVar = exteriorCorrLights(df)
-
+    winterDbVar = WinterDB(df['CZ'])
+    summerDbVar = SummerDB(df['CZ'])
+    summerWbVar = SummerWB(df['CZ'])
+    longitudeVar = Longitude(df['CZ'])
+    latitudeVar = Latitude(df['CZ'])
+    
     # create dataframe
     new_df = pd.DataFrame()
     
@@ -521,6 +552,10 @@ def gardenSlab_inputs(df, runinput):
     new_df['Unit heating setpoint temp [C]'] = unitHeatingSetpointVar
     new_df['Unit cooling setpoint temp [C]'] = unitCoolingSetpointVar
     new_df['Exterior corridor Lights [W]'] = exteriorCorrLightsVar
-
-
+    new_df['WinterDB'] = winterDbVar
+    new_df['SummerDB'] = summerDbVar
+    new_df['SummerWB'] = summerWbVar
+    new_df['Latitude'] = latitudeVar
+    new_df['Longitude'] = longitudeVar
+    
     return new_df

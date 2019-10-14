@@ -125,7 +125,7 @@ def bsmtLpd(intPrkLpd, FndType):
             elif FndType[i] == 'unventedcrawlspace':
                 var.append(0)
             elif FndType[i] == 'heatedbsmt':
-                var.append(0.4 * 7800) # 0.4 for bsmt * area 
+                var.append(0.2 * 7800) # 0.2 for bsmt * area for interior parking
             else:
                 var.append(0)
                 print('ERROR UNKNOWN FOUND TYPE bsmtLpd')

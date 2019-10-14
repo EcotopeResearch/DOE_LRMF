@@ -37,7 +37,7 @@ def ipu_to_siu(arg):
 
 ##### CONSTRUCTION CONDUCTIVITY ######
 
-def bsmtWallCond(bsmtWallU):
+def bsmtWallCond(bsmtWallU, cz):
     '''
     EnergyPlus Object
     Material
@@ -63,10 +63,15 @@ def bsmtWallCond(bsmtWallU):
     for i in range(0, len(bsmtWallU)):
         # convert bsmt wall u-values from imperial units to metric units. 
         if ipu_to_siu(bsmtWallU[i]) == 0:
+            
             ### IF THE VALUE IS ZERO WE NEED TO REPLACE WITH THE CODE MINIMUM ###
             ### THIS WILL ALSO DEPEND ON LOCATION, FUNCTIONALITY TO ADD ###
-            ### USING 0.5 AS PLACEHOLDER ###
-            u = ipu_to_siu(0.5) # replace with code minimum if = 0
+            
+            if cz[i] == '4A':
+                u = ipu_to_siu(0.059) # replace with code minimum if = 0
+            else:
+                u = ipu_to_siu(0.05)
+            
         else:
             u = ipu_to_siu(bsmtWallU[i]) # target u-value
         
@@ -78,7 +83,7 @@ def bsmtWallCond(bsmtWallU):
     
     return var
 
-def floorCond(BsmtFloorU):
+def floorCond(BsmtFloorU, cz):
     '''
     EnergyPlus Object
     Material
@@ -106,8 +111,14 @@ def floorCond(BsmtFloorU):
         if ipu_to_siu(BsmtFloorU[i]) == 0:
             ### IF THE VALUE IS ZERO WE NEED TO REPLACE WITH THE CODE MINIMUM ###
             ### THIS WILL ALSO DEPEND ON LOCATION, FUNCTIONALITY TO ADD ###
-            ### USING 0.5 AS PLACEHOLDER ###
-            u = ipu_to_siu(0.5) # replace with code minimum if = 0
+            
+            if cz[i] == '7A':
+                u = ipu_to_siu(0.028) 
+            elif cz[i] == '4A':
+                u = ipu_to_siu(0.047)
+            else:
+                u = ipu_to_siu(0.033)
+                
         else:
             u = ipu_to_siu(BsmtFloorU[i]) # target u-value
         
@@ -119,7 +130,7 @@ def floorCond(BsmtFloorU):
     
     return var
 
-def extWallCond(wtmnGenWallU):
+def extWallCond(wtmnGenWallU, st):
     '''
     EnergyPlus Object
     Material
@@ -147,8 +158,14 @@ def extWallCond(wtmnGenWallU):
         if ipu_to_siu(wtmnGenWallU[i]) == 0:
             ### IF THE VALUE IS ZERO WE NEED TO REPLACE WITH THE CODE MINIMUM ###
             ### THIS WILL ALSO DEPEND ON LOCATION, FUNCTIONALITY TO ADD ###
-            ### USING 0.5 AS PLACEHOLDER ###
-            u = ipu_to_siu(0.5) # replace with code minimum if = 0
+            
+            if st[i] == 'OR':
+                u = ipu_to_siu(0.06)
+            elif st[i] == 'MN':
+                u = ipu_to_siu(0.48)
+            else:
+                u = ipu_to_siu(0.57)
+
         else:
             u = ipu_to_siu(wtmnGenWallU[i]) # target u-value
         
@@ -161,7 +178,7 @@ def extWallCond(wtmnGenWallU):
     return var
 
 
-def ceilingCond(wtmnCeilingU):
+def ceilingCond(wtmnCeilingU, st):
     # initial SEED model values
     k_i = 0.0617176 # initial insulation thermal conductivity [W/m*K]
     t_i = 0.447738918260194 # insulation thickness [m]
@@ -183,7 +200,12 @@ def ceilingCond(wtmnCeilingU):
             ### IF THE VALUE IS ZERO WE NEED TO REPLACE WITH THE CODE MINIMUM ###
             ### THIS WILL ALSO DEPEND ON LOCATION, FUNCTIONALITY TO ADD ###
             ### USING 0.5 AS PLACEHOLDER ###
-            u = ipu_to_siu(0.5) # replace with code minimum if = 0
+            
+            if st[i] == 'OR':
+                u = ipu_to_siu(0.031)
+            else:
+                u = ipu_to_siu(0.026)
+        
         else:
             u = ipu_to_siu(wtmnCeilingU[i]) # target u-value
         
@@ -196,7 +218,7 @@ def ceilingCond(wtmnCeilingU):
     return var
 
 
-def slabCond(fndWtmnU, FndWtmnF):
+def slabCond(fndWtmnU, FndWtmnF, st):
     # initial SEED model values
     k_i = 0.0485233 # initial insulation thermal conductivity [W/m*K]
     t_i = 0.23495 # insulation thickness [m]
@@ -209,13 +231,13 @@ def slabCond(fndWtmnU, FndWtmnF):
     
     ## loop through and calculate whether u val or f val or none
     slbU = []
-    for i in range(0,len(fndWtmnU)):
-        if fndWtmnU[i] !=0:
-            slbU.append(fndWtmnU[i])
-        elif FndWtmnF[i] !=0:
+    for i in range(0,len(FndWtmnF)):
+        if FndWtmnF[i] !=0:
             slbU.append(float(FndWtmnF[i])*0.0474)
+        elif fndWtmnU[i] !=0:
+            slbU.append(fndWtmnU[i])
         else:
-            slbU.append(0) ##THIS WILL NEED TO BE REPLACED WITH THE CODE MIN
+            slbU.append(0.05) ##THIS WILL NEED TO BE REPLACED WITH THE CODE MIN
     
     # empty list to return    
     var = []    
@@ -227,8 +249,12 @@ def slabCond(fndWtmnU, FndWtmnF):
         if ipu_to_siu(slbU[i]) == 0:
             ### IF THE VALUE IS ZERO WE NEED TO REPLACE WITH THE CODE MINIMUM ###
             ### THIS WILL ALSO DEPEND ON LOCATION, FUNCTIONALITY TO ADD ###
-            ### USING 0.5 AS PLACEHOLDER ###
-            u = ipu_to_siu(0.5) # replace with code minimum if = 0
+            
+            if st[i] == 'MN':
+                u = ipu_to_siu(0.52)
+            else:
+                u = ipu_to_siu(0.54)
+                
         else:
             u = ipu_to_siu(slbU[i]) # target u-value
         
@@ -240,7 +266,7 @@ def slabCond(fndWtmnU, FndWtmnF):
     
     return var
 
-def windowU(wtmnWindowU):
+def windowU(wtmnWindowU, st, cz):
     
     # empty list to return    
     var = []    
@@ -249,7 +275,13 @@ def windowU(wtmnWindowU):
     for i in range(0, len(wtmnWindowU)):
         
         if ipu_to_siu(wtmnWindowU[i]) == 0:
-            u_start = ipu_to_siu(0.50) # replace with code minimum if = 0
+            if st[i] == 'OR':
+                u_start = ipu_to_siu(0.35) # replace with code minimum if = 0
+            elif cz[i] == '4A':
+                u_start = ipu_to_siu(0.35)
+            else:
+                u_start = ipu_to_siu(0.32)
+        
         else:
             u_start = ipu_to_siu(wtmnWindowU[i]) 
         
@@ -268,7 +300,7 @@ def windowSHGC(wtmnWindowSHGC):
     for i in range(0, len(wtmnWindowSHGC)):
         
         if wtmnWindowSHGC[i] == 0:
-            shgc = 0.50 # replace with code minimum if = 0
+            shgc = 0.4 # code min
         else:
             shgc = wtmnWindowSHGC[i] 
         

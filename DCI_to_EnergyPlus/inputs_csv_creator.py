@@ -13,7 +13,7 @@ Files Include
     2) dataframe_creator
     3) function files
 
-    
+
 This is the inputs_csv_creator file, it generates the csv for energyplus.
     
 
@@ -27,16 +27,13 @@ from dataframe_creator import (commonBsmt_inputs, commonSlab_inputs,
                                gardenBsmt_inputs, gardenSlab_inputs)
 
 # read csv of DCI outputs
-df = pd.read_csv('ModelingInputs.csv')
+df = pd.read_csv('ModelingInputs20190930.csv')
 
 # replacements
 df = df.replace(np.nan, 0, regex=True)
 df = df.replace('gas fired unit heater', 'gasfurnace', regex=True)
 df = df.replace('gasboiler', 'hydronic baseboard (gas boiler)', regex=True)
 df['common_cool'] = df['common_cool'].replace('gasfurnace', 0, regex=True)
-
-# run id
-runinput = '_001'
 
 # break the input df up into sub-dataframes that match the SEED models
 # first by entry type
@@ -67,10 +64,10 @@ df_gardenBsmt = df_gardenBsmt.reset_index()
 df_gardenSlab = df_gardenSlab.reset_index()
 
 # use functions to generate the EnergyPlus Input dataframes
-commonBsmt = commonBsmt_inputs(df_commonBsmt, runinput)
-commonSlab = commonSlab_inputs(df_commonSlab, runinput)
-gardenBsmt = gardenBsmt_inputs(df_gardenBsmt, runinput)
-gardenSlab = gardenSlab_inputs(df_gardenSlab, runinput)
+commonBsmt = commonBsmt_inputs(df_commonBsmt)
+commonSlab = commonSlab_inputs(df_commonSlab)
+gardenBsmt = gardenBsmt_inputs(df_gardenBsmt)
+gardenSlab = gardenSlab_inputs(df_gardenSlab)
 
 # final step! print to the inputs csv for parametric run
 commonBsmt.to_csv('inputs_commonBsmt.csv', header=False, index=False)
