@@ -42,14 +42,33 @@ def runnumber(df):
         
     return var
 
-def z1(df):
+def z1(cz, st): #weather switcher
     
     # empty list to return  
     var = []
     
     #for loop to walk through list of Foundation Types
-    for i in range(0,len(df)):
-        var.append(0)
+    for i in range(0,len(cz)):
+        
+        if cz[i] == '4A':
+            var.append('USA_MO_St.Louis-Spirit.of.St.Louis.AP.724345_TMY3.epw')
+        elif cz[i] == '4C' and st[i] == 'WA':
+            var.append('USA_WA_Seattle-Tacoma.Intl.AP.727930_TMY3.epw')
+        elif cz[i] == '4C' and st[i] == 'OR':
+            var.append('USA_OR_Portland.Intl.AP.726980_TMY3.epw')
+        elif cz[i] == '5A':
+            var.append('USA_IL_Chicago-OHare.Intl.AP.725300_TMY3.epw')            
+        elif cz[i] == '5B' and st[i] == 'WA':
+            var.append('USA_WA_Spokane.Intl.AP.727850_TMY3.epw')            
+        elif cz[i] == '5B' and st[i] == 'OR':
+            var.append('USA_OR_Redmond-Roberts.Field.726835_TMY3.epw')   
+        elif cz[i] == '6A':
+            var.append('USA_MN_Minneapolis-St.Paul.Intl.AP.726580_TMY3.epw')
+        elif cz[i] == '7A':
+            var.append('USA_MN_Bemidji.Muni.AP.727550_TMY3.epw')
+        else:
+            print('No climate zone could not identify weather file')
+            var.append()
         
     return var
 
@@ -381,7 +400,7 @@ def CoolingEfficiencyCurves5(unitCool):
 #####     DESIGN DAYS       #######
 ###################################
 
-def WinterDB(cz):
+def WinterDB(cz, st):
     '''
     EnergyPlus Object
     SizingPeriod:DesignDay
@@ -392,23 +411,26 @@ def WinterDB(cz):
     for i in range(0, len(cz)):
         if cz[i] == "4A":
             var.append(-15)
-        elif cz[i] == "4C":
+        elif cz[i] == "4C" and st[i] == 'WA':
             var.append(-4.2)
+        elif cz[i] == "4C" and st[i] == 'OR':
+            var.append(-4.5)
         elif cz[i] == "5A":
             var.append(-20)                        
-        elif cz[i] == "5B":
+        elif cz[i] == "5B" and st[i] == 'WA':
             var.append(-16)
+        elif cz[i] == "5B" and st[i] == 'OR':
+            var.append(-14.8)
         elif cz[i] == "6A":
             var.append(-25.2)
         elif cz[i] == "7A":
             var.append(-30.4)
         else:
             print("unknown climate zone")
-            var.append(-5)
                                                     
     return var
 
-def SummerDB(cz):
+def SummerDB(cz, st):
     '''
     EnergyPlus Object
     SizingPeriod:DesignDay
@@ -419,11 +441,15 @@ def SummerDB(cz):
     for i in range(0, len(cz)):
         if cz[i] == "4A":
             var.append(35.1)
-        elif cz[i] == "4C":
+        elif cz[i] == "4C" and st[i] == 'WA':
             var.append(29.4)
+        elif cz[i] == "4C" and st[i] == 'OR':
+            var.append(32.9)
         elif cz[i] == "5A":
             var.append(33.3)                        
-        elif cz[i] == "5B":
+        elif cz[i] == "5B" and st[i] == 'WA':
+            var.append(33.8)
+        elif cz[i] == "5B" and st[i] == 'OR':
             var.append(33.8)
         elif cz[i] == "6A":
             var.append(32.8)
@@ -431,11 +457,10 @@ def SummerDB(cz):
             var.append(31)
         else:
             print("unknown climate zone")
-            var.append(SeattleDD)
                                                     
     return var
 
-def SummerWB(cz):
+def SummerWB(cz, st):
     '''
     EnergyPlus Object
     SizingPeriod:DesignDay
@@ -446,23 +471,26 @@ def SummerWB(cz):
     for i in range(0, len(cz)):
         if cz[i] == "4A":
             var.append(25.1)
-        elif cz[i] == "4C":
+        elif cz[i] == "4C" and st[i] == 'WA':
+            var.append(19.7)
+        elif cz[i] == "4C" and st[i] == 'OR':
             var.append(18.3)
         elif cz[i] == "5A":
             var.append(23.7)                        
-        elif cz[i] == "5B":
+        elif cz[i] == "5B" and st[i] == 'WA':
             var.append(17.2)
+        elif cz[i] == "5B" and st[i] == 'OR':
+            var.append(16.6)
         elif cz[i] == "6A":
             var.append(23)
         elif cz[i] == "7A":
             var.append(21.6)
         else:
             print("unknown climate zone")
-            var.append(20)
                                                     
     return var
 
-def Latitude(cz):
+def Latitude(cz, st):
     '''
     EnergyPlus Object
     SizingPeriod:DesignDay
@@ -473,23 +501,26 @@ def Latitude(cz):
     for i in range(0, len(cz)):
         if cz[i] == "4A":
             var.append(38.65)
-        elif cz[i] == "4C":
+        elif cz[i] == "4C" and st[i] == 'WA':
             var.append(47.47)
+        elif cz[i] == "4C" and st[i] == 'OR':
+            var.append(45.60)
         elif cz[i] == "5A":
             var.append(41.98)                        
-        elif cz[i] == "5B":
+        elif cz[i] == "5B" and st[i] == 'WA':
             var.append(47.49)
+        elif cz[i] == "5B" and st[i] == 'OR':
+            var.append(44.25)
         elif cz[i] == "6A":
             var.append(44.88)
         elif cz[i] == "7A":
             var.append(47.50)
         else:
             print("unknown climate zone")
-            var.append(SeattleDD)
                                                     
     return var
 
-def Longitude(cz):
+def Longitude(cz, st):
     '''
     EnergyPlus Object
     SizingPeriod:DesignDay
@@ -500,19 +531,22 @@ def Longitude(cz):
     for i in range(0, len(cz)):
         if cz[i] == "4A":
             var.append(-90.65)
-        elif cz[i] == "4C":
+        elif cz[i] == "4C" and st[i] == 'WA':
             var.append(-122.32)
+        elif cz[i] == "4C" and st[i] == 'OR':
+            var.append(-122.62)
         elif cz[i] == "5A":
             var.append( -87.92)                        
-        elif cz[i] == "5B":
+        elif cz[i] == "5B" and st[i] == 'WA':
             var.append(-117.59)
+        elif cz[i] == "5B" and st[i] == 'OR':
+            var.append(-121.17)
         elif cz[i] == "6A":
             var.append(-93.23)
         elif cz[i] == "7A":
             var.append(-94.93)
         else:
             print("unknown climate zone")
-            var.append(SeattleDD)
                                                     
     return var
 

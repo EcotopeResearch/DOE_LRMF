@@ -66,7 +66,7 @@ def bsmtVentilationSP(ventBsemtErvYN):
             var.append(central)
         else:
             var.append(central)
-            print('ERROR IN bsmtVentilationSP')
+            print('No bsmtVentilationSP info in DCI')
     
     return var
 
@@ -128,7 +128,7 @@ def bsmtLpd(intPrkLpd, FndType):
                 var.append(0.2 * 7800) # 0.2 for bsmt * area for interior parking
             else:
                 var.append(0)
-                print('ERROR UNKNOWN FOUND TYPE bsmtLpd')
+                print('No bsmtLpd in DCI')
             
     return var
 

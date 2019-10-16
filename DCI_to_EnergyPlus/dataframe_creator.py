@@ -47,7 +47,7 @@ def commonBsmt_inputs(df):
     
     # pass column from dci df column to function, return E+ df column
     v1 = runnumber(df)
-    v2 = z1(df)
+    v2 = z1(df['CZ'], df['State'])
     v3 = z2(df)
     buildingNameVar = buildingName(df['sitex'], df['CZ'])
     unitHeatingEfficiencyVar = HeatingEfficiency(df['inunit_heat'], df['Central_Sys'])
@@ -119,11 +119,11 @@ def commonBsmt_inputs(df):
     floorCondVar = floorCond(df['BsmtFloorU'], df['CZ'])
     bsmtHeatingSetpointVar = bsmtHeatingSetpoint(df['Heat_bsmt_YN'])
     bsmtCoolingSetpointVar = bsmtCoolingSetpoint(df['Heat_bsmt_YN'])
-    winterDbVar = WinterDB(df['CZ'])
-    summerDbVar = SummerDB(df['CZ'])
-    summerWbVar = SummerWB(df['CZ'])
-    longitudeVar = Longitude(df['CZ'])
-    latitudeVar = Latitude(df['CZ'])
+    winterDbVar = WinterDB(df['CZ'], df['State'])
+    summerDbVar = SummerDB(df['CZ'], df['State'])
+    summerWbVar = SummerWB(df['CZ'], df['State'])
+    longitudeVar = Longitude(df['CZ'], df['State'])
+    latitudeVar = Latitude(df['CZ'], df['State'])
     
     # create dataframe
     new_df = pd.DataFrame()
@@ -214,7 +214,7 @@ def commonSlab_inputs(df):
     
     # pass column from dci df column to function, return E+ df column
     v1 = runnumber(df)
-    v2 = z1(df)
+    v2 = z1(df['CZ'], df['State'])
     v3 = z2(df)
     buildingNameVar = buildingName(df['sitex'], df['CZ'])
     unitHeatingEfficiencyVar = HeatingEfficiency(df['inunit_heat'], df['Central_Sys'])
@@ -266,11 +266,12 @@ def commonSlab_inputs(df):
     commonHvacFanSPVar = commonHvacFanSP(df['Ventcentral_YN'], df['Vent_corridorerv_YN'])
     commonHeatingSetpointVar = commonHeatingSetpoint(df['BLANK'])
     commonCoolingSetpointVar = commonCoolingSetpoint(df['BLANK'])
-    winterDbVar = WinterDB(df['CZ'])
-    summerDbVar = SummerDB(df['CZ'])
-    summerWbVar = SummerWB(df['CZ'])
-    longitudeVar = Longitude(df['CZ'])
-    latitudeVar = Latitude(df['CZ'])
+    winterDbVar = WinterDB(df['CZ'], df['State'])
+    summerDbVar = SummerDB(df['CZ'], df['State'])
+    summerWbVar = SummerWB(df['CZ'], df['State'])
+    longitudeVar = Longitude(df['CZ'], df['State'])
+    latitudeVar = Latitude(df['CZ'], df['State'])
+
 
     # create dataframe
     new_df = pd.DataFrame()
@@ -342,7 +343,7 @@ def gardenBsmt_inputs(df):
     
     # pass column from dci df column to function, return E+ df column
     v1 = runnumber(df)
-    v2 = z1(df)
+    v2 = z1(df['CZ'], df['State'])
     v3 = z2(df)
     buildingNameVar = buildingName(df['sitex'], df['CZ'])
     unitHeatingEfficiencyVar = HeatingEfficiency(df['inunit_heat'], df['Central_Sys'])
@@ -396,11 +397,12 @@ def gardenBsmt_inputs(df):
     floorCondVar = floorCond(df['BsmtFloorU'], df['CZ'])
     bsmtHeatingSetpointVar = bsmtHeatingSetpoint(df['Heat_bsmt_YN'])
     bsmtCoolingSetpointVar = bsmtCoolingSetpoint(df['Heat_bsmt_YN'])
-    winterDbVar = WinterDB(df['CZ'])
-    summerDbVar = SummerDB(df['CZ'])
-    summerWbVar = SummerWB(df['CZ'])
-    longitudeVar = Longitude(df['CZ'])
-    latitudeVar = Latitude(df['CZ'])
+    winterDbVar = WinterDB(df['CZ'], df['State'])
+    summerDbVar = SummerDB(df['CZ'], df['State'])
+    summerWbVar = SummerWB(df['CZ'], df['State'])
+    longitudeVar = Longitude(df['CZ'], df['State'])
+    latitudeVar = Latitude(df['CZ'], df['State'])
+
     
     # create dataframe
     new_df = pd.DataFrame()
@@ -473,7 +475,7 @@ def gardenSlab_inputs(df):
     
     # pass column from dci df column to function, return E+ df column
     v1 = runnumber(df)
-    v2 = z1(df)
+    v2 = z1(df['CZ'], df['State'])
     v3 = z2(df)
     buildingNameVar = buildingName(df['sitex'], df['CZ'])
     unitHeatingEfficiencyVar = HeatingEfficiency(df['inunit_heat'], df['Central_Sys'])
@@ -507,11 +509,12 @@ def gardenSlab_inputs(df):
     unitHeatingSetpointVar = unitHeatingSetpoint(df['BLANK'])
     unitCoolingSetpointVar = unitCoolingSetpoint(df['BLANK'])
     exteriorCorrLightsVar = exteriorCorrLights(df)
-    winterDbVar = WinterDB(df['CZ'])
-    summerDbVar = SummerDB(df['CZ'])
-    summerWbVar = SummerWB(df['CZ'])
-    longitudeVar = Longitude(df['CZ'])
-    latitudeVar = Latitude(df['CZ'])
+    winterDbVar = WinterDB(df['CZ'], df['State'])
+    summerDbVar = SummerDB(df['CZ'], df['State'])
+    summerWbVar = SummerWB(df['CZ'], df['State'])
+    longitudeVar = Longitude(df['CZ'], df['State'])
+    latitudeVar = Latitude(df['CZ'], df['State'])
+
     
     # create dataframe
     new_df = pd.DataFrame()

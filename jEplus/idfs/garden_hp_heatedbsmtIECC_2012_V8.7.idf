@@ -12266,7 +12266,7 @@ Coil:Cooling:DX:SingleSpeed,
     1000,                     !- Gross Rated Total Cooling Capacity
     autosize,                 !- Gross Rated Sensible Heat Ratio
     @@BSMTCLCOP@@,            !- Gross Rated Cooling COP
-    0.01,                     !- Rated Air Flow Rate
+    0.02,                     !- Rated Air Flow Rate
     ,                         !- Rated Evaporator Fan Power Per Volume Flow Rate
     Cooling Coil Air Inlet Node_unitheatedbsmt,    !- Air Inlet Node Name
     Heating Coil Air Inlet Node_unitheatedbsmt,    !- Air Outlet Node Name
