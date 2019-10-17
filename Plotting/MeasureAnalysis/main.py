@@ -11,103 +11,60 @@ different building components
 
 """
 
-import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-from df_restructure import df_restructure
+# separate script that restructures jEplus and dci outputs for plotting
+from eui_data import eui_data
+from hist_data import hist_data
 
-df = pd.DataFrame()
-df = df_restructure()
+# plot path
+path = 'C:\\Users\\scott\\github\\DOE_LRMF\\Plotting\\MeasureAnalysis\\plots\\'
 
-            
+# pull in dataframes from csv through data formatter scripts
+eui_df = eui_data()
+hist_df = hist_data()
+
+
+# baseline dictionary
+base_dict = {'Basement Wall U-Value': 0.05, 'Ceiling U-Value': 0.026, 'Exterior Wall U-Value': 0.057, 
+             'Slab U-Value': 0.54, 'Window U-Value': 0.4, 'Window SHGC': 0.4}
+
 # plot dataframes
 row = ['Baseline', 'Basement Wall U-Value', 'Ceiling U-Value', 'Exterior Wall U-Value', 'Slab U-Value', 'Window U-Value', 'Window SHGC']
 col = ['IL4A','WA4C','OR4C','IL5A','WA5B','OR5B','MN6A','MN7A']
 
+## loop through eui dataframe rows 1 to len, all columns for plots
+# i for columns
+# j for rows
 
-ax = sns.lineplot(data=df[col[3]][row[3]], legend=False)
-ax.set(xlabel='U Value', ylabel='EUI')
-plt.axvline(0.05, 0, 5, linestyle=':', color='red')
-plt.axhline(0, 0, 5, linestyle=':', color='red')
-ax.set_title('Basement Wall U-Value')
-plt.savefig("bsmtU.png")
-plt.show()
+for i in range(0,8):
+    for j in range(1,7):
+        
+        # set up figure object for subplots
+        fig, ax = plt.subplots()
+        
+        # create line plot
+        ax.set(xlabel='U Value', ylabel='EUI Delta')    
+        sns.lineplot(data=eui_df[col[i]][row[j]], legend=False, ax = ax)
+        
+        # create hist plot
+        if len(hist_df[col[i]][row[j]]) > 5:
+            ax2 = ax.twinx()
+            ax2.set(ylabel='Building Quantity')  
+            sns.distplot(hist_df[col[i]][row[j]], hist=True, kde=False, norm_hist=False, color='orange', ax = ax2)
 
 
-# =============================================================================
-# ax = sns.lineplot(data=IL4A_ceilingU, legend=False)
-# ax.set(xlabel='U Value', ylabel='EUI')
-# plt.axvline(0.026, 0, 5, linestyle=':', color='red')
-# plt.axhline(0, 0, 5, linestyle=':', color='red')
-# ax.set_title('Ceiling U-Value')
-# plt.savefig("ceilU.png")
-# plt.show()
-# 
-# 
-# ## HISTOGRAM INSERT
-# data = []
-# 
-# for i in range(0,len(dci)):
-#     if dci.loc[i,'KeyCodeName']=='GenWallAGU' and dci.loc[i,'State']=='Washington' and dci.loc[i,'ClimateZone']=='CZ 4':
-#         data.append(dci.loc[i,'KeyCodeValue'])
-# 
-# 
-# # set up figure object for subplots
-# fig, ax = plt.subplots()
-# 
-# # create histogram plot
-# 
-# 
-# sns.lineplot(data=IL4A_extWallU, legend=False)
-# ax2 = ax.twinx()
-# ax.set(xlabel='U Value', ylabel='EUI Delta')
-# 
-# #create line plot
-# sns.distplot(data, hist=True, kde=False, norm_hist=False)
-# ax2.set(ylabel='Building Quantity')
-# 
-# plt.axvline(0.057, 0, 5, linestyle=':', color='red')
-# 
-# 
-# 
-# 
-# ax.set_title('Exteroir Wall U-Value')
-# plt.savefig("ExtWallU.png")
-# 
-# 
-# 
-# plt.show()
-# 
-# 
-# ax = sns.lineplot( data=IL4A_slabU, legend=False)
-# ax.set(xlabel='U Value', ylabel='EUI')
-# plt.axvline(0.54, 0, 5, linestyle=':', color='red')
-# plt.axhline(0, 0, 5, linestyle=':', color='red')
-# ax.set_title('Slab F-Value')
-# plt.savefig("slabF.png")
-# plt.show()
-# 
-# ax = sns.lineplot(data=IL4A_windowU, legend=False)
-# ax.set(xlabel='U Value', ylabel='EUI')
-# ax.set_title('Window U-Value')
-# plt.axvline(0.4, 0, 5, linestyle=':', color='red')
-# plt.axhline(0, 0, 5, linestyle=':', color='red')
-# plt.savefig("windU.png")
-# plt.show()
-# 
-# 
-# ax = sns.lineplot(data=IL4A_windowSHGC, legend=False)
-# ax.set(xlabel='SHGC', ylabel='EUI')
-# plt.axvline(0.4, 0, 5, linestyle=':', color='red')
-# plt.axhline(0, 0, 5, linestyle=':', color='red')
-# ax.set_title('Window SHGC')
-# plt.savefig("shgc.png")
-# plt.show()
-# 
-# 
-# #for i in range(0,len(df)):
-# =============================================================================
+        plt.axvline(base_dict[row[j]], 0, 5, linestyle=':', color='red', label='Code Baseline')
+        ax.set_title(str(col[i])+' '+str(row[j]))
     
+        name = str(col[i])+'_'+str(row[j])+'.png'
+        
+        plt.savefig(path + name)
+        plt.show()
+        
+
+
+
 
 

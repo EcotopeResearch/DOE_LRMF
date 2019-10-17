@@ -7,7 +7,7 @@ Created on Wed Oct 16 13:48:39 2019
 
 import pandas as pd
 
-def df_restructure():
+def eui_data():
     param_path = "C:\\Users\\scott\\github\\DOE_LRMF\\DCI_to_EnergyPlus\\MeasureAnalysis\\"
     # bring in results as dataframe
     results = pd.read_csv('AllCombinedResults.csv')
