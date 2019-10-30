@@ -356,7 +356,7 @@ def eui_data():
                 value = results.loc[i,'c0: Electricity:Facility [J](RunPeriod)']*0.000947817/1000/31000
                 MN6A_windowSHGC_dict[key] = value
     
-        # check weather file location - Chicago
+        # check weather file location - Bemidji
         if results.loc[i,'WeatherFile']=='USA_MN_Bemidji.Muni.AP.727550_TMY3.epw':
     
             if 'Baseline' in results.loc[i,'@@NAME@@']:
@@ -548,7 +548,7 @@ def eui_data():
     MN7A_windowSHGC[0] = MN7A_windowSHGC[0] - MN7A_baseline_EUI
     
     
-    index = ['Baseline', 'Basement Wall U-Value', 'Ceiling U-Value', 'Exterior Wall U-Value', 'Slab U-Value', 'Window U-Value', 'Window SHGC']
+    index = ['Baseline', 'Basement Wall U-Value', 'Ceiling U-Value', 'Exterior Wall U-Value', 'Slab F-Value', 'Window U-Value', 'Window SHGC']
     
     d = {'IL4A': [IL4A_baseline_EUI, IL4A_bsmtWallU, IL4A_ceilingU, IL4A_extWallU, IL4A_slabU, IL4A_windowU, IL4A_windowSHGC],
          'WA4C': [WA4C_baseline_EUI, WA4C_bsmtWallU, WA4C_ceilingU, WA4C_extWallU, WA4C_slabU, WA4C_windowU, WA4C_windowSHGC],

@@ -1,0 +1,56 @@
+[4;33mReloaded modules[24m: inputoutput_data[0m
+[4;33mReloaded modules[24m: inputoutput_data[0m
+The variables used in this regression are:
+unitCOP
+dhwType
+dhwEff
+unitLPD
+wallU
+ceilingU
+slabU
+windowU
+SHGC
+The variables used in this regression are:
+unitCOP
+dhwType
+dhwEff
+The variables used in this regression are:
+wallU
+ceilingU
+slabU
+windowU
+SHGC
+[4;33mReloaded modules[24m: inputoutput_data[0m
+[4;33mReloaded modules[24m: inputoutput_data[0m
+[4;33mReloaded modules[24m: inputoutput_data[0m
+[4;33mReloaded modules[24m: inputoutput_data[0m
+[4;33mReloaded modules[24m: inputoutput_data[0m
+5.0
+Df Residuals:                      86   BIC:                             618.0
+Df Model:                           9                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+x1            -3.5557      0.837     -4.249      0.000      -5.219      -1.892
+x2             1.3952      0.155      8.986      0.000       1.087       1.704
+x3             3.0249      4.998      0.605      0.547      -6.910      12.960
+x4             0.6709      1.546      0.434      0.665      -2.402       3.744
+x5           113.4785     43.721      2.596      0.011      26.565     200.392
+x6           115.1625     42.977      2.680      0.009      29.727     200.598
+x7            -9.4204      5.815     -1.620      0.109     -20.981       2.140
+x8            -0.5653      2.252     -0.251      0.802      -5.042       3.911
+x9            38.6370      9.972      3.875      0.000      18.814      58.460
+==============================================================================
+Omnibus:                        1.563   Durbin-Watson:                   1.392
+Prob(Omnibus):                  0.458   Jarque-Bera (JB):                1.010
+Skew:                          -0.117   Prob(JB):                        0.604
+Kurtosis:                       3.447   Cond. No.                         616.
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+Normalized Coefficients
+[-6.40021646 11.16142122  1.20995474  2.14229204 12.44035717  8.5209643
+ -5.65274384 -1.26074713 18.54576043]

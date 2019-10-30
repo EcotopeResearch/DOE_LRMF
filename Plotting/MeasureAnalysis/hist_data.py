@@ -240,7 +240,7 @@ def hist_data():
                 if dci.loc[i,'KeyCodeName']=='WindowSHGC':        
                     MN7A_windowSHGC.append(dci.loc[i,'KeyCodeValue'])
             
-    index = ['Basement Wall U-Value', 'Ceiling U-Value', 'Exterior Wall U-Value', 'Slab U-Value', 'Window U-Value', 'Window SHGC']
+    index = ['Basement Wall U-Value', 'Ceiling U-Value', 'Exterior Wall U-Value', 'Slab F-Value', 'Window U-Value', 'Window SHGC']
     
     d = {'IL4A': [IL4A_bsmtWallU, IL4A_ceilingU, IL4A_extWallU, IL4A_slabU, IL4A_windowU, IL4A_windowSHGC],
          'WA4C': [WA4C_bsmtWallU, WA4C_ceilingU, WA4C_extWallU, WA4C_slabU, WA4C_windowU, WA4C_windowSHGC],

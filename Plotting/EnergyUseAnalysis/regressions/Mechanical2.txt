@@ -1,0 +1,31 @@
+The variables used in this regression are:
+unitCOP
+dhwType
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                       0.843
+Model:                            OLS   Adj. R-squared:                  0.839
+Method:                 Least Squares   F-statistic:                     248.9
+Date:                Mon, 28 Oct 2019   Prob (F-statistic):           4.63e-38
+Time:                        07:04:26   Log-Likelihood:                -378.47
+No. Observations:                  95   AIC:                             760.9
+Df Residuals:                      93   BIC:                             766.0
+Df Model:                           2                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+x1             9.9101      1.238      8.006      0.000       7.452      12.368
+x2             3.0369      0.278     10.943      0.000       2.486       3.588
+==============================================================================
+Omnibus:                        6.934   Durbin-Watson:                   1.808
+Prob(Omnibus):                  0.031   Jarque-Bera (JB):                6.358
+Skew:                          -0.585   Prob(JB):                       0.0416
+Kurtosis:                       3.485   Cond. No.                         5.91
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+Normalized Coefficients
+[17.83823121 24.29514108]

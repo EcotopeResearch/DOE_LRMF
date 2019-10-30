@@ -1,0 +1,33 @@
+The variables used in this regression are:
+unitCOP
+dhwType
+dhwEff
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                       0.962
+Model:                            OLS   Adj. R-squared:                  0.961
+Method:                 Least Squares   F-statistic:                     781.0
+Date:                Mon, 28 Oct 2019   Prob (F-statistic):           2.71e-65
+Time:                        07:04:26   Log-Likelihood:                -310.67
+No. Observations:                  95   AIC:                             627.3
+Df Residuals:                      92   BIC:                             635.0
+Df Model:                           3                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+x1            -3.4626      0.993     -3.488      0.001      -5.434      -1.491
+x2             1.1349      0.176      6.436      0.000       0.785       1.485
+x3            32.5565      1.907     17.070      0.000      28.769      36.344
+==============================================================================
+Omnibus:                       29.800   Durbin-Watson:                   1.189
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               61.631
+Skew:                           1.188   Prob(JB):                     4.14e-14
+Kurtosis:                       6.150   Cond. No.                         20.1
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+Normalized Coefficients
+[-6.23259887  9.07913748 13.02260165]

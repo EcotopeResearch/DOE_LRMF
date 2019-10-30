@@ -60,7 +60,7 @@ def unitVentilationSP(ventCentralYN, ventUnitErvYN):
     # empty list to return    
     var = []    
     unit = 62.21 # units are pa, equal to 0.25" 
-    central = 248.84 # units are pa, equal to 0.25"
+    central = 248.84 # units are pa, equal to 1"
     erv = 62.21 # units are pa, equal to 0.25"
     
     

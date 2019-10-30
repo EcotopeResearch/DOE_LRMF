@@ -1,0 +1,31 @@
+The variables used in this regression are:
+ceilingU
+SHGC
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                       0.935
+Model:                            OLS   Adj. R-squared:                  0.933
+Method:                 Least Squares   F-statistic:                     663.8
+Date:                Mon, 28 Oct 2019   Prob (F-statistic):           8.82e-56
+Time:                        07:04:26   Log-Likelihood:                -336.79
+No. Observations:                  95   AIC:                             677.6
+Df Residuals:                      93   BIC:                             682.7
+Df Model:                           2                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+x1           231.6288     49.738      4.657      0.000     132.858     330.400
+x2            44.3336      7.787      5.693      0.000      28.869      59.798
+==============================================================================
+Omnibus:                       50.072   Durbin-Watson:                   1.021
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):                7.314
+Skew:                           0.205   Prob(JB):                       0.0258
+Kurtosis:                       1.704   Cond. No.                         23.2
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+Normalized Coefficients
+[17.13840547 21.28013288]

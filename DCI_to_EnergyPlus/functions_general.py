@@ -137,7 +137,7 @@ def unitDhwCoeffOn(centralDhwEffAvg, inunitDhwEffAvg):
     # central of unit 0.5, 0.8
     for i in range(0, len(centralDhwEffAvg)):
         if centralDhwEffAvg[i] != 0 and inunitDhwEffAvg[i] == 0:
-            var.append(125) # Estimated thermal loss for recirc
+            var.append(9) # Estimated thermal loss for recirc
         elif inunitDhwEffAvg[i] != 0 and centralDhwEffAvg[i] == 0:
             var.append(1)
         else:
@@ -160,7 +160,7 @@ def unitDhwCoeffOff(centralDhwEffAvg, inunitDhwEffAvg):
     # central of unit 0.5, 0.8
     for i in range(0, len(centralDhwEffAvg)):
         if centralDhwEffAvg[i] != 0 and inunitDhwEffAvg[i] == 0:
-            var.append(125) # estimated thermal loss for recirc
+            var.append(9) # estimated thermal loss for recirc
         elif inunitDhwEffAvg[i] != 0 and centralDhwEffAvg[i] == 0:
             var.append(1)
         else:

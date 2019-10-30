@@ -26,12 +26,25 @@ eui_df = eui_data()
 hist_df = hist_data()
 
 
-# baseline dictionary
+# baseline dictionaries
 base_dict = {'Basement Wall U-Value': 0.05, 'Ceiling U-Value': 0.026, 'Exterior Wall U-Value': 0.057, 
-             'Slab U-Value': 0.54, 'Window U-Value': 0.4, 'Window SHGC': 0.4}
+             'Slab F-Value': 0.54, 'Window U-Value': 0.4, 'Window SHGC': 0.4}
+
+base_wa = {'Basement Wall U-Value': 0.05, 'Ceiling U-Value': 0.026, 'Exterior Wall U-Value': 0.057, 
+             'Slab F-Value': 0.54, 'Window U-Value': 0.32, 'Window SHGC': 0.4}
+
+base_or = {'Basement Wall U-Value': 0.05, 'Ceiling U-Value': 0.031, 'Exterior Wall U-Value': 0.06, 
+             'Slab F-Value': 0.54, 'Window U-Value': 0.35, 'Window SHGC': 0.4}
+
+base_mn = {'Basement Wall U-Value': [0.05], 'Ceiling U-Value': [0.026], 'Exterior Wall U-Value': [0.048], 
+             'Slab F-Value': [0.4, 0.52], 'Window U-Value': [0.32], 'Window SHGC': [0.4]}
+
+base_il = {'Basement Wall U-Value': [0.05, 0.059], 'Ceiling U-Value': [0.026], 'Exterior Wall U-Value': [0.057], 
+             'Slab F-Value': [0.54], 'Window U-Value': [0.32, 0.35], 'Window SHGC': [0.4]}
+
 
 # plot dataframes
-row = ['Baseline', 'Basement Wall U-Value', 'Ceiling U-Value', 'Exterior Wall U-Value', 'Slab U-Value', 'Window U-Value', 'Window SHGC']
+row = ['Baseline', 'Basement Wall U-Value', 'Ceiling U-Value', 'Exterior Wall U-Value', 'Slab F-Value', 'Window U-Value', 'Window SHGC']
 col = ['IL4A','WA4C','OR4C','IL5A','WA5B','OR5B','MN6A','MN7A']
 
 ## loop through eui dataframe rows 1 to len, all columns for plots
@@ -54,10 +67,17 @@ for i in range(0,8):
             ax2.set(ylabel='Building Quantity')  
             sns.distplot(hist_df[col[i]][row[j]], hist=True, kde=False, norm_hist=False, color='orange', ax = ax2)
 
-
-        plt.axvline(base_dict[row[j]], 0, 5, linestyle=':', color='red', label='Code Baseline')
+        # plot baseline line based on most recent code
+        if 'WA' in col[i]:    
+            plt.axvline(base_wa[row[j]], 0, 5, linestyle=':', color='red', label='Code Baseline')
+        if 'OR' in col[i]:    
+            plt.axvline(base_or[row[j]], 0, 5, linestyle=':', color='red', label='Code Baseline')
+        if 'MN' in col[i]:    
+            [plt.axvline(x, 0, 5, linestyle=':', color='red', label='Code Baseline') for x in base_mn[row[j]]]
+        if 'IL' in col[i]:    
+            [plt.axvline(x, 0, 5, linestyle=':', color='red', label='Code Baseline') for x in base_il[row[j]]]
+            
         ax.set_title(str(col[i])+' '+str(row[j]))
-    
         name = str(col[i])+'_'+str(row[j])+'.png'
         
         plt.savefig(path + name)

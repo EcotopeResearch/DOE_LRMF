@@ -1,0 +1,44 @@
+The variables used in this regression are:
+unitCOP
+dhwType
+dhwEff
+unitLPD
+wallU
+ceilingU
+slabU
+windowU
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                       0.972
+Model:                            OLS   Adj. R-squared:                  0.970
+Method:                 Least Squares   F-statistic:                     379.8
+Date:                Mon, 28 Oct 2019   Prob (F-statistic):           3.15e-64
+Time:                        07:04:26   Log-Likelihood:                -296.16
+No. Observations:                  95   AIC:                             608.3
+Df Residuals:                      87   BIC:                             628.7
+Df Model:                           8                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+x1            -3.1521      0.895     -3.523      0.001      -4.930      -1.374
+x2             1.3457      0.167      8.071      0.000       1.014       1.677
+x3            10.7866      4.934      2.186      0.031       0.980      20.593
+x4             1.7755      1.637      1.084      0.281      -1.479       5.030
+x5           129.5304     46.898      2.762      0.007      36.315     222.746
+x6            94.7882     45.961      2.062      0.042       3.436     186.141
+x7            -3.1382      6.018     -0.522      0.603     -15.099       8.822
+x8             3.3546      2.168      1.547      0.125      -0.954       7.663
+==============================================================================
+Omnibus:                        5.128   Durbin-Watson:                   1.240
+Prob(Omnibus):                  0.077   Jarque-Bera (JB):                5.453
+Skew:                           0.295   Prob(JB):                       0.0654
+Kurtosis:                       4.014   Cond. No.                         609.
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+Normalized Coefficients
+[-5.67373245 10.76587365  4.3146287   5.66958542 14.20009208  7.01345306
+ -1.88309951  7.48177673]

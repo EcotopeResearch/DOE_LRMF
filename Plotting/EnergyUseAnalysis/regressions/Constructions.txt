@@ -1,0 +1,37 @@
+The variables used in this regression are:
+wallU
+ceilingU
+slabU
+windowU
+SHGC
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                       0.940
+Model:                            OLS   Adj. R-squared:                  0.937
+Method:                 Least Squares   F-statistic:                     284.2
+Date:                Mon, 28 Oct 2019   Prob (F-statistic):           1.63e-53
+Time:                        07:04:26   Log-Likelihood:                -332.30
+No. Observations:                  95   AIC:                             674.6
+Df Residuals:                      90   BIC:                             687.4
+Df Model:                           5                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+x1            31.9091     64.342      0.496      0.621     -95.917     159.735
+x2           178.0378     58.820      3.027      0.003      61.181     294.895
+x3           -21.8737      8.765     -2.496      0.014     -39.287      -4.460
+x4             3.2854      3.163      1.039      0.302      -2.999       9.570
+x5            36.6293     13.397      2.734      0.008      10.013      63.245
+==============================================================================
+Omnibus:                       64.640   Durbin-Watson:                   0.994
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):                7.436
+Skew:                           0.130   Prob(JB):                       0.0243
+Kurtosis:                       1.654   Cond. No.                         165.
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+Normalized Coefficients
+[  3.49811752  13.17316398 -13.12535052   7.32759553  17.58205476]
